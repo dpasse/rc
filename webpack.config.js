@@ -7,7 +7,7 @@ module.exports = {
     context: __dirname,
     mode: 'development',
     entry: {
-      main: './src/main.tsx',
+      app: './src/app.tsx',
     },
     resolve: {
         modules: [
