@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "es5",
+    "module": "es6",
+    "outDir": "./dist/",
+    "moduleResolution": "Node",
+
+    "strict": false,
+    "allowJs": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true,
+
+    "rootDirs": [
+      "src"
+    ],
+
+    "typeRoots": [],
+  },
+  "exclude": [
+    "rc",
+    "app",
+    "node_modules",
+  ],
+}
