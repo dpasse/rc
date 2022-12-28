@@ -1,23 +1,18 @@
-import os
+from flask import Flask
 from dotenv import load_dotenv
-from flask import Flask, render_template, jsonify
+
+from .views.web import index, heartbeat
+
 
 app = Flask(__name__)
 
 load_dotenv()
 
+app.add_url_rule('/heartbeat', view_func=heartbeat, methods=['GET'])
 
-@app.route("/heartbeat")
-def heartbeat():
-    return jsonify({"status": "healthy"})
+app.add_url_rule('/', view_func=index, defaults={'path': ''}, methods=['GET'])
+app.add_url_rule('/<path:path>', view_func=index, methods=['GET'])
 
-@app.route('/', defaults={'path': ''}, methods=['GET'])
-@app.route('/<path:path>', methods=['GET'])
-def index(path: str) -> str:
-    return render_template(
-        'index.html',
-        version=os.getenv('VERSION')
-    )
 
 if __name__ == '__main__':
     app.run()

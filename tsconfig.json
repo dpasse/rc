@@ -10,9 +10,10 @@
     "allowJs": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true,
     "removeComments": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "allowSyntheticDefaultImports": true,
 
     "rootDirs": [
       "src"
