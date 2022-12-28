@@ -47,6 +47,7 @@ def get_season_stats(seasons: List[str]) -> None:
         data.extend(get_stats_by_season(season))
 
     df = pd.DataFrame(data)
+    df = df.rename(columns={ 'Tm': 'team' })
 
     dir = './pipelines/data/mlb/season_stats.csv'
     if os.path.exists(dir):
@@ -57,7 +58,7 @@ def get_season_stats(seasons: List[str]) -> None:
         if not df_current.empty:
             df = pd.concat([df, df_current])
 
-    df.sort_values(['season', 'Tm']).to_csv('./pipelines/data/mlb/season_stats.csv', index=False)
+    df.sort_values(['season', 'team']).to_csv('./pipelines/data/mlb/season_stats.csv', index=False)
 
 
 if __name__ == '__main__':
