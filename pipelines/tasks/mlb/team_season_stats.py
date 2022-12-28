@@ -62,5 +62,4 @@ def get_season_stats(seasons: List[str]) -> None:
 
 
 if __name__ == '__main__':
-    ## example: python team_season_stats.py 2020 2021 2022
     get_season_stats(sys.argv[1:])
