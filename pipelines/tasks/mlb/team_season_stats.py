@@ -1,5 +1,7 @@
 from typing import List
 
+import os
+import sys
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -8,16 +10,15 @@ from prefect import flow, task
 
 @task(retries=3)
 def get_stats_by_season(season: str) -> List[dict]:
-    stats = []
+    response = requests.get(f'https://www.baseball-reference.com/leagues/majors/{season}.shtml')
 
-    bs = BeautifulSoup(
-        requests.get(f'https://www.baseball-reference.com/leagues/majors/{season}.shtml').content,
-        features='html.parser'
-    )
+    assert response.status_code == requests.status_codes.codes['ok']
 
+    bs = BeautifulSoup(response.content, features='html.parser')
     table_headers = [th.text for th in bs.select('.stats_table thead th')]
     table_rows = bs.select('.stats_table tbody tr')
 
+    stats = []
     for row in table_rows:
         if 'class' in row.attrs:
             continue
@@ -42,13 +43,20 @@ def get_season_stats(seasons: List[str]) -> None:
     for season in seasons:
         data.extend(get_stats_by_season(season))
 
-    pd.DataFrame(data).to_csv('./pipelines/data/mlb/season_stats.csv')
+    df = pd.DataFrame(data)
+
+    dir = './pipelines/data/mlb/season_stats.csv'
+    if os.path.exists(dir):
+        df_current = pd.read_csv(dir)
+        df_current['season'] = df_current['season'].astype(str)
+
+        df_current = df_current[~df_current.season.isin(seasons)]
+        if not df_current.empty:
+            df = pd.concat([df, df_current])
+
+    df.sort_values(['season']).to_csv('./pipelines/data/mlb/season_stats.csv')
 
 
 if __name__ == '__main__':
-    seasons = [
-        '2021',
-        '2022'
-    ]
-
-    get_season_stats(seasons)
+    ## example: python team_season_stats.py 2020 2021 2022
+    get_season_stats(sys.argv[1:])
