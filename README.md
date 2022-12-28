@@ -1,6 +1,7 @@
-# rc
+# RC
 
-chrome://net-internals/#sockets
+## Components
 
-https://docs.prefect.io/tutorials/first-steps/
-https://pypi.org/project/prefect/
+1. [Pipelines](./pipelines/README.md)
+2. [Web Server](./app/README.md)
+3. [Web UI](./src/README.md)
