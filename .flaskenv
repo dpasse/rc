@@ -1,3 +1,3 @@
 DEBUG=True
 FLASK_DEBUG=1
-FLASK_APP=app.app.py
+FLASK_APP=app

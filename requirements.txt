@@ -20,6 +20,7 @@ cryptography==38.0.4
 docker==6.0.1
 fastapi==0.88.0
 Flask==2.2.2
+Flask-SQLAlchemy==3.0.2
 fsspec==2022.11.0
 google-auth==2.15.0
 greenlet==2.0.1
