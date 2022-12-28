@@ -131,6 +131,7 @@ dmypy.json
 rc/
 node_modules/
 app/static/bundles
+pipelines/data
 
 # project files
 webpack-stats.json
