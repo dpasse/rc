@@ -15,20 +15,23 @@ def get_stats_by_season(season: str) -> List[dict]:
     assert response.status_code == requests.status_codes.codes['ok']
 
     bs = BeautifulSoup(response.content, features='html.parser')
-    table_headers = [th.text for th in bs.select('.stats_table thead th')]
-    table_rows = bs.select('.stats_table tbody tr')
+    table = bs.select_one('#teams_standard_batting')
+    table_headers = [th.text for th in table.select('thead th')]
+    table_rows = table.select('tbody tr')
 
     stats = []
     for row in table_rows:
         if 'class' in row.attrs:
             continue
 
+        data = [row.select('th a')[0]] + row.select('td')
+
         observations = { 'season': season }
         observations.update(
             dict(
                 zip(
                     table_headers,
-                    map(lambda a: a.text, [row.select('th a')[0]] + row.select('td'))
+                    map(lambda a: a.text, data)
                 )
             )
         )
@@ -54,7 +57,7 @@ def get_season_stats(seasons: List[str]) -> None:
         if not df_current.empty:
             df = pd.concat([df, df_current])
 
-    df.sort_values(['season']).to_csv('./pipelines/data/mlb/season_stats.csv')
+    df.sort_values(['season', 'Tm']).to_csv('./pipelines/data/mlb/season_stats.csv', index=False)
 
 
 if __name__ == '__main__':
