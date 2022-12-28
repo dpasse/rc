@@ -1,6 +1,9 @@
 run:
 	flask run
 
+freeze:
+	pip freeze > requirements.txt
+
 webpack-build:
 	npx webpack build --config webpack.config.js --mode production
 

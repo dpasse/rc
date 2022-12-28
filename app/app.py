@@ -7,8 +7,9 @@ app = Flask(__name__)
 load_dotenv()
 
 
-@app.route('/', methods=['GET'])
-def index() -> str:
+@app.route('/', defaults={'path': ''}, methods=['GET'])
+@app.route('/<path:path>', methods=['GET'])
+def index(path: str) -> str:
     return render_template(
         'index.html',
         version=os.getenv('VERSION')
