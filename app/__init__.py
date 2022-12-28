@@ -1,13 +1,11 @@
 import os
-from typing import Tuple
 from flask import Flask
 from dotenv import load_dotenv
-from flask_sqlalchemy import SQLAlchemy
+from app.sqla import sqla
+from app.views.web import index, heartbeat
 
-from .views.web import index, heartbeat
 
-
-def create(options: dict) -> Tuple[Flask, SQLAlchemy]:
+def create_app(options: dict) -> Flask:
     app = Flask(__name__)
     app.config.from_mapping(
         SQLALCHEMY_DATABASE_URI=options['DATABASE_URI'],
@@ -19,7 +17,9 @@ def create(options: dict) -> Tuple[Flask, SQLAlchemy]:
     app.add_url_rule('/', view_func=index, defaults={'path': ''}, methods=['GET'])
     app.add_url_rule('/<path:path>', view_func=index, methods=['GET'])
 
-    return app, SQLAlchemy(app)
+    sqla.init_app(app=app)
+
+    return app
 
 load_dotenv()
-app, sqla = create(os.environ)
+app = create_app(os.environ)
