@@ -50,7 +50,9 @@ def get_season_stats(seasons: List[str]) -> None:
 
     df = pd.DataFrame(data)
     df = df.rename(columns={ 'Tm': 'team' })
-    df['team'] = df.team.map(lambda name: TeamNormalizer().get(name))
+
+    team_normalizer = TeamNormalizer()
+    df['team'] = df.team.map(lambda name: team_normalizer.get(name))
 
     dir = './pipelines/data/mlb/season_stats.csv'
     if os.path.exists(dir):
