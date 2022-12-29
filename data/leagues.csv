@@ -1,2 +1,2 @@
-id,name,abbreviation
-1,Major League Baseball,MLB
+id,name,parent
+MLB,Major League Baseball,

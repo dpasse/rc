@@ -1,0 +1,3 @@
+CREATE TABLE seasons(
+    id VARCHAR(10) PRIMARY KEY NOT NULL
+);

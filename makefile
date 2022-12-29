@@ -12,6 +12,3 @@ webpack-watch-prod:
 
 webpack-watch-dev:
 	npx webpack watch --config webpack.config.js
-
-prefect:
-	prefect orion start

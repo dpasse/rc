@@ -54,16 +54,16 @@ def get_season_stats(seasons: List[str]) -> None:
     team_normalizer = TeamNormalizer()
     df['team'] = df.team.map(lambda name: team_normalizer.get(name))
 
-    dir = './pipelines/data/mlb/season_stats.csv'
-    if os.path.exists(dir):
-        df_current = pd.read_csv(dir)
+    path = '../data/mlb/season_stats.csv'
+    if os.path.exists(path):
+        df_current = pd.read_csv(path)
         df_current['season'] = df_current['season'].astype(str)
 
         df_current = df_current[~df_current.season.isin(seasons)]
         if not df_current.empty:
             df = pd.concat([df, df_current])
 
-    df.sort_values(['season', 'team']).to_csv('./data/mlb/season_stats.csv', index=False)
+    df.sort_values(['season', 'team']).to_csv(path, index=False)
 
 
 if __name__ == '__main__':
