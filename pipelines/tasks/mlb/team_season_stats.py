@@ -7,6 +7,8 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from prefect import flow, task
 
+from normalizer import TeamNormalizer
+
 
 @task(retries=3)
 def get_stats_by_season(season: str) -> List[dict]:
@@ -48,6 +50,7 @@ def get_season_stats(seasons: List[str]) -> None:
 
     df = pd.DataFrame(data)
     df = df.rename(columns={ 'Tm': 'team' })
+    df['team'] = df.team.map(lambda name: TeamNormalizer().get(name))
 
     dir = './pipelines/data/mlb/season_stats.csv'
     if os.path.exists(dir):
