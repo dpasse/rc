@@ -63,7 +63,7 @@ def get_season_stats(seasons: List[str]) -> None:
         if not df_current.empty:
             df = pd.concat([df, df_current])
 
-    df.sort_values(['season', 'team']).to_csv('./pipelines/data/mlb/season_stats.csv', index=False)
+    df.sort_values(['season', 'team']).to_csv('./data/mlb/season_stats.csv', index=False)
 
 
 if __name__ == '__main__':
