@@ -1,2 +1,3 @@
 init:
-	python setup/create_db.py
+	python create.py
+	python load.py
