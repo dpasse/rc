@@ -131,7 +131,9 @@ dmypy.json
 rc/
 node_modules/
 app/static/bundles
-pipelines/data
 
 # project files
 webpack-stats.json
+
+# data files
+pipelines/data/mlb/season_stats.csv
