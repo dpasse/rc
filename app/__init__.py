@@ -2,29 +2,29 @@ import os
 from flask import Flask
 from dotenv import load_dotenv
 from app.sqla import sqla
-from app.views.web import index, heartbeat
+from app.views.web import web
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-def create_app(options: dict) -> Flask:
+def create_app(config: dict = None) -> Flask:
     app = Flask(__name__)
 
+    if not config:
+        config = app.env
+
     app.config.from_mapping(
-        SQLALCHEMY_DATABASE_URI='sqlite:///' + os.path.join(basedir, os.getenv('DATABASE')),
+        SECRET_KEY=config.get('FLASK_SECRET_KEY'),
+        SQLALCHEMY_DATABASE_URI='sqlite:///' + os.path.join(basedir, config.get('DATABASE')),
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
-        SQLALCHEMY_ECHO=os.getenv('SQLALCHEMY_ECHO', '0') == '1',
+        SQLALCHEMY_ECHO=config.get('SQLALCHEMY_ECHO') == '1',
     )
 
-    app.add_url_rule('/heartbeat', view_func=heartbeat, methods=['GET'])
-
-    app.add_url_rule('/', view_func=index, defaults={'path': ''}, methods=['GET'])
-    app.add_url_rule('/<path:path>', view_func=index, methods=['GET'])
+    app.register_blueprint(web)
 
     sqla.init_app(app=app)
 
     return app
 
 load_dotenv()
-
 app = create_app(os.environ)
