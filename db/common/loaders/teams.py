@@ -14,7 +14,7 @@ def execute(root_directory: str) -> List[str]:
             index_col=None
         )
 
-        df_teams['league_id'] = league
+        df_teams['league'] = league
 
         scripts.extend(build_bulk_insert_sql(df_teams, 'teams'))
 

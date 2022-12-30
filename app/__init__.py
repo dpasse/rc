@@ -5,10 +5,13 @@ from app.sqla import sqla
 from app.views.web import index, heartbeat
 
 
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 def create_app(options: dict) -> Flask:
     app = Flask(__name__)
+
     app.config.from_mapping(
-        SQLALCHEMY_DATABASE_URI=options['DATABASE_URI'],
+        SQLALCHEMY_DATABASE_URI='sqlite:///' + os.path.join(basedir, os.getenv('DATABASE')),
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
     )
 

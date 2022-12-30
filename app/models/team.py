@@ -1,23 +1,13 @@
-import enum
-from sqlalchemy.orm import validates
-from sqlalchemy import Column, Integer, String, Enum
 from app.sqla import sqla
 
-
-class Leagues(enum.Enum):
-    nl = 1
-    al = 2
 
 class Team(sqla.Model):
     __tablename__ = 'teams'
 
-    id = Column('id', Integer, primary_key=True)
-    name = Column('name', String, nullable=False)
-    league = Column('league', Enum(Leagues), nullable=False)
+    id = sqla.Column('id', sqla.Integer, primary_key=True)
+    league = sqla.Column('league', sqla.String(10), sqla.ForeignKey('leagues.id'), nullable=False)
+    location = sqla.Column('location', sqla.String(100), nullable=False)
+    nickname = sqla.Column('nickname', sqla.String(50), nullable=False)
 
-    @validates('name', 'league')
-    def not_empty(self, key: str, value: str) -> str:
-        if not value:
-            raise ValueError(f'{key.capitalize()} is required.')
-
-        return value
+    def __repr__(self):
+        return f'<Team {self.location} {self.nickname}>'

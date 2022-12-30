@@ -137,4 +137,4 @@ webpack-stats.json
 
 # data files
 data/mlb/season_stats.csv
-db/*.sqlite
+*.sqlite

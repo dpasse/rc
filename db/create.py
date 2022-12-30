@@ -16,11 +16,11 @@ if __name__ == '__main__':
         with open(script_path, 'r') as sql_script:
             migration_scripts.append((script_name, sql_script.read()))
 
-    db_path = './rc.sqlite'
-    if os.path.exists('./rc.sqlite'):
-        os.remove('./rc.sqlite')
+    db_path = '../app/rc.sqlite'
+    if os.path.exists(db_path):
+        os.remove(db_path)
 
-    with sqlite3.connect('./rc.sqlite') as conn:
+    with sqlite3.connect(db_path) as conn:
         for name, sql in migration_scripts:
             print(f'running - {name}')
 

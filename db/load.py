@@ -5,7 +5,7 @@ from common.loaders import seasons, leagues, teams
 
 if __name__ == '__main__':
     data_directory = '../data/'
-    database_path = './rc.sqlite'
+    database_path = '../app/rc.sqlite'
     data_migrations = [
         ('insert_seasons', seasons.execute),
         ('insert_leagues', leagues.execute),
