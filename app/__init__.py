@@ -13,6 +13,7 @@ def create_app(options: dict) -> Flask:
     app.config.from_mapping(
         SQLALCHEMY_DATABASE_URI='sqlite:///' + os.path.join(basedir, os.getenv('DATABASE')),
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        SQLALCHEMY_ECHO=os.getenv('SQLALCHEMY_ECHO', '0') == '1',
     )
 
     app.add_url_rule('/heartbeat', view_func=heartbeat, methods=['GET'])
@@ -25,4 +26,5 @@ def create_app(options: dict) -> Flask:
     return app
 
 load_dotenv()
+
 app = create_app(os.environ)
