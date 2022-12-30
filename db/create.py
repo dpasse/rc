@@ -5,8 +5,10 @@ import sqlite3
 if __name__ == '__main__':
     migration_scripts = []
     migration_script_names = [
-        'leagues',
         'seasons',
+        'leagues',
+        'conferences',
+        'divisions',
         'teams',
     ]
 

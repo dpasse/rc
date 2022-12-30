@@ -1,6 +1,6 @@
 import sqlite3
 
-from common.loaders import seasons, leagues, teams
+from common.loaders import seasons, leagues, conferences, divisions, teams
 
 
 if __name__ == '__main__':
@@ -9,6 +9,8 @@ if __name__ == '__main__':
     data_migrations = [
         ('insert_seasons', seasons.execute),
         ('insert_leagues', leagues.execute),
+        ('insert_conferences', conferences.execute),
+        ('insert_divisions', divisions.execute),
         ('insert_teams', teams.execute),
     ]
 
