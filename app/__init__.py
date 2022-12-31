@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from dotenv import load_dotenv
 from app.sqla import sqla
+from app.cache import cache
 from app.views.web import web
 
 
@@ -20,9 +21,11 @@ def create_app(config: dict = None) -> Flask:
         SQLALCHEMY_ECHO=config.get('SQLALCHEMY_ECHO') == '1',
     )
 
+    ## app.register_blueprint(api, url_prefix='/api')
     app.register_blueprint(web)
 
     sqla.init_app(app=app)
+    cache.init_app(app=app)
 
     return app
 
