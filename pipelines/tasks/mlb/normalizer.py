@@ -74,6 +74,9 @@ mlb_id_lookup = {
 class TeamNormalizer():
     def get(self, team: str) -> int:
         q = team.lower()
+        if q == 'tot':
+            return -1
+
         if not q in mlb_id_lookup:
             raise KeyError(f'"{team}" is not supported.')
 
