@@ -204,6 +204,19 @@ class EventVariableFactory():
             self.hierarchy_factory.create(likelihoods).children
         )
 
+    def create_with_ranges(self, likelihoods: dict) -> list:
+        ranges = []
+        event_variables = self.create(likelihoods)
+
+        i = 0
+        for ev in event_variables:
+            i += ev.probability
+            ranges.append(i)
+
+        ranges[-1] = 1
+
+        return list(zip(ranges, event_variables))
+
     def flatten_hierarchy(self, event_variable_hierarchy: List[EventVariableHierarchy], parent_probability: float = 1) -> list:
         event_variables = []
         for event_variable in event_variable_hierarchy:
