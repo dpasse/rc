@@ -7,7 +7,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from prefect import flow, task
 
-from normalizer import TeamNormalizer
+from transformers import run, single, team
 
 
 @task(retries=3)
@@ -49,10 +49,11 @@ def get_season_stats(seasons: List[str]) -> None:
         data.extend(get_stats_by_season(season))
 
     df = pd.DataFrame(data)
-    df = df.rename(columns={ 'Tm': 'team' })
-
-    team_normalizer = TeamNormalizer()
-    df['team'] = df.team.map(lambda name: team_normalizer.get(name))
+    df = df.rename(columns={
+        'Tm': 'team',
+        'SO': 'K'
+    })
+    df = run(df)
 
     path = '../data/mlb/season_stats.csv'
     if os.path.exists(path):
