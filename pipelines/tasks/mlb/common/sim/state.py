@@ -100,6 +100,8 @@ class Inning():
             EventCodes.LongFly: handleLongFlyEvent,
         }
 
+        self.history = []
+
     def load_scenario(self, bases = [0, 0, 0], runs = 0, outs = 0):
         self.bases = bases.copy()
         self.runs = runs
@@ -148,10 +150,10 @@ class Inning():
             self.runs += sum(bases[3:])
             self.bases = bases[:3]
 
-        current_state = self.get_current_state()
-        current_state.update({
-            'event': event_code,
-            'desc': event_code.name
-        })
+            current_state = self.get_current_state()
+            current_state.update({
+                'event': event_code,
+                'desc': event_code.name
+            })
 
-        return current_state
+            self.history.append(current_state)

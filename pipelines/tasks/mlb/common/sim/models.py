@@ -291,13 +291,13 @@ class Batters():
 
     def next(self):
         if len(self.__ranges) == 1:
-            return self.__lookup[0]
+            return (self.__lookup[0], self.__players[0])
 
         rv = random.random()
         for i, range in enumerate(self.__ranges):
             p, _ = range
             if rv <= p:
-                return self.__lookup[i]
+                return (self.__lookup[i], self.__players[i])
 
 
         raise ValueError('No player was found.')
