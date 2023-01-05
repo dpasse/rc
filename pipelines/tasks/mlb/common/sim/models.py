@@ -1,5 +1,6 @@
 import math
-from typing import List
+import random
+from typing import List, Tuple
 from enum import Enum
 
 
@@ -43,6 +44,20 @@ all_event_codes = [
     EventCodes.MediumFly,
     EventCodes.ShortFly,
 ]
+
+def create_probability_ranges(events) -> list:
+    ranges = []
+    threshold = 0
+
+    for i, ev in enumerate(events):
+        if len(events) - 1 == i:
+            threshold = 1
+        else:
+            threshold += ev.probability
+
+        ranges.append((threshold, ev))
+
+    return ranges
 
 class EventVariable():
     def __init__(self, key: str, probability: float, event_code: EventCodes):
@@ -197,25 +212,17 @@ class EventVariableHierarchyFactory():
 
 class EventVariableFactory():
     def __init__(self, hierarchy_factory = EventVariableHierarchyFactory()):
-        self.hierarchy_factory = hierarchy_factory
+        self.__hierarchy_factory = hierarchy_factory
 
     def create(self, likelihoods: dict) -> list:
         return self.flatten_hierarchy(
-            self.hierarchy_factory.create(likelihoods).children
+            self.__hierarchy_factory.create(likelihoods).children
         )
 
     def create_with_ranges(self, likelihoods: dict) -> list:
-        ranges = []
-        event_variables = self.create(likelihoods)
-
-        i = 0
-        for ev in event_variables:
-            i += ev.probability
-            ranges.append(i)
-
-        ranges[-1] = 1
-
-        return list(zip(ranges, event_variables))
+        return create_probability_ranges(
+            self.create(likelihoods)
+        )
 
     def flatten_hierarchy(self, event_variable_hierarchy: List[EventVariableHierarchy], parent_probability: float = 1) -> list:
         event_variables = []
@@ -236,22 +243,24 @@ class EventVariableFactory():
         return event_variables
 
 class PlayerStats():
-    def __init__(self, data):
-        self.data = data.copy()
+    def __init__(self, data, probability_of_hitting = 1):
+        self.__data = data.copy()
 
         for key in ['SH', 'SF', 'K', 'BB', 'HBP', '1B', '2B', '3B', 'HR']:
-            assert key in self.data
+            assert key in self.__data
 
-        assert 'PA' in self.data or 'AB' in self.data
+        assert 'PA' in self.__data or 'AB' in self.__data
 
-        self.data['HITS'] = sum([ self.data[key] for key in ['1B', '2B', '3B', 'HR']])
+        self.__data['HITS'] = sum([ self.__data[key] for key in ['1B', '2B', '3B', 'HR']])
 
-        if not 'PA' in self.data:
-            self.data['PA'] = sum([ self.data[key] for key in ['BB', 'HBP', 'AB', 'SH', 'SF']])
+        if not 'PA' in self.__data:
+            self.__data['PA'] = sum([ self.__data[key] for key in ['BB', 'HBP', 'AB', 'SH', 'SF']])
 
-        self.data['E'] = math.floor(.018 * self.data['PA'])
-        self.data['AtBats'] = sum([ self.data[key] for key in ['AB', 'SF', 'SH']])
-        self.data['Outs'] = self.data['AtBats'] - sum([ self.data[key] for key in ['HITS', 'E', 'K']])
+        self.__data['E'] = math.floor(.018 * self.__data['PA'])
+        self.__data['AtBats'] = sum([ self.__data[key] for key in ['AB', 'SF', 'SH']])
+        self.__data['Outs'] = self.__data['AtBats'] - sum([ self.__data[key] for key in ['HITS', 'E', 'K']])
+
+        self.probability = probability_of_hitting
 
     def likelihoods(self):
         keys = [
@@ -268,6 +277,31 @@ class PlayerStats():
 
         lh = {}
         for key in keys:
-            lh[key] = self.data[key] / self.data['PA']
+            lh[key] = self.__data[key] / self.__data['PA']
 
         return lh
+
+class Batters():
+    def __init__(self, players: list, event_variable_factory = EventVariableFactory()):
+        self.__players = players
+        self.__ranges = create_probability_ranges(players)
+        self.__lookup = {
+            i: event_variable_factory.create_with_ranges(player.likelihoods()) for i,  player in enumerate(players)
+        }
+
+    def next(self):
+        if len(self.__ranges) == 1:
+            return self.__lookup[0]
+
+        rv = random.random()
+        for i, range in enumerate(self.__ranges):
+            p, _ = range
+            if rv <= p:
+                return self.__lookup[i]
+
+
+        raise ValueError('No player was found.')
+
+class BattersFactory():
+    def create(self, players_with_probs: Tuple[dict, float]):
+        return Batters([ PlayerStats(player, probability) for player, probability in players_with_probs ])

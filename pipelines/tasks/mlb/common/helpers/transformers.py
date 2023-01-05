@@ -1,5 +1,5 @@
 import pandas as pd
-from normalizers import TeamNormalizer
+from .normalizers import TeamNormalizer
 
 
 def single(df: pd.DataFrame) -> pd.DataFrame:
@@ -10,12 +10,19 @@ def single(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
-def hbp_plus_bb(df: pd.DataFrame):
+def hbp_plus_bb(df: pd.DataFrame) -> pd.DataFrame:
     for column in ['HBP', 'BB']:
         df[column] = df[column].astype(int)
 
     df['HBP+BB'] = df['HBP'] + df['BB']
 
+    return df
+
+def obp_plus_slg(df: pd.DataFrame) -> pd.DataFrame:
+    for column in ['OBP', 'SLG']:
+        df[column] = df[column].astype(float)
+
+    df['OBP+SLG'] = df['OBP'] + df['SLG']
     return df
 
 def team(df: pd.DataFrame, team_normalizer=TeamNormalizer()) -> pd.DataFrame:
@@ -27,6 +34,7 @@ def team(df: pd.DataFrame, team_normalizer=TeamNormalizer()) -> pd.DataFrame:
 __all__ = [
     single,
     hbp_plus_bb,
+    obp_plus_slg,
     team,
 ]
 

@@ -7,7 +7,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from prefect import flow, task
 
-from transformers import single, team, run
+from common.helpers.transformers import run
 
 
 @task(retries=3)

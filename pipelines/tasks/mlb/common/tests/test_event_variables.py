@@ -1,4 +1,4 @@
-from mlb.sim.models import EventVariableFactory, PlayerStats
+from ..sim.models import EventVariableFactory, PlayerStats
 
 
 def test_event_variables():
@@ -17,7 +17,7 @@ def test_event_variables():
         }).likelihoods()
     )
 
-    output = sorted([(ev.event_code.value, round(ev.probability, 3)) for ev in event_variables], key=lambda a: a[0])
+    output = sorted([(ev.event_code.value, round(ev.probability, 5)) for ev in event_variables], key=lambda a: a[0])
     assert output == [
         (1, 0.08268),
         (2, 0.0643),

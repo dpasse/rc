@@ -1,5 +1,5 @@
 import pytest
-from mlb.sim.state import Inning, EventCodes
+from ..sim.state import Inning, EventCodes
 
 test_data = [
     ## Strikeout
