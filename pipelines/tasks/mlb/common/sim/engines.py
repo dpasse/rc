@@ -18,9 +18,10 @@ class InningSimulator():
 
         inning = Inning()
         while not inning.is_over():
-            event_variables, _ = self.__batters.next()
+            event_variables, player = self.__batters.next()
 
             inning.execute(
+                player.key,
                 generate_event(event_variables),
             )
 

@@ -1,6 +1,6 @@
 import math
 import random
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 from enum import Enum
 
 
@@ -23,6 +23,7 @@ class EventCodes(Enum):
     LongFly = 16
     MediumFly = 17
     ShortFly = 18
+    ParentEvent = 100
 
 all_event_codes = [
     EventCodes.Strikeout,
@@ -60,23 +61,35 @@ def create_probability_ranges(events) -> list:
     return ranges
 
 class EventVariable():
-    def __init__(self, key: str, probability: float, event_code: EventCodes):
-        self.key = key
-        self.probability = probability
-        self.event_code = event_code
+    def __init__(self, event_code: EventCodes = EventCodes.ParentEvent, probability: float = 1):
+        self.__event_code = event_code
+        self.__probability = probability
+
+    @property
+    def event_code(self) -> EventCodes:
+        return self.__event_code
+
+    @property
+    def probability(self) -> float:
+        return self.__probability
 
     def __repr__(self):
-        return f'<EventVariables {self.key} - {self.probability}%>'
+        event_name = 'EMPTY' if self.event_code is None else self.event_code.name
+        return f'<EventVariable name="{event_name}" probability="{self.probability}">'
 
 class EventVariableHierarchy(EventVariable):
-    def __init__(self, key: str, probability: float, event_code: EventCodes=None, children: list = []):
-        self.key = key
-        self.probability = probability
-        self.event_code = event_code
+    def __init__(self, key: str, event_code: EventCodes=EventCodes.ParentEvent, probability: float = 1, children: list = []):
+        super().__init__(event_code, probability)
+
+        self.__key = key
         self.children = children
 
+    @property
+    def key(self) -> str:
+        return self.__key
+
     def __repr__(self):
-        return f'<EventVariables {self.key} - {self.probability}%, C={len(self.children)}>'
+        return f'<EventVariableHierarchy key="{self.key}" probability="{self.probability}", children="{len(self.children)}">'
 
 class EventVariableHierarchyFactory():
     def create(self, likelihoods: dict) -> EventVariableHierarchy:
@@ -227,23 +240,23 @@ class EventVariableFactory():
     def flatten_hierarchy(self, event_variable_hierarchy: List[EventVariableHierarchy], parent_probability: float = 1) -> list:
         event_variables = []
         for event_variable in event_variable_hierarchy:
-            key = event_variable.key
             probability = event_variable.probability
             event_code = event_variable.event_code
 
-            if event_code is None:
+            if event_code == EventCodes.ParentEvent:
                 event_variables.extend(
                     self.flatten_hierarchy(event_variable.children, parent_probability * probability)
                 )
             else:
                 event_variables.append(
-                    EventVariable(key, parent_probability * probability, event_code)
+                    EventVariable(event_code, parent_probability * probability)
                 )
 
         return event_variables
 
 class PlayerStats():
-    def __init__(self, data, probability_of_hitting = 1):
+    def __init__(self, key, data, probability_of_hitting = 1):
+        self.__key  = key
         self.__data = data.copy()
 
         for key in ['SH', 'SF', 'K', 'BB', 'HBP', '1B', '2B', '3B', 'HR']:
@@ -261,6 +274,10 @@ class PlayerStats():
         self.__data['Outs'] = self.__data['AtBats'] - sum([ self.__data[key] for key in ['HITS', 'E', 'K']])
 
         self.probability = probability_of_hitting
+
+    @property
+    def key(self):
+        return self.__key
 
     def likelihoods(self):
         keys = [
@@ -303,5 +320,9 @@ class Batters():
         raise ValueError('No player was found.')
 
 class BattersFactory():
-    def create(self, players_with_probs: Tuple[dict, float]):
-        return Batters([ PlayerStats(player, probability) for player, probability in players_with_probs ])
+    def create(self, players_with_probs: Tuple[str, dict, float]):
+        return Batters([
+            PlayerStats(key, player, probability)
+            for key, player, probability
+            in players_with_probs
+        ])

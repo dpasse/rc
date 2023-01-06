@@ -3,7 +3,7 @@ from ..sim.models import EventVariableFactory, PlayerStats
 
 def test_event_variables():
     event_variables = EventVariableFactory().create(
-        PlayerStats({
+        PlayerStats('test', {
             'AB': 704, ## Appearance
             'SH': 2, ## Sac Bunts
             'SF': 3, ## Sac Flys
@@ -17,7 +17,11 @@ def test_event_variables():
         }).likelihoods()
     )
 
-    output = sorted([(ev.event_code.value, round(ev.probability, 5)) for ev in event_variables], key=lambda a: a[0])
+    output = sorted([
+        (ev.event_code.value, round(ev.probability, 5))
+        for ev in event_variables
+    ], key=lambda ev: ev[0])
+
     assert output == [
         (1, 0.08268),
         (2, 0.0643),

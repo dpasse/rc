@@ -79,11 +79,11 @@ def handleLongFlyEvent(bases: list):
 class Inning():
 
     def __init__(self) -> None:
-        self.bases = [0, 0, 0]
-        self.runs = 0
-        self.outs = 0
+        self.__bases = [0, 0, 0]
+        self.__runs = 0
+        self.__outs = 0
 
-        self.base_runner_rules = {
+        self.__base_runner_rules = {
             EventCodes.Error: handleErrorEvent,
             EventCodes.Walk: handleTakeBaseEvent,
             EventCodes.HBP: handleTakeBaseEvent,
@@ -100,36 +100,40 @@ class Inning():
             EventCodes.LongFly: handleLongFlyEvent,
         }
 
-        self.history = []
+        self.__history = []
+
+    @property
+    def history(self):
+        return self.__history
 
     def load_scenario(self, bases = [0, 0, 0], runs = 0, outs = 0):
-        self.bases = bases.copy()
-        self.runs = runs
-        self.outs = outs
+        self.__bases = bases.copy()
+        self.__runs = runs
+        self.__outs = outs
 
         return self
 
     def is_over(self) -> bool:
-        return self.outs >= 3
+        return self.__outs >= 3
 
     def handle_runners_on_base(self, event_code):
-        bases = self.bases.copy()
-        if not event_code in self.base_runner_rules:
+        bases = self.__bases.copy()
+        if not event_code in self.__base_runner_rules:
             return bases
 
-        return self.base_runner_rules[event_code](bases)
+        return self.__base_runner_rules[event_code](bases)
 
     def get_current_state(self):
         return {
-            'bases': self.bases,
-            'runs': self.runs,
-            'outs': self.outs,
+            'bases': self.__bases,
+            'runs': self.__runs,
+            'outs': self.__outs,
         }
 
-    def execute(self, event_code: EventCodes):
+    def execute(self, key: str, event_code: EventCodes):
         ## correct GIDP Event when it doesnt fit scenario
         if event_code == EventCodes.GIDP:
-            if self.outs == 2 or not (self.bases == [1, 0, 0] or self.bases == [1, 1, 0] or self.bases == [1, 0, 1] or self.bases == [1, 1, 1]):
+            if self.__outs == 2 or not (self.__bases == [1, 0, 0] or self.__bases == [1, 1, 0] or self.__bases == [1, 0, 1] or self.__bases == [1, 1, 1]):
                 event_code =  EventCodes.NoAdvanceGroundBall
 
         if event_code in [
@@ -142,18 +146,19 @@ class Inning():
             EventCodes.NoAdvanceGroundBall,
             EventCodes.GIDP,
         ]:
-            self.outs += 2 if event_code == EventCodes.GIDP else 1
+            self.__outs += 2 if event_code == EventCodes.GIDP else 1
 
         if not self.is_over():
             bases = self.handle_runners_on_base(event_code)
 
-            self.runs += sum(bases[3:])
-            self.bases = bases[:3]
+            self.__runs += sum(bases[3:])
+            self.__bases = bases[:3]
 
             current_state = self.get_current_state()
             current_state.update({
+                'batter': key,
                 'event': event_code,
                 'desc': event_code.name
             })
 
-            self.history.append(current_state)
+            self.__history.append(current_state)

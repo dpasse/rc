@@ -175,9 +175,9 @@ test_data = [
 
 @pytest.mark.parametrize("event_code,before,outs,runs_scored,after", test_data)
 def test_event_outcomes(event_code, before, outs, runs_scored, after):
-    output = Inning() \
-        .load_scenario(bases=before, outs=outs)\
-        .execute(event_code=event_code)
+    inning = Inning().load_scenario(bases=before, outs=outs)
+    inning.execute('test', event_code=event_code)
 
-    assert output['runs'] == runs_scored, event_code
-    assert output['bases'] == after, event_code
+    last_event = inning.history[-1]
+    assert last_event['runs'] == runs_scored, event_code
+    assert last_event['bases'] == after, event_code
