@@ -17,3 +17,6 @@ mypy:
 	cd ./pipelines && make mypy
 	cd ./db && make mypy
 	cd ./app && make mypy
+
+test:
+	cd ./pipelines && pytest -v
