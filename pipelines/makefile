@@ -6,3 +6,6 @@ mlb-player-stats:
 
 prefect:
 	prefect orion start
+
+mypy:
+	mypy ./ --ignore-missing-imports

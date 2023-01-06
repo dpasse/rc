@@ -1,3 +1,4 @@
+from typing import List
 from .models import EventCodes
 
 
@@ -100,7 +101,7 @@ class Inning():
             EventCodes.LongFly: handleLongFlyEvent,
         }
 
-        self.__history = []
+        self.__history: List[dict] = []
 
     @property
     def history(self):

@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, cast
 
 import os
 import sys
@@ -22,22 +22,25 @@ def get_stats_by_player(player: str) -> List[dict]:
 
     bs = BeautifulSoup(response.content, features='html.parser')
     table = bs.select_one('#div_batting_standard')
+    if table is None:
+        raise KeyError('#div_batting_standard was not found in html')
+
     table_headers = [th.text for th in table.select('thead th')]
     table_rows = table.select('tbody tr')
 
-    stats = []
+    stats: List[dict] = []
     for row in table_rows:
         tds = row.select('td')
 
-        team = tds[1].select('a')
-        if len(team) > 0:
-            team = team[0].attrs['title']
-        else:
-            team = 'TOT'
+        team_obj = tds[1].select('a')
+        team = team_obj[0].attrs['title'] if len(team_obj) > 0 else 'TOT'
 
-        data = [row.select('th')[0].text] + get_text(tds[:1]) + [team] + get_text(tds[2:])
+        data = [row.select('th')[0].text] \
+            + get_text(tds[:1]) \
+            + [team] \
+            + get_text(tds[2:])
 
-        observations = { 'player': player }
+        observations: dict = { 'player': player }
         observations.update(
             dict(
                 zip(
@@ -53,9 +56,9 @@ def get_stats_by_player(player: str) -> List[dict]:
 
 @flow(name='mlb-player-stats', persist_result=False)
 def get_payer_stats(players: List[str]) -> None:
-    data = []
+    data: List[dict] = []
     for player in players:
-        data.extend(get_stats_by_player(player))
+        data.extend(cast(List[dict], get_stats_by_player(player)))
 
     df = pd.DataFrame(data)
     df = df.rename(columns={

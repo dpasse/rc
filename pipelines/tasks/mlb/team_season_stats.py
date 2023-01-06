@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, cast
 
 import os
 import sys
@@ -18,22 +18,23 @@ def get_stats_by_season(season: str) -> List[dict]:
 
     bs = BeautifulSoup(response.content, features='html.parser')
     table = bs.select_one('#teams_standard_batting')
+    if table is None:
+        raise KeyError('#teams_standard_batting was not found in html')
+
     table_headers = [th.text for th in table.select('thead th')]
     table_rows = table.select('tbody tr')
 
-    stats = []
+    stats: List[dict] = []
     for row in table_rows:
         if 'class' in row.attrs:
             continue
 
-        data = [row.select('th a')[0]] + row.select('td')
-
-        observations = { 'season': season }
+        observations: dict = { 'season': season }
         observations.update(
             dict(
                 zip(
                     table_headers,
-                    map(lambda a: a.text, data)
+                    map(lambda a: a.text, [row.select('th a')[0]] + row.select('td'))
                 )
             )
         )
@@ -44,9 +45,9 @@ def get_stats_by_season(season: str) -> List[dict]:
 
 @flow(name='mlb-season-stats', persist_result=False)
 def get_season_stats(seasons: List[str]) -> None:
-    data = []
+    data: List[dict] = []
     for season in seasons:
-        data.extend(get_stats_by_season(season))
+        data.extend(cast(List[dict], get_stats_by_season(season)))
 
     df = pd.DataFrame(data)
     df = df.rename(columns={

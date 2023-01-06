@@ -31,14 +31,14 @@ def team(df: pd.DataFrame, team_normalizer=TeamNormalizer()) -> pd.DataFrame:
 
     return df
 
-__all__ = [
+BATTERS = [
     single,
     hbp_plus_bb,
     obp_plus_slg,
     team,
 ]
 
-def run(df: pd.DataFrame, transformers: list = __all__) -> pd.DataFrame:
+def run(df: pd.DataFrame, transformers: list = BATTERS) -> pd.DataFrame:
     for transformer in transformers:
         df = transformer(df)
 

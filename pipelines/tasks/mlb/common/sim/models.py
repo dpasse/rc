@@ -320,7 +320,7 @@ class Batters():
         raise ValueError('No player was found.')
 
 class BattersFactory():
-    def create(self, players_with_probs: Tuple[str, dict, float]):
+    def create(self, players_with_probs: List[Tuple[str, dict, float]]) -> Batters:
         return Batters([
             PlayerStats(key, player, probability)
             for key, player, probability

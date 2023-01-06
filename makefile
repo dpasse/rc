@@ -12,3 +12,8 @@ webpack-watch-prod:
 
 webpack-watch-dev:
 	npx webpack watch --config webpack.config.js
+
+mypy:
+	cd ./pipelines && make mypy
+	cd ./db && make mypy
+	cd ./app && make mypy
