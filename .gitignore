@@ -136,6 +136,5 @@ app/static/bundles
 webpack-stats.json
 
 # data files
-data/mlb/season_stats.csv
-data/mlb/player_stats.csv
+data/mlb/batters/*
 *.sqlite
