@@ -4,6 +4,9 @@ mlb-season-aggregates:
 mlb-player-aggregates:
 	python ./tasks/mlb/player_aggregates.py correca01
 
+mlb-standings:
+	python ./tasks/mlb/standings.py 2020 2021 2022
+
 prefect:
 	prefect orion start
 

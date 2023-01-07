@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from .normalizers import TeamNormalizer
 
 
@@ -35,6 +36,15 @@ def dice(df: pd.DataFrame) ->  pd.DataFrame:
         df[column] = df[column].astype(float)
 
     df['DICE'] = (3.0 + ((13 * df['HR'] + 3 * df['HBP+BB'] - 2 * df['K']) / df['IP'])).round(5)
+    return df
+
+def pythagorean(df: pd.DataFrame, exp=2.0) -> pd.DataFrame:
+    for column in ['RA', 'RS']:
+        df[column] = df[column].astype(int)
+
+    key = str(exp).replace('.', '_')
+    rate = np.power((df['RS'] / df['RA']), exp)
+    df[f'PYTH_{key}'] = (rate / (rate + 1)).round(3)
     return df
 
 def team(df: pd.DataFrame, team_normalizer=TeamNormalizer()) -> pd.DataFrame:
