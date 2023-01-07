@@ -43,7 +43,7 @@ def get_season_stats(season: str) -> List[dict]:
 
     return stats
 
-@flow(name='mlb-season-aggregates', persist_result=False)
+@flow(name='mlb-season-batter-aggregates', persist_result=False)
 def get_season_aggregates(seasons: List[str]) -> None:
     data: List[dict] = []
     for season in seasons:
