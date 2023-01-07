@@ -12,7 +12,5 @@
 
 ## Technologies Used
 
-The following tools were used to develop this project:
-
 - [React](https://reactjs.org/)
 - [Flask](https://flask.palletsprojects.com/)
