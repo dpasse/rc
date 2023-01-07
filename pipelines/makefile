@@ -1,8 +1,8 @@
-mlb-team-stats:
-	python ./tasks/mlb/team_season_stats.py 2020 2021 2022
+mlb-season-aggregates:
+	python ./tasks/mlb/season_aggregates.py 2020 2021 2022
 
-mlb-player-stats:
-	python ./tasks/mlb/player_season_stats.py correca01
+mlb-player-aggregates:
+	python ./tasks/mlb/player_aggregates.py correca01
 
 prefect:
 	prefect orion start

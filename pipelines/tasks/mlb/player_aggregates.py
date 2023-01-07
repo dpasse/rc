@@ -11,7 +11,7 @@ from common.helpers.transformers import run
 
 
 @task(retries=3)
-def get_stats_by_player(player: str) -> List[dict]:
+def get_player_stats(player: str) -> List[dict]:
     def get_text(rows):
         return list(map(lambda r: r.text, rows))
 
@@ -54,11 +54,11 @@ def get_stats_by_player(player: str) -> List[dict]:
 
     return stats
 
-@flow(name='mlb-player-stats', persist_result=False)
-def get_payer_stats(players: List[str]) -> None:
+@flow(name='mlb-player-aggregates', persist_result=False)
+def get_aggregates(players: List[str]) -> None:
     data: List[dict] = []
     for player in players:
-        data.extend(cast(List[dict], get_stats_by_player(player)))
+        data.extend(cast(List[dict], get_player_stats(player)))
 
     df = pd.DataFrame(data)
     df = df.rename(columns={
@@ -66,9 +66,10 @@ def get_payer_stats(players: List[str]) -> None:
         'Tm': 'team',
         'SO': 'K'
     })
+    df = df.drop(columns=['Awards', 'Pos'])
     df = run(df)
 
-    path = '../data/mlb/player_stats.csv'
+    path = '../data/mlb/batters/player_aggregates.csv'
     if os.path.exists(path):
         df_current = pd.read_csv(path)
         df_current['player'] = df_current['player'].astype(str)
@@ -81,4 +82,4 @@ def get_payer_stats(players: List[str]) -> None:
 
 
 if __name__ == '__main__':
-    get_payer_stats(sys.argv[1:])
+    get_aggregates(sys.argv[1:])

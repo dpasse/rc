@@ -11,7 +11,7 @@ from common.helpers.transformers import run
 
 
 @task(retries=3)
-def get_stats_by_season(season: str) -> List[dict]:
+def get_season_stats(season: str) -> List[dict]:
     response = requests.get(f'https://www.baseball-reference.com/leagues/majors/{season}.shtml')
 
     assert response.status_code == requests.status_codes.codes['ok']
@@ -43,11 +43,11 @@ def get_stats_by_season(season: str) -> List[dict]:
 
     return stats
 
-@flow(name='mlb-season-stats', persist_result=False)
-def get_season_stats(seasons: List[str]) -> None:
+@flow(name='mlb-season-aggregates', persist_result=False)
+def get_season_aggregates(seasons: List[str]) -> None:
     data: List[dict] = []
     for season in seasons:
-        data.extend(cast(List[dict], get_stats_by_season(season)))
+        data.extend(cast(List[dict], get_season_stats(season)))
 
     df = pd.DataFrame(data)
     df = df.rename(columns={
@@ -56,7 +56,7 @@ def get_season_stats(seasons: List[str]) -> None:
     })
     df = run(df)
 
-    path = '../data/mlb/season_stats.csv'
+    path = '../data/mlb/batters/season_aggregates.csv'
     if os.path.exists(path):
         df_current = pd.read_csv(path)
         df_current['season'] = df_current['season'].astype(str)
@@ -69,4 +69,4 @@ def get_season_stats(seasons: List[str]) -> None:
 
 
 if __name__ == '__main__':
-    get_season_stats(sys.argv[1:])
+    get_season_aggregates(sys.argv[1:])

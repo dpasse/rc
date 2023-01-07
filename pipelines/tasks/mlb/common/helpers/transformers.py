@@ -22,7 +22,19 @@ def obp_plus_slg(df: pd.DataFrame) -> pd.DataFrame:
     for column in ['OBP', 'SLG']:
         df[column] = df[column].astype(float)
 
-    df['OBP+SLG'] = df['OBP'] + df['SLG']
+    df['OBP+SLG'] = (df['OBP'] + df['SLG']).round(5)
+    return df
+
+def dice(df: pd.DataFrame) ->  pd.DataFrame:
+    # Defense-Independent Component ERA (PREDICT FUTURE ERA)
+
+    for column in ['HR', 'K', 'HBP+BB']:
+        df[column] = df[column].astype(int)
+
+    for column in ['IP']:
+        df[column] = df[column].astype(float)
+
+    df['DICE'] = (3.0 + ((13 * df['HR'] + 3 * df['HBP+BB'] - 2 * df['K']) / df['IP'])).round(5)
     return df
 
 def team(df: pd.DataFrame, team_normalizer=TeamNormalizer()) -> pd.DataFrame:
@@ -35,6 +47,12 @@ BATTERS = [
     single,
     hbp_plus_bb,
     obp_plus_slg,
+    team,
+]
+
+PITCHERS = [
+    hbp_plus_bb,
+    dice,
     team,
 ]
 
