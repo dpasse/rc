@@ -7,7 +7,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from prefect import flow, task
 
-from common.helpers.transformers import run
+from common.helpers.transformers import run, BATTERS
 
 
 @task(retries=3)
@@ -70,7 +70,7 @@ def get_aggregates(players: List[str]) -> None:
         'SO': 'K'
     })
     df = df.drop(columns=['Awards', 'Pos'])
-    df = run(df)
+    df = run(df, BATTERS)
 
     path = '../data/mlb/batters/batter_aggregates.csv'
     if os.path.exists(path):

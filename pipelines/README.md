@@ -6,12 +6,13 @@
 
 ## MLB
 
-| Flow                         | Example                                    | Description                         |
-| :--------------------------- | :----------------------------------------- | :---------------------------------- |
-| mlb-season-batter-aggregates | season_batter_aggregates.py 2020 2021 2022 | pulls team stats for a given season |
-| mlb-batter-aggregates        | batter_aggregates.py correca01             | pulls batter career stats           |
-| mlb-pitcher-aggregates       | pitcher_aggregates.py correca01            | pulls pitcher career stats          |
-| mlb-standings                | standings.py 2020 2021 2022                | pulls standings for a season        |
+| Flow                          | Example                                     | Description                                 |
+| :---------------------------- | :------------------------------------------ | :------------------------------------------ |
+| mlb-season-batter-aggregates  | season_batter_aggregates.py 2020 2021 2022  | pulls batter team stats for a given season  |
+| mlb-season-pitcher-aggregates | season_pitcher_aggregates.py 2020 2021 2022 | pulls pitcher team stats for a given season |
+| mlb-batter-aggregates         | batter_aggregates.py correca01              | pulls batter career stats                   |
+| mlb-pitcher-aggregates        | pitcher_aggregates.py correca01             | pulls pitcher career stats                  |
+| mlb-standings                 | standings.py 2020 2021 2022                 | pulls standings for a season                |
 
 <br />
 

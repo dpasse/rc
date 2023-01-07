@@ -62,7 +62,7 @@ PITCHERS = [
     team,
 ]
 
-def run(df: pd.DataFrame, transformers: list = BATTERS) -> pd.DataFrame:
+def run(df: pd.DataFrame, transformers: list) -> pd.DataFrame:
     for transformer in transformers:
         df = transformer(df)
 
