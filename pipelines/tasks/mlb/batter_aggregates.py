@@ -11,7 +11,7 @@ from common.helpers.transformers import run
 
 
 @task(retries=3)
-def get_player_stats(player: str) -> List[dict]:
+def get_batter_stats(player: str) -> List[dict]:
     def get_text(rows):
         return list(map(lambda r: r.text, rows))
 
@@ -30,6 +30,9 @@ def get_player_stats(player: str) -> List[dict]:
 
     stats: List[dict] = []
     for row in table_rows:
+        if 'spacer' in row.attrs['class']:
+            continue
+
         tds = row.select('td')
 
         team_obj = tds[1].select('a')
@@ -54,11 +57,11 @@ def get_player_stats(player: str) -> List[dict]:
 
     return stats
 
-@flow(name='mlb-player-aggregates', persist_result=False)
+@flow(name='mlb-batter-aggregates', persist_result=False)
 def get_aggregates(players: List[str]) -> None:
     data: List[dict] = []
     for player in players:
-        data.extend(cast(List[dict], get_player_stats(player)))
+        data.extend(cast(List[dict], get_batter_stats(player)))
 
     df = pd.DataFrame(data)
     df = df.rename(columns={
@@ -69,7 +72,7 @@ def get_aggregates(players: List[str]) -> None:
     df = df.drop(columns=['Awards', 'Pos'])
     df = run(df)
 
-    path = '../data/mlb/batters/player_aggregates.csv'
+    path = '../data/mlb/batters/batter_aggregates.csv'
     if os.path.exists(path):
         df_current = pd.read_csv(path)
         df_current['player'] = df_current['player'].astype(str)
