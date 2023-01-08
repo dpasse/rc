@@ -210,7 +210,7 @@ class EventVariableHierarchyFactory():
             ]
         )
 
-class PlayerStats():
+class BatterStats():
     def __init__(self, key: str, data: dict, probability_of_hitting: float = 1):
         self.__key  = key
         self.__data = data.copy()
@@ -258,7 +258,7 @@ class PlayerStats():
 
         return lh
 
-T = TypeVar('T', EventVariable, PlayerStats)
+T = TypeVar('T', EventVariable, BatterStats)
 def create_probability_ranges(events: List[T]) -> List[Tuple[float, T]]:
     threshold = 0.0
     ranges: List[Tuple[float, T]] = []
@@ -300,18 +300,18 @@ class EventVariableFactory():
 
 class AbstractBatters(ABC):
     @abstractmethod
-    def next(self) -> Tuple[PlayerStats, List[EventVariable]]:
+    def next(self) -> Tuple[BatterStats, List[EventVariable]]:
         pass
 
 class Batters(AbstractBatters):
-    def __init__(self, players: List[PlayerStats], event_variable_factory = EventVariableFactory()):
+    def __init__(self, players: List[BatterStats], event_variable_factory = EventVariableFactory()):
         self.__players = players
         self.__ranges = create_probability_ranges(players)
         self.__lookup = {
             i: event_variable_factory.create_with_ranges(player.likelihoods()) for i,  player in enumerate(players)
         }
 
-    def next(self) -> Tuple[PlayerStats, List[EventVariable]]:
+    def next(self) -> Tuple[BatterStats, List[EventVariable]]:
         if len(self.__ranges) == 1:
             return (self.__players[0], self.__lookup[0])
 
@@ -325,14 +325,14 @@ class Batters(AbstractBatters):
         raise ValueError('No player was found.')
 
 class BattersWithBattingOrder(AbstractBatters):
-    def __init__(self, players: List[PlayerStats], event_variable_factory = EventVariableFactory()):
+    def __init__(self, players: List[BatterStats], event_variable_factory = EventVariableFactory()):
         self.__at_bat = 0
         self.__players = players
         self.__lookup = {
             i: event_variable_factory.create_with_ranges(player.likelihoods()) for i,  player in enumerate(players)
         }
 
-    def next(self) -> Tuple[PlayerStats, List[EventVariable]]:
+    def next(self) -> Tuple[BatterStats, List[EventVariable]]:
         ## at bat
         i = self.__at_bat
 
@@ -347,14 +347,14 @@ class BattersWithBattingOrder(AbstractBatters):
 class BattersFactory():
     def create_batters(self, players_with_probs: List[Tuple[str, dict, float]]) -> Batters:
         return Batters([
-            PlayerStats(key, player, probability)
+            BatterStats(key, player, probability)
             for key, player, probability
             in players_with_probs
         ])
 
     def create_batters_with_batting_order(self, players_with_probs: List[Tuple[str, dict, float]]) -> BattersWithBattingOrder:
         return BattersWithBattingOrder([
-            PlayerStats(key, player, probability)
+            BatterStats(key, player, probability)
             for key, player, probability
             in players_with_probs
         ])

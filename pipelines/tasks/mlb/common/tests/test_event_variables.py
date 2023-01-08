@@ -1,9 +1,9 @@
-from ..sim.models import EventVariableFactory, PlayerStats
+from ..sim.models import EventVariableFactory, BatterStats
 
 
 def test_event_variables():
     event_variables = EventVariableFactory().create(
-        PlayerStats('test', {
+        BatterStats('test', {
             'AB': 704, ## Appearance
             'SH': 2, ## Sac Bunts
             'SF': 3, ## Sac Flys

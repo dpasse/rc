@@ -1,4 +1,5 @@
 from typing import List, Dict, Callable
+from dataclasses import dataclass
 from .models import EventCodes
 
 
@@ -126,21 +127,36 @@ class Bases():
 
         return runs
 
+@dataclass
+class InningScenario():
+    bases: List[int]
+    runs: int
+    outs: int
+
+@dataclass
+class InningHistory():
+    bases: List[int]
+    runs: int
+    outs: int
+    batter: str
+    event: EventCodes
+    desc: str
+
 class Inning():
     def __init__(self) -> None:
         self.__bases = Bases()
         self.__runs: int = 0
         self.__outs: int = 0
-        self.__history: List[dict] = []
+        self.__history: List[InningHistory] = []
 
     @property
-    def history(self) -> List[dict]:
+    def history(self) -> List[InningHistory]:
         return self.__history
 
-    def load_scenario(self, bases: List[int] = [0, 0, 0], runs: int = 0, outs: int = 0):
-        self.__bases = Bases(bases)
-        self.__runs = runs
-        self.__outs = outs
+    def load_scenario(self, scenario: InningScenario):
+        self.__bases = Bases(scenario.bases)
+        self.__runs = scenario.runs
+        self.__outs = scenario.outs
 
         return self
 
@@ -173,11 +189,11 @@ class Inning():
 
         if not self.is_over():
             self.__runs += self.__bases.play_event(event_code)
-            self.__history.append({
-                'bases': self.__bases.state,
-                'runs': self.__runs,
-                'outs': self.__outs,
-                'batter': key,
-                'event': event_code,
-                'desc': event_code.name
-            })
+            self.__history.append(InningHistory(
+                self.__bases.state,
+                self.__runs,
+                self.__outs,
+                key,
+                event_code,
+                event_code.name
+            ))
