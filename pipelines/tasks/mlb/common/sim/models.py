@@ -210,10 +210,40 @@ class EventVariableHierarchyFactory():
             ]
         )
 
-class BatterStats():
-    def __init__(self, key: str, data: dict, probability_of_hitting: float = 1):
-        self.__key  = key
+class PlayerStats():
+    def __init__(self, key: str, data: dict, likelihood_keys: List[str]) -> None:
+        self.__key = key
         self.__data = data.copy()
+        self.__likelihood_keys = likelihood_keys.copy()
+
+    @property
+    def key(self) -> str:
+        return self.__key
+
+    def likelihoods(self) -> dict:
+        lh = {}
+        for key in self.__likelihood_keys:
+            lh[key] = self.__data[key] / self.__data['PA']
+
+        return lh
+
+class PitcherStats(PlayerStats):
+    def __init__(self, key: str, data: dict):
+        super().__init__(key, data, [])
+
+class BatterStats(PlayerStats):
+    def __init__(self, key: str, data: dict, probability_of_hitting: float = 1):
+        super().__init__(key, data, [
+            'E',
+            'Outs',
+            'K',
+            'BB',
+            'HBP',
+            '1B',
+            '2B',
+            '3B',
+            'HR'
+        ])
 
         for key in ['SH', 'SF', 'K', 'BB', 'HBP', '1B', '2B', '3B', 'HR']:
             assert key in self.__data
@@ -232,31 +262,8 @@ class BatterStats():
         self.__probability = probability_of_hitting
 
     @property
-    def key(self) -> str:
-        return self.__key
-
-    @property
     def probability(self) -> float:
         return self.__probability
-
-    def likelihoods(self) -> dict:
-        keys = [
-            'E',
-            'Outs',
-            'K',
-            'BB',
-            'HBP',
-            '1B',
-            '2B',
-            '3B',
-            'HR'
-        ]
-
-        lh = {}
-        for key in keys:
-            lh[key] = self.__data[key] / self.__data['PA']
-
-        return lh
 
 T = TypeVar('T', EventVariable, BatterStats)
 def create_probability_ranges(events: List[T]) -> List[Tuple[float, T]]:
