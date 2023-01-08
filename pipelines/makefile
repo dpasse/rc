@@ -7,6 +7,9 @@ mlb-season-pitcher-aggregates:
 mlb-standings:
 	python ./tasks/mlb/standings.py 2020 2021 2022
 
+mlb-schedule:
+	python ./tasks/mlb/schedules.py 2022 ari
+
 mlb-batter-aggregates:
 	python ./tasks/mlb/battter_aggregates.py correca01
 

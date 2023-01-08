@@ -139,5 +139,6 @@ webpack-stats.json
 data/mlb/batters/*
 data/mlb/pitchers/*
 data/mlb/standings.csv
+data/mlb/schedules.csv
 
 *.sqlite
