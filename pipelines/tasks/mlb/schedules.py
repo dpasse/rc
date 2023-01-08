@@ -1,14 +1,14 @@
-from typing import List, cast
-import pandas as pd
-import numpy as np
-from common.helpers.normalizers import TeamNormalizer
+import sys
 import os
 import re
-import requests
 import time
+import requests
+import pandas as pd
+from typing import List, cast
 from bs4 import BeautifulSoup
 from prefect import flow, task
-import sys
+
+from common.helpers.normalizers import TeamNormalizer
 
 
 @task(retries=1)
@@ -58,14 +58,15 @@ def get_team_schedule(season: str, abbr: str, team: int) -> List[dict]:
 @flow(name='mlb-team-schedules', persist_result=False)
 def get_schedules(season: str, abbrs: List[str]) -> None:
     data: List[dict] = []
-
-    teams = []
+    teams: List[int] = []
     team_normalizer = TeamNormalizer()
+
     for abbr in abbrs:
         team = team_normalizer.get(abbr)
-        data.extend(cast(List[dict], get_team_schedule(season, abbr, team)))
-
         teams.append(team)
+        data.extend(
+            cast(List[dict], get_team_schedule(season, abbr, team))
+        )
 
     df = pd.DataFrame(data)
 
