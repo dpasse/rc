@@ -1,7 +1,6 @@
 import sys
 import time
 import json
-import re
 import requests
 
 from bs4 import BeautifulSoup
@@ -9,58 +8,108 @@ from typing import List, Optional
 from prefect import flow, task
 
 
-def clean_text(text: str) -> str:
-    text = re.sub('\u00ed', 'i', text)
-    return text
+def compress_game(game: dict) -> dict:
 
-def parse_json(game_id: str, pbp: dict) -> dict:
-    pitcher_tracker = {}
+    if len(game['periods']):
+        first_child = game['periods'][0]
+        game.update({
+          'away': first_child['awayTeamShortName'].lower(),
+          'home': first_child['homeTeamShortName'].lower(),
+        })
 
-    observations = []
-    for record in pbp:
-        period = record['period']
-        atBat = record['atBatTeam']['abbrev']
-        period.update({ 'atBat': atBat })
+        for data in game['periods']:
+            if 'atBatTeam' in data:
+                data['atBat'] = data['atBatTeam']['abbrev'].lower()
+                del data['atBatTeam']
 
-        pitcher = re.search(r'(.+?) pitching', record['dsc'] if 'dsc' in record else '')
-        if pitcher is not None:
-            pitcher_tracker[atBat] = clean_text(pitcher.group(1))
+            if 'period' in data:
+                period = data['period']
+                data['id'] = f"{period['type']}-{period['number']}".lower()
+                del data['period']
 
-        observation = {
-            'period': period,
-            'batters': []
-        }
+            if 'awayTeamShortName' in data:
+                del data['awayTeamShortName']
 
-        for play in record['plays']:
-            if 'isPitcherChange' in play and play['isPitcherChange']:
-                desc =  play['dsc'] if 'dsc' in play else 'NO-IDEA pitching'
-                match = re.search(r'(.+?) pitching', clean_text(desc))
-                if match:
-                    pitcher_tracker[atBat] = match.group(1)
+            if 'homeTeamShortName' in data:
+                del data['homeTeamShortName']
 
-            if 'pitches' in play:
-                observation['batters'].append({
-                    'pitcher': pitcher_tracker[atBat],
-                    'dsc': clean_text(play['dsc']),
-                    'pitches': [
-                        {
-                            'desc': pitch['dsc'],
-                            'coords': pitch['ptchCoords'] if 'ptchCoords' in pitch else {'x': -1, 'y': -1},
-                            'pitch': pitch['ptchDsc'] if 'ptchDsc' in pitch else '',
-                            'call': pitch['rslt'],
-                            'vel': pitch['vlcty'] if 'vlcty' in pitch else '',
-                            'bases': [ int(i) for i in pitch['evnts']['onBase'] ] if 'evnts' in pitch and 'onBase' in pitch['evnts'] else [0, 0, 0]
+            if 'dsc' in data:
+                data['plays'] = [{ 'desc': data['dsc'] }] + data['plays']
+                del data['dsc']
+
+            if 'plays' in data:
+                data['events'] = data['plays']
+                del data['plays']
+
+            data['score'] = {
+                'runs': int(data['runs']),
+                'hits': int(data['hits']),
+                'errors': int(data['errors'])
+            }
+
+            del data['hits']
+            del data['runs']
+            del data['errors']
+
+            if 'events' in data:
+                for event in data['events']:
+                    if 'defaultOpen' in event:
+                        del event['defaultOpen']
+
+                    if 'awayScore' in event and 'homeScore' in event:
+                        event['score'] = {
+                            'away': event['awayScore'],
+                            'home': event['homeScore']
                         }
-                        for pitch in play['pitches']
-                    ],
-                })
 
-        observations.append(observation)
+                        del event['awayScore']
+                        del event['homeScore']
 
-    return {
-        'game': game_id,
-        'half-innings': observations,
-    }
+                    if 'isAway' in event:
+                        del event['isAway']
+
+                    if 'id' in event:
+                        del event['id']
+
+                    if 'dsc' in event:
+                        event['desc'] = event['dsc']
+                        del event['dsc']
+
+                    if 'pitches' in event:
+                        for pitch in event['pitches']:
+
+                            if 'id' in pitch:
+                                del pitch['id']
+
+                            if 'ptchCoords' in pitch:
+                                pitch['coords'] = pitch['ptchCoords']
+                                del pitch['ptchCoords']
+
+                            if 'vlcty' in pitch:
+                                pitch['velocity'] = pitch['vlcty']
+                                del pitch['vlcty']
+
+                            if 'rslt' in pitch:
+                                pitch['result'] = pitch['rslt'].lower()
+                                del pitch['rslt']
+
+                            if 'dsc' in pitch:
+                                pitch['outcome'] = pitch['dsc']
+                                del pitch['dsc']
+
+                            if 'ptchDsc' in pitch:
+                                pitch['type'] = pitch['ptchDsc'].lower()
+                                del pitch['ptchDsc']
+
+                            if 'evnts' in pitch and 'onBase' in pitch['evnts']:
+                                pitch['bases'] = [int(x) for x in pitch['evnts']['onBase']]
+                                del pitch['evnts']['onBase']
+
+                                if len(pitch['evnts'].keys()) == 0:
+                                    del pitch['evnts']
+
+
+    return game
 
 
 @task(retries=1, retry_delay_seconds=15)
@@ -68,19 +117,27 @@ def get_pbp(game_id: str) -> Optional[dict]:
     response = requests.get(f'https://www.espn.com/mlb/playbyplay/_/gameId/{game_id}')
 
     assert response.status_code == requests.status_codes.codes['ok']
+
+    key = "window['__espnfitt__']="
+
     json_blobs = [
         script
         for script in BeautifulSoup(response.content, features='html.parser').select('script')
-        if script.text.startswith("window['__espnfitt__']=")
+        if script.text.startswith(key)
     ]
 
     if len(json_blobs) == 0:
         return None
 
-    json_blob = json_blobs[0].text
-    obj = json.loads(json_blob[len('window[\'__espnfitt__\']='):-1])
-    return parse_json(game_id, obj['page']['content']['gamepackage']['pbp'])
+    json_string = json_blobs[0].text[len(key):-1]
+    json_obj = json.loads(json_string)['page']['content']['gamepackage']['pbp']
 
+    observation = {
+      'id': game_id,
+      'periods': json_obj,
+    }
+
+    return compress_game(observation)
 
 @flow(name='mlb-pbp', persist_result=False)
 def get_pbps(game_ids: List[str]) -> None:
