@@ -2,6 +2,7 @@ from typing import List, cast
 
 import os
 import sys
+import time
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -10,7 +11,7 @@ from prefect import flow, task
 from common.helpers.transformers import run, BATTERS
 
 
-@task(retries=3)
+@task(retries=1)
 def get_season_stats(season: str) -> List[dict]:
     response = requests.get(f'https://www.baseball-reference.com/leagues/majors/{season}-standard-batting.shtml')
 
@@ -48,6 +49,8 @@ def get_season_aggregates(seasons: List[str]) -> None:
     data: List[dict] = []
     for season in seasons:
         data.extend(cast(List[dict], get_season_stats(season)))
+
+        time.sleep(8)
 
     df = pd.DataFrame(data)
     df = df.rename(columns={

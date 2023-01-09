@@ -2,6 +2,7 @@ from typing import List, cast
 
 import os
 import sys
+import time
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -62,6 +63,8 @@ def get_aggregates(players: List[str]) -> None:
     data: List[dict] = []
     for player in players:
         data.extend(cast(List[dict], get_pitcher_stats(player)))
+
+        time.sleep(8)
 
     df = pd.DataFrame(data)
     df = df.rename(columns={

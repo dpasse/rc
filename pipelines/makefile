@@ -10,6 +10,9 @@ mlb-standings:
 mlb-schedule:
 	python ./tasks/mlb/schedules.py 2022 ari
 
+mlb-pbp:
+	python ./tasks/mlb/pbp.py 401354300
+
 mlb-batter-aggregates:
 	python ./tasks/mlb/battter_aggregates.py correca01
 

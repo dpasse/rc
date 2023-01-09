@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 import requests
 import pandas as pd
 from typing import List, cast
@@ -64,6 +65,8 @@ def get_standings(seasons: List[str]) -> None:
     data: List[dict] = []
     for season in seasons:
         data.extend(cast(List[dict], get_standing(season)))
+
+        time.sleep(8)
 
     df = run(
         pd.DataFrame(data),

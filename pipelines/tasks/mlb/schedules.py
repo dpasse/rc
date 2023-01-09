@@ -11,7 +11,7 @@ from prefect import flow, task
 from common.helpers.normalizers import TeamNormalizer
 
 
-@task(retries=1)
+@task(retries=1, retry_delay_seconds=15)
 def get_team_schedule(season: str, abbr: str, team: int) -> List[dict]:
     collection = []
     for half in [1, 2]:
@@ -44,7 +44,7 @@ def get_team_schedule(season: str, abbr: str, team: int) -> List[dict]:
                     if anchor:
                         match = re.search(r'\/gameId\/(.+)$', anchor.attrs['href'])
                         if match:
-                            game_id = match.groups()[0]
+                            game_id = match.group(1)
 
                     collection.append(dict(zip(headers, [team, season, half] + data + [game_id, ''])))
                 else:
@@ -67,6 +67,8 @@ def get_schedules(season: str, abbrs: List[str]) -> None:
         data.extend(
             cast(List[dict], get_team_schedule(season, abbr, team))
         )
+
+        time.sleep(8)
 
     df = pd.DataFrame(data)
 
