@@ -3,24 +3,23 @@ from typing import List, cast
 import os
 import sys
 import time
-import requests
 import pandas as pd
-from bs4 import BeautifulSoup
 from prefect import flow, task
 
 from common.helpers.transformers import run, PITCHERS
+from common.helpers.web import make_request
 
 
 @task(retries=1)
 def get_season_stats(season: str) -> List[dict]:
-    response = requests.get(f'https://www.baseball-reference.com/leagues/majors/{season}-standard-pitching.shtml')
+    table = make_request(
+        f'https://www.baseball-reference.com/leagues/majors/{season}-standard-pitching.shtml'
+    ).select_one('#teams_standard_pitching')
 
-    assert response.status_code == requests.status_codes.codes['ok']
-
-    bs = BeautifulSoup(response.content, features='html.parser')
-    table = bs.select_one('#teams_standard_pitching')
     if table is None:
-        raise KeyError('#teams_standard_pitching was not found in html')
+        raise KeyError(
+            '#teams_standard_pitching was not found in html'
+        )
 
     table_headers = [th.text for th in table.select('thead th')]
     table_rows = table.select('tbody tr')

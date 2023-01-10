@@ -1,23 +1,21 @@
 import os
 import sys
 import time
-import requests
 import pandas as pd
 from typing import List, cast
 
-from bs4 import BeautifulSoup
 from prefect import flow, task
 
 from common.helpers.transformers import run, team, pythagorean
+from common.helpers.web import make_request
 
 
 @task(retries=3)
 def get_standing(season: str) -> List[dict]:
-    response = requests.get(f'https://www.espn.com/mlb/standings/_/season/{season}')
-    assert response.status_code == requests.status_codes.codes['ok']
+    tables = make_request(
+        f'https://www.espn.com/mlb/standings/_/season/{season}'
+    ).select('.standings__table')
 
-    bs = BeautifulSoup(response.content, features='html.parser')
-    tables = bs.select('.standings__table')
     if len(tables) == 0:
         raise KeyError('no .standings__table elements found')
 
@@ -57,10 +55,10 @@ def get_standing(season: str) -> List[dict]:
 @flow(name='mlb-standings', persist_result=False)
 def get_standings(seasons: List[str]) -> None:
     def run_pythagorean(df: pd.DataFrame) -> pd.DataFrame:
-      df = pythagorean(df, 2)
-      df = pythagorean(df, 1.83)
+        df = pythagorean(df, 2)
+        df = pythagorean(df, 1.83)
 
-      return df
+        return df
 
     data: List[dict] = []
     for season in seasons:

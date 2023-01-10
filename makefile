@@ -23,3 +23,6 @@ test:
 
 pylint:
 	find . -type f -not -path "./rc/*" -name "*.py" | xargs pylint
+
+lint:
+	make pylint

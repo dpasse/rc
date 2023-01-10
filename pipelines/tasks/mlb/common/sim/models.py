@@ -1,6 +1,6 @@
 import math
 import random
-from typing import List, Tuple, TypeVar
+from typing import List, Tuple, TypeVar, Optional
 from enum import Enum
 from abc import ABC, abstractmethod
 
@@ -65,18 +65,27 @@ class EventVariable():
         return f'<EventVariable name="{event_name}" probability="{self.probability}">'
 
 class EventVariableHierarchy(EventVariable):
-    def __init__(self, key: str, event_code: EventCodes=EventCodes.ParentEvent, probability: float = 1, children: list = []):
+    def __init__(self,
+                 key: str,
+                 event_code: EventCodes=EventCodes.ParentEvent,
+                 probability: float = 1,
+                 children: Optional[list] = None
+        ):
         super().__init__(event_code, probability)
 
         self.__key = key
-        self.children = children
+        self.children = children if children else []
 
     @property
     def key(self) -> str:
         return self.__key
 
     def __repr__(self):
-        return f'<EventVariableHierarchy key="{self.key}" probability="{self.probability}", children="{len(self.children)}">'
+        return (
+            f'<EventVariableHierarchy key="{self.key}" ',
+            f'probability="{self.probability}", ',
+            f'children="{len(self.children)}">'
+        )
 
 class EventVariableHierarchyFactory():
     def create(self, likelihoods: dict) -> EventVariableHierarchy:

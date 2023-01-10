@@ -2,12 +2,11 @@ from typing import List, cast
 
 import os
 import sys
-import requests
 import pandas as pd
-from bs4 import BeautifulSoup
 from prefect import flow, task
 
 from common.helpers.transformers import run, BATTERS
+from common.helpers.web import make_request
 
 
 @task(retries=3)
@@ -15,13 +14,10 @@ def get_batter_stats(player: str) -> List[dict]:
     def get_text(rows):
         return list(map(lambda r: r.text, rows))
 
-    starts_with = player[0]
-    response = requests.get(f'https://www.baseball-reference.com/players/{starts_with}/{player}.shtml')
+    table = make_request(
+        f'https://www.baseball-reference.com/players/{player[0]}/{player}.shtml'
+    ).select_one('#div_batting_standard')
 
-    assert response.status_code == requests.status_codes.codes['ok']
-
-    bs = BeautifulSoup(response.content, features='html.parser')
-    table = bs.select_one('#div_batting_standard')
     if table is None:
         raise KeyError('#div_batting_standard was not found in html')
 

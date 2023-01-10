@@ -1,11 +1,11 @@
 import sys
 import time
 import json
-import requests
 
-from bs4 import BeautifulSoup
 from typing import List, Optional
 from prefect import flow, task
+
+from common.helpers.web import make_request
 
 
 def compress_game(game: dict) -> dict:
@@ -123,15 +123,15 @@ def compress_game(game: dict) -> dict:
 
 @task(retries=1, retry_delay_seconds=15)
 def get_pbp(game_id: str) -> Optional[dict]:
-    response = requests.get(f'https://www.espn.com/mlb/playbyplay/_/gameId/{game_id}')
-
-    assert response.status_code == requests.status_codes.codes['ok']
-
     key = "window['__espnfitt__']="
+
+    scripts = make_request(
+        f'https://www.espn.com/mlb/playbyplay/_/gameId/{game_id}'
+    ).select('script')
 
     json_blobs = [
         script
-        for script in BeautifulSoup(response.content, features='html.parser').select('script')
+        for script in scripts
         if script.text.startswith(key)
     ]
 

@@ -2,29 +2,28 @@ import sys
 import os
 import re
 import time
-import requests
 import pandas as pd
 from typing import List, cast
-from bs4 import BeautifulSoup
 from prefect import flow, task
 
 from common.helpers.normalizers import TeamNormalizer
+from common.helpers.web import make_request
 
 
 @task(retries=1, retry_delay_seconds=15)
 def get_team_schedule(season: str, abbr: str, team: int) -> List[dict]:
     collection = []
     for half in [1, 2]:
-        url = f'https://www.espn.com/mlb/team/schedule/_/name/{abbr}/season/2022/seasontype/2/half/{half}'
-        print('running: ', url)
+        bs = make_request(
+            f'https://www.espn.com/mlb/team/schedule/_/name/{abbr}/season/2022/seasontype/2/half/{half}'
+        )
 
-        response = requests.get(url)
+        schedules = (
+            card
+            for card in bs.select('.Card')
+            if len(card.select('.schedule__header')) > 0
+        )
 
-        assert response.status_code == requests.status_codes.codes['ok']
-
-        bs = BeautifulSoup(response.content, features='html.parser')
-
-        schedules = [ card for card in bs.select('.Card') if len(card.select('.schedule__header')) > 0 ]
         for schedule in schedules:
 
             rows = schedule.select('.Table__TBODY tr')
