@@ -1,10 +1,9 @@
+from typing import List
 import numpy as np
 import pandas as pd
-from typing import List
 
 
 def chunkify(df: pd.DataFrame, chunk_size: int):
-    ## simple helper found -> https://stackoverflow.com/questions/44729727/pandas-slice-large-dataframe-into-chunks
     start = 0
     length = df.shape[0]
 

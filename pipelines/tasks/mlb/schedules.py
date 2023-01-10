@@ -2,8 +2,8 @@ import sys
 import os
 import re
 import time
-import pandas as pd
 from typing import List, cast
+import pandas as pd
 from prefect import flow, task
 
 from common.helpers.normalizers import TeamNormalizer
@@ -25,19 +25,16 @@ def get_team_schedule(season: str, abbr: str, team: int) -> List[dict]:
         )
 
         for schedule in schedules:
-
             rows = schedule.select('.Table__TBODY tr')
 
             tds = rows[0].select('td')
             headers = ['TEAM', 'SEASON', 'HALF'] + [ column.text for column in tds ] + ['GAME_ID', 'DESC']
-            n_headers = len(tds)
 
             for row in rows[1:]:
-
                 columns = row.select('td')
                 data = [column.text.strip() for column in columns]
 
-                if len(data) ==  n_headers:
+                if len(data) ==  len(tds):
                     game_id = ''
                     anchor = columns[2].select_one('a.AnchorLink')
                     if anchor:

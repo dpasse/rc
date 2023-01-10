@@ -1,11 +1,12 @@
 import sqlite3
 
-from common.loaders import seasons, leagues, conferences, divisions, teams
+from db.common.loaders import seasons, leagues, conferences, divisions, teams
 
+
+DATA_DIRECTORY = '../data/'
+DATABASE_PATH = '../app/rc.sqlite'
 
 if __name__ == '__main__':
-    data_directory = '../data/'
-    database_path = '../app/rc.sqlite'
     data_migrations = [
         ('insert_seasons', seasons.execute),
         ('insert_leagues', leagues.execute),
@@ -15,14 +16,13 @@ if __name__ == '__main__':
     ]
 
     for label, method in data_migrations:
-
-        with sqlite3.connect(database_path) as conn:
+        with sqlite3.connect(DATABASE_PATH) as conn:
             print(f'running - {label}')
 
             cursor = conn.cursor()
-            for i, script in enumerate(method(data_directory)):
+            for i, script in enumerate(method(DATA_DIRECTORY)):
                 print(f'    * running {i + 1} script')
 
                 cursor.execute(script)
 
-            print(f'    * complete')
+            print('    * complete')

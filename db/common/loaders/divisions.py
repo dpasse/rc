@@ -1,6 +1,6 @@
 import os
-import pandas as pd
 from typing import List
+import pandas as pd
 
 from ..helpers.pandas_to_sql import build_bulk_insert_sql
 

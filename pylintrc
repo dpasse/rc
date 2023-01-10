@@ -182,7 +182,8 @@ good-names=i,
            Run,
            _,
            df,
-           bs
+           bs,
+           q
 
 # Good variable names regexes, separated by a comma. If names match any regex,
 # they will always be accepted
@@ -329,7 +330,7 @@ indent-after-paren=4
 indent-string='    '
 
 # Maximum number of characters on a single line.
-max-line-length=100
+max-line-length=150
 
 # Maximum number of lines in a module.
 max-module-lines=1000
