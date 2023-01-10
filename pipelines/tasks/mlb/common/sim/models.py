@@ -95,7 +95,7 @@ class EventVariableHierarchy(EventVariable):
             f'probability="{self.probability}", ' + \
             f'children="{len(self.children)}">'
 
-class EventVariableHierarchyFactory():
+class BatterEventVariableHierarchyFactory():
     def create(self, likelihoods: dict) -> EventVariableHierarchy:
         return EventVariableHierarchy(
             key='Mathletics',
@@ -300,18 +300,19 @@ def create_probability_ranges(events: List[T]) -> List[Tuple[float, T]]:
 
     return ranges
 
-class EventVariableFactory():
-    def __init__(self, hierarchy_factory = EventVariableHierarchyFactory()):
+class BatterEventVariableFactory():
+    def __init__(self, hierarchy_factory = BatterEventVariableHierarchyFactory()):
         self.__hierarchy_factory = hierarchy_factory
 
-    def create(self, likelihoods: dict) -> List[EventVariable]:
+    def create(self, batter: BatterStats) -> List[EventVariable]:
         return self.flatten_hierarchy(
-            self.__hierarchy_factory.create(likelihoods).children
+            self.__hierarchy_factory.create(batter.likelihoods()).children
         )
 
-    def create_with_ranges(self, likelihoods: dict) -> List[Tuple[float, EventVariable]]:
-        events = self.create(likelihoods)
-        return create_probability_ranges(events)
+    def create_with_ranges(self, batter: BatterStats) -> List[Tuple[float, EventVariable]]:
+        return create_probability_ranges(
+            self.create(batter)
+        )
 
     def flatten_hierarchy(self, event_variable_hierarchy: List[EventVariableHierarchy], parent_probability: float = 1) -> List[EventVariable]:
         event_variables: List[EventVariable] = []
@@ -336,11 +337,11 @@ class AbstractBatters(ABC):
         pass
 
 class Batters(AbstractBatters):
-    def __init__(self, players: List[BatterStats], event_variable_factory = EventVariableFactory()):
+    def __init__(self, players: List[BatterStats], event_variable_factory = BatterEventVariableFactory()):
         self.__players = players
         self.__ranges = create_probability_ranges(players)
         self.__lookup = {
-            i: event_variable_factory.create_with_ranges(player.likelihoods()) for i,  player in enumerate(players)
+            i: event_variable_factory.create_with_ranges(player) for i,  player in enumerate(players)
         }
 
     def next(self) -> Tuple[BatterStats, List[EventVariable]]:
@@ -355,11 +356,11 @@ class Batters(AbstractBatters):
         raise ValueError('No player was found.')
 
 class BattersWithBattingOrder(AbstractBatters):
-    def __init__(self, players: List[BatterStats], event_variable_factory = EventVariableFactory()):
+    def __init__(self, players: List[BatterStats], event_variable_factory = BatterEventVariableFactory()):
         self.__at_bat = 0
         self.__players = players
         self.__lookup = {
-            i: event_variable_factory.create_with_ranges(player.likelihoods()) for i,  player in enumerate(players)
+            i: event_variable_factory.create_with_ranges(player) for i,  player in enumerate(players)
         }
 
     def next(self) -> Tuple[BatterStats, List[EventVariable]]:

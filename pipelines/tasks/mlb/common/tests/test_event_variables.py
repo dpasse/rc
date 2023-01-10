@@ -1,8 +1,8 @@
-from ..sim.models import EventVariableFactory, BatterStats
+from ..sim.models import BatterEventVariableFactory, BatterStats
 
 
 def test_event_variables():
-    event_variables = EventVariableFactory().create(
+    event_variables = BatterEventVariableFactory().create(
         BatterStats('test', {
             'AB': 704, ## Appearance
             'SH': 2, ## Sac Bunts
@@ -14,7 +14,7 @@ def test_event_variables():
             '2B': 24,
             '3B': 5,
             'HR': 8
-        }).likelihoods()
+        })
     )
 
     output = sorted([
