@@ -10,10 +10,10 @@ class InningSimulator():
 
     def play(self):
         def generate_event(event_variables_with_ranges: List[Tuple[float, EventVariable]]) -> EventCodes:
-            rv = random.random()
-            for p, ev in event_variables_with_ranges:
-                if rv <= p:
-                    return ev.event_code
+            rand = random.random()
+            for probability, event in event_variables_with_ranges:
+                if rand <= probability:
+                    return event.event_code
 
             raise ValueError('No Event Code was generated!')
 

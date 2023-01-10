@@ -3,13 +3,13 @@ from dataclasses import dataclass
 from .models import EventCodes
 
 
-def handleEmptyEvent(bases: List[int]) -> List[int]:
+def handle_empty_event(bases: List[int]) -> List[int]:
     return bases
 
-def handleErrorEvent(bases: List[int]) -> List[int]:
+def handle_error_event(bases: List[int]) -> List[int]:
     return [1] + bases
 
-def handleTakeBaseEvent(bases: List[int]) -> List[int]:
+def handle_take_base_event(bases: List[int]) -> List[int]:
     if bases == [1, 1, 1]:
         return [1] + bases
 
@@ -21,28 +21,28 @@ def handleTakeBaseEvent(bases: List[int]) -> List[int]:
 
     return bases
 
-def handleSingleEvent(bases: List[int]) -> List[int]:
+def handle_single_event(bases: List[int]) -> List[int]:
     return [1] + bases
 
-def handleMediumSingleEvent(bases: List[int]) -> List[int]:
-    return handleSingleEvent(bases[:1] + [0] + bases[1:])
+def handle_medium_single_event(bases: List[int]) -> List[int]:
+    return handle_single_event(bases[:1] + [0] + bases[1:])
 
-def handleLongSingleEvent(bases: List[int]) -> List[int]:
-    return handleSingleEvent([0] + bases)
+def handle_long_single_event(bases: List[int]) -> List[int]:
+    return handle_single_event([0] + bases)
 
-def handleDoubleEvent(bases: List[int]) -> List[int]:
+def handle_double_event(bases: List[int]) -> List[int]:
     return [0, 1] + bases
 
-def handleLongDoubleEvent(bases: List[int]) -> List[int]:
-    return handleDoubleEvent([0] + bases)
+def handle_long_double_event(bases: List[int]) -> List[int]:
+    return handle_double_event([0] + bases)
 
-def handleTripleEvent(bases: List[int]) -> List[int]:
+def handle_triple_event(bases: List[int]) -> List[int]:
     return [0, 0, 1] + bases
 
-def handleHomerunEvent(bases: List[int]) -> List[int]:
+def handle_homerun_event(bases: List[int]) -> List[int]:
     return [0, 0, 0, 1] + bases
 
-def handleGroundIntoDoublePlayEvent(bases: List[int]) -> List[int]:
+def handle_ground_into_double_play_event(bases: List[int]) -> List[int]:
     if bases == [1, 0, 0]:
         return [0, 0, 0]
 
@@ -57,7 +57,7 @@ def handleGroundIntoDoublePlayEvent(bases: List[int]) -> List[int]:
 
     return bases
 
-def handleNormalGroundBallEvent(bases: List[int]) -> List[int]:
+def handle_normal_ground_ball_event(bases: List[int]) -> List[int]:
     if bases == [0, 1, 1]:
         return bases
 
@@ -72,30 +72,30 @@ def handleNormalGroundBallEvent(bases: List[int]) -> List[int]:
 
     return bases[:1] + [0] + bases[1:]
 
-def handleMediumFlyEvent(bases: List[int]) -> List[int]:
+def handle_medium_fly_event(bases: List[int]) -> List[int]:
     return bases[:2] + [0] + bases[2:]
 
-def handleLongFlyEvent(bases: List[int]) -> List[int]:
+def handle_long_fly_event(bases: List[int]) -> List[int]:
     return bases[:1] + [0] + bases[1:]
 
 class Bases():
-    def __init__(self, scenario=[0, 0, 0]) -> None:
-        self.__bases = scenario.copy()
+    def __init__(self, scenario: Optional[List[int]] = None) -> None:
+        self.__bases = (scenario if scenario else [0, 0, 0]).copy()
         self.__base_runner_rules: Dict[EventCodes, Callable[[List[int]], List[int]]] = {
-            EventCodes.Error: handleErrorEvent,
-            EventCodes.Walk: handleTakeBaseEvent,
-            EventCodes.HBP: handleTakeBaseEvent,
-            EventCodes.ShortSingle: handleSingleEvent,
-            EventCodes.MediumSingle: handleMediumSingleEvent,
-            EventCodes.LongSingle: handleLongSingleEvent,
-            EventCodes.ShortDouble: handleDoubleEvent,
-            EventCodes.LongDouble: handleLongDoubleEvent,
-            EventCodes.Triple: handleTripleEvent,
-            EventCodes.HR: handleHomerunEvent,
-            EventCodes.GIDP: handleGroundIntoDoublePlayEvent,
-            EventCodes.NormalGroundBall: handleNormalGroundBallEvent,
-            EventCodes.MediumFly: handleMediumFlyEvent,
-            EventCodes.LongFly: handleLongFlyEvent,
+            EventCodes.Error: handle_error_event,
+            EventCodes.Walk: handle_take_base_event,
+            EventCodes.HBP: handle_take_base_event,
+            EventCodes.ShortSingle: handle_single_event,
+            EventCodes.MediumSingle: handle_medium_single_event,
+            EventCodes.LongSingle: handle_long_single_event,
+            EventCodes.ShortDouble: handle_double_event,
+            EventCodes.LongDouble: handle_long_double_event,
+            EventCodes.Triple: handle_triple_event,
+            EventCodes.HR: handle_homerun_event,
+            EventCodes.GIDP: handle_ground_into_double_play_event,
+            EventCodes.NormalGroundBall: handle_normal_ground_ball_event,
+            EventCodes.MediumFly: handle_medium_fly_event,
+            EventCodes.LongFly: handle_long_fly_event,
         }
 
     @property
@@ -165,7 +165,7 @@ class Inning():
                 [1, 0, 1],
                 [1, 1, 1]
             ]
-            if self.__outs == 2 or not (self.__bases.is_in(double_play_scenarios)):
+            if self.__outs == 2 or not self.__bases.is_in(double_play_scenarios):
                 event_code =  EventCodes.NoAdvanceGroundBall
 
         if event_code in [

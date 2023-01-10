@@ -41,5 +41,3 @@ def test_event_variables():
         (17, 0.07522),
         (18, 0.04513)
     ]
-
-

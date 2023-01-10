@@ -1,18 +1,19 @@
 from typing import List, Tuple
+from functools import partial, wraps
 import pandas as pd
 import numpy as np
+
 from .normalizers import TeamNormalizer
-from functools import partial, wraps
 
 
-def _pseudo_set_types(f, types: List[Tuple[List[str], type]]):
-    @wraps(f)
+def _pseudo_set_types(func, types: List[Tuple[List[str], type]]):
+    @wraps(func)
     def wrapper(df, *args, **kwargs):
-        for columns, type in types:
+        for columns, column_type in types:
             for column in columns:
-                df[column] = df[column].astype(type)
+                df[column] = df[column].astype(column_type)
 
-        return f(df, *args, **kwargs)
+        return func(df, *args, **kwargs)
 
     return wrapper
 
@@ -46,7 +47,7 @@ def pythagorean(df: pd.DataFrame, exp=2.0) -> pd.DataFrame:
 
 def team(df: pd.DataFrame, team_normalizer=TeamNormalizer()) -> pd.DataFrame:
     df['team_name'] = df['team'].astype(str).copy()
-    df['team'] = df['team'].map(lambda name: team_normalizer.get(name)).astype(int)
+    df['team'] = df['team'].map(team_normalizer.get).astype(int)
     return df
 
 BATTERS = [

@@ -10,12 +10,12 @@ from app.views.web import web
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 def create_app(config: Optional[dict] = None) -> Flask:
-    app = Flask(__name__)
+    rc_app = Flask(__name__)
 
     if not config:
-        config = cast(dict, app.env)
+        config = cast(dict, rc_app.env)
 
-    app.config.from_mapping(
+    rc_app.config.from_mapping(
         SECRET_KEY=config.get('FLASK_SECRET_KEY'),
         SQLALCHEMY_DATABASE_URI='sqlite:///' + os.path.join(basedir, config.get('DATABASE') or ''),
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
@@ -23,12 +23,12 @@ def create_app(config: Optional[dict] = None) -> Flask:
     )
 
     ## app.register_blueprint(api, url_prefix='/api')
-    app.register_blueprint(web)
+    rc_app.register_blueprint(web)
 
-    sqla.init_app(app=app)
-    cache.init_app(app=app)
+    sqla.init_app(app=rc_app)
+    cache.init_app(app=rc_app)
 
-    return app
+    return rc_app
 
 load_dotenv()
 app = create_app(cast(dict, os.environ))

@@ -1,9 +1,9 @@
+
+from typing import List, cast
 import os
 import sys
 import time
 import pandas as pd
-from typing import List, cast
-
 from prefect import flow, task
 
 from common.helpers.transformers import run, team, pythagorean

@@ -153,7 +153,7 @@ def get_pbps(game_ids: List[str]) -> None:
     for game_id in game_ids:
         observation = get_pbp(game_id)
         if observation:
-            with open(f'../data/mlb/pbp/pbp_{game_id}.json', 'w') as pbp_output:
+            with open(f'../data/mlb/pbp/pbp_{game_id}.json', 'w', encoding='UTF8') as pbp_output:
                 pbp_output.write(json.dumps(observation, indent=2))
         else:
             print(f'Error - "{game_id}" failed')

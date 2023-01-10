@@ -5,6 +5,7 @@ from enum import Enum
 from abc import ABC, abstractmethod
 
 
+# pylint: disable=C0103
 class EventCodes(Enum):
     Strikeout = 1
     Walk = 2
@@ -46,6 +47,7 @@ all_event_codes = [
     EventCodes.MediumFly,
     EventCodes.ShortFly,
 ]
+# pylint: enable=C0103
 
 class EventVariable():
     def __init__(self, event_code: EventCodes = EventCodes.ParentEvent, probability: float = 1):
@@ -69,23 +71,25 @@ class EventVariableHierarchy(EventVariable):
                  key: str,
                  event_code: EventCodes=EventCodes.ParentEvent,
                  probability: float = 1,
-                 children: Optional[list] = None
+                 children: Optional[List[EventVariable]] = None
         ):
         super().__init__(event_code, probability)
 
         self.__key = key
-        self.children = children if children else []
+        self.__children = children if children else []
 
     @property
     def key(self) -> str:
         return self.__key
 
-    def __repr__(self):
-        return (
-            f'<EventVariableHierarchy key="{self.key}" ',
-            f'probability="{self.probability}", ',
+    @property
+    def children(self) -> List[EventVariable]:
+        return self.__children
+
+    def __repr__(self) -> str:
+        return f'<EventVariableHierarchy key="{self.key}" ' + \
+            f'probability="{self.probability}", ' + \
             f'children="{len(self.children)}">'
-        )
 
 class EventVariableHierarchyFactory():
     def create(self, likelihoods: dict) -> EventVariableHierarchy:
@@ -230,11 +234,11 @@ class PlayerStats():
         return self.__key
 
     def likelihoods(self) -> dict:
-        lh = {}
+        likelihood = {}
         for key in self.__likelihood_keys:
-            lh[key] = self.__data[key] / self.__data['PA']
+            likelihood[key] = self.__data[key] / self.__data['PA']
 
-        return lh
+        return likelihood
 
 class PitcherStats(PlayerStats):
     def __init__(self, key: str, data: dict):
@@ -245,17 +249,24 @@ class BatterStats(PlayerStats):
         given_data = data.copy()
 
         assert 'PA' in given_data or 'AB' in given_data
-        for key in ('SH', 'SF', 'K', 'BB', 'HBP', '1B', '2B', '3B', 'HR'):
-            assert key in given_data
+        for column in ('SH', 'SF', 'K', 'BB', 'HBP', '1B', '2B', '3B', 'HR'):
+            assert column in given_data
 
         if not 'PA' in given_data:
-            given_data['PA'] = sum(given_data[key] for key in ('BB', 'HBP', 'AB', 'SH', 'SF'))
+            given_data['PA'] = sum(
+                given_data[column] for column in ('BB', 'HBP', 'AB', 'SH', 'SF')
+            )
 
-        given_data['HITS'] = sum(given_data[key] for key in ('1B', '2B', '3B', 'HR'))
+        given_data['HITS'] = sum(
+            given_data[column] for column in ('1B', '2B', '3B', 'HR')
+        )
 
         given_data['E'] = math.floor(.018 * given_data['PA'])
-        given_data['AtBats'] = sum(given_data[key] for key in ('AB', 'SF', 'SH'))
-        given_data['Outs'] = given_data['AtBats'] - sum(given_data[key] for key in ('HITS', 'E', 'K'))
+        given_data['AtBats'] = sum(
+            given_data[column] for column in ('AB', 'SF', 'SH')
+        )
+        given_data['Outs'] = given_data['AtBats'] - \
+            sum(given_data[column] for column in ('HITS', 'E', 'K'))
 
         super().__init__(key, given_data, [
             'E',
@@ -279,9 +290,9 @@ T = TypeVar('T', EventVariable, BatterStats)
 def create_probability_ranges(events: List[T]) -> List[Tuple[float, T]]:
     threshold = 0.0
     ranges: List[Tuple[float, T]] = []
-    for i, ev in enumerate(events):
-        threshold = 1 if len(events) - 1 == i else threshold + ev.probability
-        ranges.append((threshold, ev))
+    for i, event in enumerate(events):
+        threshold = 1 if len(events) - 1 == i else threshold + event.probability
+        ranges.append((threshold, event))
 
     return ranges
 
@@ -332,12 +343,10 @@ class Batters(AbstractBatters):
         if len(self.__ranges) == 1:
             return (self.__players[0], self.__lookup[0])
 
-        rv = random.random()
-        for i, range in enumerate(self.__ranges):
-            p, _ = range
-            if rv <= p:
+        rand = random.random()
+        for i, probability_range in enumerate(self.__ranges):
+            if rand <= probability_range[0]:
                 return (self.__players[i], self.__lookup[i])
-
 
         raise ValueError('No player was found.')
 
