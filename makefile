@@ -20,3 +20,6 @@ mypy:
 
 test:
 	cd ./pipelines && pytest -v
+
+pylint:
+	find . -type f -not -path "./rc/*" -name "*.py" | xargs pylint

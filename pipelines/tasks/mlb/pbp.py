@@ -9,7 +9,6 @@ from prefect import flow, task
 
 
 def compress_game(game: dict) -> dict:
-
     if len(game['periods']):
         first_child = game['periods'][0]
         game.update({
@@ -52,6 +51,7 @@ def compress_game(game: dict) -> dict:
             del data['errors']
 
             if 'events' in data:
+                previous_bases = None
                 for event in data['events']:
                     if 'defaultOpen' in event:
                         del event['defaultOpen']
@@ -90,12 +90,19 @@ def compress_game(game: dict) -> dict:
                                 del pitch['vlcty']
 
                             if 'rslt' in pitch:
-                                pitch['result'] = pitch['rslt'].lower()
-                                del pitch['rslt']
+                                pitch['result'] = {
+                                    'type': pitch['rslt'].lower(),
+                                }
 
-                            if 'dsc' in pitch:
-                                pitch['outcome'] = pitch['dsc']
-                                del pitch['dsc']
+                                if 'dsc' in pitch:
+                                    pitch['result']['outcome'] = pitch['dsc'].lower()
+                                    del pitch['dsc']
+
+                                if 'hitCoords' in pitch:
+                                    pitch['result']['hitCoords'] = pitch['hitCoords']
+                                    del pitch['hitCoords']
+
+                                del pitch['rslt']
 
                             if 'ptchDsc' in pitch:
                                 pitch['type'] = pitch['ptchDsc'].lower()
@@ -105,12 +112,14 @@ def compress_game(game: dict) -> dict:
                                 pitch['bases'] = [int(x) for x in pitch['evnts']['onBase']]
                                 del pitch['evnts']['onBase']
 
+                                previous_bases = pitch['bases'].copy()
+
                                 if len(pitch['evnts'].keys()) == 0:
                                     del pitch['evnts']
-
+                            elif previous_bases:
+                                pitch['bases'] = previous_bases.copy()
 
     return game
-
 
 @task(retries=1, retry_delay_seconds=15)
 def get_pbp(game_id: str) -> Optional[dict]:
