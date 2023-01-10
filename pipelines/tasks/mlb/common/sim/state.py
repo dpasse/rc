@@ -1,4 +1,4 @@
-from typing import List, Dict, Callable
+from typing import List, Dict, Callable, Optional
 from dataclasses import dataclass
 from .models import EventCodes
 
@@ -143,22 +143,15 @@ class InningHistory():
     desc: str
 
 class Inning():
-    def __init__(self) -> None:
-        self.__bases = Bases()
-        self.__runs: int = 0
-        self.__outs: int = 0
+    def __init__(self, scenario: Optional[InningScenario] = None) -> None:
+        self.__bases = Bases(scenario.bases if scenario else [0, 0, 0])
+        self.__runs: int = scenario.runs if scenario else 0
+        self.__outs: int = scenario.outs if scenario else 0
         self.__history: List[InningHistory] = []
 
     @property
     def history(self) -> List[InningHistory]:
         return self.__history
-
-    def load_scenario(self, scenario: InningScenario):
-        self.__bases = Bases(scenario.bases)
-        self.__runs = scenario.runs
-        self.__outs = scenario.outs
-
-        return self
 
     def is_over(self) -> bool:
         return self.__outs >= 3

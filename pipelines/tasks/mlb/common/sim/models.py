@@ -233,7 +233,22 @@ class PitcherStats(PlayerStats):
 
 class BatterStats(PlayerStats):
     def __init__(self, key: str, data: dict, probability_of_hitting: float = 1):
-        super().__init__(key, data, [
+        given_data = data.copy()
+
+        assert 'PA' in given_data or 'AB' in given_data
+        for key in ('SH', 'SF', 'K', 'BB', 'HBP', '1B', '2B', '3B', 'HR'):
+            assert key in given_data
+
+        if not 'PA' in given_data:
+            given_data['PA'] = sum(given_data[key] for key in ('BB', 'HBP', 'AB', 'SH', 'SF'))
+
+        given_data['HITS'] = sum(given_data[key] for key in ('1B', '2B', '3B', 'HR'))
+
+        given_data['E'] = math.floor(.018 * given_data['PA'])
+        given_data['AtBats'] = sum(given_data[key] for key in ('AB', 'SF', 'SH'))
+        given_data['Outs'] = given_data['AtBats'] - sum(given_data[key] for key in ('HITS', 'E', 'K'))
+
+        super().__init__(key, given_data, [
             'E',
             'Outs',
             'K',
@@ -244,20 +259,6 @@ class BatterStats(PlayerStats):
             '3B',
             'HR'
         ])
-
-        for key in ['SH', 'SF', 'K', 'BB', 'HBP', '1B', '2B', '3B', 'HR']:
-            assert key in self.__data
-
-        assert 'PA' in self.__data or 'AB' in self.__data
-
-        self.__data['HITS'] = sum([ self.__data[key] for key in ['1B', '2B', '3B', 'HR']])
-
-        if not 'PA' in self.__data:
-            self.__data['PA'] = sum([ self.__data[key] for key in ['BB', 'HBP', 'AB', 'SH', 'SF']])
-
-        self.__data['E'] = math.floor(.018 * self.__data['PA'])
-        self.__data['AtBats'] = sum([ self.__data[key] for key in ['AB', 'SF', 'SH']])
-        self.__data['Outs'] = self.__data['AtBats'] - sum([ self.__data[key] for key in ['HITS', 'E', 'K']])
 
         self.__probability = probability_of_hitting
 
