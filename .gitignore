@@ -136,9 +136,10 @@ app/static/bundles
 webpack-stats.json
 
 # data files
-data/mlb/batters/*
-data/mlb/pitchers/*
+data/mlb/batting/*
+data/mlb/pitching/*
 data/mlb/pbp/*
+
 data/mlb/standings.csv
 data/mlb/schedules.csv
 

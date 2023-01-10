@@ -66,12 +66,16 @@ class EventVariable():
         event_name = 'EMPTY' if self.event_code is None else self.event_code.name
         return f'<EventVariable name="{event_name}" probability="{self.probability}">'
 
+# pylint: disable=C0103
+TEventVariableHierarchy = TypeVar('TEventVariableHierarchy', bound='EventVariableHierarchy')
+# pylint: enable=C0103
+
 class EventVariableHierarchy(EventVariable):
-    def __init__(self,
+    def __init__(self: TEventVariableHierarchy,
                  key: str,
                  event_code: EventCodes=EventCodes.ParentEvent,
                  probability: float = 1,
-                 children: Optional[List[EventVariable]] = None
+                 children: Optional[List[TEventVariableHierarchy]] = None
         ):
         super().__init__(event_code, probability)
 
@@ -79,14 +83,14 @@ class EventVariableHierarchy(EventVariable):
         self.__children = children if children else []
 
     @property
-    def key(self) -> str:
+    def key(self: TEventVariableHierarchy) -> str:
         return self.__key
 
     @property
-    def children(self) -> List[EventVariable]:
+    def children(self: TEventVariableHierarchy) -> List[TEventVariableHierarchy]:
         return self.__children
 
-    def __repr__(self) -> str:
+    def __repr__(self: TEventVariableHierarchy) -> str:
         return f'<EventVariableHierarchy key="{self.key}" ' + \
             f'probability="{self.probability}", ' + \
             f'children="{len(self.children)}">'
@@ -310,7 +314,7 @@ class EventVariableFactory():
         return create_probability_ranges(events)
 
     def flatten_hierarchy(self, event_variable_hierarchy: List[EventVariableHierarchy], parent_probability: float = 1) -> List[EventVariable]:
-        event_variables = []
+        event_variables: List[EventVariable] = []
         for event_variable in event_variable_hierarchy:
             probability = event_variable.probability
             event_code = event_variable.event_code

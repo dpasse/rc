@@ -8,6 +8,7 @@ from prefect import flow, task
 
 from common.helpers.transformers import run, team, pythagorean
 from common.helpers.web import make_request
+from common.helpers.merges import merge
 
 
 @task(retries=3)
@@ -76,9 +77,7 @@ def get_standings(seasons: List[str]) -> None:
         df_current = pd.read_csv(path)
         df_current['season'] = df_current['season'].astype(str)
 
-        df_current = df_current[~df_current.season.isin(seasons)]
-        if not df_current.empty:
-            df = pd.concat([df, df_current])
+        df = merge(df, df_current[~df_current.season.isin(seasons)])
 
     df.sort_values(['season']).to_csv(path, index=False)
 

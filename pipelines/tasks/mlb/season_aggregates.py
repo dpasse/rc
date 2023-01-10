@@ -6,19 +6,20 @@ import time
 import pandas as pd
 from prefect import flow, task
 
-from common.helpers.transformers import run, PITCHERS
+from common.helpers.transformers import run, PITCHERS, BATTERS
 from common.helpers.web import make_request
+from common.helpers.merges import merge
 
 
 @task(retries=1)
-def get_season_stats(season: str) -> List[dict]:
+def get_season_stats(aggregate_type: str, season: str) -> List[dict]:
     table = make_request(
-        f'https://www.baseball-reference.com/leagues/majors/{season}-standard-pitching.shtml'
-    ).select_one('#teams_standard_pitching')
+        f'https://www.baseball-reference.com/leagues/majors/{season}-standard-{aggregate_type}.shtml'
+    ).select_one(f'#teams_standard_{aggregate_type}')
 
     if table is None:
         raise KeyError(
-            '#teams_standard_pitching was not found in html'
+            f'#teams_standard_{aggregate_type} was not found in html'
         )
 
     table_headers = [th.text for th in table.select('thead th')]
@@ -43,11 +44,11 @@ def get_season_stats(season: str) -> List[dict]:
 
     return stats
 
-@flow(name='mlb-season-pitching-aggregates', persist_result=False)
-def get_season_aggregates(seasons: List[str]) -> None:
+@flow(name='mlb-season-aggregates', persist_result=False)
+def get_season_aggregates(aggregate_type: str, seasons: List[str]) -> None:
     data: List[dict] = []
     for season in seasons:
-        data.extend(cast(List[dict], get_season_stats(season)))
+        data.extend(cast(List[dict], get_season_stats(aggregate_type, season)))
 
         time.sleep(8)
 
@@ -56,19 +57,18 @@ def get_season_aggregates(seasons: List[str]) -> None:
         'Tm': 'team',
         'SO': 'K'
     })
-    df = run(df, PITCHERS)
 
-    path = '../data/mlb/pitchers/season_aggregates.csv'
+    df = run(df, PITCHERS if aggregate_type == 'pitching' else BATTERS)
+
+    path = f'../data/mlb/{aggregate_type}/season_aggregates.csv'
     if os.path.exists(path):
         df_current = pd.read_csv(path)
         df_current['season'] = df_current['season'].astype(str)
 
-        df_current = df_current[~df_current.season.isin(seasons)]
-        if not df_current.empty:
-            df = pd.concat([df, df_current])
+        df = merge(df, df_current[~df_current.season.isin(seasons)])
 
     df.sort_values(['season', 'team']).to_csv(path, index=False)
 
 
 if __name__ == '__main__':
-    get_season_aggregates(sys.argv[1:])
+    get_season_aggregates(sys.argv[1], sys.argv[2:])
