@@ -23,14 +23,14 @@ def transform_period(period: Dict[str, Any]) -> Dict[str, Any]:
 
     return period
 
-def transform_plays(period: Dict[str, Any]) -> Dict[str, Any]:
+def transform_events(period: Dict[str, Any]) -> Dict[str, Any]:
     if 'plays' in period:
         period['events'] = period['plays']
 
         del period['plays']
 
     if 'dsc' in period:
-        period['events'] = [{ 'desc': period['dsc'] }] + period['events']
+        period['events'] = [{ 'desc': period['dsc'], 'isInfoPlay': True }] + period['events']
 
         del period['dsc']
 
@@ -149,11 +149,12 @@ def compress_game(game: Dict[str, Any]) -> Dict[str, Any]:
         'home': game['periods'][0]['homeTeamShortName'].lower(),
     })
 
+    i = 1
     for period in cast(List[Dict[str, Any]], game['periods']):
         for transformer in (
             transform_at_bat,
             transform_period,
-            transform_plays,
+            transform_events,
             transform_score,
             clean_period,
         ):
@@ -170,6 +171,9 @@ def compress_game(game: Dict[str, Any]) -> Dict[str, Any]:
                 clean_event,
             ):
                 event = event_transformer(event)
+
+            event['id'] = i
+            i += 1
 
             if not 'pitches' in event:
                 continue
