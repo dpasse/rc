@@ -1,4 +1,3 @@
-import re
 import sys
 import time
 import json
@@ -6,7 +5,10 @@ import json
 from typing import List, Optional, Tuple, Dict, Any, cast
 from prefect import flow, task
 from common.helpers.web import make_request
+from common.helpers.parsers import EventDescriptionParser
 
+
+EVENT_DESCRIPTION_PARSER = EventDescriptionParser()
 
 def transform_at_bat(period: Dict[str, Any]) -> Dict[str, Any]:
     if 'atBatTeam' in period:
@@ -72,6 +74,13 @@ def transform_event_desc(event: Dict[str, Any]) -> Dict[str, Any]:
         event['desc'] = event['dsc']
         del event['dsc']
 
+    outcome = EVENT_DESCRIPTION_PARSER.transform_into_object(event['desc'])
+    if outcome:
+        event['entities'] = outcome
+
+    if 'isInfoPlay' in event and not ('entities' in event and event['entities']['type'] in ['sub-p', 'sub-f']):
+        event['type'] = 'after-pitch'
+
     return event
 
 def clean_event(event: Dict[str, Any]) -> Dict[str, Any]:
@@ -83,20 +92,6 @@ def clean_event(event: Dict[str, Any]) -> Dict[str, Any]:
 
     if 'id' in event:
         del event['id']
-
-    return event
-
-def expand_info_play_event(event: Dict[str, Any]) -> Dict[str, Any]:
-    should_expand_if = 'isInfoPlay' in event or 'isPitcherChange' in event
-    if not should_expand_if:
-        return event
-
-    sub_match = re.search(r'^(.+?) (hit for|in|as|catching|pitching)', event['desc'])
-    if sub_match:
-        event['player'] = sub_match.group(1)
-        event['type'] = 'sub-p' if sub_match.group(2) == 'pitching' else 'sub-f'
-    else:
-        event['type'] = 'after-pitch'
 
     return event
 
@@ -176,23 +171,29 @@ def tie_after_pitch_events_to_pitch(events: List[Dict[str, Any]]) -> List[Dict[s
         if 'type' in event:
             if event['type'] == 'after-pitch':
                 after_pitch_events.append(event)
-        elif len(after_pitch_events) > 1:
-            for pitch in cast(List[Dict[str, Any]], event['pitches']):
-                if not 'action' in pitch['result']:
+
+        elif len(after_pitch_events) > 0:
+            pitches = cast(List[Dict[str, Any]], event['pitches'])
+            for i, pitch in enumerate(pitches):
+                should_apply_events = 'action' in pitch['result'] or i == len(pitches) - 1
+                if not should_apply_events:
                     continue
 
                 after_pitch_event, after_pitch_events = after_pitch_events[0], after_pitch_events[1:]
-
-                after_pitch_event['after-pitch-event'] = {
+                after_pitch_event['afterPitchEvent'] = {
                     'id': event['id'],
                     'pitch': pitch['order']
                 }
 
-                pitch['result']['after-pitch-event'] = after_pitch_event['id']
+                pitch['result']['afterPitchEvent'] = after_pitch_event['id']
+                del pitch['result']['action']
+
+                if len(after_pitch_events) == 0:
+                    break
 
             if len(after_pitch_events) > 0:
                 print()
-                print('NOT ALL "after-pitch" EVENTS COULD BE ACCOUNTED FOR!!')
+                print('NOT ALL "after-pitch" EVENTS COULD BE ACCOUNTED FOR on "action" pitches!!')
                 print()
 
             after_pitch_events.clear()
@@ -229,7 +230,6 @@ def compress_game(game: Dict[str, Any]) -> Dict[str, Any]:
                 transform_event_score,
                 transform_event_desc,
                 clean_event,
-                expand_info_play_event,
             ):
                 event = event_transformer(event)
 
