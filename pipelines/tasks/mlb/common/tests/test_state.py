@@ -1,6 +1,7 @@
 import pytest
 from ..sim.state import Inning, EventCodes, InningScenario
 
+
 test_data = [
     ## Strikeout
     (EventCodes.Strikeout, [0,0,0], 0, 0, [0,0,0]),
