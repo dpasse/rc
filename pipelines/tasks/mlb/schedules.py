@@ -77,7 +77,7 @@ def get_schedules(season: str, abbrs: List[str]) -> None:
         df_current = pd.read_csv(path)
         df_current['TEAM'] = df_current['TEAM'].astype(int)
         df_current['SEASON'] = df_current['SEASON'].astype(str)
-        df_current['GAME_ID'] = df_current['GAME_ID'].astype(int)
+        df_current['GAME_ID'] = df_current['GAME_ID'].astype(str)
 
         df = merge(df, df_current[~df_current.TEAM.isin(teams) & df_current.SEASON != season])
 

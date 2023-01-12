@@ -78,8 +78,13 @@ def transform_event_desc(event: Dict[str, Any]) -> Dict[str, Any]:
     if outcome:
         event['entities'] = outcome
 
-    if 'isInfoPlay' in event and not ('entities' in event and event['entities']['type'] in ['sub-p', 'sub-f']):
-        event['type'] = 'after-pitch'
+    is_sub = ('entities' in event and event['entities']['type'] in ['sub-p', 'sub-f'])
+    if 'isInfoPlay' in event and not is_sub:
+        is_balk = ('entities' in event and event['entities']['type'] in ['balk'])
+        if is_balk:
+            event['type'] = 'before-pitch'
+        else:
+            event['type'] = 'after-pitch'
 
     return event
 
@@ -165,38 +170,57 @@ def transform_clean_pitch(pitch: Dict[str, Any]) -> Dict[str, Any]:
 
     return pitch
 
-def tie_after_pitch_events_to_pitch(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    after_pitch_events: List[Dict[str, Any]] = []
+def tie_pitch_events_to_pitch(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    pitch_events: List[Dict[str, Any]] = []
     for event in events:
         if 'type' in event:
-            if event['type'] == 'after-pitch':
-                after_pitch_events.append(event)
+            if event['type'] in ['after-pitch', 'before-pitch']:
+                pitch_events.append(event)
 
-        elif len(after_pitch_events) > 0:
+        elif len(pitch_events) > 0:
+            if not 'pitches' in event:
+                continue
+
             pitches = cast(List[Dict[str, Any]], event['pitches'])
             for i, pitch in enumerate(pitches):
-                should_apply_events = 'action' in pitch['result'] or i == len(pitches) - 1
+                ## the action is on the before bases changed pitch prior to last pitch
+                is_last_pitch = i == len(pitches) - 1
+                should_apply_events = 'action' in pitch['result'] or is_last_pitch
                 if not should_apply_events:
                     continue
 
-                after_pitch_event, after_pitch_events = after_pitch_events[0], after_pitch_events[1:]
-                after_pitch_event['afterPitchEvent'] = {
-                    'id': event['id'],
-                    'pitch': pitch['order']
-                }
+                pitch_event, pitch_events = pitch_events[0], pitch_events[1:]
 
-                pitch['result']['afterPitchEvent'] = after_pitch_event['id']
-                del pitch['result']['action']
+                if pitch_event['type'] == 'after-pitch':
+                    pitch_event['afterPitchEvent'] = {
+                        'id': event['id'],
+                        'pitch': pitch['order']
+                    }
 
-                if len(after_pitch_events) == 0:
+                    pitch['result']['afterPitchEvent'] = pitch_event['id']
+                else:
+                    before_pitch = pitch if is_last_pitch else pitches[i+1]
+
+                    pitch_event['beforePitchEvent'] = {
+                        'id': event['id'],
+                        'pitch': before_pitch['order']
+                    }
+
+                    before_pitch['result']['beforePitchEvent'] = pitch_event['id']
+
+                if 'action' in pitch:
+                    ## clear
+                    del pitch['result']['action']
+
+                if len(pitch_events) == 0:
                     break
 
-            if len(after_pitch_events) > 0:
+            if len(pitch_events) > 0:
                 print()
                 print('NOT ALL "after-pitch" EVENTS COULD BE ACCOUNTED FOR on "action" pitches!!')
                 print()
 
-            after_pitch_events.clear()
+            pitch_events.clear()
 
     return events
 
@@ -245,6 +269,9 @@ def compress_game(game: Dict[str, Any]) -> Dict[str, Any]:
             }
 
             pitches = cast(List[Dict[str, Any]], event['pitches'])
+            if len(pitches) == 0:
+                continue
+
             for pitch in pitches:
                 for pitch_transformer in (
                     transform_pitch_renames,
@@ -263,7 +290,7 @@ def compress_game(game: Dict[str, Any]) -> Dict[str, Any]:
 
                 last_pitch = current_pitch
 
-        events = tie_after_pitch_events_to_pitch(events)
+        events = tie_pitch_events_to_pitch(events)
 
     return game
 
