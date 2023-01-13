@@ -56,8 +56,7 @@ def split_extras(extras: List[str]) -> Tuple[List[str], List[Dict[str, Any]]]:
 def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
     move_expressions = [
       r'^ *(.+?) (thrown out at|out(?: |stretching)+at|doubled off|caught stealing|safe at|to) (.+)',
-      r'^ *(.+?) (thrown out)',
-      r'^ *(.+?) (scored)',
+      r'^ *(.+?) (thrown out|scored)',
     ]
 
     moves: List[Dict[str, Any]] = []
@@ -437,7 +436,6 @@ class EventDescriptionParser():
             (r'^(.+?)(?: |hit)+(sacrifice fly|sacrificed) to (.+)', handle_sacrifice),
             (r'^(.+?) (caught stealing) (.+)', handle_caught_stealing),
             (r'^(.+?) (stole) (.+)', handle_steals),
-            ## (r'^(.+?)(?: |safe at)+(.+?) on ((?:fielding|throwing) error)', handle_error),
             (r'(.+on ((?:fielding|throwing) error).+)', handle_error),
             (r'^(.+?) ((?:hit|ran) for|in\b|a[st]\b|catching|pitch(?:ing|es to))', handle_subs),
         ]
