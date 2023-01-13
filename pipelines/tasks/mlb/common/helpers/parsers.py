@@ -402,7 +402,7 @@ class EventDescriptionParser():
         self.__parse_event_expressions: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
             (r'^(.+?) (struck out) (.+)', handle_strike_outs),
             (r'^(.+? (?:balk).+)', handle_balk),
-            (r'^(.+?) to (.+?) on (.+?) by pitcher (.+?)', handle_pick_off_error),
+            (r'^(.+?) to (.+?) on (pickoff error) by (pitcher|catcher) (.+?)', handle_pick_off_error),
             (r'^(.+?) (picked off) and caught stealing (.+)', handle_pick_off),
             (r'^(.+?) (picked off) (.+)', handle_pick_off),
             (r'^(.+?) ((?:homer)ed) to (.+)', handle_homerun),
