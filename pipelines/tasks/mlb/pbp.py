@@ -91,7 +91,7 @@ def transform_event_desc(event: Dict[str, Any]) -> Dict[str, Any]:
         event['entities'] = outcome
 
         if 'isInfoPlay' in event and not event['entities']['type'] in ['sub-p', 'sub-f']:
-            if event['entities']['type'] in ['balk', 'picked off']:
+            if event['entities']['type'] in ['balk', 'picked off', 'pickoff error']:
                 event['type'] = 'before-pitch'
             else:
                 ## wild pitch, stole

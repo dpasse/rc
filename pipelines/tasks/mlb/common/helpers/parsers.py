@@ -76,7 +76,9 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
                 }
 
                 if move_type == 'scored' or len(match_groups) == 3:
-                    move['at'] = 'home' if move_type == 'scored' else clean_text(re.sub(r'on( |throwing)+error.*$', '', match_groups[2]))
+                    move['at'] = 'home' if move_type == 'scored' else clean_text(
+                        re.sub(r'(on(?: |throwing)+error|in rundown).*$', '', match_groups[2])
+                    )
                 else:
                     move['at'] = 'not-available'
 
@@ -359,8 +361,20 @@ def handle_pick_off(groups: List[str]) -> Dict[str, Any]:
     observation: Dict[str, Any] = {
         'player': groups[0],
         'type': groups[1],
-        'at': groups[2],
         'outs': 1,
+    }
+
+    if len(groups) > 2:
+        observation['at'] = groups[2]
+
+    return observation
+
+def handle_pick_off_error(groups: List[str]) -> Dict[str, Any]:
+    observation: Dict[str, Any] = {
+        'player': groups[0],
+        'type': groups[2],
+        'at': groups[1],
+        'by': groups[3],
     }
 
     return observation
@@ -388,8 +402,10 @@ class EventDescriptionParser():
         self.__parse_event_expressions: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
             (r'^(.+?) (struck out) (.+)', handle_strike_outs),
             (r'^(.+? (?:balk).+)', handle_balk),
-            (r'^(.+?) (picked off) (.+)\.', handle_pick_off),
-            (r'^(.+?) ((?:homer)ed) to (.+?)\.', handle_homerun),
+            (r'^(.+?) to (.+?) on (.+?) by pitcher (.+?)', handle_pick_off_error),
+            (r'^(.+?) (picked off) and caught stealing (.+)', handle_pick_off),
+            (r'^(.+?) (picked off) (.+)', handle_pick_off),
+            (r'^(.+?) ((?:homer)ed) to (.+)', handle_homerun),
             (r'^(.+? (?:wild pitch|passed ball).+)', handle_wild_pitch),
             (r'^(.+?) ((?:(?:intentionally |)walked|hit by pitch).*)', handle_walk),
             (r'^(.+?)(?: |hit a)+((?:singl|doubl|tripl)ed|ground rule double) to (.+)', handle_in_play),
