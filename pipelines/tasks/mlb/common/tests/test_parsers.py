@@ -52,6 +52,18 @@ test_data = [
         }
     ),
     (
+        'Kirilloff struck out swinging, catcher Tom Murphy to first baseman Ty France.',
+        {
+            'player': 'Kirilloff',
+            'type': 'struck out',
+            'effort': 'swinging',
+            'moves': [
+                {'player': 'catcher Tom Murphy', 'type': 'advanced', 'at': 'first baseman Ty France', 'qaulity': 'bad'}
+            ],
+            'outs': 1
+        }
+    ),
+    (
         'Gordon doubled to center.',
         {
             'player': 'Gordon',
@@ -116,6 +128,26 @@ test_data = [
                     'at': 'third',
                 }
             ]
+        }
+    ),
+    (
+        'Kepler scored on Crawford wild pitch, Sánchez stole second.',
+        {
+            'player': 'Crawford',
+            'type': 'wild pitch',
+            'moves': [
+                {
+                    'player': 'Kepler',
+                    'type': 'advanced',
+                    'at': 'home',
+                },
+                {
+                    'player': 'Sánchez',
+                    'type': 'advanced',
+                    'at': 'second',
+                }
+            ],
+            'runs': 1,
         }
     ),
     (
@@ -240,6 +272,7 @@ test_data = [
             'player': 'Hosmer',
             'type': 'throwing error',
             'at': 'home',
+            'runs': 1,
         }
     ),
     (
@@ -284,6 +317,18 @@ test_data = [
         }
     ),
     (
+        'Haniger doubled to left center, Winker thrown out at home.',
+        {
+            'player': 'Haniger',
+            'type': 'doubled',
+            'at': 'left center',
+            'moves': [
+                {'player': 'Winker', 'type': 'out', 'at': 'home'}
+            ],
+            'outs': 1,
+        }
+    ),
+    (
         'Bader scored on a balk, Molina to second on a balk.',
         {
             'type': 'balk',
@@ -292,6 +337,29 @@ test_data = [
                 {'player': 'Molina', 'type': 'advanced', 'at': 'second'},
             ],
             'runs': 1,
+        }
+    ),
+    (
+        'Kirilloff reached first base on catcher\'s interference, Kirilloff to first on error by catcher Raleigh, Sánchez to second on error.',
+        {
+            'player': 'Kirilloff',
+            'type': "catcher's interference",
+            'at': 'first',
+            'moves': [
+                {'player': 'Kirilloff', 'type': 'advanced', 'at': 'first'},
+                {'player': 'Sánchez', 'type': 'advanced', 'at': 'second'},
+            ]
+        }
+    ),
+    (
+        'Polanco hit a ground rule double to deep right, Correa to third.',
+        {
+            'player': 'Polanco',
+            'type': "ground rule double",
+            'at': 'deep right',
+            'moves': [
+                {'player': 'Correa', 'type': 'advanced', 'at': 'third'},
+            ]
         }
     ),
 
@@ -419,6 +487,62 @@ test_data = [
             'type': 'struck out',
             'effort': 'looking',
             'outs': 1,
+        }
+    ),
+    (
+        'Kelenic picked off first.',
+        {
+            'player': 'Kelenic',
+            'type': 'picked off',
+            'at': 'first',
+            'outs': 1,
+        }
+    ),
+    (
+        'Vogelbach flied into double play, left to catcher, Marte thrown out',
+        {
+            'player': 'Vogelbach',
+            'type': 'flied into double play',
+            'order': ['left', 'catcher'],
+            'moves': [
+                {'player': 'Marte', 'type': 'out', 'at': 'not-available'},
+            ],
+            'outs': 2,
+        }
+    ),
+    (
+        'Plawecki struck out looking, Bradley Jr. caught stealing second, catcher to second.',
+        {
+            'player': 'Plawecki',
+            'type': 'struck out',
+            'effort': 'looking',
+            'moves': [
+                {'player': 'Bradley Jr.', 'type': 'out', 'at': 'second'},
+                {'player': 'catcher', 'type': 'advanced', 'at': 'second', 'qaulity': 'bad'}
+            ],
+            'outs': 2,
+        }
+    ),
+    (
+        'Rodríguez stole second, Rodríguez safe at third on throwing error by catcher Sánchez.',
+        {
+            'player': 'Rodríguez',
+            'type': 'stole',
+            'at': 'second',
+            'moves': [
+                {'player': 'Rodríguez', 'type': 'advanced', 'at': 'third'},
+            ],
+        }
+    ),
+    (
+        'T. Turner reached on infield single to third, Betts safe at third on throwing error by third baseman Urshela.',
+        {
+            'player': 'T. Turner',
+            'type': 'infield single',
+            'at': 'third',
+            'moves': [
+                {'player': 'Betts', 'type': 'advanced', 'at': 'third'},
+            ],
         }
     ),
 

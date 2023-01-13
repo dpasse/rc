@@ -91,9 +91,10 @@ def transform_event_desc(event: Dict[str, Any]) -> Dict[str, Any]:
         event['entities'] = outcome
 
         if 'isInfoPlay' in event and not event['entities']['type'] in ['sub-p', 'sub-f']:
-            if event['entities']['type'] in ['balk']:
+            if event['entities']['type'] in ['balk', 'picked off']:
                 event['type'] = 'before-pitch'
             else:
+                ## wild pitch, stole
                 event['type'] = 'after-pitch'
     else:
         Logger.error('    - Missing entities')
@@ -393,7 +394,7 @@ if __name__ == '__main__':
 
     Logger.info('    - #%s', len(input_game_ids))
 
-    get_pbps(input_game_ids)
+    get_pbps(input_game_ids, timeout=60)
 
     Logger.info('Finished @ %s', datetime.datetime.now())
     Logger.info('')
