@@ -132,6 +132,8 @@ rc/
 node_modules/
 app/static/bundles
 
+.DS_Store
+
 # project files
 webpack-stats.json
 
@@ -139,6 +141,7 @@ webpack-stats.json
 data/mlb/batting/*
 data/mlb/pitching/*
 data/mlb/pbp/*
+data/mlb/inputs/*
 
 data/mlb/standings.csv
 data/mlb/schedules.csv

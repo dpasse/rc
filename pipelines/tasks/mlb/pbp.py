@@ -1,10 +1,12 @@
+from typing import List, Optional, Tuple, Dict, Any, cast
+
 import sys
 import time
 import json
 import logging
 import datetime
+import pandas as pd
 
-from typing import List, Optional, Tuple, Dict, Any, cast
 from prefect import flow, task
 from common.helpers.web import make_request
 from common.helpers.parsers import EventDescriptionParser
@@ -13,7 +15,7 @@ from common.helpers.parsers import EventDescriptionParser
 Logger = logging.getLogger(__name__)
 Logger.setLevel(level=logging.INFO)
 Logger.addHandler(
-    logging.FileHandler('../data/mlb/pbp/pbp.log')
+    logging.FileHandler('../data/mlb/logs/pbp.log')
 )
 
 EVENT_DESCRIPTION_PARSER = EventDescriptionParser()
@@ -374,24 +376,20 @@ if __name__ == '__main__':
     if len(args) == 0:
         raise Exception('Need to provide options.')
 
+    Logger.info('Started @ %s', datetime.datetime.now())
+
     input_game_ids: List[str] = []
     if args[0] == '-l':
         FILE_PATH = args[1]
 
         Logger.info('    - %s', FILE_PATH)
 
-        with open(FILE_PATH, 'r', encoding='UTF8') as games_to_run:
-            data = games_to_run.read()
-
+        df = pd.read_csv(FILE_PATH, index_col=None)
         input_game_ids.extend(
-            game_id
-            for game_id in map(lambda text: text.strip(), data.split('\n'))
-            if len(game_id) > 0
+            df.id.astype(str).unique().tolist()
         )
     else:
         input_game_ids.extend(args)
-
-    Logger.info('Started @ %s', datetime.datetime.now())
 
     Logger.info('    - #%s', len(input_game_ids))
 

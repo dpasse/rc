@@ -8,10 +8,10 @@ mlb-standings:
 	python ./tasks/mlb/standings.py 2020 2021 2022
 
 mlb-schedule:
-	python ./tasks/mlb/schedules.py 2022 ari
+	python ./tasks/mlb/schedules.py  -l "../data/mlb/inputs/schedules.csv"
 
 mlb-pbp:
-	python ./tasks/mlb/pbp.py -l "../data/mlb/pbp/games.txt"
+	python ./tasks/mlb/pbp.py -l "../data/mlb/inputs/games.csv"
 
 mlb-batter-aggregates:
 	python ./tasks/mlb/player_aggregates.py batting correca01
