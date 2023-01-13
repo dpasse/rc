@@ -11,7 +11,7 @@ mlb-schedule:
 	python ./tasks/mlb/schedules.py 2022 ari
 
 mlb-pbp:
-	python ./tasks/mlb/pbp.py 401356045
+	python ./tasks/mlb/pbp.py -l "../data/mlb/pbp/games.txt"
 
 mlb-batter-aggregates:
 	python ./tasks/mlb/player_aggregates.py batting correca01

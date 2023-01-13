@@ -1,6 +1,8 @@
 import sys
 import time
 import json
+import logging
+import datetime
 
 from typing import List, Optional, Tuple, Dict, Any, cast
 from prefect import flow, task
@@ -8,7 +10,15 @@ from common.helpers.web import make_request
 from common.helpers.parsers import EventDescriptionParser
 
 
+Logger = logging.getLogger(__name__)
+Logger.setLevel(level=logging.INFO)
+Logger.addHandler(
+    logging.FileHandler('../data/mlb/pbp/pbp.log')
+)
+
 EVENT_DESCRIPTION_PARSER = EventDescriptionParser()
+
+# pylint: disable=W0703
 
 def transform_at_bat(period: Dict[str, Any]) -> Dict[str, Any]:
     if 'atBatTeam' in period:
@@ -78,13 +88,13 @@ def transform_event_desc(event: Dict[str, Any]) -> Dict[str, Any]:
     if outcome:
         event['entities'] = outcome
 
-    is_sub = ('entities' in event and event['entities']['type'] in ['sub-p', 'sub-f'])
-    if 'isInfoPlay' in event and not is_sub:
-        is_balk = ('entities' in event and event['entities']['type'] in ['balk'])
-        if is_balk:
-            event['type'] = 'before-pitch'
-        else:
-            event['type'] = 'after-pitch'
+        if 'isInfoPlay' in event and not event['entities']['type'] in ['sub-p', 'sub-f']:
+            if event['entities']['type'] in ['balk']:
+                event['type'] = 'before-pitch'
+            else:
+                event['type'] = 'after-pitch'
+    else:
+        Logger.error('    - Missing entities')
 
     return event
 
@@ -294,10 +304,17 @@ def compress_game(game: Dict[str, Any]) -> Dict[str, Any]:
 
     return game
 
-@task(retries=1, retry_delay_seconds=15)
-def get_pbp(game_id: str) -> Optional[dict]:
-    key = "window['__espnfitt__']="
+def dump_json_blob(game_id: str, json_blob: dict) -> None:
+    Logger.info('    - Writing debug file')
 
+    with open(f'../data/mlb/pbp/org_pbp_{game_id}.json', 'w', encoding='UTF8') as debug_json:
+        json.dump(json_blob, debug_json)
+
+@task(retries=1, retry_delay_seconds=15)
+def get_pbp(game_id: str, debug = False) -> Optional[dict]:
+    Logger.info('* Stated "%s"', game_id)
+
+    key = "window['__espnfitt__']="
     scripts = make_request(
         f'https://www.espn.com/mlb/playbyplay/_/gameId/{game_id}'
     ).select('script')
@@ -314,25 +331,71 @@ def get_pbp(game_id: str) -> Optional[dict]:
     json_string = json_blobs[0].text[len(key):-1]
     json_obj = json.loads(json_string)['page']['content']['gamepackage']['pbp']
 
-    observation = {
-      'id': game_id,
-      'periods': json_obj,
-    }
+    game = None
 
-    return compress_game(observation)
+    try:
+        game = compress_game({
+            'id': game_id,
+            'periods': json_obj,
+        })
+    except Exception as exception:
+        Logger.error('    - %s failed', game_id)
+        Logger.error(exception)
+
+        debug = True
+
+    if debug:
+        dump_json_blob(
+            game_id,
+            json_blob=json_obj
+        )
+
+    return game
 
 @flow(name='mlb-pbp', persist_result=False)
-def get_pbps(game_ids: List[str]) -> None:
-    for game_id in game_ids:
-        observation = get_pbp(game_id)
-        if observation:
-            with open(f'../data/mlb/pbp/pbp_{game_id}.json', 'w', encoding='UTF8') as pbp_output:
-                pbp_output.write(json.dumps(observation, indent=2))
-        else:
-            print(f'Error - "{game_id}" failed')
+def get_pbps(game_ids: List[str], timeout = 8) -> None:
+    for i, game_id in enumerate(game_ids):
+        try:
+            game = get_pbp(game_id)
+            if game:
+                with open(f'../data/mlb/pbp/pbp_{game_id}.json', 'w', encoding='UTF8') as pbp_output:
+                    pbp_output.write(json.dumps(game, indent=2))
+        except Exception as exception:
+            Logger.error('    - %s failed', game_id)
+            Logger.error(exception)
 
-        time.sleep(8)
+        if i < (len(game_ids) - 1):
+            Logger.info('    - sleeping %s seconds', timeout)
+            time.sleep(timeout)
 
 
 if __name__ == '__main__':
-    get_pbps(sys.argv[1:])
+    args = sys.argv[1:]
+    if len(args) == 0:
+        raise Exception('Need to provide options.')
+
+    input_game_ids: List[str] = []
+    if args[0] == '-l':
+        FILE_PATH = args[1]
+
+        Logger.info('    - %s', FILE_PATH)
+
+        with open(FILE_PATH, 'r', encoding='UTF8') as games_to_run:
+            data = games_to_run.read()
+
+        input_game_ids.extend(
+            game_id
+            for game_id in map(lambda text: text.strip(), data.split('\n'))
+            if len(game_id) > 0
+        )
+    else:
+        input_game_ids.extend(args)
+
+    Logger.info('Started @ %s', datetime.datetime.now())
+
+    Logger.info('    - #%s', len(input_game_ids))
+
+    get_pbps(input_game_ids)
+
+    Logger.info('Finished @ %s', datetime.datetime.now())
+    Logger.info('')
