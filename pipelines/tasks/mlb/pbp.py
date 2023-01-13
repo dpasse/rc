@@ -186,17 +186,13 @@ def transform_clean_pitch(pitch: Dict[str, Any]) -> Dict[str, Any]:
 def tie_pitch_events_to_pitch(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     pitch_events: List[Dict[str, Any]] = []
     for event in events:
+        is_info_event = 'isInfoPlay' in event
         if 'type' in event:
             if event['type'] in ['after-pitch', 'before-pitch']:
                 pitch_events.append(event)
-
-        elif len(pitch_events) > 0:
-            if not 'pitches' in event:
-                continue
-
-            pitches = cast(List[Dict[str, Any]], event['pitches'])
+        elif not is_info_event and len(pitch_events) > 0:
+            pitches = cast(List[Dict[str, Any]], event['pitches'] if 'pitches' in event else [])
             for i, pitch in enumerate(pitches):
-                ## the action is on the before bases changed pitch prior to last pitch
                 is_last_pitch = i == len(pitches) - 1
                 should_apply_events = 'action' in pitch['result'] or is_last_pitch
                 if not should_apply_events:

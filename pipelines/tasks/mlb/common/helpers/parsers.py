@@ -17,7 +17,7 @@ Positions = set([
 def clean_text(text: str) -> str:
     return re.sub(r'[,.]$', '', text).strip()
 
-def split_text(text: str, delimiter: str = r',') -> List[str]:
+def split_text(text: str, delimiter: str = r',|\band\b') -> List[str]:
     return [
         text
         for text in map(
@@ -30,6 +30,7 @@ def split_text(text: str, delimiter: str = r',') -> List[str]:
 def split_extras(extras: List[str]) -> Tuple[List[str], List[Dict[str, Any]]]:
     orders, moves = [], []
     for extra in extras:
+        extra = re.sub(r" (on ((?:throwing|fielding| )*error|runner's fielder's choice)|in rundown).*$", '', extra)
 
         extra_split = [
             text
@@ -39,7 +40,6 @@ def split_extras(extras: List[str]) -> Tuple[List[str], List[Dict[str, Any]]]:
         ]
 
         if len(extra_split) > 1:
-
             has_positions = True
             for subset in extra_split:
                 has_positions = has_positions \
@@ -76,9 +76,7 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
                 }
 
                 if move_type == 'scored' or len(match_groups) == 3:
-                    move['at'] = 'home' if move_type == 'scored' else clean_text(
-                        re.sub(r'(on(?: |throwing)+error|in rundown).*$', '', match_groups[2])
-                    )
+                    move['at'] = 'home' if move_type == 'scored' else clean_text(match_groups[2])
                 else:
                     move['at'] = 'not-available'
 
@@ -310,15 +308,19 @@ def handle_wild_pitch(groups: List[str]) -> Dict[str, Any]:
     return observation
 
 def handle_error(groups: List[str]) -> Dict[str, Any]:
-    at_base = clean_text(groups[1])
     observation: Dict[str, Any] = {
-        'player': groups[0],
-        'type': groups[2],
-        'at': 'home' if at_base == 'scored' else at_base,
+        'type': groups[1],
     }
 
-    if at_base == 'scored':
-        observation['runs'] = 1
+    orders, moves = split_extras(
+        split_text(groups[0])
+    )
+
+    if len(orders) > 0:
+        observation['order'] = orders
+
+    if len(moves) > 0:
+        observation['moves'] = moves
 
     return observation
 
@@ -332,6 +334,23 @@ def handle_sacrifice(groups: List[str]) -> Dict[str, Any]:
     }
 
     orders, moves = split_extras(extras[1:])
+
+    if len(orders) > 0:
+        observation['order'] = orders
+
+    if len(moves) > 0:
+        observation['moves'] = moves
+
+    return observation
+
+def handle_attempted_sacrifice(groups: List[str]) -> Dict[str, Any]:
+    observation: Dict[str, Any] = {
+        'player': groups[0],
+        'type': groups[1]
+    }
+
+    extras = split_text(groups[2])
+    orders, moves = split_extras(extras)
 
     if len(orders) > 0:
         observation['order'] = orders
@@ -402,7 +421,7 @@ class EventDescriptionParser():
         self.__parse_event_expressions: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
             (r'^(.+?) (struck out) (.+)', handle_strike_outs),
             (r'^(.+? (?:balk).+)', handle_balk),
-            (r'^(.+?) to (.+?) on (pickoff error) by (pitcher|catcher) (.+?)', handle_pick_off_error),
+            (r'^(.+?) to (.+?) on (pickoff error) by (?:pitcher|catcher) (.+)', handle_pick_off_error),
             (r'^(.+?) (picked off) and caught stealing (.+)', handle_pick_off),
             (r'^(.+?) (picked off) (.+)', handle_pick_off),
             (r'^(.+?) ((?:homer)ed) to (.+)', handle_homerun),
@@ -412,12 +431,14 @@ class EventDescriptionParser():
             (r'^(.+?) reached on (infield single|bunt single) to (.+)', handle_in_play),
             (r'^(.+?) reached (.+?)(?: |base)+on (catcher\'s interference.+)', handle_catcher_interference),
             (r'^(.+?)(?: |bunt)+((?:lin|ground|fli|foul|popp)ed out) to (.+)', handle_in_play_out),
-            (r'^(.+?) ((?:ground|lin|fli)ed into (?:double|triple) play)(.+)', handle_multiple_outs),
+            (r'^(.+?) ((?:ground|lin|fli|popp)ed into (?:double|triple) play)(.+)', handle_multiple_outs),
             (r'^(.+?) ((?:ground|lin|fli)ed into fielder\'s choice) to (.+)', handle_fielders_choice),
+            (r'^(.+?) (sacrificed),(.+)', handle_attempted_sacrifice),
             (r'^(.+?)(?: |hit)+(sacrifice fly|sacrificed) to (.+)', handle_sacrifice),
             (r'^(.+?) (caught stealing) (.+)', handle_caught_stealing),
             (r'^(.+?) (stole) (.+)', handle_steals),
-            (r'^(.+?)(?: |safe at)+(.+?) on ((?:fielding|throwing) error)', handle_error),
+            ## (r'^(.+?)(?: |safe at)+(.+?) on ((?:fielding|throwing) error)', handle_error),
+            (r'(.+on ((?:fielding|throwing) error).+)', handle_error),
             (r'^(.+?) ((?:hit|ran) for|in\b|a[st]\b|catching|pitch(?:ing|es to))', handle_subs),
         ]
 
@@ -428,11 +449,12 @@ class EventDescriptionParser():
             if match:
                 description_as_object = mapping_function(list(match.groups()))
 
-                if 'type' in description_as_object:
-                    description_as_object['type'] = clean_text(description_as_object['type']).lower()
+                for key in ['type', 'at', 'by']:
+                    if key in description_as_object:
+                        description_as_object[key] = clean_text(description_as_object[key])
 
-                if 'at' in description_as_object:
-                    description_as_object['at'] = clean_text(description_as_object['at']).lower()
+                        if key in ['type', 'at']:
+                            description_as_object[key] = description_as_object[key].lower()
 
                 if 'moves' in description_as_object:
                     outs = sum(
