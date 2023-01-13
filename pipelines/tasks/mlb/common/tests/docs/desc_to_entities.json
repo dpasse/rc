@@ -1,0 +1,9318 @@
+[
+  [
+    "C. Paddack pitching for MIN",
+    {
+      "player": "C. Paddack",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Betts doubled to left.",
+    {
+      "player": "Betts",
+      "type": "doubled",
+      "at": "left"
+    }
+  ],
+  [
+    "Freeman lined out to left.",
+    {
+      "outs": 1,
+      "player": "Freeman",
+      "type": "lined out",
+      "at": "left"
+    }
+  ],
+  [
+    "T. Turner reached on infield single to third, Betts safe at third on throwing error by third baseman Urshela.",
+    {
+      "player": "T. Turner",
+      "type": "infield single",
+      "at": "third",
+      "moves": [
+        {
+          "player": "Betts",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "T. Turner stole second.",
+    {
+      "player": "T. Turner",
+      "type": "stole",
+      "at": "second"
+    }
+  ],
+  [
+    "Muncy hit by pitch.",
+    {
+      "player": "Muncy",
+      "type": "hit by pitch"
+    }
+  ],
+  [
+    "J. Turner singled to right, Betts scored and T. Turner scored, Muncy to second.",
+    {
+      "player": "J. Turner",
+      "type": "singled",
+      "at": "right",
+      "moves": [
+        {
+          "player": "Betts",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Muncy",
+          "type": "advanced",
+          "at": "second"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Taylor safe at first on fielding error by pitcher Paddack, J. Turner to second, Muncy to third.",
+    {
+      "player": "Taylor",
+      "type": "fielding error",
+      "at": "first"
+    }
+  ],
+  [
+    "Bellinger struck out swinging.",
+    {
+      "player": "Bellinger",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Lux grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Lux",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "C. Kershaw pitching for LAD",
+    {
+      "player": "C. Kershaw",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton struck out swinging.",
+    {
+      "player": "Buxton",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Arraez struck out swinging.",
+    {
+      "player": "Arraez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Urshela grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "C. Paddack pitching for MIN",
+    {
+      "player": "C. Paddack",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Barnes grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Barnes",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Betts singled to left.",
+    {
+      "player": "Betts",
+      "type": "singled",
+      "at": "left"
+    }
+  ],
+  [
+    "Freeman doubled to shallow left, Betts to third.",
+    {
+      "player": "Freeman",
+      "type": "doubled",
+      "at": "shallow left",
+      "moves": [
+        {
+          "player": "Betts",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "T. Turner hit sacrifice fly to center, Betts scored.",
+    {
+      "player": "T. Turner",
+      "type": "sacrifice fly",
+      "at": "center",
+      "outs": 1,
+      "moves": [
+        {
+          "player": "Betts",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Muncy fouled out to right.",
+    {
+      "outs": 1,
+      "player": "Muncy",
+      "type": "fouled out",
+      "at": "right"
+    }
+  ],
+  [
+    "C. Kershaw pitching for LAD",
+    {
+      "player": "C. Kershaw",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco popped out to first.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "popped out",
+      "at": "first"
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler struck out swinging.",
+    {
+      "player": "Kepler",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "C. Paddack pitching for MIN",
+    {
+      "player": "C. Paddack",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "J. Turner flied out to center.",
+    {
+      "outs": 1,
+      "player": "J. Turner",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Taylor lined out to right.",
+    {
+      "outs": 1,
+      "player": "Taylor",
+      "type": "lined out",
+      "at": "right"
+    }
+  ],
+  [
+    "Bellinger doubled to right.",
+    {
+      "player": "Bellinger",
+      "type": "doubled",
+      "at": "right"
+    }
+  ],
+  [
+    "Lux struck out swinging.",
+    {
+      "player": "Lux",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "C. Kershaw pitching for LAD",
+    {
+      "player": "C. Kershaw",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 flied out to second.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "flied out",
+      "at": "second"
+    }
+  ],
+  [
+    "Celestino flied out to right.",
+    {
+      "outs": 1,
+      "player": "Celestino",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Gordon struck out swinging.",
+    {
+      "player": "Gordon",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "C. Paddack pitching for MIN",
+    {
+      "player": "C. Paddack",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Barnes struck out swinging.",
+    {
+      "player": "Barnes",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Betts grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Betts",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Freeman lined out to center.",
+    {
+      "outs": 1,
+      "player": "Freeman",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "C. Kershaw pitching for LAD",
+    {
+      "player": "C. Kershaw",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton struck out swinging.",
+    {
+      "player": "Buxton",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Arraez struck out swinging.",
+    {
+      "player": "Arraez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Urshela lined out to right.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "lined out",
+      "at": "right"
+    }
+  ],
+  [
+    "D. Rodriguez pitching for MIN",
+    {
+      "player": "D. Rodriguez",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "T. Turner walked.",
+    {
+      "player": "T. Turner",
+      "type": "walked"
+    }
+  ],
+  [
+    "Muncy walked, T. Turner to second.",
+    {
+      "player": "Muncy",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "T. Turner",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "J. Turner flied out to left, Muncy to second, T. Turner to third.",
+    {
+      "outs": 1,
+      "player": "J. Turner",
+      "type": "flied out",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Muncy",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "T. Turner",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Taylor grounded into fielder's choice to shortstop, T. Turner out at home.",
+    {
+      "player": "Taylor",
+      "type": "grounded into fielder's choice",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "T. Turner",
+          "type": "out",
+          "at": "home"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "Bellinger grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Bellinger",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "C. Kershaw pitching for LAD",
+    {
+      "player": "C. Kershaw",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler flied out to left.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "D. Rodriguez pitching for MIN",
+    {
+      "player": "D. Rodriguez",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Lux struck out swinging.",
+    {
+      "player": "Lux",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Barnes flied out to right.",
+    {
+      "outs": 1,
+      "player": "Barnes",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Betts grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Betts",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "C. Kershaw pitching for LAD",
+    {
+      "player": "C. Kershaw",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 struck out swinging.",
+    {
+      "player": "San\u00f3",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Celestino struck out swinging.",
+    {
+      "player": "Celestino",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Gordon struck out looking.",
+    {
+      "player": "Gordon",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "D. Rodriguez pitching for MIN",
+    {
+      "player": "D. Rodriguez",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Freeman grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Freeman",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "T. Turner flied out to left.",
+    {
+      "outs": 1,
+      "player": "T. Turner",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Muncy walked.",
+    {
+      "player": "Muncy",
+      "type": "walked"
+    }
+  ],
+  [
+    "J. Turner grounded into fielder's choice to third, Muncy out at second.",
+    {
+      "player": "J. Turner",
+      "type": "grounded into fielder's choice",
+      "at": "third",
+      "moves": [
+        {
+          "player": "Muncy",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "C. Kershaw pitching for LAD",
+    {
+      "player": "C. Kershaw",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton struck out swinging.",
+    {
+      "player": "Buxton",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Arraez popped out to third.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "popped out",
+      "at": "third"
+    }
+  ],
+  [
+    "Urshela grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "D. Rodriguez pitching for MIN",
+    {
+      "player": "D. Rodriguez",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Taylor struck out swinging.",
+    {
+      "player": "Taylor",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Bellinger homered to center (424 feet).",
+    {
+      "player": "Bellinger",
+      "type": "homered",
+      "at": "center",
+      "runs": 1
+    }
+  ],
+  [
+    "Lux homered to center (421 feet).",
+    {
+      "player": "Lux",
+      "type": "homered",
+      "at": "center",
+      "runs": 1
+    }
+  ],
+  [
+    "Barnes homered to left (370 feet).",
+    {
+      "player": "Barnes",
+      "type": "homered",
+      "at": "left",
+      "runs": 1
+    }
+  ],
+  [
+    "Betts flied out to second.",
+    {
+      "outs": 1,
+      "player": "Betts",
+      "type": "flied out",
+      "at": "second"
+    }
+  ],
+  [
+    "Freeman reached on infield single to third.",
+    {
+      "player": "Freeman",
+      "type": "infield single",
+      "at": "third"
+    }
+  ],
+  [
+    "T. Turner grounded into fielder's choice to shortstop, Freeman out at second.",
+    {
+      "player": "T. Turner",
+      "type": "grounded into fielder's choice",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "Freeman",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "A. Vesia pitching for LAD",
+    {
+      "player": "A. Vesia",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "S\u00e1nchez singled to right center.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "singled",
+      "at": "right center"
+    }
+  ],
+  [
+    "Kepler walked, S\u00e1nchez to second.",
+    {
+      "player": "Kepler",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "S\u00e1nchez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "San\u00f3 struck out looking.",
+    {
+      "player": "San\u00f3",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Celestino lined out to second.",
+    {
+      "outs": 1,
+      "player": "Celestino",
+      "type": "lined out",
+      "at": "second"
+    }
+  ],
+  [
+    "G. Jax pitching for MIN",
+    {
+      "player": "G. Jax",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Muncy homered to right (386 feet).",
+    {
+      "player": "Muncy",
+      "type": "homered",
+      "at": "right",
+      "runs": 1
+    }
+  ],
+  [
+    "J. Turner flied out to center.",
+    {
+      "outs": 1,
+      "player": "J. Turner",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Taylor struck out swinging.",
+    {
+      "player": "Taylor",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Bellinger walked.",
+    {
+      "player": "Bellinger",
+      "type": "walked"
+    }
+  ],
+  [
+    "Lux struck out looking.",
+    {
+      "player": "Lux",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "J. Bruihl pitching for LAD",
+    {
+      "player": "J. Bruihl",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Gordon lined out to left.",
+    {
+      "outs": 1,
+      "player": "Gordon",
+      "type": "lined out",
+      "at": "left"
+    }
+  ],
+  [
+    "Larnach hit for Buxton",
+    {
+      "player": "Larnach",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Larnach flied out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Larnach",
+      "type": "flied out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Arraez flied out to right.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "J. Ryan pitching for MIN",
+    {
+      "player": "J. Ryan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Frazier grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "France hit by pitch.",
+    {
+      "player": "France",
+      "type": "hit by pitch"
+    }
+  ],
+  [
+    "Winker flied out to left.",
+    {
+      "outs": 1,
+      "player": "Winker",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Haniger homered to left (411 feet), France scored.",
+    {
+      "player": "Haniger",
+      "type": "homered",
+      "at": "left",
+      "runs": 2,
+      "moves": [
+        {
+          "player": "France",
+          "type": "advanced",
+          "at": "home"
+        }
+      ]
+    }
+  ],
+  [
+    "Su\u00e1rez struck out looking.",
+    {
+      "player": "Su\u00e1rez",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "R. Ray pitching for SEA",
+    {
+      "player": "R. Ray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Buxton",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Correa singled to center.",
+    {
+      "player": "Correa",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "Polanco flied out to center.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Urshela grounded into fielder's choice to shortstop, Correa out at second.",
+    {
+      "player": "Urshela",
+      "type": "grounded into fielder's choice",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "Correa",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "J. Ryan pitching for MIN",
+    {
+      "player": "J. Ryan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kelenic lined out to center.",
+    {
+      "outs": 1,
+      "player": "Kelenic",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "Rodr\u00edguez grounded out to catcher.",
+    {
+      "outs": 1,
+      "player": "Rodr\u00edguez",
+      "type": "grounded out",
+      "at": "catcher"
+    }
+  ],
+  [
+    "Crawford walked.",
+    {
+      "player": "Crawford",
+      "type": "walked"
+    }
+  ],
+  [
+    "Raleigh struck out swinging.",
+    {
+      "player": "Raleigh",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "R. Ray pitching for SEA",
+    {
+      "player": "R. Ray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 struck out swinging.",
+    {
+      "player": "San\u00f3",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kirilloff flied out to right.",
+    {
+      "outs": 1,
+      "player": "Kirilloff",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "S\u00e1nchez flied out to left.",
+    {
+      "outs": 1,
+      "player": "S\u00e1nchez",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "J. Ryan pitching for MIN",
+    {
+      "player": "J. Ryan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Frazier flied out to center.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "France walked.",
+    {
+      "player": "France",
+      "type": "walked"
+    }
+  ],
+  [
+    "Winker walked, France to second.",
+    {
+      "player": "Winker",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "France",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Haniger grounded into fielder's choice to shortstop, Winker out at second, France to third.",
+    {
+      "player": "Haniger",
+      "type": "grounded into fielder's choice",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "Winker",
+          "type": "out",
+          "at": "second"
+        },
+        {
+          "player": "France",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "Su\u00e1rez struck out swinging.",
+    {
+      "player": "Su\u00e1rez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "R. Ray pitching for SEA",
+    {
+      "player": "R. Ray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Jeffers walked.",
+    {
+      "player": "Jeffers",
+      "type": "walked"
+    }
+  ],
+  [
+    "Kepler hit by pitch, Jeffers to second.",
+    {
+      "player": "Kepler",
+      "type": "hit by pitch",
+      "moves": [
+        {
+          "player": "Jeffers",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Buxton struck out swinging.",
+    {
+      "player": "Buxton",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Correa grounded into double play, pitcher to second to first, Kepler out at second.",
+    {
+      "player": "Correa",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "pitcher",
+        "second",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "Kepler",
+          "type": "out",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "J. Ryan pitching for MIN",
+    {
+      "player": "J. Ryan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kelenic fouled out to third.",
+    {
+      "outs": 1,
+      "player": "Kelenic",
+      "type": "fouled out",
+      "at": "third"
+    }
+  ],
+  [
+    "Rodr\u00edguez struck out swinging.",
+    {
+      "player": "Rodr\u00edguez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Crawford walked.",
+    {
+      "player": "Crawford",
+      "type": "walked"
+    }
+  ],
+  [
+    "Raleigh reached on infield single to third, Crawford to second.",
+    {
+      "player": "Raleigh",
+      "type": "infield single",
+      "at": "third",
+      "moves": [
+        {
+          "player": "Crawford",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Frazier lined out to center.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "R. Ray pitching for SEA",
+    {
+      "player": "R. Ray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Urshela homered to left (397 feet).",
+    {
+      "player": "Urshela",
+      "type": "homered",
+      "at": "left",
+      "runs": 1
+    }
+  ],
+  [
+    "San\u00f3 flied out to second.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "flied out",
+      "at": "second"
+    }
+  ],
+  [
+    "Kirilloff struck out swinging.",
+    {
+      "player": "Kirilloff",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "J. Duran pitching for MIN",
+    {
+      "player": "J. Duran",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "France singled to right.",
+    {
+      "player": "France",
+      "type": "singled",
+      "at": "right"
+    }
+  ],
+  [
+    "Winker singled to center, France to second.",
+    {
+      "player": "Winker",
+      "type": "singled",
+      "at": "center",
+      "moves": [
+        {
+          "player": "France",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Winker to second on wild pitch by Duran, France to third on wild pitch by Duran.",
+    {
+      "type": "wild pitch",
+      "player": "Duran",
+      "moves": [
+        {
+          "player": "Winker",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "France",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Haniger struck out swinging.",
+    {
+      "player": "Haniger",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Su\u00e1rez struck out swinging.",
+    {
+      "player": "Su\u00e1rez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kelenic struck out looking.",
+    {
+      "player": "Kelenic",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "R. Ray pitching for SEA",
+    {
+      "player": "R. Ray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "S\u00e1nchez popped out to first.",
+    {
+      "outs": 1,
+      "player": "S\u00e1nchez",
+      "type": "popped out",
+      "at": "first"
+    }
+  ],
+  [
+    "Jeffers singled to left.",
+    {
+      "player": "Jeffers",
+      "type": "singled",
+      "at": "left"
+    }
+  ],
+  [
+    "Kepler walked, Jeffers to second.",
+    {
+      "player": "Kepler",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "Jeffers",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Buxton struck out swinging.",
+    {
+      "player": "Buxton",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Correa lined out to center.",
+    {
+      "outs": 1,
+      "player": "Correa",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "J. Duran pitching for MIN",
+    {
+      "player": "J. Duran",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Rodr\u00edguez struck out looking.",
+    {
+      "player": "Rodr\u00edguez",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Crawford grounded out to pitcher.",
+    {
+      "outs": 1,
+      "player": "Crawford",
+      "type": "grounded out",
+      "at": "pitcher"
+    }
+  ],
+  [
+    "Raleigh walked.",
+    {
+      "player": "Raleigh",
+      "type": "walked"
+    }
+  ],
+  [
+    "Frazier grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "R. Ray pitching for SEA",
+    {
+      "player": "R. Ray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco walked.",
+    {
+      "player": "Polanco",
+      "type": "walked"
+    }
+  ],
+  [
+    "Urshela grounded into double play, second to shortstop to first, Polanco out at second.",
+    {
+      "player": "Urshela",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "second",
+        "shortstop",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "Polanco",
+          "type": "out",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "San\u00f3 walked.",
+    {
+      "player": "San\u00f3",
+      "type": "walked"
+    }
+  ],
+  [
+    "Kirilloff struck out swinging.",
+    {
+      "player": "Kirilloff",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "J. Alcala pitching for MIN",
+    {
+      "player": "J. Alcala",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "France walked.",
+    {
+      "player": "France",
+      "type": "walked"
+    }
+  ],
+  [
+    "Winker singled to center, France to second.",
+    {
+      "player": "Winker",
+      "type": "singled",
+      "at": "center",
+      "moves": [
+        {
+          "player": "France",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Haniger grounded into double play, third to second to first, Winker out at second, France to third.",
+    {
+      "player": "Haniger",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "third",
+        "second",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "Winker",
+          "type": "out",
+          "at": "second"
+        },
+        {
+          "player": "France",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Su\u00e1rez flied out to left.",
+    {
+      "outs": 1,
+      "player": "Su\u00e1rez",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "R. Ray pitching for SEA",
+    {
+      "player": "R. Ray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "S\u00e1nchez grounded out to third.",
+    {
+      "outs": 1,
+      "player": "S\u00e1nchez",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Jeffers lined out to center.",
+    {
+      "outs": 1,
+      "player": "Jeffers",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "Kepler lined out to center.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "D. Coulombe pitching for MIN",
+    {
+      "player": "D. Coulombe",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kelenic struck out swinging.",
+    {
+      "player": "Kelenic",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Rodr\u00edguez lined out to right.",
+    {
+      "outs": 1,
+      "player": "Rodr\u00edguez",
+      "type": "lined out",
+      "at": "right"
+    }
+  ],
+  [
+    "Crawford struck out swinging.",
+    {
+      "player": "Crawford",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "P. Sewald pitching for SEA",
+    {
+      "player": "P. Sewald",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton popped out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Buxton",
+      "type": "popped out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Correa grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Correa",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Polanco flied out to left.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "D. Coulombe pitching for MIN",
+    {
+      "player": "D. Coulombe",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Raleigh walked.",
+    {
+      "player": "Raleigh",
+      "type": "walked"
+    }
+  ],
+  [
+    "Frazier lined out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "lined out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "France struck out looking.",
+    {
+      "player": "France",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Winker grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Winker",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "Arraez hit for Urshela",
+    {
+      "player": "Arraez",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "D. Steckenrider pitching for SEA",
+    {
+      "player": "D. Steckenrider",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Arraez singled to center.",
+    {
+      "player": "Arraez",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "San\u00f3 fouled out to catcher.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "fouled out",
+      "at": "catcher"
+    }
+  ],
+  [
+    "Kirilloff struck out swinging.",
+    {
+      "player": "Kirilloff",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Gordon ran for Arraez",
+    {
+      "player": "Gordon",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "S\u00e1nchez flied out to left.",
+    {
+      "outs": 1,
+      "player": "S\u00e1nchez",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "T. Houck pitching for BOS",
+    {
+      "player": "T. Houck",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Arraez grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Polanco walked.",
+    {
+      "player": "Polanco",
+      "type": "walked"
+    }
+  ],
+  [
+    "Correa struck out swinging, Polanco caught stealing second, catcher to second.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 2,
+      "order": ["catcher", "second"],
+      "moves": [
+        {
+          "player": "Polanco",
+          "type": "out",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "S. Gray pitching for MIN",
+    {
+      "player": "S. Gray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Hern\u00e1ndez fouled out to catcher.",
+    {
+      "outs": 1,
+      "player": "Hern\u00e1ndez",
+      "type": "fouled out",
+      "at": "catcher"
+    }
+  ],
+  [
+    "Devers lined out to center.",
+    {
+      "outs": 1,
+      "player": "Devers",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "Bogaerts struck out looking.",
+    {
+      "player": "Bogaerts",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "T. Houck pitching for BOS",
+    {
+      "player": "T. Houck",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kepler grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Larnach struck out looking.",
+    {
+      "player": "Larnach",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Urshela lined out to center.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "S. Gray pitching for MIN",
+    {
+      "player": "S. Gray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Martinez walked.",
+    {
+      "player": "Martinez",
+      "type": "walked"
+    }
+  ],
+  [
+    "Verdugo homered to right center (437 feet), Martinez scored.",
+    {
+      "player": "Verdugo",
+      "type": "homered",
+      "at": "right center",
+      "runs": 2,
+      "moves": [
+        {
+          "player": "Martinez",
+          "type": "advanced",
+          "at": "home"
+        }
+      ]
+    }
+  ],
+  [
+    "Story fouled out to first.",
+    {
+      "outs": 1,
+      "player": "Story",
+      "type": "fouled out",
+      "at": "first"
+    }
+  ],
+  [
+    "Dalbec popped out to second.",
+    {
+      "outs": 1,
+      "player": "Dalbec",
+      "type": "popped out",
+      "at": "second"
+    }
+  ],
+  [
+    "J. Winder pitching for MIN",
+    {
+      "player": "J. Winder",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Bradley Jr. struck out swinging.",
+    {
+      "player": "Bradley Jr.",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "T. Houck pitching for BOS",
+    {
+      "player": "T. Houck",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Gordon walked.",
+    {
+      "player": "Gordon",
+      "type": "walked"
+    }
+  ],
+  [
+    "San\u00f3 singled to left, Gordon to second.",
+    {
+      "player": "San\u00f3",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Jeffers grounded into double play, third to second to first, San\u00f3 out at second, Gordon to third.",
+    {
+      "player": "Jeffers",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "third",
+        "second",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "San\u00f3",
+          "type": "out",
+          "at": "second"
+        },
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Arraez grounded out to pitcher.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "grounded out",
+      "at": "pitcher"
+    }
+  ],
+  [
+    "J. Winder pitching for MIN",
+    {
+      "player": "J. Winder",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "V\u00e1zquez grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "V\u00e1zquez",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Hern\u00e1ndez doubled to left.",
+    {
+      "player": "Hern\u00e1ndez",
+      "type": "doubled",
+      "at": "left"
+    }
+  ],
+  [
+    "Devers grounded out to second, Hern\u00e1ndez to third.",
+    {
+      "outs": 1,
+      "player": "Devers",
+      "type": "grounded out",
+      "at": "second",
+      "moves": [
+        {
+          "player": "Hern\u00e1ndez",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Bogaerts homered to left (400 feet), Hern\u00e1ndez scored.",
+    {
+      "player": "Bogaerts",
+      "type": "homered",
+      "at": "left",
+      "runs": 2,
+      "moves": [
+        {
+          "player": "Hern\u00e1ndez",
+          "type": "advanced",
+          "at": "home"
+        }
+      ]
+    }
+  ],
+  [
+    "Martinez grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Martinez",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "T. Houck pitching for BOS",
+    {
+      "player": "T. Houck",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Correa flied out to center.",
+    {
+      "outs": 1,
+      "player": "Correa",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Kepler lined out to left.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "lined out",
+      "at": "left"
+    }
+  ],
+  [
+    "J. Winder pitching for MIN",
+    {
+      "player": "J. Winder",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Verdugo grounded out to pitcher.",
+    {
+      "outs": 1,
+      "player": "Verdugo",
+      "type": "grounded out",
+      "at": "pitcher"
+    }
+  ],
+  [
+    "Story singled to deep right center.",
+    {
+      "player": "Story",
+      "type": "singled",
+      "at": "deep right center"
+    }
+  ],
+  [
+    "Dalbec grounded out to second, Story to second.",
+    {
+      "outs": 1,
+      "player": "Dalbec",
+      "type": "grounded out",
+      "at": "second",
+      "moves": [
+        {
+          "player": "Story",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Bradley Jr. flied out to center.",
+    {
+      "outs": 1,
+      "player": "Bradley Jr.",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "T. Houck pitching for BOS",
+    {
+      "player": "T. Houck",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Larnach singled to left.",
+    {
+      "player": "Larnach",
+      "type": "singled",
+      "at": "left"
+    }
+  ],
+  [
+    "Urshela grounded into double play, shortstop to second to first, Larnach out at second.",
+    {
+      "player": "Urshela",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "shortstop",
+        "second",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "Larnach",
+          "type": "out",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Gordon grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Gordon",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "J. Winder pitching for MIN",
+    {
+      "player": "J. Winder",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "V\u00e1zquez grounded out to third.",
+    {
+      "outs": 1,
+      "player": "V\u00e1zquez",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Hern\u00e1ndez walked.",
+    {
+      "player": "Hern\u00e1ndez",
+      "type": "walked"
+    }
+  ],
+  [
+    "Devers grounded out to second, Hern\u00e1ndez to second.",
+    {
+      "outs": 1,
+      "player": "Devers",
+      "type": "grounded out",
+      "at": "second",
+      "moves": [
+        {
+          "player": "Hern\u00e1ndez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Bogaerts popped out to second.",
+    {
+      "outs": 1,
+      "player": "Bogaerts",
+      "type": "popped out",
+      "at": "second"
+    }
+  ],
+  [
+    "T. Houck pitching for BOS",
+    {
+      "player": "T. Houck",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 flied out to right.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Jeffers struck out looking.",
+    {
+      "player": "Jeffers",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Arraez walked.",
+    {
+      "player": "Arraez",
+      "type": "walked"
+    }
+  ],
+  [
+    "M. Strahm pitching for BOS",
+    {
+      "player": "M. Strahm",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco flied out to right.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "J. Winder pitching for MIN",
+    {
+      "player": "J. Winder",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Martinez struck out swinging.",
+    {
+      "player": "Martinez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Verdugo grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Verdugo",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Story flied out to center.",
+    {
+      "outs": 1,
+      "player": "Story",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "M. Strahm pitching for BOS",
+    {
+      "player": "M. Strahm",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Correa struck out looking.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Larnach doubled to deep left center.",
+    {
+      "player": "Larnach",
+      "type": "doubled",
+      "at": "deep left center"
+    }
+  ],
+  [
+    "G. Whitlock pitching for BOS",
+    {
+      "player": "G. Whitlock",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Urshela struck out swinging.",
+    {
+      "player": "Urshela",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "J. Winder pitching for MIN",
+    {
+      "player": "J. Winder",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Dalbec flied out to left.",
+    {
+      "outs": 1,
+      "player": "Dalbec",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Bradley Jr. flied out to right.",
+    {
+      "outs": 1,
+      "player": "Bradley Jr.",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "V\u00e1zquez singled to center.",
+    {
+      "player": "V\u00e1zquez",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "Hern\u00e1ndez grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Hern\u00e1ndez",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "G. Whitlock pitching for BOS",
+    {
+      "player": "G. Whitlock",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Gordon struck out looking.",
+    {
+      "player": "Gordon",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "San\u00f3 walked.",
+    {
+      "player": "San\u00f3",
+      "type": "walked"
+    }
+  ],
+  [
+    "Jeffers struck out swinging.",
+    {
+      "player": "Jeffers",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Arraez singled to center, San\u00f3 to second.",
+    {
+      "player": "Arraez",
+      "type": "singled",
+      "at": "center",
+      "moves": [
+        {
+          "player": "San\u00f3",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "J. Romero pitching for MIN",
+    {
+      "player": "J. Romero",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Devers singled to shallow right center.",
+    {
+      "player": "Devers",
+      "type": "singled",
+      "at": "shallow right center"
+    }
+  ],
+  [
+    "Bogaerts grounded into double play, pitcher to second to first, Devers out at second.",
+    {
+      "player": "Bogaerts",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "pitcher",
+        "second",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "Devers",
+          "type": "out",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Martinez struck out looking.",
+    {
+      "player": "Martinez",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "G. Whitlock pitching for BOS",
+    {
+      "player": "G. Whitlock",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Correa struck out swinging.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler flied out to right.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Larnach singled to center.",
+    {
+      "player": "Larnach",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "Urshela lined out to third.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "lined out",
+      "at": "third"
+    }
+  ],
+  [
+    "M. Wacha pitching for BOS",
+    {
+      "player": "M. Wacha",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Arraez flied out to center.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Correa grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Correa",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "B. Ober pitching for MIN",
+    {
+      "player": "B. Ober",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Hern\u00e1ndez flied out to left.",
+    {
+      "outs": 1,
+      "player": "Hern\u00e1ndez",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Devers singled to center.",
+    {
+      "player": "Devers",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "Bogaerts singled to left, Devers to second.",
+    {
+      "player": "Bogaerts",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Devers",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Martinez flied out to right.",
+    {
+      "outs": 1,
+      "player": "Martinez",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Verdugo grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Verdugo",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "M. Wacha pitching for BOS",
+    {
+      "player": "M. Wacha",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kepler struck out looking.",
+    {
+      "player": "Kepler",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Urshela lined out to right.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "lined out",
+      "at": "right"
+    }
+  ],
+  [
+    "Larnach struck out swinging.",
+    {
+      "player": "Larnach",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "B. Ober pitching for MIN",
+    {
+      "player": "B. Ober",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Story grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Story",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Dalbec struck out swinging.",
+    {
+      "player": "Dalbec",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Bradley Jr. grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Bradley Jr.",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "M. Wacha pitching for BOS",
+    {
+      "player": "M. Wacha",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "S\u00e1nchez grounded out to third.",
+    {
+      "outs": 1,
+      "player": "S\u00e1nchez",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "San\u00f3 walked.",
+    {
+      "player": "San\u00f3",
+      "type": "walked"
+    }
+  ],
+  [
+    "Gordon flied out to center.",
+    {
+      "outs": 1,
+      "player": "Gordon",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Arraez grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "B. Ober pitching for MIN",
+    {
+      "player": "B. Ober",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Plawecki struck out swinging.",
+    {
+      "player": "Plawecki",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Hern\u00e1ndez flied out to center.",
+    {
+      "outs": 1,
+      "player": "Hern\u00e1ndez",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Devers flied out to center.",
+    {
+      "outs": 1,
+      "player": "Devers",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "M. Wacha pitching for BOS",
+    {
+      "player": "M. Wacha",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Correa struck out looking.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Polanco walked.",
+    {
+      "player": "Polanco",
+      "type": "walked"
+    }
+  ],
+  [
+    "Kepler grounded into double play, shortstop to third to first, Polanco out at second.",
+    {
+      "player": "Kepler",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "shortstop",
+        "third",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "Polanco",
+          "type": "out",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "B. Ober pitching for MIN",
+    {
+      "player": "B. Ober",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Bogaerts lined out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Bogaerts",
+      "type": "lined out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Martinez struck out swinging.",
+    {
+      "player": "Martinez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Verdugo singled to right.",
+    {
+      "player": "Verdugo",
+      "type": "singled",
+      "at": "right"
+    }
+  ],
+  [
+    "Story lined out to left.",
+    {
+      "outs": 1,
+      "player": "Story",
+      "type": "lined out",
+      "at": "left"
+    }
+  ],
+  [
+    "M. Wacha pitching for BOS",
+    {
+      "player": "M. Wacha",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Urshela singled to center.",
+    {
+      "player": "Urshela",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "Larnach popped out to third.",
+    {
+      "outs": 1,
+      "player": "Larnach",
+      "type": "popped out",
+      "at": "third"
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "San\u00f3 flied out to right.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "B. Ober pitching for MIN",
+    {
+      "player": "B. Ober",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Dalbec popped out to second.",
+    {
+      "outs": 1,
+      "player": "Dalbec",
+      "type": "popped out",
+      "at": "second"
+    }
+  ],
+  [
+    "Bradley Jr. walked.",
+    {
+      "player": "Bradley Jr.",
+      "type": "walked"
+    }
+  ],
+  [
+    "Plawecki flied out to left.",
+    {
+      "outs": 1,
+      "player": "Plawecki",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Hern\u00e1ndez fouled out to first.",
+    {
+      "outs": 1,
+      "player": "Hern\u00e1ndez",
+      "type": "fouled out",
+      "at": "first"
+    }
+  ],
+  [
+    "Garlick hit for Gordon",
+    {
+      "player": "Garlick",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "M. Strahm pitching for BOS",
+    {
+      "player": "M. Strahm",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Garlick struck out swinging.",
+    {
+      "player": "Garlick",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Arraez grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Correa flied out to right.",
+    {
+      "outs": 1,
+      "player": "Correa",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Kepler in center field.",
+    {
+      "player": "Kepler",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Garlick in right field.",
+    {
+      "player": "Garlick",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Devers safe at first on fielding error by first baseman San\u00f3.",
+    {
+      "player": "Devers",
+      "type": "fielding error",
+      "at": "first"
+    }
+  ],
+  [
+    "Bogaerts doubled to left, Devers to third.",
+    {
+      "player": "Bogaerts",
+      "type": "doubled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Devers",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Martinez hit sacrifice fly to center, Devers scored, Bogaerts to third.",
+    {
+      "player": "Martinez",
+      "type": "sacrifice fly",
+      "at": "center",
+      "outs": 1,
+      "moves": [
+        {
+          "player": "Devers",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Bogaerts",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Verdugo hit sacrifice fly to center, Bogaerts scored.",
+    {
+      "player": "Verdugo",
+      "type": "sacrifice fly",
+      "at": "center",
+      "outs": 1,
+      "moves": [
+        {
+          "player": "Bogaerts",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Story lined out to center.",
+    {
+      "outs": 1,
+      "player": "Story",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "M. Strahm pitching for BOS",
+    {
+      "player": "M. Strahm",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco bunt grounded out to pitcher.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "grounded out",
+      "at": "pitcher"
+    }
+  ],
+  [
+    "Kepler singled to left.",
+    {
+      "player": "Kepler",
+      "type": "singled",
+      "at": "left"
+    }
+  ],
+  [
+    "R. Brasier pitching for BOS",
+    {
+      "player": "R. Brasier",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Urshela singled to deep right, Kepler to third.",
+    {
+      "player": "Urshela",
+      "type": "singled",
+      "at": "deep right",
+      "moves": [
+        {
+          "player": "Kepler",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Larnach hit sacrifice fly to center, Kepler scored.",
+    {
+      "player": "Larnach",
+      "type": "sacrifice fly",
+      "at": "center",
+      "outs": 1,
+      "moves": [
+        {
+          "player": "Kepler",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "S\u00e1nchez singled to left, Urshela to second.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Urshela",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "San\u00f3 walked, S\u00e1nchez to second, Urshela to third.",
+    {
+      "player": "San\u00f3",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "S\u00e1nchez",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "Urshela",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Garlick struck out swinging.",
+    {
+      "player": "Garlick",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "T. Duffey pitching for MIN",
+    {
+      "player": "T. Duffey",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Dalbec grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Dalbec",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Bradley Jr. walked.",
+    {
+      "player": "Bradley Jr.",
+      "type": "walked"
+    }
+  ],
+  [
+    "Plawecki struck out looking, Bradley Jr. caught stealing second, catcher to second.",
+    {
+      "player": "Plawecki",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 2,
+      "order": ["catcher", "second"],
+      "moves": [
+        {
+          "player": "Bradley Jr.",
+          "type": "out",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "J. Diekman pitching for BOS",
+    {
+      "player": "J. Diekman",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Arraez grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Correa struck out swinging.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "C. Thielbar pitching for MIN",
+    {
+      "player": "C. Thielbar",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Hern\u00e1ndez singled to center.",
+    {
+      "player": "Hern\u00e1ndez",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "Devers singled to center, Hern\u00e1ndez to third.",
+    {
+      "player": "Devers",
+      "type": "singled",
+      "at": "center",
+      "moves": [
+        {
+          "player": "Hern\u00e1ndez",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Bogaerts reached on infield single to first, Hern\u00e1ndez scored, Devers to second.",
+    {
+      "player": "Bogaerts",
+      "type": "infield single",
+      "at": "first",
+      "moves": [
+        {
+          "player": "Hern\u00e1ndez",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Devers",
+          "type": "advanced",
+          "at": "second"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Martinez doubled to deep center, Devers scored, Bogaerts to third.",
+    {
+      "player": "Martinez",
+      "type": "doubled",
+      "at": "deep center",
+      "moves": [
+        {
+          "player": "Devers",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Bogaerts",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Verdugo popped out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Verdugo",
+      "type": "popped out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "C. Stashak pitching for MIN",
+    {
+      "player": "C. Stashak",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Story singled to center, Bogaerts scored and Martinez scored.",
+    {
+      "player": "Story",
+      "type": "singled",
+      "at": "center",
+      "moves": [
+        {
+          "player": "Bogaerts",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Dalbec singled to center, Story to second.",
+    {
+      "player": "Dalbec",
+      "type": "singled",
+      "at": "center",
+      "moves": [
+        {
+          "player": "Story",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Bradley Jr. singled to right, Story scored, Dalbec to third.",
+    {
+      "player": "Bradley Jr.",
+      "type": "singled",
+      "at": "right",
+      "moves": [
+        {
+          "player": "Story",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Dalbec",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Plawecki hit sacrifice fly to right, Dalbec scored.",
+    {
+      "player": "Plawecki",
+      "type": "sacrifice fly",
+      "at": "right",
+      "outs": 1,
+      "moves": [
+        {
+          "player": "Dalbec",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Hern\u00e1ndez struck out swinging.",
+    {
+      "player": "Hern\u00e1ndez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Ara\u00faz at shortstop.",
+    {
+      "player": "Ara\u00faz",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "A. Davis pitching for BOS",
+    {
+      "player": "A. Davis",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kepler popped out to catcher.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "popped out",
+      "at": "catcher"
+    }
+  ],
+  [
+    "Urshela struck out swinging.",
+    {
+      "player": "Urshela",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Larnach lined out to third.",
+    {
+      "outs": 1,
+      "player": "Larnach",
+      "type": "lined out",
+      "at": "third"
+    }
+  ],
+  [
+    "B. Ober pitching for MIN",
+    {
+      "player": "B. Ober",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Frazier flied out to right.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "France struck out swinging.",
+    {
+      "player": "France",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Winker walked.",
+    {
+      "player": "Winker",
+      "type": "walked"
+    }
+  ],
+  [
+    "Haniger doubled to left center, Winker thrown out at home.",
+    {
+      "player": "Haniger",
+      "type": "doubled",
+      "at": "left center",
+      "moves": [
+        {
+          "player": "Winker",
+          "type": "out",
+          "at": "home"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "M. Gonzales pitching for SEA",
+    {
+      "player": "M. Gonzales",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton homered to left (363 feet).",
+    {
+      "player": "Buxton",
+      "type": "homered",
+      "at": "left",
+      "runs": 1
+    }
+  ],
+  [
+    "Correa struck out looking.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Polanco singled to left.",
+    {
+      "player": "Polanco",
+      "type": "singled",
+      "at": "left"
+    }
+  ],
+  [
+    "Urshela singled to left, Polanco to second.",
+    {
+      "player": "Urshela",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Polanco",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "San\u00f3 lined out to left.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "lined out",
+      "at": "left"
+    }
+  ],
+  [
+    "Kirilloff safe at first on fielding error by second baseman Frazier, Urshela to second, Polanco to third.",
+    {
+      "player": "Kirilloff",
+      "type": "fielding error",
+      "at": "first"
+    }
+  ],
+  [
+    "S\u00e1nchez homered to left (446 feet), Polanco scored, Urshela scored and Kirilloff scored.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "homered",
+      "at": "left",
+      "runs": 4,
+      "moves": [
+        {
+          "player": "Polanco",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Urshela",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Kirilloff",
+          "type": "advanced",
+          "at": "home"
+        }
+      ]
+    }
+  ],
+  [
+    "Jeffers singled to right center.",
+    {
+      "player": "Jeffers",
+      "type": "singled",
+      "at": "right center"
+    }
+  ],
+  [
+    "Kepler grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "B. Ober pitching for MIN",
+    {
+      "player": "B. Ober",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kelenic grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Kelenic",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Su\u00e1rez flied out to center.",
+    {
+      "outs": 1,
+      "player": "Su\u00e1rez",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Rodr\u00edguez lined out to center.",
+    {
+      "outs": 1,
+      "player": "Rodr\u00edguez",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "M. Gonzales pitching for SEA",
+    {
+      "player": "M. Gonzales",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton homered to left (350 feet).",
+    {
+      "player": "Buxton",
+      "type": "homered",
+      "at": "left",
+      "runs": 1
+    }
+  ],
+  [
+    "Correa grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Correa",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "Polanco popped out to second.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "popped out",
+      "at": "second"
+    }
+  ],
+  [
+    "Urshela walked.",
+    {
+      "player": "Urshela",
+      "type": "walked"
+    }
+  ],
+  [
+    "San\u00f3 walked, Urshela to second.",
+    {
+      "player": "San\u00f3",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "Urshela",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Kirilloff grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Kirilloff",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "B. Ober pitching for MIN",
+    {
+      "player": "B. Ober",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Crawford doubled to deep right.",
+    {
+      "player": "Crawford",
+      "type": "doubled",
+      "at": "deep right"
+    }
+  ],
+  [
+    "Torrens walked.",
+    {
+      "player": "Torrens",
+      "type": "walked"
+    }
+  ],
+  [
+    "Frazier singled to left center, Crawford scored, Torrens to second.",
+    {
+      "player": "Frazier",
+      "type": "singled",
+      "at": "left center",
+      "moves": [
+        {
+          "player": "Crawford",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Torrens",
+          "type": "advanced",
+          "at": "second"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "France struck out swinging.",
+    {
+      "player": "France",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Winker flied out to center.",
+    {
+      "outs": 1,
+      "player": "Winker",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Haniger homered to left (385 feet), Torrens scored and Frazier scored.",
+    {
+      "player": "Haniger",
+      "type": "homered",
+      "at": "left",
+      "runs": 3,
+      "moves": [
+        {
+          "player": "Torrens",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Frazier",
+          "type": "advanced",
+          "at": "home"
+        }
+      ]
+    }
+  ],
+  [
+    "Kelenic struck out swinging.",
+    {
+      "player": "Kelenic",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "M. Festa pitching for SEA",
+    {
+      "player": "M. Festa",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Jeffers struck out looking.",
+    {
+      "player": "Jeffers",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler homered to right (411 feet).",
+    {
+      "player": "Kepler",
+      "type": "homered",
+      "at": "right",
+      "runs": 1
+    }
+  ],
+  [
+    "Buxton flied out to left.",
+    {
+      "outs": 1,
+      "player": "Buxton",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "B. Ober pitching for MIN",
+    {
+      "player": "B. Ober",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Su\u00e1rez struck out swinging.",
+    {
+      "player": "Su\u00e1rez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Rodr\u00edguez lined out to center.",
+    {
+      "outs": 1,
+      "player": "Rodr\u00edguez",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "Crawford lined out to center.",
+    {
+      "outs": 1,
+      "player": "Crawford",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "M. Festa pitching for SEA",
+    {
+      "player": "M. Festa",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Correa lined out to left.",
+    {
+      "outs": 1,
+      "player": "Correa",
+      "type": "lined out",
+      "at": "left"
+    }
+  ],
+  [
+    "Polanco homered to right (424 feet).",
+    {
+      "player": "Polanco",
+      "type": "homered",
+      "at": "right",
+      "runs": 1
+    }
+  ],
+  [
+    "Urshela struck out swinging.",
+    {
+      "player": "Urshela",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "San\u00f3 struck out looking.",
+    {
+      "player": "San\u00f3",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "B. Ober pitching for MIN",
+    {
+      "player": "B. Ober",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Torrens grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Torrens",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Frazier flied out to left.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "France popped out to first.",
+    {
+      "outs": 1,
+      "player": "France",
+      "type": "popped out",
+      "at": "first"
+    }
+  ],
+  [
+    "E. Swanson pitching for SEA",
+    {
+      "player": "E. Swanson",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kirilloff grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Kirilloff",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Jeffers fouled out to right.",
+    {
+      "outs": 1,
+      "player": "Jeffers",
+      "type": "fouled out",
+      "at": "right"
+    }
+  ],
+  [
+    "D. Coulombe pitching for MIN",
+    {
+      "player": "D. Coulombe",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Winker flied out to left.",
+    {
+      "outs": 1,
+      "player": "Winker",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Haniger lined out to center.",
+    {
+      "outs": 1,
+      "player": "Haniger",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "Kelenic reached on infield single to catcher.",
+    {
+      "player": "Kelenic",
+      "type": "infield single",
+      "at": "catcher"
+    }
+  ],
+  [
+    "J. Alcala pitching for MIN",
+    {
+      "player": "J. Alcala",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Su\u00e1rez grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Su\u00e1rez",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "E. Swanson pitching for SEA",
+    {
+      "player": "E. Swanson",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kepler grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Y. Ramirez pitching for SEA",
+    {
+      "player": "Y. Ramirez",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton struck out swinging.",
+    {
+      "player": "Buxton",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Correa homered to left (458 feet).",
+    {
+      "player": "Correa",
+      "type": "homered",
+      "at": "left",
+      "runs": 1
+    }
+  ],
+  [
+    "Polanco grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "J. Alcala pitching for MIN",
+    {
+      "player": "J. Alcala",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Rodr\u00edguez struck out looking.",
+    {
+      "player": "Rodr\u00edguez",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Crawford walked.",
+    {
+      "player": "Crawford",
+      "type": "walked"
+    }
+  ],
+  [
+    "Torrens struck out swinging.",
+    {
+      "player": "Torrens",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Frazier singled to center, Crawford to third.",
+    {
+      "player": "Frazier",
+      "type": "singled",
+      "at": "center",
+      "moves": [
+        {
+          "player": "Crawford",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "France grounded into fielder's choice to shortstop, Frazier out at second.",
+    {
+      "player": "France",
+      "type": "grounded into fielder's choice",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "Frazier",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "Y. Ramirez pitching for SEA",
+    {
+      "player": "Y. Ramirez",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Urshela walked.",
+    {
+      "player": "Urshela",
+      "type": "walked"
+    }
+  ],
+  [
+    "Urshela to second on wild pitch by Ramirez.",
+    {
+      "type": "wild pitch",
+      "player": "Ramirez",
+      "moves": [
+        {
+          "player": "Urshela",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "San\u00f3 fouled out to first.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "fouled out",
+      "at": "first"
+    }
+  ],
+  [
+    "Kirilloff struck out swinging.",
+    {
+      "player": "Kirilloff",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "S\u00e1nchez doubled to deep right center, Urshela scored.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "doubled",
+      "at": "deep right center",
+      "moves": [
+        {
+          "player": "Urshela",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Jeffers flied out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Jeffers",
+      "type": "flied out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "E. Pagan pitching for MIN",
+    {
+      "player": "E. Pagan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Winker grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Winker",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "Haniger struck out swinging.",
+    {
+      "player": "Haniger",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kelenic struck out swinging.",
+    {
+      "player": "Kelenic",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Moore at shortstop.",
+    {
+      "player": "Moore",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "J. Sheffield pitching for SEA",
+    {
+      "player": "J. Sheffield",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kepler flied out to left.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Buxton grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Buxton",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Correa struck out looking.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "J. Romero pitching for MIN",
+    {
+      "player": "J. Romero",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Su\u00e1rez grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Su\u00e1rez",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "Rodr\u00edguez grounded out to pitcher.",
+    {
+      "outs": 1,
+      "player": "Rodr\u00edguez",
+      "type": "grounded out",
+      "at": "pitcher"
+    }
+  ],
+  [
+    "Moore walked.",
+    {
+      "player": "Moore",
+      "type": "walked"
+    }
+  ],
+  [
+    "Torrens singled to right, Moore to third.",
+    {
+      "player": "Torrens",
+      "type": "singled",
+      "at": "right",
+      "moves": [
+        {
+          "player": "Moore",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Frazier grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "R. Hill pitching for BOS",
+    {
+      "player": "R. Hill",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Correa singled to center.",
+    {
+      "player": "Correa",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "Urshela flied out to center.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Garlick homered to left (364 feet), Correa scored.",
+    {
+      "player": "Garlick",
+      "type": "homered",
+      "at": "left",
+      "runs": 2,
+      "moves": [
+        {
+          "player": "Correa",
+          "type": "advanced",
+          "at": "home"
+        }
+      ]
+    }
+  ],
+  [
+    "S\u00e1nchez grounded out to third.",
+    {
+      "outs": 1,
+      "player": "S\u00e1nchez",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "D. Bundy pitching for MIN",
+    {
+      "player": "D. Bundy",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Hern\u00e1ndez struck out swinging.",
+    {
+      "player": "Hern\u00e1ndez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Devers grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Devers",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Bogaerts singled to left.",
+    {
+      "player": "Bogaerts",
+      "type": "singled",
+      "at": "left"
+    }
+  ],
+  [
+    "Martinez flied out to right.",
+    {
+      "outs": 1,
+      "player": "Martinez",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "R. Hill pitching for BOS",
+    {
+      "player": "R. Hill",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Larnach flied out to center.",
+    {
+      "outs": 1,
+      "player": "Larnach",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "San\u00f3 flied out to right.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Jeffers struck out swinging.",
+    {
+      "player": "Jeffers",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "D. Bundy pitching for MIN",
+    {
+      "player": "D. Bundy",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Verdugo grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Verdugo",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Arroyo popped out to second.",
+    {
+      "outs": 1,
+      "player": "Arroyo",
+      "type": "popped out",
+      "at": "second"
+    }
+  ],
+  [
+    "Shaw struck out looking.",
+    {
+      "player": "Shaw",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "R. Hill pitching for BOS",
+    {
+      "player": "R. Hill",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Celestino singled to center.",
+    {
+      "player": "Celestino",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "Polanco homered to left (369 feet), Celestino scored.",
+    {
+      "player": "Polanco",
+      "type": "homered",
+      "at": "left",
+      "runs": 2,
+      "moves": [
+        {
+          "player": "Celestino",
+          "type": "advanced",
+          "at": "home"
+        }
+      ]
+    }
+  ],
+  [
+    "Correa walked.",
+    {
+      "player": "Correa",
+      "type": "walked"
+    }
+  ],
+  [
+    "Urshela singled to left, Correa to second.",
+    {
+      "player": "Urshela",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Correa",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Garlick flied out to left.",
+    {
+      "outs": 1,
+      "player": "Garlick",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "S\u00e1nchez popped out to shortstop.",
+    {
+      "outs": 1,
+      "player": "S\u00e1nchez",
+      "type": "popped out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Larnach grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Larnach",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "D. Bundy pitching for MIN",
+    {
+      "player": "D. Bundy",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "V\u00e1zquez flied out to center.",
+    {
+      "outs": 1,
+      "player": "V\u00e1zquez",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Bradley Jr. struck out swinging.",
+    {
+      "player": "Bradley Jr.",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Hern\u00e1ndez grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Hern\u00e1ndez",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "R. Hill pitching for BOS",
+    {
+      "player": "R. Hill",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 flied out to center.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Jeffers walked.",
+    {
+      "player": "Jeffers",
+      "type": "walked"
+    }
+  ],
+  [
+    "Celestino grounded into double play, second to first, Jeffers out at second.",
+    {
+      "player": "Celestino",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "second",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "Jeffers",
+          "type": "out",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "D. Bundy pitching for MIN",
+    {
+      "player": "D. Bundy",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Devers grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Devers",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Bogaerts struck out swinging.",
+    {
+      "player": "Bogaerts",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Martinez struck out swinging.",
+    {
+      "player": "Martinez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "R. Hill pitching for BOS",
+    {
+      "player": "R. Hill",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Correa flied out to right.",
+    {
+      "outs": 1,
+      "player": "Correa",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Urshela singled to deep left.",
+    {
+      "player": "Urshela",
+      "type": "singled",
+      "at": "deep left"
+    }
+  ],
+  [
+    "Kepler hit for Garlick",
+    {
+      "player": "Kepler",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "P. Valdez pitching for BOS",
+    {
+      "player": "P. Valdez",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kepler struck out looking.",
+    {
+      "player": "Kepler",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler in right field.",
+    {
+      "player": "Kepler",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Verdugo doubled to left.",
+    {
+      "player": "Verdugo",
+      "type": "doubled",
+      "at": "left"
+    }
+  ],
+  [
+    "Arroyo singled to left, Verdugo to third.",
+    {
+      "player": "Arroyo",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Verdugo",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Shaw flied out to left, Arroyo to second.",
+    {
+      "outs": 1,
+      "player": "Shaw",
+      "type": "flied out",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Arroyo",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "V\u00e1zquez grounded out to shortstop, Verdugo scored.",
+    {
+      "outs": 1,
+      "player": "V\u00e1zquez",
+      "type": "grounded out",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "Verdugo",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Bradley Jr. grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Bradley Jr.",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "P. Valdez pitching for BOS",
+    {
+      "player": "P. Valdez",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "S\u00e1nchez popped out to first.",
+    {
+      "outs": 1,
+      "player": "S\u00e1nchez",
+      "type": "popped out",
+      "at": "first"
+    }
+  ],
+  [
+    "Larnach grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Larnach",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "San\u00f3 grounded out to third.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "D. Bundy pitching for MIN",
+    {
+      "player": "D. Bundy",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Hern\u00e1ndez struck out swinging.",
+    {
+      "player": "Hern\u00e1ndez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Devers singled to left.",
+    {
+      "player": "Devers",
+      "type": "singled",
+      "at": "left"
+    }
+  ],
+  [
+    "Bogaerts doubled to left, Devers to third.",
+    {
+      "player": "Bogaerts",
+      "type": "doubled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Devers",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "J. Smith pitching for MIN",
+    {
+      "player": "J. Smith",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Martinez grounded into fielder's choice to first, Martinez to second, Bogaerts to third, Devers out at home in rundown.",
+    {
+      "player": "Martinez",
+      "type": "grounded into fielder's choice",
+      "at": "first",
+      "moves": [
+        {
+          "player": "Martinez",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "Bogaerts",
+          "type": "advanced",
+          "at": "third"
+        },
+        {
+          "player": "Devers",
+          "type": "out",
+          "at": "home in rundown"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "Verdugo intentionally walked.",
+    {
+      "player": "Verdugo",
+      "type": "intentionally walked"
+    }
+  ],
+  [
+    "Arroyo flied out to center.",
+    {
+      "outs": 1,
+      "player": "Arroyo",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "K. Crawford pitching for BOS",
+    {
+      "player": "K. Crawford",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Jeffers walked.",
+    {
+      "player": "Jeffers",
+      "type": "walked"
+    }
+  ],
+  [
+    "Celestino struck out swinging.",
+    {
+      "player": "Celestino",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Polanco flied out to left.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Correa singled to right center, Jeffers to third.",
+    {
+      "player": "Correa",
+      "type": "singled",
+      "at": "right center",
+      "moves": [
+        {
+          "player": "Jeffers",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Urshela flied out to center.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "J. Duran pitching for MIN",
+    {
+      "player": "J. Duran",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Shaw struck out looking.",
+    {
+      "player": "Shaw",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "V\u00e1zquez homered to left (390 feet).",
+    {
+      "player": "V\u00e1zquez",
+      "type": "homered",
+      "at": "left",
+      "runs": 1
+    }
+  ],
+  [
+    "Bradley Jr. walked.",
+    {
+      "player": "Bradley Jr.",
+      "type": "walked"
+    }
+  ],
+  [
+    "Hern\u00e1ndez struck out looking.",
+    {
+      "player": "Hern\u00e1ndez",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Devers struck out swinging.",
+    {
+      "player": "Devers",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "K. Crawford pitching for BOS",
+    {
+      "player": "K. Crawford",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kepler walked.",
+    {
+      "player": "Kepler",
+      "type": "walked"
+    }
+  ],
+  [
+    "S\u00e1nchez walked, Kepler to second.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "Kepler",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Larnach struck out swinging.",
+    {
+      "player": "Larnach",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "San\u00f3 flied out to left, Kepler to third.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "flied out",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Kepler",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Arraez hit for Jeffers",
+    {
+      "player": "Arraez",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Kepler scored on Crawford wild pitch, S\u00e1nchez stole second.",
+    {
+      "type": "wild pitch",
+      "player": "Crawford",
+      "moves": [
+        {
+          "player": "Kepler",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "S\u00e1nchez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Arraez intentionally walked.",
+    {
+      "player": "Arraez",
+      "type": "intentionally walked"
+    }
+  ],
+  [
+    "Celestino walked, Arraez to second, S\u00e1nchez to third.",
+    {
+      "player": "Celestino",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "Arraez",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "S\u00e1nchez",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Polanco singled to right, Arraez scored and S\u00e1nchez scored, Celestino to third.",
+    {
+      "player": "Polanco",
+      "type": "singled",
+      "at": "right",
+      "moves": [
+        {
+          "player": "Arraez",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Celestino",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "H. Sawamura pitching for BOS",
+    {
+      "player": "H. Sawamura",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Celestino scored, Polanco to second on wild pitch by Sawamura.",
+    {
+      "type": "wild pitch",
+      "player": "Sawamura",
+      "moves": [
+        {
+          "player": "Polanco",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Correa struck out swinging.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Arraez as designated hitter.",
+    {
+      "player": "Arraez",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "G. Jax pitching for MIN",
+    {
+      "player": "G. Jax",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Bogaerts grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Bogaerts",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Martinez singled to right.",
+    {
+      "player": "Martinez",
+      "type": "singled",
+      "at": "right"
+    }
+  ],
+  [
+    "Verdugo singled to left, Martinez to second.",
+    {
+      "player": "Verdugo",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Martinez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Arroyo struck out swinging.",
+    {
+      "player": "Arroyo",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Shaw struck out swinging.",
+    {
+      "player": "Shaw",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "H. Sawamura pitching for BOS",
+    {
+      "player": "H. Sawamura",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Urshela singled to right.",
+    {
+      "player": "Urshela",
+      "type": "singled",
+      "at": "right"
+    }
+  ],
+  [
+    "Kepler grounded out to shortstop, Urshela to second.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "grounded out",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "Urshela",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "S\u00e1nchez fouled out to first.",
+    {
+      "outs": 1,
+      "player": "S\u00e1nchez",
+      "type": "fouled out",
+      "at": "first"
+    }
+  ],
+  [
+    "Larnach fouled out to left.",
+    {
+      "outs": 1,
+      "player": "Larnach",
+      "type": "fouled out",
+      "at": "left"
+    }
+  ],
+  [
+    "G. Jax pitching for MIN",
+    {
+      "player": "G. Jax",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "V\u00e1zquez reached on infield single to third.",
+    {
+      "player": "V\u00e1zquez",
+      "type": "infield single",
+      "at": "third"
+    }
+  ],
+  [
+    "Bradley Jr. doubled to left, V\u00e1zquez to third.",
+    {
+      "player": "Bradley Jr.",
+      "type": "doubled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "V\u00e1zquez",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Hern\u00e1ndez lined out to right.",
+    {
+      "outs": 1,
+      "player": "Hern\u00e1ndez",
+      "type": "lined out",
+      "at": "right"
+    }
+  ],
+  [
+    "Devers popped out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Devers",
+      "type": "popped out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Bogaerts reached on infield single to shortstop, V\u00e1zquez scored, Bradley Jr. to third.",
+    {
+      "player": "Bogaerts",
+      "type": "infield single",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "V\u00e1zquez",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Bradley Jr.",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Martinez struck out swinging.",
+    {
+      "player": "Martinez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "D. Bundy pitching for MIN",
+    {
+      "player": "D. Bundy",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Frazier grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "France struck out swinging.",
+    {
+      "player": "France",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Winker flied out to left.",
+    {
+      "outs": 1,
+      "player": "Winker",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "C. Flexen pitching for SEA",
+    {
+      "player": "C. Flexen",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton walked.",
+    {
+      "player": "Buxton",
+      "type": "walked"
+    }
+  ],
+  [
+    "Correa flied out to center.",
+    {
+      "outs": 1,
+      "player": "Correa",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Arraez singled to left, Buxton to second.",
+    {
+      "player": "Arraez",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Buxton",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Polanco doubled to deep right, Buxton scored, Arraez to third.",
+    {
+      "player": "Polanco",
+      "type": "doubled",
+      "at": "deep right",
+      "moves": [
+        {
+          "player": "Buxton",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Arraez",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Urshela flied out to center.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Kepler grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "D. Bundy pitching for MIN",
+    {
+      "player": "D. Bundy",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Haniger lined out to left.",
+    {
+      "outs": 1,
+      "player": "Haniger",
+      "type": "lined out",
+      "at": "left"
+    }
+  ],
+  [
+    "Toro flied out to right.",
+    {
+      "outs": 1,
+      "player": "Toro",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Su\u00e1rez doubled to shallow left.",
+    {
+      "player": "Su\u00e1rez",
+      "type": "doubled",
+      "at": "shallow left"
+    }
+  ],
+  [
+    "Crawford flied out to left.",
+    {
+      "outs": 1,
+      "player": "Crawford",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "C. Flexen pitching for SEA",
+    {
+      "player": "C. Flexen",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "S\u00e1nchez flied out to right.",
+    {
+      "outs": 1,
+      "player": "S\u00e1nchez",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "San\u00f3 walked.",
+    {
+      "player": "San\u00f3",
+      "type": "walked"
+    }
+  ],
+  [
+    "Kirilloff struck out swinging.",
+    {
+      "player": "Kirilloff",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Buxton doubled to deep left, San\u00f3 thrown out at home.",
+    {
+      "player": "Buxton",
+      "type": "doubled",
+      "at": "deep left",
+      "moves": [
+        {
+          "player": "San\u00f3",
+          "type": "out",
+          "at": "home"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "D. Bundy pitching for MIN",
+    {
+      "player": "D. Bundy",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Rodr\u00edguez walked.",
+    {
+      "player": "Rodr\u00edguez",
+      "type": "walked"
+    }
+  ],
+  [
+    "Rodr\u00edguez stole second, Rodr\u00edguez safe at third on throwing error by catcher S\u00e1nchez.",
+    {
+      "player": "Rodr\u00edguez",
+      "type": "stole",
+      "at": "second",
+      "moves": [
+        {
+          "player": "Rodr\u00edguez",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Raleigh struck out swinging.",
+    {
+      "player": "Raleigh",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Frazier flied out to center.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "France lined out to left.",
+    {
+      "outs": 1,
+      "player": "France",
+      "type": "lined out",
+      "at": "left"
+    }
+  ],
+  [
+    "C. Flexen pitching for SEA",
+    {
+      "player": "C. Flexen",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Correa struck out swinging.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Arraez flied out to left.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Polanco walked.",
+    {
+      "player": "Polanco",
+      "type": "walked"
+    }
+  ],
+  [
+    "Urshela flied out to right.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "D. Bundy pitching for MIN",
+    {
+      "player": "D. Bundy",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Winker grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Winker",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Haniger fouled out to first.",
+    {
+      "outs": 1,
+      "player": "Haniger",
+      "type": "fouled out",
+      "at": "first"
+    }
+  ],
+  [
+    "Toro grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Toro",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "C. Flexen pitching for SEA",
+    {
+      "player": "C. Flexen",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kepler flied out to left.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "San\u00f3 flied out to center.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "D. Bundy pitching for MIN",
+    {
+      "player": "D. Bundy",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Su\u00e1rez flied out to center.",
+    {
+      "outs": 1,
+      "player": "Su\u00e1rez",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Crawford grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Crawford",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Rodr\u00edguez safe at first on throwing error by shortstop Correa.",
+    {
+      "player": "Rodr\u00edguez",
+      "type": "throwing error",
+      "at": "first"
+    }
+  ],
+  [
+    "Raleigh lined out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Raleigh",
+      "type": "lined out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "C. Flexen pitching for SEA",
+    {
+      "player": "C. Flexen",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kirilloff singled to left.",
+    {
+      "player": "Kirilloff",
+      "type": "singled",
+      "at": "left"
+    }
+  ],
+  [
+    "Buxton doubled to deep left center, Kirilloff to third.",
+    {
+      "player": "Buxton",
+      "type": "doubled",
+      "at": "deep left center",
+      "moves": [
+        {
+          "player": "Kirilloff",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Correa grounded into fielder's choice to shortstop, Kirilloff out at home.",
+    {
+      "player": "Correa",
+      "type": "grounded into fielder's choice",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "Kirilloff",
+          "type": "out",
+          "at": "home"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "A. Misiewicz pitching for SEA",
+    {
+      "player": "A. Misiewicz",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Arraez singled to left, Buxton scored, Correa to second.",
+    {
+      "player": "Arraez",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Buxton",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Correa",
+          "type": "advanced",
+          "at": "second"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Polanco singled to center, Correa scored, Arraez to third.",
+    {
+      "player": "Polanco",
+      "type": "singled",
+      "at": "center",
+      "moves": [
+        {
+          "player": "Correa",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Arraez",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Urshela singled to center, Arraez scored, Polanco to second.",
+    {
+      "player": "Urshela",
+      "type": "singled",
+      "at": "center",
+      "moves": [
+        {
+          "player": "Arraez",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Polanco",
+          "type": "advanced",
+          "at": "second"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Kepler grounded into double play, shortstop to first, Urshela out at second.",
+    {
+      "player": "Kepler",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "shortstop",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "Urshela",
+          "type": "out",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "C. Thielbar pitching for MIN",
+    {
+      "player": "C. Thielbar",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Frazier grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "France flied out to center.",
+    {
+      "outs": 1,
+      "player": "France",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Winker walked.",
+    {
+      "player": "Winker",
+      "type": "walked"
+    }
+  ],
+  [
+    "Haniger grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Haniger",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "S. Romo pitching for SEA",
+    {
+      "player": "S. Romo",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "S\u00e1nchez singled to right.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "singled",
+      "at": "right"
+    }
+  ],
+  [
+    "San\u00f3 struck out swinging.",
+    {
+      "player": "San\u00f3",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kirilloff reached first base on catcher's interference, Kirilloff to first on error by catcher Raleigh, S\u00e1nchez to second on error.",
+    {
+      "player": "Kirilloff",
+      "type": "catcher's interference",
+      "at": "first",
+      "moves": [
+        {
+          "player": "Kirilloff",
+          "type": "advanced",
+          "at": "first"
+        },
+        {
+          "player": "S\u00e1nchez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Buxton grounded into fielder's choice to shortstop, Kirilloff out at second, S\u00e1nchez to third.",
+    {
+      "player": "Buxton",
+      "type": "grounded into fielder's choice",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "Kirilloff",
+          "type": "out",
+          "at": "second"
+        },
+        {
+          "player": "S\u00e1nchez",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "Buxton stole second.",
+    {
+      "player": "Buxton",
+      "type": "stole",
+      "at": "second"
+    }
+  ],
+  [
+    "Correa struck out swinging.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "T. Duffey pitching for MIN",
+    {
+      "player": "T. Duffey",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Toro grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Toro",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Su\u00e1rez grounded out to pitcher.",
+    {
+      "outs": 1,
+      "player": "Su\u00e1rez",
+      "type": "grounded out",
+      "at": "pitcher"
+    }
+  ],
+  [
+    "Crawford singled to right.",
+    {
+      "player": "Crawford",
+      "type": "singled",
+      "at": "right"
+    }
+  ],
+  [
+    "Rodr\u00edguez struck out looking.",
+    {
+      "player": "Rodr\u00edguez",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "E. Swanson pitching for SEA",
+    {
+      "player": "E. Swanson",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Arraez singled to center.",
+    {
+      "player": "Arraez",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "Polanco grounded out to third, Arraez to second.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "grounded out",
+      "at": "third",
+      "moves": [
+        {
+          "player": "Arraez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Urshela flied out to left.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Kepler lined out to left.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "lined out",
+      "at": "left"
+    }
+  ],
+  [
+    "Kelenic hit for Raleigh",
+    {
+      "player": "Kelenic",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "J. Smith pitching for MIN",
+    {
+      "player": "J. Smith",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kelenic walked.",
+    {
+      "player": "Kelenic",
+      "type": "walked"
+    }
+  ],
+  [
+    "Frazier fouled out to left.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "fouled out",
+      "at": "left"
+    }
+  ],
+  [
+    "France struck out swinging.",
+    {
+      "player": "France",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Winker safe at first on fielding error by left fielder Kirilloff, Kelenic safe at third on error.",
+    {
+      "player": "Winker",
+      "type": "fielding error",
+      "at": "first"
+    }
+  ],
+  [
+    "Haniger struck out swinging.",
+    {
+      "player": "Haniger",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Murphy catching.",
+    {
+      "player": "Murphy",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "A. Munoz pitching for SEA",
+    {
+      "player": "A. Munoz",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "San\u00f3 struck out swinging.",
+    {
+      "player": "San\u00f3",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kirilloff struck out swinging.",
+    {
+      "player": "Kirilloff",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Celestino in left field.",
+    {
+      "player": "Celestino",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "J. Duran pitching for MIN",
+    {
+      "player": "J. Duran",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Toro flied out to left.",
+    {
+      "outs": 1,
+      "player": "Toro",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Su\u00e1rez grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Su\u00e1rez",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Crawford grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Crawford",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "S. Gray pitching for MIN",
+    {
+      "player": "S. Gray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Frazier lined out to center.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "France grounded out to second.",
+    {
+      "outs": 1,
+      "player": "France",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "Winker flied out to center.",
+    {
+      "outs": 1,
+      "player": "Winker",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "L. Gilbert pitching for SEA",
+    {
+      "player": "L. Gilbert",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton struck out looking.",
+    {
+      "player": "Buxton",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Arraez homered to right (372 feet).",
+    {
+      "player": "Arraez",
+      "type": "homered",
+      "at": "right",
+      "runs": 1
+    }
+  ],
+  [
+    "Correa walked.",
+    {
+      "player": "Correa",
+      "type": "walked"
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kirilloff struck out swinging, catcher Tom Murphy to first baseman Ty France.",
+    {
+      "player": "Kirilloff",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1,
+      "order": ["catcher Tom Murphy", "first baseman Ty France"]
+    }
+  ],
+  [
+    "S. Gray pitching for MIN",
+    {
+      "player": "S. Gray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Haniger safe at first on fielding error by third baseman Arraez.",
+    {
+      "player": "Haniger",
+      "type": "fielding error",
+      "at": "first"
+    }
+  ],
+  [
+    "Toro struck out looking.",
+    {
+      "player": "Toro",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Kelenic grounded into fielder's choice to shortstop, Haniger out at second.",
+    {
+      "player": "Kelenic",
+      "type": "grounded into fielder's choice",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "Haniger",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "Kelenic stole second.",
+    {
+      "player": "Kelenic",
+      "type": "stole",
+      "at": "second"
+    }
+  ],
+  [
+    "Rodr\u00edguez struck out looking.",
+    {
+      "player": "Rodr\u00edguez",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "L. Gilbert pitching for SEA",
+    {
+      "player": "L. Gilbert",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 flied out to center.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Kepler grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Jeffers singled to right.",
+    {
+      "player": "Jeffers",
+      "type": "singled",
+      "at": "right"
+    }
+  ],
+  [
+    "Gordon singled to right, Jeffers to third.",
+    {
+      "player": "Gordon",
+      "type": "singled",
+      "at": "right",
+      "moves": [
+        {
+          "player": "Jeffers",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Buxton hit by pitch, Gordon to second.",
+    {
+      "player": "Buxton",
+      "type": "hit by pitch",
+      "moves": [
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Arraez flied out to left.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "S. Gray pitching for MIN",
+    {
+      "player": "S. Gray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Crawford singled to deep right.",
+    {
+      "player": "Crawford",
+      "type": "singled",
+      "at": "deep right"
+    }
+  ],
+  [
+    "Murphy walked, Crawford to second.",
+    {
+      "player": "Murphy",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "Crawford",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Frazier grounded into double play, third to first, Murphy to second, Crawford out at third.",
+    {
+      "player": "Frazier",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "third",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "Murphy",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "Crawford",
+          "type": "out",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "France doubled to deep left center, Murphy scored.",
+    {
+      "player": "France",
+      "type": "doubled",
+      "at": "deep left center",
+      "moves": [
+        {
+          "player": "Murphy",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Winker walked.",
+    {
+      "player": "Winker",
+      "type": "walked"
+    }
+  ],
+  [
+    "Haniger struck out looking.",
+    {
+      "player": "Haniger",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "L. Gilbert pitching for SEA",
+    {
+      "player": "L. Gilbert",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Correa struck out swinging.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kirilloff flied out to left.",
+    {
+      "outs": 1,
+      "player": "Kirilloff",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "S. Gray pitching for MIN",
+    {
+      "player": "S. Gray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Toro grounded out to pitcher.",
+    {
+      "outs": 1,
+      "player": "Toro",
+      "type": "grounded out",
+      "at": "pitcher"
+    }
+  ],
+  [
+    "Kelenic grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Kelenic",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Rodr\u00edguez struck out looking.",
+    {
+      "player": "Rodr\u00edguez",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "L. Gilbert pitching for SEA",
+    {
+      "player": "L. Gilbert",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 lined out to second.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "lined out",
+      "at": "second"
+    }
+  ],
+  [
+    "Kepler struck out swinging.",
+    {
+      "player": "Kepler",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Jeffers grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Jeffers",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "S. Gray pitching for MIN",
+    {
+      "player": "S. Gray",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Crawford popped out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Crawford",
+      "type": "popped out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Murphy homered to right center (423 feet).",
+    {
+      "player": "Murphy",
+      "type": "homered",
+      "at": "right center",
+      "runs": 1
+    }
+  ],
+  [
+    "Frazier popped out to first.",
+    {
+      "outs": 1,
+      "player": "Frazier",
+      "type": "popped out",
+      "at": "first"
+    }
+  ],
+  [
+    "France singled to right.",
+    {
+      "player": "France",
+      "type": "singled",
+      "at": "right"
+    }
+  ],
+  [
+    "C. Thielbar pitching for MIN",
+    {
+      "player": "C. Thielbar",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Winker popped out to third.",
+    {
+      "outs": 1,
+      "player": "Winker",
+      "type": "popped out",
+      "at": "third"
+    }
+  ],
+  [
+    "L. Gilbert pitching for SEA",
+    {
+      "player": "L. Gilbert",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Gordon struck out swinging.",
+    {
+      "player": "Gordon",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Buxton popped out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Buxton",
+      "type": "popped out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Arraez grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "C. Thielbar pitching for MIN",
+    {
+      "player": "C. Thielbar",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Haniger lined out to right.",
+    {
+      "outs": 1,
+      "player": "Haniger",
+      "type": "lined out",
+      "at": "right"
+    }
+  ],
+  [
+    "Toro grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Toro",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Kelenic walked.",
+    {
+      "player": "Kelenic",
+      "type": "walked"
+    }
+  ],
+  [
+    "Kelenic picked off first.",
+    {
+      "player": "Kelenic",
+      "type": "picked off",
+      "at": "first",
+      "outs": 1
+    }
+  ],
+  [
+    "Caleb Thielbar pitches to Julio Rodriguez",
+    {
+      "player": "Caleb Thielbar",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "A. Misiewicz pitching for SEA",
+    {
+      "player": "A. Misiewicz",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Correa struck out swinging.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kirilloff flied out to center.",
+    {
+      "outs": 1,
+      "player": "Kirilloff",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "J. Smith pitching for MIN",
+    {
+      "player": "J. Smith",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Rodr\u00edguez struck out looking.",
+    {
+      "player": "Rodr\u00edguez",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Crawford reached on infield single to shortstop.",
+    {
+      "player": "Crawford",
+      "type": "infield single",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Murphy reached on infield single to shortstop, Crawford to second.",
+    {
+      "player": "Murphy",
+      "type": "infield single",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "Crawford",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Frazier grounded into fielder's choice to right, Murphy out at second, Crawford to third.",
+    {
+      "player": "Frazier",
+      "type": "grounded into fielder's choice",
+      "at": "right",
+      "moves": [
+        {
+          "player": "Murphy",
+          "type": "out",
+          "at": "second"
+        },
+        {
+          "player": "Crawford",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "France lined out to left.",
+    {
+      "outs": 1,
+      "player": "France",
+      "type": "lined out",
+      "at": "left"
+    }
+  ],
+  [
+    "S. Romo pitching for SEA",
+    {
+      "player": "S. Romo",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 struck out looking.",
+    {
+      "player": "San\u00f3",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Jeffers fouled out to first.",
+    {
+      "outs": 1,
+      "player": "Jeffers",
+      "type": "fouled out",
+      "at": "first"
+    }
+  ],
+  [
+    "J. Cotton pitching for MIN",
+    {
+      "player": "J. Cotton",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Winker walked.",
+    {
+      "player": "Winker",
+      "type": "walked"
+    }
+  ],
+  [
+    "Haniger flied out to right.",
+    {
+      "outs": 1,
+      "player": "Haniger",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Toro flied out to center.",
+    {
+      "outs": 1,
+      "player": "Toro",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Kelenic struck out swinging.",
+    {
+      "player": "Kelenic",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "A. Munoz pitching for SEA",
+    {
+      "player": "A. Munoz",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Gordon walked.",
+    {
+      "player": "Gordon",
+      "type": "walked"
+    }
+  ],
+  [
+    "Buxton homered to left (436 feet), Gordon scored.",
+    {
+      "player": "Buxton",
+      "type": "homered",
+      "at": "left",
+      "runs": 2,
+      "moves": [
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "home"
+        }
+      ]
+    }
+  ],
+  [
+    "Arraez flied out to right.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Correa struck out swinging.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "T. Duffey pitching for MIN",
+    {
+      "player": "T. Duffey",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Rodr\u00edguez doubled to center.",
+    {
+      "player": "Rodr\u00edguez",
+      "type": "doubled",
+      "at": "center"
+    }
+  ],
+  [
+    "Crawford grounded out to second, Rodr\u00edguez to third.",
+    {
+      "outs": 1,
+      "player": "Crawford",
+      "type": "grounded out",
+      "at": "second",
+      "moves": [
+        {
+          "player": "Rodr\u00edguez",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Murphy struck out swinging.",
+    {
+      "player": "Murphy",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Frazier doubled to left center, Rodr\u00edguez scored.",
+    {
+      "player": "Frazier",
+      "type": "doubled",
+      "at": "left center",
+      "moves": [
+        {
+          "player": "Rodr\u00edguez",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "France singled to right center, Frazier scored.",
+    {
+      "player": "France",
+      "type": "singled",
+      "at": "right center",
+      "moves": [
+        {
+          "player": "Frazier",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Winker lined out to second.",
+    {
+      "outs": 1,
+      "player": "Winker",
+      "type": "lined out",
+      "at": "second"
+    }
+  ],
+  [
+    "D. Castillo pitching for SEA",
+    {
+      "player": "D. Castillo",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kirilloff flied out to center.",
+    {
+      "outs": 1,
+      "player": "Kirilloff",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "San\u00f3 struck out swinging.",
+    {
+      "player": "San\u00f3",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler struck out swinging.",
+    {
+      "player": "Kepler",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "C. Archer pitching for MIN",
+    {
+      "player": "C. Archer",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Betts popped out to second.",
+    {
+      "outs": 1,
+      "player": "Betts",
+      "type": "popped out",
+      "at": "second"
+    }
+  ],
+  [
+    "Freeman flied out to left.",
+    {
+      "outs": 1,
+      "player": "Freeman",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "T. Turner grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "T. Turner",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "A. Heaney pitching for LAD",
+    {
+      "player": "A. Heaney",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton struck out swinging.",
+    {
+      "player": "Buxton",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Correa doubled to left.",
+    {
+      "player": "Correa",
+      "type": "doubled",
+      "at": "left"
+    }
+  ],
+  [
+    "Polanco grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Urshela flied out to left.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "C. Archer pitching for MIN",
+    {
+      "player": "C. Archer",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Muncy lined out to center.",
+    {
+      "outs": 1,
+      "player": "Muncy",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "J. Turner grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "J. Turner",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Smith grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Smith",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "A. Heaney pitching for LAD",
+    {
+      "player": "A. Heaney",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Jeffers grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Jeffers",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "C. Archer pitching for MIN",
+    {
+      "player": "C. Archer",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Bellinger struck out swinging.",
+    {
+      "player": "Bellinger",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Taylor struck out swinging.",
+    {
+      "player": "Taylor",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Lux doubled to deep center.",
+    {
+      "player": "Lux",
+      "type": "doubled",
+      "at": "deep center"
+    }
+  ],
+  [
+    "Betts flied out to left.",
+    {
+      "outs": 1,
+      "player": "Betts",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "A. Heaney pitching for LAD",
+    {
+      "player": "A. Heaney",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 flied out to left.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Celestino struck out looking.",
+    {
+      "player": "Celestino",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Buxton struck out swinging.",
+    {
+      "player": "Buxton",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "C. Archer pitching for MIN",
+    {
+      "player": "C. Archer",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Freeman doubled to deep left.",
+    {
+      "player": "Freeman",
+      "type": "doubled",
+      "at": "deep left"
+    }
+  ],
+  [
+    "T. Turner grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "T. Turner",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Muncy popped out to third.",
+    {
+      "outs": 1,
+      "player": "Muncy",
+      "type": "popped out",
+      "at": "third"
+    }
+  ],
+  [
+    "J. Turner struck out looking.",
+    {
+      "player": "J. Turner",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "A. Heaney pitching for LAD",
+    {
+      "player": "A. Heaney",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Correa doubled to left.",
+    {
+      "player": "Correa",
+      "type": "doubled",
+      "at": "left"
+    }
+  ],
+  [
+    "Polanco flied out to right.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Urshela grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Urshela",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "J. Winder pitching for MIN",
+    {
+      "player": "J. Winder",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Smith struck out looking.",
+    {
+      "player": "Smith",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Bellinger walked.",
+    {
+      "player": "Bellinger",
+      "type": "walked"
+    }
+  ],
+  [
+    "Bellinger stole second.",
+    {
+      "player": "Bellinger",
+      "type": "stole",
+      "at": "second"
+    }
+  ],
+  [
+    "Taylor walked.",
+    {
+      "player": "Taylor",
+      "type": "walked"
+    }
+  ],
+  [
+    "Taylor stole second, Bellinger stole third.",
+    {
+      "player": "Taylor",
+      "type": "stole",
+      "at": "second"
+    }
+  ],
+  [
+    "Lux hit sacrifice fly to center, Bellinger scored, Taylor to third.",
+    {
+      "player": "Lux",
+      "type": "sacrifice fly",
+      "at": "center",
+      "outs": 1,
+      "moves": [
+        {
+          "player": "Bellinger",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Taylor",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Betts flied out to left.",
+    {
+      "outs": 1,
+      "player": "Betts",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "A. Heaney pitching for LAD",
+    {
+      "player": "A. Heaney",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kepler doubled to deep right center.",
+    {
+      "player": "Kepler",
+      "type": "doubled",
+      "at": "deep right center"
+    }
+  ],
+  [
+    "Jeffers grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Jeffers",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "San\u00f3 hit by pitch.",
+    {
+      "player": "San\u00f3",
+      "type": "hit by pitch"
+    }
+  ],
+  [
+    "Arraez hit for Celestino",
+    {
+      "player": "Arraez",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Arraez grounded into fielder's choice to shortstop, Kepler scored on throwing error by shortstop T. Turner, San\u00f3 safe at third on error.",
+    {
+      "player": "Arraez",
+      "type": "grounded into fielder's choice",
+      "at": "shortstop",
+      "moves": [
+        {
+          "player": "Kepler",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "San\u00f3",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "B. Graterol pitching for LAD",
+    {
+      "player": "B. Graterol",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton flied out to left.",
+    {
+      "outs": 1,
+      "player": "Buxton",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Correa grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Correa",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Kirilloff in left field.",
+    {
+      "player": "Kirilloff",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Arraez at third base.",
+    {
+      "player": "Arraez",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "D. Coulombe pitching for MIN",
+    {
+      "player": "D. Coulombe",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Freeman grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Freeman",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "T. Turner flied out to right.",
+    {
+      "outs": 1,
+      "player": "T. Turner",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Muncy walked.",
+    {
+      "player": "Muncy",
+      "type": "walked"
+    }
+  ],
+  [
+    "J. Smith pitching for MIN",
+    {
+      "player": "J. Smith",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "J. Turner struck out swinging.",
+    {
+      "player": "J. Turner",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "B. Graterol pitching for LAD",
+    {
+      "player": "B. Graterol",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Polanco",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "Kirilloff grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Kirilloff",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "S\u00e1nchez walked.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "walked"
+    }
+  ],
+  [
+    "D. Price pitching for LAD",
+    {
+      "player": "D. Price",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Kepler walked, S\u00e1nchez to second.",
+    {
+      "player": "Kepler",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "S\u00e1nchez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Jeffers flied out to second.",
+    {
+      "outs": 1,
+      "player": "Jeffers",
+      "type": "flied out",
+      "at": "second"
+    }
+  ],
+  [
+    "E. Pagan pitching for MIN",
+    {
+      "player": "E. Pagan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Smith lined out to center.",
+    {
+      "outs": 1,
+      "player": "Smith",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "Bellinger struck out swinging.",
+    {
+      "player": "Bellinger",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Taylor tripled to deep left center.",
+    {
+      "player": "Taylor",
+      "type": "tripled",
+      "at": "deep left center"
+    }
+  ],
+  [
+    "Lux grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Lux",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "D. Hudson pitching for LAD",
+    {
+      "player": "D. Hudson",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 grounded out to third.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "Arraez grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "Buxton struck out swinging.",
+    {
+      "player": "Buxton",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "E. Pagan pitching for MIN",
+    {
+      "player": "E. Pagan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Betts walked.",
+    {
+      "player": "Betts",
+      "type": "walked"
+    }
+  ],
+  [
+    "C. Thielbar pitching for MIN",
+    {
+      "player": "C. Thielbar",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Freeman walked, Betts to second.",
+    {
+      "player": "Freeman",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "Betts",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "T. Turner singled to left, Betts scored, Freeman to second.",
+    {
+      "player": "T. Turner",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Betts",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Freeman",
+          "type": "advanced",
+          "at": "second"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Muncy walked, T. Turner to second, Freeman to third.",
+    {
+      "player": "Muncy",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "T. Turner",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "Freeman",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "J. Romero pitching for MIN",
+    {
+      "player": "J. Romero",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "J. Turner singled to right, Freeman scored, Muncy to second, T. Turner to third.",
+    {
+      "player": "J. Turner",
+      "type": "singled",
+      "at": "right",
+      "moves": [
+        {
+          "player": "Freeman",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Muncy",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "T. Turner",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Smith doubled to deep right, T. Turner scored and Muncy scored, J. Turner to third.",
+    {
+      "player": "Smith",
+      "type": "doubled",
+      "at": "deep right",
+      "moves": [
+        {
+          "player": "T. Turner",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "J. Turner",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Bellinger struck out swinging.",
+    {
+      "player": "Bellinger",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Taylor singled to left, J. Turner scored, Smith to third.",
+    {
+      "player": "Taylor",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "J. Turner",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Smith",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Lux singled to center, Smith scored, Taylor to second.",
+    {
+      "player": "Lux",
+      "type": "singled",
+      "at": "center",
+      "moves": [
+        {
+          "player": "Smith",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Taylor",
+          "type": "advanced",
+          "at": "second"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Betts struck out looking.",
+    {
+      "player": "Betts",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Freeman reached on infield single to third, Lux to second, Taylor to third.",
+    {
+      "player": "Freeman",
+      "type": "infield single",
+      "at": "third",
+      "moves": [
+        {
+          "player": "Lux",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "Taylor",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "T. Turner struck out swinging.",
+    {
+      "player": "T. Turner",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Gordon hit for Correa",
+    {
+      "player": "Gordon",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "G. Cleavinger pitching for LAD",
+    {
+      "player": "G. Cleavinger",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Gordon walked.",
+    {
+      "player": "Gordon",
+      "type": "walked"
+    }
+  ],
+  [
+    "Polanco singled to left, Gordon to second.",
+    {
+      "player": "Polanco",
+      "type": "singled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Kirilloff grounded into fielder's choice to second, Polanco out at second, Gordon to third.",
+    {
+      "player": "Kirilloff",
+      "type": "grounded into fielder's choice",
+      "at": "second",
+      "moves": [
+        {
+          "player": "Polanco",
+          "type": "out",
+          "at": "second"
+        },
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler singled to right, Gordon scored, Kirilloff to third.",
+    {
+      "player": "Kepler",
+      "type": "singled",
+      "at": "right",
+      "moves": [
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Kirilloff",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "E. Phillips pitching for LAD",
+    {
+      "player": "E. Phillips",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Jeffers struck out swinging.",
+    {
+      "player": "Jeffers",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Gordon at shortstop.",
+    {
+      "player": "Gordon",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "J. Cotton pitching for MIN",
+    {
+      "player": "J. Cotton",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Muncy walked.",
+    {
+      "player": "Muncy",
+      "type": "walked"
+    }
+  ],
+  [
+    "Muncy to second on wild pitch by Cotton.",
+    {
+      "type": "wild pitch",
+      "player": "Cotton",
+      "moves": [
+        {
+          "player": "Muncy",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "J. Turner walked.",
+    {
+      "player": "J. Turner",
+      "type": "walked"
+    }
+  ],
+  [
+    "Smith flied out to right.",
+    {
+      "outs": 1,
+      "player": "Smith",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Bellinger walked, J. Turner to second, Muncy to third.",
+    {
+      "player": "Bellinger",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "J. Turner",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "Muncy",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Taylor struck out swinging.",
+    {
+      "player": "Taylor",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Lux lined out to left.",
+    {
+      "outs": 1,
+      "player": "Lux",
+      "type": "lined out",
+      "at": "left"
+    }
+  ],
+  [
+    "E. Phillips pitching for LAD",
+    {
+      "player": "E. Phillips",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 struck out looking.",
+    {
+      "player": "San\u00f3",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Arraez grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Buxton flied out to right.",
+    {
+      "outs": 1,
+      "player": "Buxton",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "N. Pivetta pitching for BOS",
+    {
+      "player": "N. Pivetta",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Buxton doubled to shallow left center.",
+    {
+      "player": "Buxton",
+      "type": "doubled",
+      "at": "shallow left center"
+    }
+  ],
+  [
+    "Gordon ran for Buxton",
+    {
+      "player": "Gordon",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Arraez singled to left center, Gordon scored.",
+    {
+      "player": "Arraez",
+      "type": "singled",
+      "at": "left center",
+      "moves": [
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Correa grounded into double play, shortstop to second to first, Arraez out at second.",
+    {
+      "player": "Correa",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "shortstop",
+        "second",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "Arraez",
+          "type": "out",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Polanco walked.",
+    {
+      "player": "Polanco",
+      "type": "walked"
+    }
+  ],
+  [
+    "Kepler lined out to second.",
+    {
+      "outs": 1,
+      "player": "Kepler",
+      "type": "lined out",
+      "at": "second"
+    }
+  ],
+  [
+    "Gordon in center field.",
+    {
+      "player": "Gordon",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Hern\u00e1ndez struck out swinging.",
+    {
+      "player": "Hern\u00e1ndez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Devers grounded out to pitcher.",
+    {
+      "outs": 1,
+      "player": "Devers",
+      "type": "grounded out",
+      "at": "pitcher"
+    }
+  ],
+  [
+    "Bogaerts struck out looking.",
+    {
+      "player": "Bogaerts",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "N. Pivetta pitching for BOS",
+    {
+      "player": "N. Pivetta",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Larnach walked.",
+    {
+      "player": "Larnach",
+      "type": "walked"
+    }
+  ],
+  [
+    "San\u00f3 homered to left (368 feet), Larnach scored.",
+    {
+      "player": "San\u00f3",
+      "type": "homered",
+      "at": "left",
+      "runs": 2,
+      "moves": [
+        {
+          "player": "Larnach",
+          "type": "advanced",
+          "at": "home"
+        }
+      ]
+    }
+  ],
+  [
+    "Jeffers struck out swinging.",
+    {
+      "player": "Jeffers",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Gordon singled to center.",
+    {
+      "player": "Gordon",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "Arraez doubled to deep right, Gordon scored.",
+    {
+      "player": "Arraez",
+      "type": "doubled",
+      "at": "deep right",
+      "moves": [
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Correa lined out to center.",
+    {
+      "outs": 1,
+      "player": "Correa",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "J. Ryan pitching for MIN",
+    {
+      "player": "J. Ryan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Martinez struck out swinging.",
+    {
+      "player": "Martinez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Verdugo homered to right (410 feet).",
+    {
+      "player": "Verdugo",
+      "type": "homered",
+      "at": "right",
+      "runs": 1
+    }
+  ],
+  [
+    "Story struck out swinging.",
+    {
+      "player": "Story",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Dalbec popped out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Dalbec",
+      "type": "popped out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "P. Valdez pitching for BOS",
+    {
+      "player": "P. Valdez",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler hit by pitch.",
+    {
+      "player": "Kepler",
+      "type": "hit by pitch"
+    }
+  ],
+  [
+    "Kepler stole second.",
+    {
+      "player": "Kepler",
+      "type": "stole",
+      "at": "second"
+    }
+  ],
+  [
+    "S\u00e1nchez flied out to right, Kepler to third.",
+    {
+      "outs": 1,
+      "player": "S\u00e1nchez",
+      "type": "flied out",
+      "at": "right",
+      "moves": [
+        {
+          "player": "Kepler",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Larnach struck out swinging.",
+    {
+      "player": "Larnach",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "J. Ryan pitching for MIN",
+    {
+      "player": "J. Ryan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Bradley Jr. lined out to center.",
+    {
+      "outs": 1,
+      "player": "Bradley Jr.",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "V\u00e1zquez struck out swinging.",
+    {
+      "player": "V\u00e1zquez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Hern\u00e1ndez grounded out to third.",
+    {
+      "outs": 1,
+      "player": "Hern\u00e1ndez",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "P. Valdez pitching for BOS",
+    {
+      "player": "P. Valdez",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "San\u00f3 walked.",
+    {
+      "player": "San\u00f3",
+      "type": "walked"
+    }
+  ],
+  [
+    "Jeffers struck out swinging.",
+    {
+      "player": "Jeffers",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Gordon struck out swinging.",
+    {
+      "player": "Gordon",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "San\u00f3 stole second.",
+    {
+      "player": "San\u00f3",
+      "type": "stole",
+      "at": "second"
+    }
+  ],
+  [
+    "Arraez grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "J. Ryan pitching for MIN",
+    {
+      "player": "J. Ryan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Devers reached on infield single to first.",
+    {
+      "player": "Devers",
+      "type": "infield single",
+      "at": "first"
+    }
+  ],
+  [
+    "Bogaerts lined out to right.",
+    {
+      "outs": 1,
+      "player": "Bogaerts",
+      "type": "lined out",
+      "at": "right"
+    }
+  ],
+  [
+    "Martinez singled to right, Devers to third.",
+    {
+      "player": "Martinez",
+      "type": "singled",
+      "at": "right",
+      "moves": [
+        {
+          "player": "Devers",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Verdugo grounded into double play, second to shortstop to first, Martinez out at second.",
+    {
+      "player": "Verdugo",
+      "type": "grounded into double play",
+      "outs": 2,
+      "order": [
+        "second",
+        "shortstop",
+        "first"
+      ],
+      "moves": [
+        {
+          "player": "Martinez",
+          "type": "out",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "H. Sawamura pitching for BOS",
+    {
+      "player": "H. Sawamura",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Correa walked.",
+    {
+      "player": "Correa",
+      "type": "walked"
+    }
+  ],
+  [
+    "Polanco hit a ground rule double to deep right, Correa to third.",
+    {
+      "player": "Polanco",
+      "type": "ground rule double",
+      "at": "deep right",
+      "moves": [
+        {
+          "player": "Correa",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Kepler struck out swinging.",
+    {
+      "player": "Kepler",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "S\u00e1nchez singled to shallow center, Correa scored and Polanco scored.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "singled",
+      "at": "shallow center",
+      "moves": [
+        {
+          "player": "Correa",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Larnach grounded into fielder's choice to first, S\u00e1nchez out at second.",
+    {
+      "player": "Larnach",
+      "type": "grounded into fielder's choice",
+      "at": "first",
+      "moves": [
+        {
+          "player": "S\u00e1nchez",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
+    }
+  ],
+  [
+    "San\u00f3 grounded out to third.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "grounded out",
+      "at": "third"
+    }
+  ],
+  [
+    "J. Ryan pitching for MIN",
+    {
+      "player": "J. Ryan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Story singled to center.",
+    {
+      "player": "Story",
+      "type": "singled",
+      "at": "center"
+    }
+  ],
+  [
+    "Dalbec flied out to right.",
+    {
+      "outs": 1,
+      "player": "Dalbec",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Bradley Jr. reached on bunt single to third, Story to second.",
+    {
+      "player": "Bradley Jr.",
+      "type": "bunt single",
+      "at": "third",
+      "moves": [
+        {
+          "player": "Story",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "V\u00e1zquez flied out to center.",
+    {
+      "outs": 1,
+      "player": "V\u00e1zquez",
+      "type": "flied out",
+      "at": "center"
+    }
+  ],
+  [
+    "Hern\u00e1ndez fouled out to first.",
+    {
+      "outs": 1,
+      "player": "Hern\u00e1ndez",
+      "type": "fouled out",
+      "at": "first"
+    }
+  ],
+  [
+    "H. Sawamura pitching for BOS",
+    {
+      "player": "H. Sawamura",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Jeffers grounded out to shortstop.",
+    {
+      "outs": 1,
+      "player": "Jeffers",
+      "type": "grounded out",
+      "at": "shortstop"
+    }
+  ],
+  [
+    "Gordon lined out to center.",
+    {
+      "outs": 1,
+      "player": "Gordon",
+      "type": "lined out",
+      "at": "center"
+    }
+  ],
+  [
+    "Arraez walked.",
+    {
+      "player": "Arraez",
+      "type": "walked"
+    }
+  ],
+  [
+    "Arraez caught stealing second, catcher to second.",
+    {
+      "player": "Arraez",
+      "type": "caught stealing",
+      "at": "second",
+      "outs": 1,
+      "order": [
+        "catcher",
+        "second"
+      ]
+    }
+  ],
+  [
+    "Hirokazu Sawamura pitches to Carlos Correa",
+    {
+      "player": "Hirokazu Sawamura",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "J. Ryan pitching for MIN",
+    {
+      "player": "J. Ryan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Devers popped out to second.",
+    {
+      "outs": 1,
+      "player": "Devers",
+      "type": "popped out",
+      "at": "second"
+    }
+  ],
+  [
+    "Bogaerts struck out swinging.",
+    {
+      "player": "Bogaerts",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Martinez struck out swinging.",
+    {
+      "player": "Martinez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "R. Brasier pitching for BOS",
+    {
+      "player": "R. Brasier",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Correa struck out swinging.",
+    {
+      "player": "Correa",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Polanco struck out swinging.",
+    {
+      "player": "Polanco",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Kepler struck out looking.",
+    {
+      "player": "Kepler",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "J. Duran pitching for MIN",
+    {
+      "player": "J. Duran",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Verdugo grounded out to first.",
+    {
+      "outs": 1,
+      "player": "Verdugo",
+      "type": "grounded out",
+      "at": "first"
+    }
+  ],
+  [
+    "Story struck out swinging.",
+    {
+      "player": "Story",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Dalbec grounded out to second.",
+    {
+      "outs": 1,
+      "player": "Dalbec",
+      "type": "grounded out",
+      "at": "second"
+    }
+  ],
+  [
+    "A. Davis pitching for BOS",
+    {
+      "player": "A. Davis",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "S\u00e1nchez struck out swinging.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Larnach doubled to deep center.",
+    {
+      "player": "Larnach",
+      "type": "doubled",
+      "at": "deep center"
+    }
+  ],
+  [
+    "San\u00f3 struck out looking.",
+    {
+      "player": "San\u00f3",
+      "type": "struck out",
+      "effort": "looking",
+      "outs": 1
+    }
+  ],
+  [
+    "Jeffers walked.",
+    {
+      "player": "Jeffers",
+      "type": "walked"
+    }
+  ],
+  [
+    "Garlick hit for Gordon",
+    {
+      "player": "Garlick",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Garlick struck out swinging.",
+    {
+      "player": "Garlick",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Garlick in right field.",
+    {
+      "player": "Garlick",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Kepler in center field.",
+    {
+      "player": "Kepler",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "Bradley Jr. doubled to right center.",
+    {
+      "player": "Bradley Jr.",
+      "type": "doubled",
+      "at": "right center"
+    }
+  ],
+  [
+    "V\u00e1zquez struck out swinging.",
+    {
+      "player": "V\u00e1zquez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Hern\u00e1ndez doubled to left, Bradley Jr. scored.",
+    {
+      "player": "Hern\u00e1ndez",
+      "type": "doubled",
+      "at": "left",
+      "moves": [
+        {
+          "player": "Bradley Jr.",
+          "type": "advanced",
+          "at": "home"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "Devers homered to right (363 feet), Hern\u00e1ndez scored.",
+    {
+      "player": "Devers",
+      "type": "homered",
+      "at": "right",
+      "runs": 2,
+      "moves": [
+        {
+          "player": "Hern\u00e1ndez",
+          "type": "advanced",
+          "at": "home"
+        }
+      ]
+    }
+  ],
+  [
+    "Bogaerts struck out swinging.",
+    {
+      "player": "Bogaerts",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Martinez struck out swinging.",
+    {
+      "player": "Martinez",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "M. Barnes pitching for BOS",
+    {
+      "player": "M. Barnes",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Arraez flied out to left.",
+    {
+      "outs": 1,
+      "player": "Arraez",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Correa walked.",
+    {
+      "player": "Correa",
+      "type": "walked"
+    }
+  ],
+  [
+    "Polanco walked, Correa to second.",
+    {
+      "player": "Polanco",
+      "type": "walked",
+      "moves": [
+        {
+          "player": "Correa",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
+    }
+  ],
+  [
+    "Kepler singled to center, Correa scored, Polanco to second.",
+    {
+      "player": "Kepler",
+      "type": "singled",
+      "at": "center",
+      "moves": [
+        {
+          "player": "Correa",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "Polanco",
+          "type": "advanced",
+          "at": "second"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "S\u00e1nchez hit by pitch, Kepler to second, Polanco to third.",
+    {
+      "player": "S\u00e1nchez",
+      "type": "hit by pitch",
+      "moves": [
+        {
+          "player": "Kepler",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "Polanco",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
+    }
+  ],
+  [
+    "Larnach grounded out to pitcher, Polanco scored, S\u00e1nchez to second, Kepler to third.",
+    {
+      "outs": 1,
+      "player": "Larnach",
+      "type": "grounded out",
+      "at": "pitcher",
+      "moves": [
+        {
+          "player": "Polanco",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
+          "player": "S\u00e1nchez",
+          "type": "advanced",
+          "at": "second"
+        },
+        {
+          "player": "Kepler",
+          "type": "advanced",
+          "at": "third"
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  [
+    "San\u00f3 flied out to left.",
+    {
+      "outs": 1,
+      "player": "San\u00f3",
+      "type": "flied out",
+      "at": "left"
+    }
+  ],
+  [
+    "Urshela at third base.",
+    {
+      "player": "Urshela",
+      "type": "sub-f"
+    }
+  ],
+  [
+    "E. Pagan pitching for MIN",
+    {
+      "player": "E. Pagan",
+      "type": "sub-p"
+    }
+  ],
+  [
+    "Verdugo flied out to right.",
+    {
+      "outs": 1,
+      "player": "Verdugo",
+      "type": "flied out",
+      "at": "right"
+    }
+  ],
+  [
+    "Story struck out swinging.",
+    {
+      "player": "Story",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ],
+  [
+    "Dalbec struck out swinging.",
+    {
+      "player": "Dalbec",
+      "type": "struck out",
+      "effort": "swinging",
+      "outs": 1
+    }
+  ]
+]

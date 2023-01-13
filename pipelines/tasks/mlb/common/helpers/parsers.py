@@ -2,27 +2,16 @@ import re
 from typing import Optional, Tuple, Dict, Any, List, Callable
 
 
-Positions = set(['catcher',
-    'center',
-    'deep center',
-    'deep left',
-    'deep left center',
-    'deep right',
-    'deep right center',
+Positions = set([
+    'catcher',
     'first',
-    'left',
-    'left center',
-    'pitcher',
-    'right',
-    'right center',
     'second',
-    'shallow center',
-    'shallow left',
-    'shallow left center',
-    'shallow right',
-    'shallow right center',
     'shortstop',
-    'third'
+    'third',
+    'left',
+    'center',
+    'right',
+    'pitcher',
 ])
 
 def clean_text(text: str) -> str:
@@ -37,6 +26,32 @@ def split_text(text: str, delimiter: str = r',') -> List[str]:
         )
         if len(text) > 0
     ]
+
+def split_extras(extras: List[str]) -> Tuple[List[str], List[Dict[str, Any]]]:
+    orders, moves = [], []
+    for extra in extras:
+
+        extra_split = [
+            text
+            for text
+            in map(clean_text, re.split(r' to ', extra))
+            if len(text) > 0
+        ]
+
+        if len(extra_split) > 1:
+
+            has_positions = True
+            for subset in extra_split:
+                has_positions = has_positions \
+                    and any(token in Positions for token in subset.split(' '))
+
+            if has_positions:
+                orders.extend(extra_split)
+                continue
+
+        moves.append(extra)
+
+    return orders, handle_moves(moves)
 
 def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
     move_expressions = [
@@ -80,16 +95,12 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
     return moves
 
 def handle_outs_plus_moves(groups: List[str]) -> Dict[str, Any]:
+    orders, moves = split_extras(groups)
+
     observation: Dict[str, Any] = {
-        'order':  [
-            text
-            for text
-            in map(clean_text, re.split(r' ?to ', groups[0]))
-            if len(text) > 0
-        ]
+        'order': orders,
     }
 
-    moves = handle_moves(groups[1:])
     if len(moves) > 0:
         observation['moves'] = moves
 
@@ -103,8 +114,12 @@ def handle_steals(groups: List[str]) -> Dict[str, Any]:
         'at': extras[0],
     }
 
-    moves = handle_moves(extras[1:])
-    if moves:
+    orders, moves = split_extras(extras[1:])
+
+    if len(orders) > 0:
+        observation['order'] = orders
+
+    if len(moves) > 0:
         observation['moves'] = moves
 
     return observation
@@ -118,7 +133,11 @@ def handle_in_play(groups: List[str]) -> Dict[str, Any]:
         'at': extras[0],
     }
 
-    moves = handle_moves(extras[1:])
+    orders, moves = split_extras(extras[1:])
+
+    if len(orders) > 0:
+        observation['order'] = orders
+
     if len(moves) > 0:
         observation['moves'] = moves
 
@@ -142,7 +161,11 @@ def handle_strike_outs(groups: List[str]) -> Dict[str, Any]:
         'outs': 1,
     }
 
-    moves = handle_moves(extras[1:])
+    orders, moves = split_extras(extras[1:])
+
+    if len(orders) > 0:
+        observation['order'] = orders
+
     if len(moves) > 0:
         observation['moves'] = moves
 
@@ -161,7 +184,11 @@ def handle_homerun(groups: List[str]) -> Dict[str, Any]:
         'runs': 1,
     }
 
-    moves = handle_moves(extras[1:])
+    orders, moves = split_extras(extras[1:])
+
+    if len(orders) > 0:
+        observation['order'] = orders
+
     if len(moves) > 0:
         observation['moves'] = moves
 
@@ -175,7 +202,11 @@ def handle_walk(groups: List[str]) -> Dict[str, Any]:
         'type': extras[0],
     }
 
-    moves = handle_moves(extras[1:])
+    orders, moves = split_extras(extras[1:])
+
+    if len(orders) > 0:
+        observation['order'] = orders
+
     if len(moves) > 0:
         observation['moves'] = moves
 
@@ -225,7 +256,11 @@ def handle_fielders_choice(groups: List[str]) -> Dict[str, Any]:
         'at': extras[0]
     }
 
-    moves = handle_moves(extras[1:])
+    orders, moves = split_extras(extras[1:])
+
+    if len(orders) > 0:
+        observation['order'] = orders
+
     if len(moves) > 0:
         observation['moves'] = moves
 
@@ -294,7 +329,11 @@ def handle_sacrifice(groups: List[str]) -> Dict[str, Any]:
         'outs': 1,
     }
 
-    moves = handle_moves(extras)
+    orders, moves = split_extras(extras[1:])
+
+    if len(orders) > 0:
+        observation['order'] = orders
+
     if len(moves) > 0:
         observation['moves'] = moves
 
@@ -306,7 +345,11 @@ def handle_balk(groups: List[str]) -> Dict[str, Any]:
         'type': 'balk',
     }
 
-    moves = handle_moves(extras)
+    orders, moves = split_extras(extras[1:])
+
+    if len(orders) > 0:
+        observation['order'] = orders
+
     if len(moves) > 0:
         observation['moves'] = moves
 
@@ -330,7 +373,11 @@ def handle_catcher_interference(groups: List[str]) -> Dict[str, Any]:
         'at': groups[1],
     }
 
-    moves = handle_moves(extras[1:])
+    orders, moves = split_extras(extras[1:])
+
+    if len(orders) > 0:
+        observation['order'] = orders
+
     if len(moves) > 0:
         observation['moves'] = moves
 
