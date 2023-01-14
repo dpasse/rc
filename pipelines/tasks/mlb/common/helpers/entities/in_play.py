@@ -23,7 +23,7 @@ def handle_in_play_out(groups: List[str]) -> Dict[str, Any]:
     return observation
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
-    (r'^(.+?) ((?:singl|doubl|tripl)ed) to (.+)', handle_in_play),
+    (r'^(.+?) ((?:singl|doubl|tripl)e[ds]) to (.+)', handle_in_play),
     (r'^(.+?) reached on ((?:infield|bunt) single) to (.+)', handle_in_play),
     (r'^(.+?) hit a (ground rule double) to (.+)', handle_in_play),
     (r'^(.+?)(?: |bunt)+((?:lin|ground|fli|foul|popp)ed out) to (.+)', handle_in_play_out),

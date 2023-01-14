@@ -2,11 +2,22 @@ from typing import Dict, Any, List, Callable, Tuple
 from .utils import split_text, create_player_observation
 
 
+def handle_called_out_on_strikes(groups: List[str]) -> Dict[str, Any]:
+    observation = create_player_observation(
+        player=groups[0],
+        event_type='struck out',
+        outs=1
+    )
+
+    observation['effort'] = 'called out'
+
+    return observation
+
 def handle_strike_outs(groups: List[str]) -> Dict[str, Any]:
     extras = split_text(groups[2])
     observation = create_player_observation(
         player=groups[0],
-        event_type=groups[1],
+        event_type='struck out',
         extras=extras[1:],
         outs=1
     )
@@ -17,4 +28,5 @@ def handle_strike_outs(groups: List[str]) -> Dict[str, Any]:
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
     (r'^(.+?) (struck out) (.+)', handle_strike_outs),
+    (r'^(.+?) called out on strikes\.', handle_called_out_on_strikes),
 ]
