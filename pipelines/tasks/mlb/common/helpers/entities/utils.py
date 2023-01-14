@@ -44,6 +44,13 @@ def search(expressions: List[str], text: str) -> Optional[re.Match[str]]:
 
     return None
 
+def replace(expressions: List[Tuple[str, str]], text: str) -> str:
+    copy_of_text = text[:]
+    for expression, replace_with in expressions:
+        copy_of_text = re.sub(expression, replace_with, copy_of_text)
+
+    return copy_of_text
+
 def clean_text(text: str) -> str:
     return re.sub(r'[,.]$', '', text).strip()
 
@@ -58,14 +65,15 @@ def split_text(text: str, delimiter: str = r',|\band\b') -> List[str]:
     ]
 
 def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
-    move_expressions = [
-      r'^ *(.+?) (thrown out at|out(?: |stretching)+at|doubled off|caught stealing|safe at|to) (.+)',
-      r'^ *(.+?) (thrown out|scored)',
-    ]
-
     moves: List[Dict[str, Any]] = []
     for item in groups:
-        match = search(move_expressions, item)
+        match = search([
+                r'^ *(.+?) (thrown out at|out(?: |stretching)+at|doubled off|caught stealing|safe at|to) (.+)',
+                r'^ *(.+?) (thrown out|scored)',
+            ],
+            item
+        )
+
         if match:
             match_groups = match.groups()
 
@@ -101,7 +109,13 @@ def split_extras(extras: List[str]) -> Tuple[List[str], List[Dict[str, Any]]]:
     moves: List[str] = []
 
     for extra in extras:
-        extra = re.sub(r" (on ((?:throwing|fielding| )*error|runner's fielder's choice|a balk)|in rundown).*$", '', extra)
+        extra = replace(
+            [
+                (r" on ((?:throwing|fielding| )*error|runner's fielder's choice|a balk).*$", ''),
+                (r" in rundown.*$", ''),
+            ],
+            extra,
+        )
 
         extra_split = [
             text.strip()

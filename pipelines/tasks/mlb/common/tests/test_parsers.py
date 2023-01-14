@@ -12,5 +12,4 @@ with open('./tasks/mlb/common/tests/docs/desc_to_entities.json', 'r', encoding='
 @pytest.mark.parametrize('description,expected', test_data)
 def test_event_description_parser(description: str, expected: Dict[str, Any]):
     observation = EventDescriptionParser().transform_into_object(description)
-    print(observation)
     assert observation == expected, observation
