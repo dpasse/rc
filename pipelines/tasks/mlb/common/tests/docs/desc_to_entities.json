@@ -50,7 +50,8 @@
     "Muncy hit by pitch.",
     {
       "player": "Muncy",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -336,7 +337,8 @@
     "T. Turner walked.",
     {
       "player": "T. Turner",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -344,6 +346,7 @@
     {
       "player": "Muncy",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "T. Turner",
@@ -484,7 +487,8 @@
     "Muncy walked.",
     {
       "player": "Muncy",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -619,6 +623,7 @@
     {
       "player": "Kepler",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "S\u00e1nchez",
@@ -666,7 +671,8 @@
     "Bellinger walked.",
     {
       "player": "Bellinger",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -739,7 +745,8 @@
     "France hit by pitch.",
     {
       "player": "France",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -847,7 +854,8 @@
     "Crawford walked.",
     {
       "player": "Crawford",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -890,7 +898,8 @@
     "France walked.",
     {
       "player": "France",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -898,6 +907,7 @@
     {
       "player": "Winker",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "France",
@@ -941,7 +951,8 @@
     "Jeffers walked.",
     {
       "player": "Jeffers",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -949,6 +960,7 @@
     {
       "player": "Kepler",
       "type": "hit by pitch",
+      "at": "first",
       "moves": [
         {
           "player": "Jeffers",
@@ -1127,6 +1139,7 @@
     {
       "player": "Kepler",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Jeffers",
@@ -1167,7 +1180,8 @@
     "Raleigh walked.",
     {
       "player": "Raleigh",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -1183,7 +1197,8 @@
     "Polanco walked.",
     {
       "player": "Polanco",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -1210,7 +1225,8 @@
     "San\u00f3 walked.",
     {
       "player": "San\u00f3",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -1515,7 +1531,8 @@
     "Martinez walked.",
     {
       "player": "Martinez",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -1572,7 +1589,8 @@
     "Gordon walked.",
     {
       "player": "Gordon",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -1792,7 +1810,8 @@
     "Hern\u00e1ndez walked.",
     {
       "player": "Hern\u00e1ndez",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -1842,7 +1861,8 @@
     "Arraez walked.",
     {
       "player": "Arraez",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -2097,7 +2117,8 @@
     "Abreu walked.",
     {
       "player": "Abreu",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -2144,7 +2165,8 @@
     "Kepler walked.",
     {
       "player": "Kepler",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -2152,6 +2174,7 @@
     {
       "player": "Urshela",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Kepler",
@@ -2258,6 +2281,7 @@
     {
       "player": "Sheets",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Abreu",
@@ -2591,7 +2615,8 @@
     "Godoy walked.",
     {
       "player": "Godoy",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -2667,7 +2692,8 @@
     "Garlick walked.",
     {
       "player": "Garlick",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -2709,6 +2735,7 @@
     {
       "player": "Buxton",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "San\u00f3",
@@ -3342,7 +3369,8 @@
     "Hays walked.",
     {
       "player": "Hays",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -3470,7 +3498,8 @@
     "Chirinos walked.",
     {
       "player": "Chirinos",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -3595,7 +3624,8 @@
     "Bregman walked.",
     {
       "player": "Bregman",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -3645,6 +3675,7 @@
     {
       "player": "Tucker",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Gurriel",
@@ -3714,7 +3745,8 @@
     "Altuve walked.",
     {
       "player": "Altuve",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -3766,7 +3798,8 @@
     "Tucker walked.",
     {
       "player": "Tucker",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -3842,6 +3875,7 @@
     {
       "player": "Brantley",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Altuve",
@@ -3945,7 +3979,8 @@
     "Pe\u00f1a walked.",
     {
       "player": "Pe\u00f1a",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -4052,7 +4087,8 @@
     "Celestino walked.",
     {
       "player": "Celestino",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -4135,7 +4171,8 @@
     "Brantley walked.",
     {
       "player": "Brantley",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -4185,7 +4222,8 @@
     "Gurriel hit by pitch.",
     {
       "player": "Gurriel",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -4730,7 +4768,8 @@
     "Brown walked.",
     {
       "player": "Brown",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -5014,7 +5053,8 @@
     "Kemp walked.",
     {
       "player": "Kemp",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -5257,7 +5297,8 @@
     "Bradley Jr. walked.",
     {
       "player": "Bradley Jr.",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -5465,6 +5506,7 @@
     {
       "player": "San\u00f3",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "S\u00e1nchez",
@@ -6144,7 +6186,8 @@
     "Pollock walked.",
     {
       "player": "Pollock",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -6152,6 +6195,7 @@
     {
       "player": "Vaughn",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Pollock",
@@ -6222,7 +6266,8 @@
     "Santander hit by pitch.",
     {
       "player": "Santander",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -6268,7 +6313,8 @@
     "Nevin hit by pitch.",
     {
       "player": "Nevin",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -6333,7 +6379,8 @@
     "Santander walked.",
     {
       "player": "Santander",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -6349,7 +6396,8 @@
     "Urshela walked.",
     {
       "player": "Urshela",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -6372,7 +6420,8 @@
     "S\u00e1nchez hit by pitch.",
     {
       "player": "S\u00e1nchez",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -6440,6 +6489,7 @@
     {
       "player": "Celestino",
       "type": "hit by pitch",
+      "at": "first",
       "moves": [
         {
           "player": "Jeffers",
@@ -6603,7 +6653,8 @@
     "Larnach walked.",
     {
       "player": "Larnach",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -6843,7 +6894,8 @@
     "Buxton walked.",
     {
       "player": "Buxton",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -7170,7 +7222,8 @@
     "Miranda walked.",
     {
       "player": "Miranda",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -7222,6 +7275,7 @@
     {
       "player": "Polanco",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Celestino",
@@ -7309,6 +7363,7 @@
     {
       "player": "Lowrie",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Neuse",
@@ -7330,6 +7385,7 @@
     {
       "player": "Murphy",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "McKinney",
@@ -7407,7 +7463,7 @@
       "player": "Arraez",
       "type": "lined into double play",
       "outs": 2,
-      "order": [],
+      "order": ["shortstop"],
       "moves": [
         {
           "player": "Correa",
@@ -7672,7 +7728,8 @@
     "Witt Jr. walked.",
     {
       "player": "Witt Jr.",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -7873,7 +7930,8 @@
     "Taylor walked.",
     {
       "player": "Taylor",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -8077,6 +8135,7 @@
     {
       "player": "Polanco",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Jeffers",
@@ -8186,7 +8245,8 @@
     "Celestino hit by pitch.",
     {
       "player": "Celestino",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -8519,6 +8579,7 @@
     {
       "player": "Correa",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Arraez",
@@ -8779,7 +8840,8 @@
     "Correa walked.",
     {
       "player": "Correa",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -8802,6 +8864,7 @@
     {
       "player": "Kepler",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Polanco",
@@ -8897,6 +8960,7 @@
     {
       "player": "Buxton",
       "type": "hit by pitch",
+      "at": "first",
       "moves": [
         {
           "player": "Jeffers",
@@ -9082,7 +9146,8 @@
     "Mendick walked.",
     {
       "player": "Mendick",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -9121,7 +9186,8 @@
     "Grandal walked.",
     {
       "player": "Grandal",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -9186,7 +9252,8 @@
     "B\u00e1ez walked.",
     {
       "player": "B\u00e1ez",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -9587,6 +9654,7 @@
     {
       "player": "Grossman",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Hill",
@@ -9639,7 +9707,8 @@
     "Torkelson walked.",
     {
       "player": "Torkelson",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -9647,6 +9716,7 @@
     {
       "player": "Candelario",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Torkelson",
@@ -9829,7 +9899,8 @@
     "W. Castro walked.",
     {
       "player": "W. Castro",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -9837,6 +9908,7 @@
     {
       "player": "Hill",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "W. Castro",
@@ -9997,7 +10069,10 @@
   [
     "Schoop to second on a balk.",
     {
-      "type": "balk"
+      "type": "balk",
+      "moves": [
+        {"player": "Schoop", "type": "advanced", "at": "second"}
+      ]
     }
   ],
   [
@@ -10180,6 +10255,7 @@
     {
       "player": "Garlick",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Urshela",
@@ -10231,7 +10307,7 @@
       "player": "Hill",
       "type": "lined into double play",
       "outs": 2,
-      "order": [],
+      "order": ["first"],
       "moves": [
         {
           "player": "W. Castro",
@@ -10290,7 +10366,8 @@
     "Meadows hit by pitch.",
     {
       "player": "Meadows",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -10414,6 +10491,7 @@
     {
       "player": "Meadows",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Barnhart",
@@ -10474,7 +10552,8 @@
     "Winker walked.",
     {
       "player": "Winker",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -10619,6 +10698,7 @@
     {
       "player": "San\u00f3",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Urshela",
@@ -10649,7 +10729,8 @@
     "Torrens walked.",
     {
       "player": "Torrens",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -10955,7 +11036,8 @@
     "Moore walked.",
     {
       "player": "Moore",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -11279,7 +11361,8 @@
     "Verdugo intentionally walked.",
     {
       "player": "Verdugo",
-      "type": "intentionally walked"
+      "type": "intentionally walked",
+      "at": "first"
     }
   ],
   [
@@ -11345,6 +11428,7 @@
     {
       "player": "S\u00e1nchez",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Kepler",
@@ -11401,7 +11485,8 @@
     "Arraez intentionally walked.",
     {
       "player": "Arraez",
-      "type": "intentionally walked"
+      "type": "intentionally walked",
+      "at": "first"
     }
   ],
   [
@@ -11409,6 +11494,7 @@
     {
       "player": "Celestino",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Arraez",
@@ -11976,6 +12062,7 @@
     {
       "player": "Urshela",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Kepler",
@@ -12295,7 +12382,8 @@
     "Correa hit by pitch.",
     {
       "player": "Correa",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -12335,7 +12423,8 @@
     "S\u00e1nchez walked.",
     {
       "player": "S\u00e1nchez",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -12403,7 +12492,8 @@
     "Mullins hit by pitch.",
     {
       "player": "Mullins",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -12598,7 +12688,8 @@
     "Arozarena walked.",
     {
       "player": "Arozarena",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -12661,7 +12752,8 @@
     "Walls walked.",
     {
       "player": "Walls",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -12771,7 +12863,8 @@
     "Buxton hit by pitch.",
     {
       "player": "Buxton",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -12796,7 +12889,7 @@
       "player": "Polanco",
       "type": "lined into double play",
       "outs": 2,
-      "order": [],
+      "order": ["first"],
       "moves": [
         {
           "player": "Correa",
@@ -13133,7 +13226,8 @@
     "Rodr\u00edguez walked.",
     {
       "player": "Rodr\u00edguez",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -13477,7 +13571,8 @@
     "Kelenic walked.",
     {
       "player": "Kelenic",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -13639,6 +13734,7 @@
     {
       "player": "Buxton",
       "type": "hit by pitch",
+      "at": "first",
       "moves": [
         {
           "player": "Gordon",
@@ -13661,6 +13757,7 @@
     {
       "player": "Murphy",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Crawford",
@@ -14022,7 +14119,8 @@
     "D\u00edaz walked.",
     {
       "player": "D\u00edaz",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -14030,6 +14128,7 @@
     {
       "player": "J. Lowe",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "D\u00edaz",
@@ -14714,7 +14813,8 @@
     "San\u00f3 hit by pitch.",
     {
       "player": "San\u00f3",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -14830,7 +14930,8 @@
     "Betts walked.",
     {
       "player": "Betts",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -14838,6 +14939,7 @@
     {
       "player": "Freeman",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Betts",
@@ -14873,6 +14975,7 @@
     {
       "player": "Muncy",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "T. Turner",
@@ -15115,7 +15218,8 @@
     "J. Turner walked.",
     {
       "player": "J. Turner",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -15132,6 +15236,7 @@
     {
       "player": "Bellinger",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "J. Turner",
@@ -15296,7 +15401,8 @@
     "Mancini walked.",
     {
       "player": "Mancini",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -15304,6 +15410,7 @@
     {
       "player": "Santander",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Mancini",
@@ -15463,6 +15570,7 @@
     {
       "player": "S\u00e1nchez",
       "type": "hit by pitch",
+      "at": "first",
       "moves": [
         {
           "player": "Gordon",
@@ -15797,6 +15905,7 @@
     {
       "player": "Kepler",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Buxton",
@@ -15812,7 +15921,7 @@
       "player": "Polanco",
       "type": "lined into double play",
       "outs": 2,
-      "order": [],
+      "order": ["first"],
       "moves": [
         {
           "player": "Kepler",
@@ -15826,7 +15935,8 @@
     "Smith walked.",
     {
       "player": "Smith",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -15908,7 +16018,8 @@
     "Pinder walked.",
     {
       "player": "Pinder",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -16017,7 +16128,8 @@
     "Kirilloff hit by pitch.",
     {
       "player": "Kirilloff",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -16098,6 +16210,7 @@
     {
       "player": "Murphy",
       "type": "hit by pitch",
+      "at": "first",
       "moves": [
         {
           "player": "Brown",
@@ -16149,7 +16262,8 @@
     "Perez walked.",
     {
       "player": "Perez",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
@@ -16354,6 +16468,7 @@
     {
       "player": "Merrifield",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Gallagher",
@@ -16368,6 +16483,7 @@
     {
       "player": "Lopez",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Taylor",
@@ -16683,7 +16799,8 @@
     "Kepler hit by pitch.",
     {
       "player": "Kepler",
-      "type": "hit by pitch"
+      "type": "hit by pitch",
+      "at": "first"
     }
   ],
   [
@@ -16962,6 +17079,7 @@
     {
       "player": "Polanco",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Correa",
@@ -16997,6 +17115,7 @@
     {
       "player": "S\u00e1nchez",
       "type": "hit by pitch",
+      "at": "first",
       "moves": [
         {
           "player": "Kepler",
@@ -17229,6 +17348,7 @@
     {
       "player": "Kepler",
       "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Larnach",
@@ -17249,7 +17369,8 @@
     "Phillips walked.",
     {
       "player": "Phillips",
-      "type": "walked"
+      "type": "walked",
+      "at": "first"
     }
   ],
   [
