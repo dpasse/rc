@@ -4106,8 +4106,11 @@
   [
     "Celestino out at second on runner's fielder's choice.",
     {
-      "player": "Celestino out",
-      "type": "sub-f"
+      "type": "runner's fielder's choice",
+      "moves": [
+        {"player": "Celestino", "type": "out", "at": "second"}
+      ],
+      "outs": 1
     }
   ],
   [
@@ -6359,8 +6362,11 @@
   [
     "Buxton out at second on runner's fielder's choice.",
     {
-      "player": "Buxton out",
-      "type": "sub-f"
+      "type": "runner's fielder's choice",
+      "moves": [
+        {"player": "Buxton", "type": "out", "at": "second"}
+      ],
+      "outs": 1
     }
   ],
   [
@@ -15667,7 +15673,7 @@
       "at": "first",
       "moves": [
         {
-          "player": "S\u00e1nchez hit by batted ball",
+          "player": "S\u00e1nchez",
           "type": "out",
           "at": "second"
         }

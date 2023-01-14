@@ -1,6 +1,6 @@
 import re
 from typing import Optional, Tuple, Dict, Any, List, Callable
-from .entities.utils import clean_text
+from .entities.utils import clean_text, is_event_type, is_location
 from .entities import steal_exports, \
                       in_play_exports, \
                       strike_outs_exports, \
@@ -59,11 +59,36 @@ class EventDescriptionParser(ParsingEngine):
                 if key in ['type', 'at']:
                     observation[key] = observation[key].lower()
 
+        players = set([])
+        event_types = set([])
+        locations = set([])
+
+        if 'player' in observation:
+            players.add(observation['player'])
+
+        if 'type' in observation:
+            event_types.add(observation['type'])
+
+        if 'at' in observation:
+            locations.add(observation['at'])
+
         if 'moves' in observation:
+            moves = observation['moves']
+
+            for move in moves:
+                if 'player' in move:
+                    players.add(move['player'])
+
+                if 'type' in move:
+                    event_types.add(move['type'])
+
+                if 'at' in move:
+                    locations.add(move['at'])
+
             outs = sum(
                 1
                 for move
-                in observation['moves']
+                in moves
                 if move['type'] == 'out'
             )
 
@@ -76,7 +101,7 @@ class EventDescriptionParser(ParsingEngine):
             runs = sum(
                 1
                 for move
-                in observation['moves']
+                in moves
                 if move['at'] == 'home' and move['type'] != 'out'
             )
 
@@ -85,5 +110,31 @@ class EventDescriptionParser(ParsingEngine):
                     observation['runs'] = 0
 
                 observation['runs'] += runs
+
+        output = []
+
+        for event_type in event_types:
+            if not is_event_type(event_type):
+                output.append('type')
+                break
+
+        for location in locations:
+            if not is_location(location):
+                output.append('at')
+                break
+
+        for player in players:
+            is_bad = False
+            for chunk in player.split(' '):
+                if chunk[0].islower():
+                    is_bad = True
+                    break
+
+            if is_bad:
+                output.append('player')
+                break
+
+        if any(output):
+            observation['issues'] = output
 
         return observation

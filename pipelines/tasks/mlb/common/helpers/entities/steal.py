@@ -1,5 +1,5 @@
 from typing import Dict, Any, List, Tuple, Callable
-from .utils import split_text, handle_extras, create_player_observation
+from .utils import split_text, create_player_observation
 
 
 def handle_steals(groups: List[str]) -> Dict[str, Any]:

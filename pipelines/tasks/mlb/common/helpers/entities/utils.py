@@ -14,7 +14,80 @@ Positions = set([
     'pitcher',
 ])
 
-def create_player_observation(player: str, event_type: str, at: Optional[str] = None, outs: Optional[int] = None, runs: Optional[int] = None, extras: Optional[List[str]] = None):
+EventTypes = set([
+    "runner's fielder's choice",
+    "grounded into fielder's choice",
+    'grounded into double play',
+    'popped into double play',
+    'flied into double play',
+    "catcher's interference",
+    'lined into double play',
+    'intentionally walked',
+    'ground rule double',
+    'caught stealing',
+    'throwing error',
+    'infield single',
+    'fielding error',
+    'pickoff error',
+    'sacrifice fly',
+    'hit by pitch',
+    'grounded out',
+    'bunt single',
+    'wild pitch',
+    'fouled out',
+    'struck out',
+    'picked off',
+    'popped out',
+    'sacrificed',
+    'flied out',
+    'lined out',
+    'advanced',
+    'homered',
+    'doubled',
+    'tripled',
+    'singled',
+    'walked',
+    'sub-p',
+    'sub-f',
+    'stole',
+    'balk',
+    'out'
+])
+
+Locations = set([
+    'shallow right center',
+    'shallow left center',
+    'deep right center',
+    'deep left center',
+    'shallow center',
+    'shallow right',
+    'right center',
+    'shallow left',
+    'deep center',
+    'left center',
+    'deep right',
+    'deep left',
+    'shortstop',
+    'pitcher',
+    'catcher',
+    'second',
+    'center',
+    'third',
+    'right',
+    'first',
+    'left',
+    'home'
+])
+
+
+def create_player_observation(
+    player: str,
+    event_type: str,
+    at: Optional[str] = None,
+    outs: Optional[int] = None,
+    runs: Optional[int] = None,
+    extras: Optional[List[str]] = None):
+
     observation: Dict[str, Any] = {
         'player': player,
         'type': event_type,
@@ -35,6 +108,12 @@ def create_player_observation(player: str, event_type: str, at: Optional[str] = 
         )
 
     return observation
+
+def is_event_type(event_type: str) -> bool:
+    return event_type in EventTypes
+
+def is_location(location: str) -> bool:
+    return location in Locations
 
 def search(expressions: List[str], text: str) -> Optional[re.Match[str]]:
     for expression in expressions:
@@ -68,10 +147,11 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
     moves: List[Dict[str, Any]] = []
     for item in groups:
         match = search([
+                r'^ *(.+?) (hit by batted ball out at) (.+)',
                 r'^ *(.+?) (thrown out at|out(?: |stretching)+at|doubled off|caught stealing|safe at|to) (.+)',
                 r'^ *(.+?) (thrown out|scored)',
             ],
-            item
+            item,
         )
 
         if match:

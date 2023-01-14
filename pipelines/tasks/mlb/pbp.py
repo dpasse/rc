@@ -390,7 +390,7 @@ if __name__ == '__main__':
 
     Logger.info('    - #%s', len(input_game_ids))
 
-    get_pbps(input_game_ids, timeout=60)
+    get_pbps(input_game_ids, timeout=30)
 
     Logger.info('Finished @ %s', datetime.datetime.now())
     Logger.info('')

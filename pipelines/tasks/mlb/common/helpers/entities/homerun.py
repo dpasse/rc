@@ -1,10 +1,10 @@
 import re
 from typing import Dict, Any, List, Tuple, Callable
-from .utils import split_text, handle_extras, create_player_observation, search
+from .utils import split_text, create_player_observation, search
 
 
 def handle_homerun(groups: List[str]) -> Dict[str, Any]:
-    distance = search(['\((\d+)'], groups[2])
+    distance = search([r'\((\d+)'], groups[2])
 
     extras = split_text(
         re.sub(r'\([^)]+\)', '', groups[2]), ## (565 feet)
