@@ -540,6 +540,7 @@
       "player": "Bellinger",
       "type": "homered",
       "at": "center",
+      "distance": 424,
       "runs": 1
     }
   ],
@@ -549,7 +550,8 @@
       "player": "Lux",
       "type": "homered",
       "at": "center",
-      "runs": 1
+      "runs": 1,
+      "distance": 421
     }
   ],
   [
@@ -558,6 +560,7 @@
       "player": "Barnes",
       "type": "homered",
       "at": "left",
+      "distance": 370,
       "runs": 1
     }
   ],
@@ -664,6 +667,7 @@
       "player": "Muncy",
       "type": "homered",
       "at": "right",
+      "distance": 386,
       "runs": 1
     }
   ],
@@ -764,6 +768,7 @@
       "player": "Haniger",
       "type": "homered",
       "at": "left",
+      "distance": 411,
       "runs": 2,
       "moves": [
         {
@@ -1038,6 +1043,7 @@
       "player": "Urshela",
       "type": "homered",
       "at": "left",
+      "distance": 397,
       "runs": 1
     }
   ],
@@ -1541,6 +1547,7 @@
       "player": "Verdugo",
       "type": "homered",
       "at": "right center",
+      "distance": 437,
       "runs": 2,
       "moves": [
         {
@@ -1681,6 +1688,7 @@
       "player": "Bogaerts",
       "type": "homered",
       "at": "left",
+      "distance": 400,
       "runs": 2,
       "moves": [
         {
@@ -2092,6 +2100,7 @@
       "player": "Anderson",
       "type": "homered",
       "at": "left center",
+      "distance": 395,
       "runs": 1
     }
   ],
@@ -2574,6 +2583,7 @@
       "player": "Mendick",
       "type": "homered",
       "at": "left",
+      "distance": 406,
       "runs": 1
     }
   ],
@@ -2625,6 +2635,7 @@
       "player": "Buxton",
       "type": "homered",
       "at": "right",
+      "distance": 366,
       "runs": 2,
       "moves": [
         {
@@ -2916,6 +2927,7 @@
     {
       "player": "Buxton",
       "type": "homered",
+      "distance": 469,
       "at": "left",
       "runs": 3,
       "moves": [
@@ -5929,6 +5941,7 @@
       "player": "Vaughn",
       "type": "homered",
       "at": "center",
+      "distance": 424,
       "runs": 1
     }
   ],
@@ -6663,6 +6676,7 @@
       "player": "Jeffers",
       "type": "homered",
       "at": "center",
+      "distance": 424,
       "runs": 3,
       "moves": [
         {
@@ -6975,6 +6989,7 @@
     {
       "player": "Miranda",
       "type": "homered",
+      "distance": 404,
       "at": "left",
       "runs": 1
     }
@@ -7124,6 +7139,7 @@
     {
       "player": "Buxton",
       "type": "homered",
+      "distance": 414,
       "at": "center",
       "runs": 1
     }
@@ -8807,6 +8823,7 @@
     {
       "player": "Jeffers",
       "type": "homered",
+      "distance": 392,
       "at": "left",
       "runs": 1
     }
@@ -8825,6 +8842,7 @@
     {
       "player": "Buxton",
       "type": "homered",
+      "distance": 407,
       "at": "left",
       "runs": 1
     }
@@ -9011,6 +9029,7 @@
     {
       "player": "Abreu",
       "type": "homered",
+      "distance": 396,
       "at": "right",
       "runs": 1
     }
@@ -9454,6 +9473,7 @@
     {
       "player": "Kepler",
       "type": "homered",
+      "distance": 393,
       "at": "right",
       "runs": 2,
       "moves": [
@@ -9679,6 +9699,7 @@
       "player": "B\u00e1ez",
       "type": "homered",
       "at": "center",
+      "distance": 415,
       "runs": 3,
       "moves": [
         {
@@ -10584,6 +10605,7 @@
     {
       "player": "Buxton",
       "type": "homered",
+      "distance": 363,
       "at": "left",
       "runs": 1
     }
@@ -10619,6 +10641,7 @@
     {
       "player": "S\u00e1nchez",
       "type": "homered",
+      "distance": 446,
       "at": "left",
       "runs": 4,
       "moves": [
@@ -10680,6 +10703,7 @@
     {
       "player": "Buxton",
       "type": "homered",
+      "distance": 350,
       "at": "left",
       "runs": 1
     }
@@ -10768,6 +10792,7 @@
     {
       "player": "Haniger",
       "type": "homered",
+      "distance": 385,
       "at": "left",
       "runs": 3,
       "moves": [
@@ -10796,6 +10821,7 @@
     {
       "player": "Kepler",
       "type": "homered",
+      "distance": 411,
       "at": "right",
       "runs": 1
     }
@@ -10814,6 +10840,7 @@
     {
       "player": "Polanco",
       "type": "homered",
+      "distance": 424,
       "at": "right",
       "runs": 1
     }
@@ -10908,6 +10935,7 @@
     {
       "player": "Correa",
       "type": "homered",
+      "distance": 458,
       "at": "left",
       "runs": 1
     }
@@ -11067,6 +11095,7 @@
     {
       "player": "Garlick",
       "type": "homered",
+      "distance": 364,
       "at": "left",
       "runs": 2,
       "moves": [
@@ -11135,6 +11164,7 @@
     {
       "player": "Polanco",
       "type": "homered",
+      "distance": 369,
       "at": "left",
       "runs": 2,
       "moves": [
@@ -11401,6 +11431,7 @@
     {
       "player": "V\u00e1zquez",
       "type": "homered",
+      "distance": 390,
       "at": "left",
       "runs": 1
     }
@@ -11748,6 +11779,7 @@
     {
       "player": "Kepler",
       "type": "homered",
+      "distance": 401,
       "at": "left center",
       "runs": 1
     }
@@ -11819,6 +11851,7 @@
     {
       "player": "Kepler",
       "type": "homered",
+      "distance": 423,
       "at": "right center",
       "runs": 1
     }
@@ -11855,6 +11888,7 @@
     {
       "player": "Jeffers",
       "type": "homered",
+      "distance": 377,
       "at": "left",
       "runs": 2,
       "moves": [
@@ -12179,6 +12213,7 @@
     {
       "player": "Mountcastle",
       "type": "homered",
+      "distance": 414,
       "at": "center",
       "runs": 1
     }
@@ -12284,6 +12319,7 @@
     {
       "player": "Mullins",
       "type": "homered",
+      "distance": 399,
       "at": "right center",
       "runs": 1
     }
@@ -12367,6 +12403,7 @@
     {
       "player": "Buxton",
       "type": "homered",
+      "distance": 452,
       "at": "center",
       "runs": 2,
       "moves": [
@@ -12406,6 +12443,7 @@
     {
       "player": "Mateo",
       "type": "homered",
+      "distance": 412,
       "at": "center",
       "runs": 1
     }
@@ -12553,6 +12591,7 @@
     {
       "player": "Hays",
       "type": "homered",
+      "distance": 409,
       "at": "left",
       "runs": 1
     }
@@ -12562,6 +12601,7 @@
     {
       "player": "Mountcastle",
       "type": "homered",
+      "distance": 381,
       "at": "right",
       "runs": 1
     }
@@ -12668,6 +12708,7 @@
     {
       "player": "J. Lowe",
       "type": "homered",
+      "distance": 418,
       "at": "center",
       "runs": 3,
       "moves": [
@@ -12846,6 +12887,7 @@
     {
       "player": "Zunino",
       "type": "homered",
+      "distance": 408,
       "at": "left center",
       "runs": 1
     }
@@ -13647,6 +13689,7 @@
     {
       "player": "Arraez",
       "type": "homered",
+      "distance": 372,
       "at": "right",
       "runs": 1
     }
@@ -13866,6 +13909,7 @@
     {
       "player": "Murphy",
       "type": "homered",
+      "distance": 423,
       "at": "right center",
       "runs": 1
     }
@@ -13998,6 +14042,7 @@
     {
       "player": "Buxton",
       "type": "homered",
+      "distance": 436,
       "at": "left",
       "runs": 2,
       "moves": [
@@ -14093,6 +14138,7 @@
     {
       "player": "Garlick",
       "type": "homered",
+      "distance": 416,
       "at": "center",
       "runs": 1
     }
@@ -14161,6 +14207,7 @@
     {
       "player": "Walls",
       "type": "homered",
+      "distance": 406,
       "at": "right",
       "runs": 1
     }
@@ -14286,6 +14333,7 @@
     {
       "player": "Garlick",
       "type": "homered",
+      "distance": 397,
       "at": "left",
       "runs": 2,
       "moves": [
@@ -14509,6 +14557,7 @@
     {
       "player": "Kepler",
       "type": "homered",
+      "distance": 391,
       "at": "right",
       "runs": 2,
       "moves": [
@@ -15386,6 +15435,7 @@
     {
       "player": "Mullins",
       "type": "homered",
+      "distance": 381,
       "at": "right",
       "runs": 2,
       "moves": [
@@ -15486,6 +15536,7 @@
     {
       "player": "Ur\u00edas",
       "type": "homered",
+      "distance": 429,
       "at": "center",
       "runs": 2,
       "moves": [
@@ -15502,6 +15553,7 @@
     {
       "player": "Correa",
       "type": "homered",
+      "distance": 418,
       "at": "center",
       "runs": 2,
       "moves": [
@@ -16080,6 +16132,7 @@
     {
       "player": "Polanco",
       "type": "homered",
+      "distance": 451,
       "at": "center",
       "runs": 1
     }
@@ -16380,6 +16433,7 @@
     {
       "player": "Perez",
       "type": "homered",
+      "distance": 373,
       "at": "left",
       "runs": 1
     }
@@ -16543,6 +16597,7 @@
     {
       "player": "Perez",
       "type": "homered",
+      "distance": 388,
       "at": "left",
       "runs": 1
     }
@@ -16568,6 +16623,7 @@
     {
       "player": "Dozier",
       "type": "homered",
+      "distance": 429,
       "at": "left",
       "runs": 1
     }
@@ -16741,6 +16797,7 @@
     {
       "player": "San\u00f3",
       "type": "homered",
+      "distance": 368,
       "at": "left",
       "runs": 2,
       "moves": [
@@ -16773,6 +16830,7 @@
     {
       "player": "Verdugo",
       "type": "homered",
+      "distance": 410,
       "at": "right",
       "runs": 1
     }
@@ -17056,6 +17114,7 @@
     {
       "player": "Devers",
       "type": "homered",
+      "distance": 363,
       "at": "right",
       "runs": 2,
       "moves": [
@@ -17398,6 +17457,7 @@
     {
       "player": "Buxton",
       "type": "homered",
+      "distance": 428,
       "at": "left center",
       "runs": 1
     }

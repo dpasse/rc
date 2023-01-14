@@ -14,7 +14,7 @@ Positions = set([
     'pitcher',
 ])
 
-def create_player_observation(player: str, event_type: str, at: str, outs: Optional[int] = None, extras: Optional[List[str]] = None):
+def create_player_observation(player: str, event_type: str, at: str, outs: Optional[int] = None, runs: Optional[int] = None, extras: Optional[List[str]] = None):
     observation: Dict[str, Any] = {
         'player': player,
         'type': event_type,
@@ -23,6 +23,9 @@ def create_player_observation(player: str, event_type: str, at: str, outs: Optio
 
     if outs:
         observation['outs'] = outs
+
+    if runs:
+        observation['runs'] = runs
 
     if extras and len(extras) > 0:
         observation.update(
