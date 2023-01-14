@@ -14,12 +14,14 @@ Positions = set([
     'pitcher',
 ])
 
-def create_player_observation(player: str, event_type: str, at: str, outs: Optional[int] = None, runs: Optional[int] = None, extras: Optional[List[str]] = None):
+def create_player_observation(player: str, event_type: str, at: Optional[str] = None, outs: Optional[int] = None, runs: Optional[int] = None, extras: Optional[List[str]] = None):
     observation: Dict[str, Any] = {
         'player': player,
         'type': event_type,
-        'at': at,
     }
+
+    if at:
+        observation['at'] = at
 
     if outs:
         observation['outs'] = outs
@@ -69,15 +71,18 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
 
             player = match_groups[0]
             move_type = match_groups[1]
-            move = {
-                'player': player,
-                'type': 'advanced' if move_type in ['to', 'scored', 'safe at'] else 'out'
-            }
 
+            at = None
             if move_type == 'scored' or len(match_groups) == 3:
-                move['at'] = 'home' if move_type == 'scored' else clean_text(match_groups[2])
+                at = 'home' if move_type == 'scored' else clean_text(match_groups[2])
             else:
-                move['at'] = 'not-available'
+                at = 'not-available'
+
+            move = create_player_observation(
+                player=player,
+                event_type='advanced' if move_type in ['to', 'scored', 'safe at'] else 'out',
+                at=at
+            )
 
             is_bad_name = sum(
                 1 if chunk in Positions else 0 for chunk in player.split(' ')

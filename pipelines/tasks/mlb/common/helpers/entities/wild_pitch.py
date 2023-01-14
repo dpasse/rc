@@ -1,6 +1,6 @@
 import re
 from typing import Dict, Any, List, Tuple, Callable
-from .utils import split_text, clean_text
+from .utils import split_text, clean_text, create_player_observation
 
 
 def handle_wild_pitch(groups: List[str]) -> Dict[str, Any]:
@@ -33,11 +33,13 @@ def handle_wild_pitch(groups: List[str]) -> Dict[str, Any]:
             if move_match:
                 match_groups = list(move_match.groups())
                 at_base = clean_text(match_groups[1])
-                moves.append({
-                    'player': match_groups[0],
-                    'type': 'advanced',
-                    'at': 'home' if at_base == 'scored' else at_base,
-                })
+                moves.append(
+                    create_player_observation(
+                        player=match_groups[0],
+                        event_type='advanced',
+                        at='home' if at_base == 'scored' else at_base,
+                    )
+                )
 
     if len(moves) > 0:
         observation['moves'] = moves

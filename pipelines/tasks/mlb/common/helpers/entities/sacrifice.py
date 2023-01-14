@@ -1,33 +1,26 @@
 from typing import Dict, Any, List, Callable, Tuple
-from .utils import split_text, handle_extras
+from .utils import split_text, create_player_observation
 
 
 def handle_sacrifice(groups: List[str]) -> Dict[str, Any]:
     extras = split_text(groups[2])
-    observation = {
-        'player': groups[0],
-        'type': groups[1],
-        'at': extras[0],
-        'outs': 1,
-    }
-
-    observation.update(
-        handle_extras(extras[1:])
+    observation = create_player_observation(
+        player=groups[0],
+        event_type=groups[1],
+        at=extras[0],
+        extras=extras[1:],
+        outs=1
     )
 
     return observation
 
 def handle_attempted_sacrifice(groups: List[str]) -> Dict[str, Any]:
-    observation: Dict[str, Any] = {
-        'player': groups[0],
-        'type': groups[1]
-    }
-
-    observation.update(
-        handle_extras(split_text(groups[2]))
+    return create_player_observation(
+        player=groups[0],
+        event_type=groups[1],
+        extras=split_text(groups[2])
     )
 
-    return observation
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
     (r'^(.+?) (sacrificed),(.+)', handle_attempted_sacrifice),
