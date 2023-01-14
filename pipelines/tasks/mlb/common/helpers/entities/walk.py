@@ -2,7 +2,7 @@ from typing import Dict, Any, List, Tuple, Callable
 from .utils import split_text, create_player_observation
 
 
-def handle_walk(groups: List[str]) -> Dict[str, Any]:
+def handle(groups: List[str]) -> Dict[str, Any]:
     extras = split_text(groups[1])
     return create_player_observation(
         player=groups[0],
@@ -12,5 +12,7 @@ def handle_walk(groups: List[str]) -> Dict[str, Any]:
     )
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
-    (r'^(.+?) ((?:(?:intentionally |)walked|hit by pitch).*)', handle_walk),
+    (r'^(.+?) (intentionally walked.*)', handle),
+    (r'^(.+?) (walked.*)', handle),
+    (r'^(.+?) (hit by pitch.*)', handle),
 ]

@@ -10,5 +10,8 @@ def handle_sub(groups: List[str]) -> Dict[str, Any]:
     )
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
-    (r'^(.+?) ((?:hit|ran) for|in\b|a[st]\b|catching|pitch(?:ing|es to))', handle_sub),
+    (r'^(.+?) ((?:hit|ran|pitching) for)', handle_sub),
+    (r'^(.+?) (catching)', handle_sub),
+    (r'^(.+?) (pitches) to', handle_sub),
+    (r'^(.+?) (in|a[st])\b', handle_sub),
 ]

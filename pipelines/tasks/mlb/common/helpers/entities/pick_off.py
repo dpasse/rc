@@ -22,6 +22,5 @@ def handle_pick_off_error(groups: List[str]) -> Dict[str, Any]:
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
     (r'^(.+?) to (.+?) on (pickoff error) by (?:pitcher|catcher) (.+)', handle_pick_off_error),
-    (r'^(.+?) (picked off) and caught stealing (.+)', handle_pick_off),
-    (r'^(.+?) (picked off) (.+)', handle_pick_off),
+    (r'^(.+?) (picked off)(?: and caught stealing|) (.+)', handle_pick_off),
 ]
