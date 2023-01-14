@@ -15,9 +15,11 @@ Positions = set([
 ])
 
 EventTypes = set([
+    'inside-the-park-home run',
     "runner's fielder's choice",
     "grounded into fielder's choice",
     'grounded into double play',
+    "fielder's indifference",
     'popped into double play',
     'flied into double play',
     "catcher's interference",
@@ -194,7 +196,7 @@ def split_extras(extras: List[str]) -> Tuple[List[str], List[Dict[str, Any]]]:
     for extra in extras:
         extra = replace(
             [
-                (r" on ((?:throwing|fielding| )*error|runner's fielder's choice|a balk).*$", ''),
+                (r" on ((?:throwing|fielding| )*error|runner's fielder's choice|fielder's indifference|a balk).*$", ''),
                 (r" in rundown.*$", ''),
             ],
             extra,

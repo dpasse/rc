@@ -25,4 +25,5 @@ def handle_homerun(groups: List[str]) -> Dict[str, Any]:
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
     (r'^(.+?) (homered) to (.+)', handle_homerun),
+    (r'^(.+?) (inside-the-park-home run) to (.+)', handle_homerun),
 ]

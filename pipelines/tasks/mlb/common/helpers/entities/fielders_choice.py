@@ -23,5 +23,5 @@ def handle_wide_fielders_choice(groups: List[str]) -> Dict[str, Any]:
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]]  = [
     (r'^(.+?) ((?:ground|lin|fli)ed into fielder\'s choice) to (.+)', handle_fielders_choice),
-    (r'(.+? (runner\'s fielder\'s choice).+)', handle_wide_fielders_choice),
+    (r'(.+? (fielder\'s indifference|runner\'s fielder\'s choice).+)', handle_wide_fielders_choice),
 ]
