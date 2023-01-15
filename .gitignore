@@ -147,3 +147,6 @@ data/mlb/standings.csv
 data/mlb/schedules.csv
 
 *.sqlite
+
+## stash notes
+notes.txt
