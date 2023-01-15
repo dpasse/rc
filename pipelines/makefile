@@ -19,6 +19,9 @@ mlb-batter-aggregates:
 mlb-pitcher-aggregates:
 	python ./tasks/mlb/player_aggregates.py pitching verlaju01
 
+mlb-reparse-pbp:
+	python ./tasks/mlb/reparse_pbp.py
+
 prefect:
 	prefect orion start
 
