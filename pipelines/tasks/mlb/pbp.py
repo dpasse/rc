@@ -9,7 +9,7 @@ import pandas as pd
 
 from prefect import flow, task
 from common.helpers.web import make_request
-from common.helpers.parsers import EventDescriptionParser
+from common.helpers.parsers import parse_game
 
 
 Logger = logging.getLogger(__name__)
@@ -17,8 +17,6 @@ Logger.setLevel(level=logging.INFO)
 Logger.addHandler(
     logging.FileHandler('../data/mlb/logs/pbp.log')
 )
-
-EVENT_DESCRIPTION_PARSER = EventDescriptionParser()
 
 # pylint: disable=W0703
 
@@ -85,19 +83,6 @@ def transform_event_desc(event: Dict[str, Any]) -> Dict[str, Any]:
     if 'dsc' in event:
         event['desc'] = event['dsc']
         del event['dsc']
-
-    outcome = EVENT_DESCRIPTION_PARSER.transform_into_object(event['desc'])
-    if outcome:
-        event['entities'] = outcome
-
-        if 'isInfoPlay' in event and not event['entities']['type'] in ['sub-p', 'sub-f']:
-            if event['entities']['type'] in ['balk', 'picked off', 'pickoff error']:
-                event['type'] = 'before-pitch'
-            else:
-                ## wild pitch, stole
-                event['type'] = 'after-pitch'
-    else:
-        Logger.error('    - Missing entities')
 
     return event
 
@@ -183,56 +168,6 @@ def transform_clean_pitch(pitch: Dict[str, Any]) -> Dict[str, Any]:
 
     return pitch
 
-def tie_pitch_events_to_pitch(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    pitch_events: List[Dict[str, Any]] = []
-    for event in events:
-        is_info_event = 'isInfoPlay' in event
-        if 'type' in event:
-            if event['type'] in ['after-pitch', 'before-pitch']:
-                pitch_events.append(event)
-        elif not is_info_event and len(pitch_events) > 0:
-            pitches = cast(List[Dict[str, Any]], event['pitches'] if 'pitches' in event else [])
-            for i, pitch in enumerate(pitches):
-                is_last_pitch = i == len(pitches) - 1
-                should_apply_events = 'action' in pitch['result'] or is_last_pitch
-                if not should_apply_events:
-                    continue
-
-                pitch_event, pitch_events = pitch_events[0], pitch_events[1:]
-
-                if pitch_event['type'] == 'after-pitch':
-                    pitch_event['afterPitchEvent'] = {
-                        'id': event['id'],
-                        'pitch': pitch['order']
-                    }
-
-                    pitch['result']['afterPitchEvent'] = pitch_event['id']
-                else:
-                    before_pitch = pitch if is_last_pitch else pitches[i+1]
-
-                    pitch_event['beforePitchEvent'] = {
-                        'id': event['id'],
-                        'pitch': before_pitch['order']
-                    }
-
-                    before_pitch['result']['beforePitchEvent'] = pitch_event['id']
-
-                if 'action' in pitch:
-                    ## clear
-                    del pitch['result']['action']
-
-                if len(pitch_events) == 0:
-                    break
-
-            if len(pitch_events) > 0:
-                print()
-                print('NOT ALL "after-pitch" EVENTS COULD BE ACCOUNTED FOR on "action" pitches!!')
-                print()
-
-            pitch_events.clear()
-
-    return events
-
 def compress_game(game: Dict[str, Any]) -> Dict[str, Any]:
     if len(game['periods']) == 0:
         return game
@@ -292,15 +227,6 @@ def compress_game(game: Dict[str, Any]) -> Dict[str, Any]:
                 pitch, previous_bases = transform_pitch_bases_event(pitch, previous_bases)
                 pitch, count = transform_pitch_set_count(pitch, count)
 
-            last_pitch = pitches[0]
-            for current_pitch in pitches[1:-1]:
-                if last_pitch['result']['bases'] != current_pitch['result']['bases']:
-                    last_pitch['result']['action'] = True
-
-                last_pitch = current_pitch
-
-        events = tie_pitch_events_to_pitch(events)
-
     return game
 
 def dump_json_blob(game_id: str, json_blob: dict) -> None:
@@ -333,10 +259,9 @@ def get_pbp(game_id: str, debug = False) -> Optional[dict]:
     game = None
 
     try:
-        game = compress_game({
-            'id': game_id,
-            'periods': json_obj,
-        })
+        game = parse_game(
+            compress_game({ 'id': game_id, 'periods': json_obj })
+        )
     except Exception as exception:
         Logger.error('    - %s failed', game_id)
         Logger.error(exception)

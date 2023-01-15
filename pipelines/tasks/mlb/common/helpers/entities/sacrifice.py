@@ -2,6 +2,8 @@ from typing import Dict, Any, List, Callable, Tuple
 from .utils import split_text, create_player_observation
 
 
+# pylint: disable=R0801
+
 def handle_sacrifice(groups: List[str]) -> Dict[str, Any]:
     extras = split_text(groups[2])
     observation = create_player_observation(

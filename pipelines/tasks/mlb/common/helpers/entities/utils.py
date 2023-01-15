@@ -55,6 +55,7 @@ EventTypes = set([
     'sub-p',
     'sub-f',
     'stole',
+    'error',
     'balk',
     'out'
 ])
@@ -120,6 +121,13 @@ def is_event_type(event_type: str) -> bool:
 def is_location(location: str) -> bool:
     return location in Locations
 
+def is_player(player: str) -> bool:
+    for chunk in player.split(' '):
+        if chunk[0].islower():
+            return False
+
+    return True
+
 def search(expressions: List[str], text: str) -> Optional[re.Match[str]]:
     for expression in expressions:
         match = re.search(expression, text)
@@ -176,14 +184,6 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
                 event_type='advanced' if move_type in ['to', 'scored', 'safe at'] else 'out',
                 at=at
             )
-
-            is_bad_name = sum(
-                1 if chunk in Positions else 0 for chunk in player.split(' ')
-            )
-
-            if is_bad_name > 0:
-                print(f'possible bad name - "{player}" - {is_bad_name} bad chunk(s) found.')
-                move['qaulity'] = 'bad'
 
             moves.append(move)
 

@@ -3,6 +3,8 @@ from typing import Dict, Any, List, Tuple, Callable
 from .utils import split_text, create_player_observation, search
 
 
+# pylint: disable=R0801
+
 def handle_homerun(groups: List[str]) -> Dict[str, Any]:
     distance = search([r'\((\d+)'], groups[2])
 

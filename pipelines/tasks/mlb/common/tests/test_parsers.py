@@ -1,10 +1,10 @@
-from typing import Dict, Any
+from typing import Dict, Any, List
 import json
 import pytest
 from ..helpers.parsers import EventDescriptionParser
 
 
-test_data = []
+test_data: List[Dict[str, Any]] = []
 
 if len(test_data) == 0:
     with open('./tasks/mlb/common/tests/docs/desc_to_entities.json', 'r', encoding='UTF8') as file_input:

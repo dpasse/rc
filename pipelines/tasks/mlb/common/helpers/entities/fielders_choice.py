@@ -1,6 +1,9 @@
 from typing import Dict, Any, List, Tuple, Callable
 from .utils import split_text, handle_extras, create_player_observation
 
+
+# pylint: disable=R0801
+
 def handle_fielders_choice(groups: List[str]) -> Dict[str, Any]:
     extras = split_text(groups[2])
     return create_player_observation(
