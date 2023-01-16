@@ -14,6 +14,10 @@ Positions = set([
     'pitcher',
 ])
 
+StrikeOutEfforts = set([
+    'swinging', 'looking', 'called out'
+])
+
 EventTypes = set([
     'inside-the-park-home run',
     "runner's fielder's choice",
@@ -128,6 +132,12 @@ def is_player(player: str) -> bool:
 
     return True
 
+def is_position(position: str) -> bool:
+    return position in Positions
+
+def is_strike_out_effort(effort: str) -> bool:
+    return effort in StrikeOutEfforts
+
 def search(expressions: List[str], text: str) -> Optional[re.Match[str]]:
     for expression in expressions:
         match = re.search(expression, text)
@@ -159,12 +169,28 @@ def split_text(text: str, delimiter: str = r',|\band\b') -> List[str]:
 def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
     moves: List[Dict[str, Any]] = []
     for item in groups:
+        text = item[:]
+        additional_information = search(
+            [
+                r"( on ((?:throwing|fielding| )*error|runner's fielder's choice|fielder's indifference).*$)",
+                r"( on a (balk).*$)",
+                r"( in (rundown).*$)",
+                r"( (hit by batted ball))",
+            ],
+            text,
+        )
+
+        how = None
+        if additional_information:
+            text = text.replace(additional_information.group(1), '')
+            how = additional_information.group(2)
+
         match = search([
-                r'^ *(.+?) (hit by batted ball out at) (.+)',
-                r'^ *(.+?) (thrown out at|out(?: |stretching)+at|doubled off|caught stealing|safe at|to) (.+)',
+                r'^ *(.+?) (out|out stretching|thrown out|safe) at (.+)',
+                r'^ *(.+?) (doubled off|caught stealing|to) (.+)',
                 r'^ *(.+?) (thrown out|scored)',
             ],
-            item,
+            text,
         )
 
         if match:
@@ -181,9 +207,12 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
 
             move = create_player_observation(
                 player=player,
-                event_type='advanced' if move_type in ['to', 'scored', 'safe at'] else 'out',
+                event_type='advanced' if move_type in ['to', 'scored', 'safe'] else 'out',
                 at=at
             )
+
+            if how:
+                move['how'] = how
 
             moves.append(move)
 
@@ -194,18 +223,12 @@ def split_extras(extras: List[str]) -> Tuple[List[str], List[Dict[str, Any]]]:
     moves: List[str] = []
 
     for extra in extras:
-        extra = replace(
-            [
-                (r" on ((?:throwing|fielding| )*error|runner's fielder's choice|fielder's indifference|a balk).*$", ''),
-                (r" in rundown.*$", ''),
-            ],
-            extra,
-        )
+        text = extra[:]
 
         extra_split = [
             text.strip()
             for text
-            in map(clean_text, re.split(r' ?to ', extra))
+            in map(clean_text, re.split(r' ?to ', text))
         ]
 
         if len(extra_split) > 1:
