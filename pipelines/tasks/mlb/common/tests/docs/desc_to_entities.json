@@ -10709,13 +10709,15 @@
   [
     "Kepler walked, Correa to third on wild pitch by Garc\u00eda.",
     {
-      "type": "wild pitch",
-      "player": "Garc\u00eda",
+      "player": "Kepler",
+      "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Correa",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -32236,13 +32238,15 @@
   [
     "Kirk walked, Hern\u00e1ndez to third on wild pitch by Cano.",
     {
-      "type": "wild pitch",
-      "player": "Cano",
+      "player": "Kirk",
+      "type": "walked",
+      "at": "first",
       "moves": [
         {
           "player": "Hern\u00e1ndez",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -34791,7 +34795,14 @@
     {
       "player": "Franco",
       "type": "stole",
-      "at": "second"
+      "at": "second",
+      "moves": [
+        {
+          "player": "Lowe",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
     }
   ],
   [
@@ -36437,6 +36448,13 @@
       "player": "Melendez",
       "type": "struck out",
       "outs": 1,
+      "moves": [
+        {
+          "player": "Blanco",
+          "type": "advanced",
+          "at": "second"
+        }
+      ],
       "effort": "swinging"
     }
   ],
@@ -38137,7 +38155,14 @@
     {
       "player": "Taylor",
       "type": "stole",
-      "at": "second"
+      "at": "second",
+      "moves": [
+        {
+          "player": "Bellinger",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
     }
   ],
   [

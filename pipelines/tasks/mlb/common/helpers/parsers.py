@@ -27,8 +27,8 @@ default_description_expressions = strike_outs_exports + \
               balk_exports + \
               pick_off_exports + \
               homerun_exports + \
-              wild_pitch_exports + \
               walk_exports + \
+              wild_pitch_exports + \
               in_play_exports + \
               interference_exports + \
               multiple_outs_export + \
@@ -128,11 +128,11 @@ class EventDescriptionParser(ParsingEngine):
         return observation
 
     def post_parse(self, observation: Dict[str, Any]) -> Dict[str, Any]:
-        for key in ['type', 'at', 'by']:
+        for key in ['type', 'at', 'by', 'how', 'effort']:
             if key in observation:
                 observation[key] = clean_text(observation[key])
 
-                if key in ['type', 'at']:
+                if key in ['type', 'at', 'how', 'effort']:
                     observation[key] = observation[key].lower()
 
         if 'moves' in observation:

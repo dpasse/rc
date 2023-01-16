@@ -172,7 +172,7 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
         text = item[:]
         additional_information = search(
             [
-                r"( on ((?:throwing|fielding| )*error|runner's fielder's choice|fielder's indifference).*$)",
+                r"( on ((?:throwing|fielding| )*error|runner's fielder's choice|fielder's indifference|wild pitch).*$)",
                 r"( on a (balk).*$)",
                 r"( in (rundown).*$)",
                 r"( (hit by batted ball))",
@@ -187,7 +187,7 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
 
         match = search([
                 r'^ *(.+?) (out|out stretching|thrown out|safe) at (.+)',
-                r'^ *(.+?) (doubled off|caught stealing|to) (.+)',
+                r'^ *(.+?) (doubled off|caught stealing|to|stole) (.+)',
                 r'^ *(.+?) (thrown out|scored)',
             ],
             text,
@@ -207,7 +207,7 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
 
             move = create_player_observation(
                 player=player,
-                event_type='advanced' if move_type in ['to', 'scored', 'safe'] else 'out',
+                event_type='advanced' if move_type in ['to', 'scored', 'safe', 'stole'] else 'out',
                 at=at
             )
 
