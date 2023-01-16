@@ -34,6 +34,16 @@ def handle_pitcher_sub(groups: List[str]) -> Dict[str, Any]:
 
     return observation
 
+def handle_pitcher_sub_with_team(groups: List[str]) -> Dict[str, Any]:
+    observation = create_player_observation(
+        player=groups[0],
+        event_type='sub-p'
+    )
+
+    observation['team'] = groups[1]
+
+    return observation
+
 def handle_default_sub(groups: List[str]) -> Dict[str, Any]:
     is_pitch = clean_text(groups[1]).startswith('pitch')
     return create_player_observation(
@@ -44,7 +54,7 @@ def handle_default_sub(groups: List[str]) -> Dict[str, Any]:
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
     (r'^(.+?) (?:a[st]|in) (.+)', handle_position_sub),
     (r'^(.+?) (?:hit|ran) for (.+)', handle_player_sub),
-    (r'^(.+?) (pitching) for', handle_default_sub),
+    (r'^(.+?) pitching for (.+)', handle_pitcher_sub_with_team),
     (r'^(.+?) (catching)', handle_default_sub),
     (r'^(.+?) (?:pitches) to (.+)', handle_pitcher_sub),
 ]

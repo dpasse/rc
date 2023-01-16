@@ -3,7 +3,8 @@
     "C. Paddack pitching for MIN",
     {
       "player": "C. Paddack",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -34,7 +35,8 @@
           "player": "Betts",
           "type": "advanced",
           "at": "third",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Urshela"
         }
       ]
     }
@@ -90,7 +92,8 @@
           "player": "Taylor",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Paddack"
         },
         {
           "player": "J. Turner",
@@ -127,7 +130,8 @@
     "C. Kershaw pitching for LAD",
     {
       "player": "C. Kershaw",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "LAD"
     }
   ],
   [
@@ -344,7 +348,8 @@
     "D. Rodriguez pitching for MIN",
     {
       "player": "D. Rodriguez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -615,7 +620,8 @@
     "A. Vesia pitching for LAD",
     {
       "player": "A. Vesia",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "LAD"
     }
   ],
   [
@@ -672,7 +678,8 @@
     "G. Jax pitching for MIN",
     {
       "player": "G. Jax",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -706,7 +713,8 @@
     "J. Bruihl pitching for LAD",
     {
       "player": "J. Bruihl",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "LAD"
     }
   ],
   [
@@ -748,7 +756,8 @@
     "D. Jefferies pitching for OAK",
     {
       "player": "D. Jefferies",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -858,7 +867,8 @@
     "S. Gray pitching for MIN",
     {
       "player": "S. Gray",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -950,7 +960,8 @@
           "player": "Barrera",
           "type": "advanced",
           "at": "second",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Kepler"
         }
       ]
     }
@@ -965,7 +976,8 @@
           "player": "Barrera",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Gray"
         }
       ]
     }
@@ -1060,7 +1072,8 @@
           "player": "S\u00e1nchez",
           "type": "advanced",
           "at": "third",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Barrera"
         }
       ],
       "runs": 1
@@ -1230,7 +1243,8 @@
     "J. Grimm pitching for OAK",
     {
       "player": "J. Grimm",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -1358,7 +1372,8 @@
     "K. Snead pitching for OAK",
     {
       "player": "K. Snead",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -1479,7 +1494,8 @@
     "L. Trivino pitching for OAK",
     {
       "player": "L. Trivino",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -1512,7 +1528,8 @@
     "A. Kolarek pitching for OAK",
     {
       "player": "A. Kolarek",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -1578,7 +1595,8 @@
     "Y. Cano pitching for MIN",
     {
       "player": "Y. Cano",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -1691,7 +1709,8 @@
     "C. Stashak pitching for MIN",
     {
       "player": "C. Stashak",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -1765,7 +1784,8 @@
     "C. Pinder pitching for OAK",
     {
       "player": "C. Pinder",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -1912,7 +1932,8 @@
     "J. Duran pitching for MIN",
     {
       "player": "J. Duran",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -1969,7 +1990,8 @@
     "C. Gonzalez pitching for MIN",
     {
       "player": "C. Gonzalez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -1992,7 +2014,8 @@
           "player": "Margot",
           "type": "advanced",
           "at": "second",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Celestino"
         }
       ]
     }
@@ -2103,7 +2126,8 @@
     "S. Baz pitching for TB",
     {
       "player": "S. Baz",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -2251,7 +2275,8 @@
           "player": "Celestino",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Baz"
         }
       ]
     }
@@ -2337,7 +2362,8 @@
     "J. Beeks pitching for TB",
     {
       "player": "J. Beeks",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -2395,7 +2421,8 @@
     "B. Raley pitching for TB",
     {
       "player": "B. Raley",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -2442,7 +2469,8 @@
     "T. Megill pitching for MIN",
     {
       "player": "T. Megill",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -2503,7 +2531,8 @@
     "M. Wisler pitching for TB",
     {
       "player": "M. Wisler",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -2528,7 +2557,8 @@
     "C. Thielbar pitching for MIN",
     {
       "player": "C. Thielbar",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -2584,7 +2614,8 @@
     "R. Thompson pitching for TB",
     {
       "player": "R. Thompson",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -2676,7 +2707,8 @@
     "J. Cotton pitching for MIN",
     {
       "player": "J. Cotton",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -2711,7 +2743,8 @@
           "player": "Margot",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Gordon"
         }
       ],
       "runs": 1
@@ -2739,7 +2772,8 @@
     "S. Armstrong pitching for TB",
     {
       "player": "S. Armstrong",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -2891,7 +2925,8 @@
     "E. Pagan pitching for MIN",
     {
       "player": "E. Pagan",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -2916,7 +2951,8 @@
     "J. Ryan pitching for MIN",
     {
       "player": "J. Ryan",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -2975,7 +3011,8 @@
     "R. Ray pitching for SEA",
     {
       "player": "R. Ray",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -3255,13 +3292,15 @@
           "player": "Winker",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Duran"
         },
         {
           "player": "France",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Duran"
         }
       ]
     }
@@ -3392,7 +3431,8 @@
     "J. Alcala pitching for MIN",
     {
       "player": "J. Alcala",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -3460,7 +3500,8 @@
     "D. Coulombe pitching for MIN",
     {
       "player": "D. Coulombe",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -3494,7 +3535,8 @@
     "P. Sewald pitching for SEA",
     {
       "player": "P. Sewald",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -3554,7 +3596,8 @@
     "D. Steckenrider pitching for SEA",
     {
       "player": "D. Steckenrider",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -3578,7 +3621,8 @@
     "T. Houck pitching for BOS",
     {
       "player": "T. Houck",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -3702,7 +3746,8 @@
     "J. Winder pitching for MIN",
     {
       "player": "J. Winder",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -3983,7 +4028,8 @@
     "M. Strahm pitching for BOS",
     {
       "player": "M. Strahm",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -4043,7 +4089,8 @@
     "G. Whitlock pitching for BOS",
     {
       "player": "G. Whitlock",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -4109,7 +4156,8 @@
     "J. Romero pitching for MIN",
     {
       "player": "J. Romero",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -4188,7 +4236,8 @@
     "C. Quantrill pitching for CLE",
     {
       "player": "C. Quantrill",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -4213,7 +4262,8 @@
     "D. Bundy pitching for MIN",
     {
       "player": "D. Bundy",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -4295,7 +4345,8 @@
           "player": "Reyes",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Arraez"
         }
       ],
       "outs": 1,
@@ -4714,7 +4765,8 @@
     "E. Clase pitching for CLE",
     {
       "player": "E. Clase",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -4752,7 +4804,8 @@
           "player": "Gordon",
           "type": "advanced",
           "at": "second",
-          "how": "passed ball"
+          "how": "passed ball",
+          "by": "Maile"
         }
       ]
     }
@@ -4892,7 +4945,8 @@
     "E. Morgan pitching for CLE",
     {
       "player": "E. Morgan",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -5003,7 +5057,8 @@
           "player": "Palacios",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Pag\u00e1n"
         }
       ]
     }
@@ -5061,7 +5116,8 @@
           "player": "Rosario",
           "type": "advanced",
           "at": "third",
-          "how": "passed ball"
+          "how": "passed ball",
+          "by": "Jeffers"
         }
       ],
       "runs": 1
@@ -5088,7 +5144,8 @@
     "C. Archer pitching for MIN",
     {
       "player": "C. Archer",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -5140,7 +5197,8 @@
     "L. Giolito pitching for CHW",
     {
       "player": "L. Giolito",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -5222,7 +5280,8 @@
           "player": "Haseley",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "San\u00f3"
         }
       ]
     }
@@ -5462,7 +5521,8 @@
     "T. Banks pitching for CHW",
     {
       "player": "T. Banks",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -5483,7 +5543,8 @@
           "player": "Sheets",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Winder"
         }
       ]
     }
@@ -5535,7 +5596,8 @@
     "R. Lopez pitching for CHW",
     {
       "player": "R. Lopez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -5605,7 +5667,8 @@
     "A. Bummer pitching for CHW",
     {
       "player": "A. Bummer",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -5683,7 +5746,8 @@
     "K. Graveman pitching for CHW",
     {
       "player": "K. Graveman",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -5785,7 +5849,8 @@
     "L. Hendriks pitching for CHW",
     {
       "player": "L. Hendriks",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -5824,7 +5889,8 @@
     "J. Smith pitching for MIN",
     {
       "player": "J. Smith",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -5885,13 +5951,15 @@
           "player": "Godoy",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Hendriks"
         },
         {
           "player": "Gordon",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Hendriks"
         }
       ]
     }
@@ -5922,7 +5990,8 @@
     "L. Weaver pitching for ARI",
     {
       "player": "L. Weaver",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "ARI"
     }
   ],
   [
@@ -6224,7 +6293,8 @@
     "C. Smith pitching for ARI",
     {
       "player": "C. Smith",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "ARI"
     }
   ],
   [
@@ -6568,7 +6638,8 @@
     "J. Hager pitching for ARI",
     {
       "player": "J. Hager",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "ARI"
     }
   ],
   [
@@ -6646,7 +6717,8 @@
     "N. Cortes pitching for NYY",
     {
       "player": "N. Cortes",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "NYY"
     }
   ],
   [
@@ -6776,7 +6848,8 @@
           "player": "Judge",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Gordon"
         }
       ]
     }
@@ -6999,7 +7072,8 @@
     "C. Schmidt pitching for NYY",
     {
       "player": "C. Schmidt",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "NYY"
     }
   ],
   [
@@ -7162,7 +7236,8 @@
     "M. Banuelos pitching for NYY",
     {
       "player": "M. Banuelos",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "NYY"
     }
   ],
   [
@@ -7368,7 +7443,8 @@
     "C. Flexen pitching for SEA",
     {
       "player": "C. Flexen",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -7477,7 +7553,8 @@
           "player": "Arraez",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Flexen"
         }
       ]
     }
@@ -7555,7 +7632,8 @@
           "player": "Moore",
           "type": "advanced",
           "at": "first",
-          "how": "error"
+          "how": "error",
+          "by": "S\u00e1nchez"
         }
       ]
     }
@@ -7746,14 +7824,16 @@
     "P. Murfee pitching for SEA",
     {
       "player": "P. Murfee",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
     "S. Romo pitching for SEA",
     {
       "player": "S. Romo",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -7769,7 +7849,8 @@
     "R. Borucki pitching for SEA",
     {
       "player": "R. Borucki",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -7841,7 +7922,8 @@
     "A. Munoz pitching for SEA",
     {
       "player": "A. Munoz",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -7872,7 +7954,8 @@
     "M. Festa pitching for SEA",
     {
       "player": "M. Festa",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -7957,7 +8040,8 @@
     "J. Urquidy pitching for HOU",
     {
       "player": "J. Urquidy",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "HOU"
     }
   ],
   [
@@ -8035,7 +8119,8 @@
           "player": "Gurriel",
           "type": "advanced",
           "at": "second",
-          "how": "passed ball"
+          "how": "passed ball",
+          "by": "S\u00e1nchez"
         }
       ]
     }
@@ -8267,7 +8352,8 @@
     "B. Abreu pitching for HOU",
     {
       "player": "B. Abreu",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "HOU"
     }
   ],
   [
@@ -8405,7 +8491,8 @@
           "player": "Maldonado",
           "type": "advanced",
           "at": "second",
-          "how": "passed ball"
+          "how": "passed ball",
+          "by": "S\u00e1nchez"
         }
       ]
     }
@@ -8521,7 +8608,8 @@
     "P. Maton pitching for HOU",
     {
       "player": "P. Maton",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "HOU"
     }
   ],
   [
@@ -8617,7 +8705,8 @@
           "player": "Contreras",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Pe\u00f1a"
         }
       ]
     }
@@ -8742,7 +8831,8 @@
     "R. Stanek pitching for HOU",
     {
       "player": "R. Stanek",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "HOU"
     }
   ],
   [
@@ -8824,7 +8914,8 @@
     "N. Gordon pitching for MIN",
     {
       "player": "N. Gordon",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -8873,7 +8964,8 @@
     "H. Neris pitching for HOU",
     {
       "player": "H. Neris",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "HOU"
     }
   ],
   [
@@ -8898,7 +8990,8 @@
     "D. Smeltzer pitching for MIN",
     {
       "player": "D. Smeltzer",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -8941,7 +9034,8 @@
     "D. Rasmussen pitching for TB",
     {
       "player": "D. Rasmussen",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -9204,7 +9298,8 @@
           "player": "Kepler",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Ram\u00edrez"
         }
       ],
       "runs": 1
@@ -9251,7 +9346,8 @@
     "R. Garza Jr. pitching for TB",
     {
       "player": "R. Garza Jr.",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -9481,7 +9577,8 @@
     "C. Faucher pitching for TB",
     {
       "player": "C. Faucher",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -9539,7 +9636,8 @@
     "T. Wells pitching for BAL",
     {
       "player": "T. Wells",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -9824,7 +9922,8 @@
     "B. Baker pitching for BAL",
     {
       "player": "B. Baker",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -9871,7 +9970,8 @@
     "C. Perez pitching for BAL",
     {
       "player": "C. Perez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -9893,7 +9993,8 @@
           "player": "Correa",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "P\u00e9rez"
         }
       ]
     }
@@ -9953,7 +10054,8 @@
     "F. Bautista pitching for BAL",
     {
       "player": "F. Bautista",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -10066,7 +10168,8 @@
     "P. Fry pitching for BAL",
     {
       "player": "P. Fry",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -10100,7 +10203,8 @@
     "Y. Kikuchi pitching for TOR",
     {
       "player": "Y. Kikuchi",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TOR"
     }
   ],
   [
@@ -10355,7 +10459,8 @@
     "J. Moran pitching for MIN",
     {
       "player": "J. Moran",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -10406,7 +10511,8 @@
     "T. Richards pitching for TOR",
     {
       "player": "T. Richards",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TOR"
     }
   ],
   [
@@ -10546,7 +10652,8 @@
     "J. Merryweather pitching for TOR",
     {
       "player": "J. Merryweather",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TOR"
     }
   ],
   [
@@ -10571,7 +10678,8 @@
     "T. Duffey pitching for MIN",
     {
       "player": "T. Duffey",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -10604,7 +10712,8 @@
     "A. Vasquez pitching for TOR",
     {
       "player": "A. Vasquez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TOR"
     }
   ],
   [
@@ -10666,7 +10775,8 @@
     "J. Beasley pitching for TOR",
     {
       "player": "J. Beasley",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TOR"
     }
   ],
   [
@@ -10769,7 +10879,8 @@
     "R. Garcia pitching for DET",
     {
       "player": "R. Garcia",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -10791,7 +10902,8 @@
           "player": "Correa",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Garc\u00eda"
         }
       ]
     }
@@ -11019,7 +11131,8 @@
     "W. Peralta pitching for DET",
     {
       "player": "W. Peralta",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -11077,7 +11190,8 @@
           "player": "B\u00e1ez",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Urshela"
         }
       ]
     }
@@ -11179,7 +11293,8 @@
     "J. Jimenez pitching for DET",
     {
       "player": "J. Jimenez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -11219,7 +11334,8 @@
           "player": "B\u00e1ez",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Pag\u00e1n"
         }
       ]
     }
@@ -11228,7 +11344,8 @@
     "G. Soto pitching for DET",
     {
       "player": "G. Soto",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -11337,7 +11454,8 @@
     "A. Lange pitching for DET",
     {
       "player": "A. Lange",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -11417,7 +11535,8 @@
     "M. Fulmer pitching for DET",
     {
       "player": "M. Fulmer",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -11429,7 +11548,8 @@
           "player": "Buxton",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "W. Castro"
         }
       ]
     }
@@ -11458,7 +11578,8 @@
     "A. Chafin pitching for DET",
     {
       "player": "A. Chafin",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -11500,7 +11621,8 @@
     "Z. Plesac pitching for CLE",
     {
       "player": "Z. Plesac",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -11777,7 +11899,8 @@
     "T. Stephan pitching for CLE",
     {
       "player": "T. Stephan",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -11815,7 +11938,8 @@
           "player": "Rosario",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Duran"
         }
       ]
     }
@@ -11842,7 +11966,8 @@
     "E. De Los Santos pitching for CLE",
     {
       "player": "E. De Los Santos",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -11935,7 +12060,8 @@
     "J. Verlander pitching for HOU",
     {
       "player": "J. Verlander",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "HOU"
     }
   ],
   [
@@ -12252,7 +12378,8 @@
           "player": "Pe\u00f1a",
           "type": "advanced",
           "at": "second",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Lewis"
         }
       ]
     }
@@ -12490,7 +12617,8 @@
     "B. Taylor pitching for HOU",
     {
       "player": "B. Taylor",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "HOU"
     }
   ],
   [
@@ -12529,7 +12657,8 @@
     "K. Pilkington pitching for CLE",
     {
       "player": "K. Pilkington",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -12897,7 +13026,8 @@
     "A. Gose pitching for CLE",
     {
       "player": "A. Gose",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -12996,7 +13126,8 @@
     "A. Castro pitching for CLE",
     {
       "player": "A. Castro",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -13106,7 +13237,8 @@
     "A. Senzatela pitching for COL",
     {
       "player": "A. Senzatela",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "COL"
     }
   ],
   [
@@ -13442,7 +13574,8 @@
     "J. Chacin pitching for COL",
     {
       "player": "J. Chacin",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "COL"
     }
   ],
   [
@@ -13476,7 +13609,8 @@
     "C. Estevez pitching for COL",
     {
       "player": "C. Estevez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "COL"
     }
   ],
   [
@@ -13537,7 +13671,8 @@
     "T. Thornburg pitching for MIN",
     {
       "player": "T. Thornburg",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -13594,7 +13729,8 @@
     "J. Bird pitching for COL",
     {
       "player": "J. Bird",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "COL"
     }
   ],
   [
@@ -13653,7 +13789,8 @@
     "A. Faedo pitching for DET",
     {
       "player": "A. Faedo",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -13911,7 +14048,8 @@
     "J. Foley pitching for DET",
     {
       "player": "J. Foley",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -13925,7 +14063,8 @@
           "player": "Gordon",
           "type": "advanced",
           "at": "third",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Haase"
         }
       ]
     }
@@ -14064,7 +14203,8 @@
     "B. Brieske pitching for DET",
     {
       "player": "B. Brieske",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -14143,7 +14283,8 @@
           "player": "Larnach",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Brieske"
         }
       ]
     }
@@ -14555,7 +14696,8 @@
           "player": "Candelario",
           "type": "advanced",
           "at": "home",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Miranda"
         },
         {
           "player": "Torkelson",
@@ -14592,7 +14734,8 @@
           "player": "W. Castro",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Megill"
         }
       ]
     }
@@ -14634,7 +14777,8 @@
           "player": "S\u00e1nchez",
           "type": "advanced",
           "at": "home",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "W. Castro"
         }
       ],
       "runs": 1
@@ -14650,7 +14794,8 @@
           "player": "Hill",
           "type": "advanced",
           "at": "second",
-          "how": "passed ball"
+          "how": "passed ball",
+          "by": "S\u00e1nchez"
         }
       ]
     }
@@ -14666,7 +14811,8 @@
           "player": "Hill",
           "type": "advanced",
           "at": "home",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Urshela"
         }
       ],
       "runs": 1
@@ -14739,7 +14885,8 @@
           "player": "Murphy",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Paddack"
         }
       ]
     }
@@ -15123,7 +15270,8 @@
           "player": "Gordon",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Bethancourt"
         }
       ]
     }
@@ -15203,7 +15351,8 @@
     "D. Acevedo pitching for OAK",
     {
       "player": "D. Acevedo",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -15248,7 +15397,8 @@
     "D. Jimenez pitching for OAK",
     {
       "player": "D. Jimenez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -15316,14 +15466,16 @@
     "M. Wacha pitching for BOS",
     {
       "player": "M. Wacha",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
     "B. Ober pitching for MIN",
     {
       "player": "B. Ober",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -15536,7 +15688,8 @@
           "player": "Devers",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "San\u00f3"
         }
       ]
     }
@@ -15625,7 +15778,8 @@
     "R. Brasier pitching for BOS",
     {
       "player": "R. Brasier",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -15728,7 +15882,8 @@
     "J. Diekman pitching for BOS",
     {
       "player": "J. Diekman",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -15900,7 +16055,8 @@
     "A. Davis pitching for BOS",
     {
       "player": "A. Davis",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -15960,7 +16116,8 @@
     "M. Kopech pitching for CHW",
     {
       "player": "M. Kopech",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -16194,7 +16351,8 @@
           "player": "Abreu",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Jax"
         }
       ]
     }
@@ -16219,7 +16377,8 @@
     "J. Ruiz pitching for CHW",
     {
       "player": "J. Ruiz",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -16283,7 +16442,8 @@
           "player": "Jeffers",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Graveman"
         }
       ]
     }
@@ -16299,7 +16459,8 @@
           "player": "Arraez",
           "type": "advanced",
           "at": "home",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Abreu"
         },
         {
           "player": "Jeffers",
@@ -16393,7 +16554,8 @@
     "B. Zimmermann pitching for BAL",
     {
       "player": "B. Zimmermann",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -16415,7 +16577,8 @@
           "player": "Mancini",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Urshela"
         }
       ]
     }
@@ -16613,7 +16776,8 @@
           "player": "Nevin",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Correa"
         }
       ],
       "runs": 1
@@ -16792,7 +16956,8 @@
     "J. Krehbiel pitching for BAL",
     {
       "player": "J. Krehbiel",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -16856,7 +17021,8 @@
     "K. Akin pitching for BAL",
     {
       "player": "K. Akin",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -16991,7 +17157,8 @@
     "K. Gausman pitching for TOR",
     {
       "player": "K. Gausman",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TOR"
     }
   ],
   [
@@ -17028,7 +17195,8 @@
           "player": "Polanco",
           "type": "advanced",
           "at": "second",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Hern\u00e1ndez"
         }
       ],
       "runs": 1
@@ -17299,7 +17467,8 @@
     "D. Phelps pitching for TOR",
     {
       "player": "D. Phelps",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TOR"
     }
   ],
   [
@@ -17442,7 +17611,8 @@
     "A. Cimber pitching for TOR",
     {
       "player": "A. Cimber",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TOR"
     }
   ],
   [
@@ -17651,7 +17821,8 @@
           "player": "Jansen",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Polanco"
         },
         {
           "player": "Zimmer",
@@ -17717,7 +17888,8 @@
     "G. Marquez pitching for COL",
     {
       "player": "G. Marquez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "COL"
     }
   ],
   [
@@ -18108,7 +18280,8 @@
           "player": "Garlick",
           "type": "advanced",
           "at": "third",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "McMahon"
         }
       ]
     }
@@ -18117,7 +18290,8 @@
     "D. Bard pitching for COL",
     {
       "player": "D. Bard",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "COL"
     }
   ],
   [
@@ -18166,7 +18340,8 @@
     "C. Sands pitching for MIN",
     {
       "player": "C. Sands",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -18182,7 +18357,8 @@
     "J. Springs pitching for TB",
     {
       "player": "J. Springs",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -18267,7 +18443,8 @@
           "player": "Phillips",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Sands"
         }
       ]
     }
@@ -18349,7 +18526,8 @@
           "player": "Arozarena",
           "type": "advanced",
           "at": "third",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Sands"
         }
       ]
     }
@@ -18373,6 +18551,11 @@
           "player": "Arozarena",
           "type": "advanced",
           "at": "home"
+        },
+        {
+          "player": "Kiermaier",
+          "type": "advanced",
+          "at": "third"
         }
       ],
       "runs": 1
@@ -18618,7 +18801,8 @@
           "player": "Walls",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Duffey"
         }
       ]
     }
@@ -18641,7 +18825,8 @@
           "player": "Gordon",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Kiermaier"
         },
         {
           "player": "Correa",
@@ -18708,7 +18893,8 @@
     "C. Poche pitching for TB",
     {
       "player": "C. Poche",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -18721,7 +18907,8 @@
           "player": "Celestino",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Poch\u00e9"
         }
       ]
     }
@@ -18730,7 +18917,8 @@
     "Z. Logue pitching for OAK",
     {
       "player": "Z. Logue",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -19066,7 +19254,8 @@
     "A.J. Puk pitching for OAK",
     {
       "player": "A.J. Puk",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -19405,7 +19594,8 @@
           "player": "Pache",
           "type": "advanced",
           "at": "third",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Polanco"
         }
       ]
     }
@@ -19621,7 +19811,8 @@
     "Z. Greinke pitching for KC",
     {
       "player": "Z. Greinke",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -19914,7 +20105,8 @@
     "G. Speier pitching for KC",
     {
       "player": "G. Speier",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -19976,7 +20168,8 @@
     "T. Clarke pitching for KC",
     {
       "player": "T. Clarke",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -20070,7 +20263,8 @@
     "D. Coleman pitching for KC",
     {
       "player": "D. Coleman",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -20119,7 +20313,8 @@
     "T. McKenzie pitching for CLE",
     {
       "player": "T. McKenzie",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -20281,7 +20476,8 @@
           "player": "Arraez",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "McKenzie"
         }
       ]
     }
@@ -20321,7 +20517,8 @@
           "player": "Urshela",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "McKenzie"
         }
       ]
     }
@@ -20384,7 +20581,8 @@
           "player": "Rosario",
           "type": "advanced",
           "at": "second",
-          "how": "passed ball"
+          "how": "passed ball",
+          "by": "Jeffers"
         }
       ]
     }
@@ -20513,7 +20711,8 @@
     "B. Shaw pitching for CLE",
     {
       "player": "B. Shaw",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -20537,7 +20736,8 @@
     "I. Gibaut pitching for CLE",
     {
       "player": "I. Gibaut",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -20551,7 +20751,8 @@
           "player": "Kirilloff",
           "type": "advanced",
           "at": "second",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Kwan"
         }
       ]
     }
@@ -20674,7 +20875,8 @@
     "E. Clement pitching for CLE",
     {
       "player": "E. Clement",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -20771,13 +20973,15 @@
           "player": "Miranda",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Clement"
         },
         {
           "player": "Contreras",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Clement"
         }
       ]
     }
@@ -20882,7 +21086,8 @@
           "player": "Kwan",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Cotton"
         }
       ],
       "runs": 1
@@ -21162,7 +21367,8 @@
           "player": "Straw",
           "type": "advanced",
           "at": "third",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Gordon"
         }
       ]
     }
@@ -21446,7 +21652,8 @@
     "S. Hentges pitching for CLE",
     {
       "player": "S. Hentges",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -21659,7 +21866,8 @@
     "R. Feltner pitching for COL",
     {
       "player": "R. Feltner",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "COL"
     }
   ],
   [
@@ -21969,7 +22177,8 @@
     "A. Gomber pitching for COL",
     {
       "player": "A. Gomber",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "COL"
     }
   ],
   [
@@ -22131,7 +22340,8 @@
     "R. Stephenson pitching for COL",
     {
       "player": "R. Stephenson",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "COL"
     }
   ],
   [
@@ -22239,7 +22449,8 @@
     "E. Rodriguez pitching for DET",
     {
       "player": "E. Rodriguez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -22646,7 +22857,8 @@
           "player": "Arraez",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Lange"
         }
       ]
     }
@@ -22724,7 +22936,8 @@
     "D. Lynch pitching for KC",
     {
       "player": "D. Lynch",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -23057,7 +23270,8 @@
     "C. Snider pitching for KC",
     {
       "player": "C. Snider",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -23126,7 +23340,8 @@
     "J. Brentz pitching for KC",
     {
       "player": "J. Brentz",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -23159,7 +23374,8 @@
     "J. Staumont pitching for KC",
     {
       "player": "J. Staumont",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -23202,7 +23418,8 @@
     "S. Barlow pitching for KC",
     {
       "player": "S. Barlow",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -23237,7 +23454,8 @@
     "B. Keller pitching for KC",
     {
       "player": "B. Keller",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -23535,7 +23753,8 @@
           "player": "S\u00e1nchez",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Keller"
         }
       ]
     }
@@ -23732,7 +23951,8 @@
     "F. Griffin pitching for KC",
     {
       "player": "F. Griffin",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -23865,7 +24085,8 @@
     "T. Skubal pitching for DET",
     {
       "player": "T. Skubal",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -24224,7 +24445,8 @@
     "W. Vest pitching for DET",
     {
       "player": "W. Vest",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -24236,7 +24458,8 @@
           "player": "Garlick",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Candelario"
         }
       ]
     }
@@ -24331,7 +24554,8 @@
     "J. Taillon pitching for NYY",
     {
       "player": "J. Taillon",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "NYY"
     }
   ],
   [
@@ -24540,7 +24764,8 @@
     "J. Minaya pitching for MIN",
     {
       "player": "J. Minaya",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -24572,7 +24797,8 @@
           "player": "Urshela",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Donaldson"
         }
       ]
     }
@@ -24666,13 +24892,15 @@
           "player": "Trevino",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Minaya"
         },
         {
           "player": "Hicks",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Minaya"
         }
       ]
     }
@@ -24725,7 +24953,8 @@
     "L. Luetge pitching for NYY",
     {
       "player": "L. Luetge",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "NYY"
     }
   ],
   [
@@ -24815,7 +25044,8 @@
     "W. Peralta pitching for NYY",
     {
       "player": "W. Peralta",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "NYY"
     }
   ],
   [
@@ -24846,7 +25076,8 @@
           "player": "LeMahieu",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Duffey"
         }
       ]
     }
@@ -25004,7 +25235,8 @@
     "R. Marinaccio pitching for NYY",
     {
       "player": "R. Marinaccio",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "NYY"
     }
   ],
   [
@@ -25045,7 +25277,8 @@
     "V. Velasquez pitching for CHW",
     {
       "player": "V. Velasquez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -25308,7 +25541,8 @@
     "B. Sousa pitching for CHW",
     {
       "player": "B. Sousa",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -25361,7 +25595,8 @@
     "K. Crick pitching for CHW",
     {
       "player": "K. Crick",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -25491,7 +25726,8 @@
     "A. Severino pitching for CHW",
     {
       "player": "A. Severino",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CHW"
     }
   ],
   [
@@ -25616,7 +25852,8 @@
           "player": "Larnach",
           "type": "advanced",
           "at": "first",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Hendriks"
         }
       ]
     }
@@ -25717,7 +25954,8 @@
     "A. Civale pitching for CLE",
     {
       "player": "A. Civale",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -26524,7 +26762,8 @@
           "player": "Larnach",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Soto"
         }
       ]
     }
@@ -26540,7 +26779,8 @@
           "player": "Larnach",
           "type": "advanced",
           "at": "home",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Haase"
         },
         {
           "player": "Urshela",
@@ -26561,7 +26801,8 @@
     "J. Kaprielian pitching for OAK",
     {
       "player": "J. Kaprielian",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -26838,7 +27079,8 @@
     "S. Moll pitching for OAK",
     {
       "player": "S. Moll",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -26857,7 +27099,8 @@
           "player": "Kepler",
           "type": "advanced",
           "at": "third",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Moll"
         }
       ]
     }
@@ -26875,7 +27118,8 @@
     "Z. Jackson pitching for OAK",
     {
       "player": "Z. Jackson",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "OAK"
     }
   ],
   [
@@ -27140,7 +27384,8 @@
           "player": "Urshela",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "H. Castro"
         }
       ]
     }
@@ -27328,7 +27573,8 @@
           "player": "Celestino",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "H. Castro"
         },
         {
           "player": "Larnach",
@@ -27349,7 +27595,8 @@
           "player": "Polanco",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Barnhart"
         },
         {
           "player": "Celestino",
@@ -27380,7 +27627,8 @@
           "player": "Polanco",
           "type": "advanced",
           "at": "home",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "W. Castro"
         },
         {
           "player": "Celestino",
@@ -27468,7 +27716,8 @@
     "J. Barnes pitching for DET",
     {
       "player": "J. Barnes",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -27658,7 +27907,8 @@
     "L. Garcia pitching for HOU",
     {
       "player": "L. Garcia",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "HOU"
     }
   ],
   [
@@ -27873,7 +28123,8 @@
           "player": "Castro",
           "type": "advanced",
           "at": "home",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Thielbar"
         },
         {
           "player": "Pe\u00f1a",
@@ -27990,7 +28241,8 @@
     "S. Martinez pitching for HOU",
     {
       "player": "S. Martinez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "HOU"
     }
   ],
   [
@@ -28119,7 +28371,8 @@
     "R. Montero pitching for HOU",
     {
       "player": "R. Montero",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "HOU"
     }
   ],
   [
@@ -28153,7 +28406,8 @@
     "S. Watkins pitching for BAL",
     {
       "player": "S. Watkins",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -28448,7 +28702,8 @@
           "player": "Mateo",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Polanco"
         }
       ],
       "runs": 1
@@ -28473,7 +28728,8 @@
           "player": "Mateo",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Minaya"
         }
       ]
     }
@@ -28523,7 +28779,8 @@
     "J. Lopez pitching for BAL",
     {
       "player": "J. Lopez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -28555,7 +28812,8 @@
     "M. Gonzales pitching for SEA",
     {
       "player": "M. Gonzales",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -28629,7 +28887,8 @@
           "player": "Trammell",
           "type": "advanced",
           "at": "third",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Kepler"
         }
       ]
     }
@@ -28901,13 +29160,15 @@
           "player": "S\u00e1nchez",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Murfee"
         },
         {
           "player": "Correa",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Murfee"
         }
       ]
     }
@@ -28943,7 +29204,8 @@
           "player": "Arraez",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Romo"
         }
       ]
     }
@@ -28989,7 +29251,8 @@
     "R. Elias pitching for SEA",
     {
       "player": "R. Elias",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -29145,7 +29408,8 @@
           "player": "Kirilloff",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Frazier"
         },
         {
           "player": "Urshela",
@@ -29366,7 +29630,8 @@
     "E. Swanson pitching for SEA",
     {
       "player": "E. Swanson",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -29408,7 +29673,8 @@
     "Y. Ramirez pitching for SEA",
     {
       "player": "Y. Ramirez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -29471,7 +29737,8 @@
           "player": "Urshela",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Ramirez"
         }
       ]
     }
@@ -29522,7 +29789,8 @@
     "J. Sheffield pitching for SEA",
     {
       "player": "J. Sheffield",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -29553,7 +29821,8 @@
     "R. Hill pitching for BOS",
     {
       "player": "R. Hill",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -29698,7 +29967,8 @@
     "P. Valdez pitching for BOS",
     {
       "player": "P. Valdez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -29831,7 +30101,8 @@
     "K. Crawford pitching for BOS",
     {
       "player": "K. Crawford",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -29970,7 +30241,8 @@
     "H. Sawamura pitching for BOS",
     {
       "player": "H. Sawamura",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -29988,7 +30260,8 @@
           "player": "Polanco",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Sawamura"
         }
       ],
       "runs": 1
@@ -30144,7 +30417,8 @@
     "M. Pineda pitching for DET",
     {
       "player": "M. Pineda",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -30404,7 +30678,8 @@
     "D. Hutchison pitching for DET",
     {
       "player": "D. Hutchison",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -30452,7 +30727,8 @@
     "S. Bieber pitching for CLE",
     {
       "player": "S. Bieber",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -30541,13 +30817,15 @@
           "player": "Le\u00f3n",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Archer"
         },
         {
           "player": "Palacios",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Archer"
         }
       ]
     }
@@ -30742,7 +31020,8 @@
           "player": "Gim\u00e9nez",
           "type": "advanced",
           "at": "second",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Correa"
         }
       ]
     }
@@ -30856,7 +31135,8 @@
           "player": "Reyes",
           "type": "advanced",
           "at": "home",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Correa"
         },
         {
           "player": "Straw",
@@ -31164,7 +31444,8 @@
     "D. Carlton pitching for DET",
     {
       "player": "D. Carlton",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -31185,7 +31466,8 @@
           "player": "Palacios",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "B\u00e1ez"
         }
       ]
     }
@@ -31199,7 +31481,8 @@
           "player": "Arraez",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Schoop"
         },
         {
           "player": "Palacios",
@@ -31224,7 +31507,8 @@
           "player": "Palacios",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Carlton"
         }
       ]
     }
@@ -31577,7 +31861,8 @@
           "player": "Kepler",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Rivera"
         }
       ]
     }
@@ -31641,7 +31926,8 @@
           "player": "Buxton",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Witt Jr"
         }
       ]
     }
@@ -31656,7 +31942,8 @@
           "player": "Buxton",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Lynch"
         }
       ]
     }
@@ -31665,7 +31952,8 @@
     "J. Payamps pitching for KC",
     {
       "player": "J. Payamps",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -31899,7 +32187,8 @@
     "M. Peacock pitching for KC",
     {
       "player": "M. Peacock",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -31975,7 +32264,8 @@
     "J. Berrios pitching for TOR",
     {
       "player": "J. Berrios",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TOR"
     }
   ],
   [
@@ -32149,7 +32439,8 @@
           "player": "Bichette",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Palacios"
         }
       ],
       "runs": 1
@@ -32249,7 +32540,8 @@
     "I. Hamilton pitching for MIN",
     {
       "player": "I. Hamilton",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "MIN"
     }
   ],
   [
@@ -32453,7 +32745,8 @@
           "player": "Hern\u00e1ndez",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Cano"
         }
       ]
     }
@@ -32468,7 +32761,8 @@
           "player": "Kirk",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Cano"
         }
       ]
     }
@@ -32767,7 +33061,8 @@
     "T. Thornton pitching for TOR",
     {
       "player": "T. Thornton",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TOR"
     }
   ],
   [
@@ -32906,7 +33201,8 @@
           "player": "Larnach",
           "type": "advanced",
           "at": "third",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Ur\u00edas"
         }
       ]
     }
@@ -33771,7 +34067,8 @@
           "player": "Straw",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Duran"
         }
       ]
     }
@@ -33859,7 +34156,8 @@
           "player": "Rosario",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Lewis"
         }
       ]
     }
@@ -34120,7 +34418,8 @@
           "player": "Schoop",
           "type": "advanced",
           "at": "second",
-          "how": "passed ball"
+          "how": "passed ball",
+          "by": "Jeffers"
         }
       ]
     }
@@ -34216,7 +34515,8 @@
     "M. Kelly pitching for ARI",
     {
       "player": "M. Kelly",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "ARI"
     }
   ],
   [
@@ -34592,7 +34892,8 @@
     "J. Mantiply pitching for ARI",
     {
       "player": "J. Mantiply",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "ARI"
     }
   ],
   [
@@ -34617,7 +34918,8 @@
     "N. Ramirez pitching for ARI",
     {
       "player": "N. Ramirez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "ARI"
     }
   ],
   [
@@ -34630,7 +34932,8 @@
           "player": "Buxton",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Ramirez"
         }
       ]
     }
@@ -34648,7 +34951,8 @@
     "I. Kennedy pitching for ARI",
     {
       "player": "I. Kennedy",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "ARI"
     }
   ],
   [
@@ -34664,7 +34968,8 @@
     "C. Kluber pitching for TB",
     {
       "player": "C. Kluber",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -34953,7 +35258,8 @@
     "J. Guerra pitching for TB",
     {
       "player": "J. Guerra",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -34975,7 +35281,8 @@
           "player": "Correa",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Guerra"
         }
       ]
     }
@@ -35067,7 +35374,8 @@
     "P. Sanders pitching for TB",
     {
       "player": "P. Sanders",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -35149,7 +35457,8 @@
     "G. Cole pitching for NYY",
     {
       "player": "G. Cole",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "NYY"
     }
   ],
   [
@@ -35426,7 +35735,8 @@
     "M. Castro pitching for NYY",
     {
       "player": "M. Castro",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "NYY"
     }
   ],
   [
@@ -35557,7 +35867,8 @@
           "player": "Torres",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Polanco"
         },
         {
           "player": "Donaldson",
@@ -35705,13 +36016,15 @@
           "player": "Torres",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Moran"
         },
         {
           "player": "Donaldson",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Moran"
         }
       ],
       "runs": 1
@@ -35730,7 +36043,8 @@
     "M. King pitching for NYY",
     {
       "player": "M. King",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "NYY"
     }
   ],
   [
@@ -35746,7 +36060,8 @@
     "C. Holmes pitching for NYY",
     {
       "player": "C. Holmes",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "NYY"
     }
   ],
   [
@@ -35948,7 +36263,8 @@
     "R. Bolanos pitching for KC",
     {
       "player": "R. Bolanos",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -35994,7 +36310,8 @@
           "player": "Larnach",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Bola\u00f1os"
         }
       ]
     }
@@ -36063,7 +36380,8 @@
           "player": "Dozier",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Jax"
         }
       ]
     }
@@ -36272,7 +36590,8 @@
     "B. Singer pitching for KC",
     {
       "player": "B. Singer",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -36385,7 +36704,8 @@
           "player": "Dozier",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Archer"
         }
       ]
     }
@@ -36415,7 +36735,8 @@
           "player": "Lopez",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Polanco"
         },
         {
           "player": "Rivera",
@@ -36833,7 +37154,8 @@
           "player": "Rodr\u00edguez",
           "type": "advanced",
           "at": "third",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "S\u00e1nchez"
         }
       ]
     }
@@ -36892,7 +37214,8 @@
           "player": "Rodr\u00edguez",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Correa"
         }
       ]
     }
@@ -36941,7 +37264,8 @@
     "A. Misiewicz pitching for SEA",
     {
       "player": "A. Misiewicz",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -37046,7 +37370,8 @@
           "player": "Kirilloff",
           "type": "advanced",
           "at": "first",
-          "how": "error"
+          "how": "error",
+          "by": "Raleigh"
         },
         {
           "player": "S\u00e1nchez",
@@ -37162,7 +37487,8 @@
           "player": "Winker",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Kirilloff"
         },
         {
           "player": "Kelenic",
@@ -37202,7 +37528,8 @@
     "L. Gilbert pitching for SEA",
     {
       "player": "L. Gilbert",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
@@ -37240,7 +37567,8 @@
           "player": "Haniger",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Arraez"
         }
       ]
     }
@@ -37603,14 +37931,16 @@
     "D. Castillo pitching for SEA",
     {
       "player": "D. Castillo",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "SEA"
     }
   ],
   [
     "S. McClanahan pitching for TB",
     {
       "player": "S. McClanahan",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -37769,7 +38099,8 @@
           "player": "Celestino",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "McClanahan"
         }
       ]
     }
@@ -37813,7 +38144,8 @@
     "J.P. Feyereisen pitching for TB",
     {
       "player": "J.P. Feyereisen",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -37834,7 +38166,8 @@
           "player": "Celestino",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Walls"
         },
         {
           "player": "Celestino",
@@ -38296,7 +38629,8 @@
     "A. Heaney pitching for LAD",
     {
       "player": "A. Heaney",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "LAD"
     }
   ],
   [
@@ -38442,7 +38776,8 @@
           "player": "Kepler",
           "type": "advanced",
           "at": "home",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "T. Turner"
         },
         {
           "player": "San\u00f3",
@@ -38458,7 +38793,8 @@
     "B. Graterol pitching for LAD",
     {
       "player": "B. Graterol",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "LAD"
     }
   ],
   [
@@ -38500,7 +38836,8 @@
     "D. Price pitching for LAD",
     {
       "player": "D. Price",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "LAD"
     }
   ],
   [
@@ -38533,7 +38870,8 @@
     "D. Hudson pitching for LAD",
     {
       "player": "D. Hudson",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "LAD"
     }
   ],
   [
@@ -38744,7 +39082,8 @@
     "G. Cleavinger pitching for LAD",
     {
       "player": "G. Cleavinger",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "LAD"
     }
   ],
   [
@@ -38808,7 +39147,8 @@
     "E. Phillips pitching for LAD",
     {
       "player": "E. Phillips",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "LAD"
     }
   ],
   [
@@ -38821,7 +39161,8 @@
           "player": "Muncy",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Cotton"
         }
       ]
     }
@@ -38876,7 +39217,8 @@
     "K. Bradish pitching for BAL",
     {
       "player": "K. Bradish",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -38918,7 +39260,8 @@
           "player": "Mancini",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Correa"
         }
       ]
     }
@@ -39244,7 +39587,8 @@
           "player": "Mullins",
           "type": "advanced",
           "at": "third",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Miranda"
         }
       ]
     }
@@ -39403,7 +39747,8 @@
     "D. Tate pitching for BAL",
     {
       "player": "D. Tate",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BAL"
     }
   ],
   [
@@ -39473,7 +39818,8 @@
           "player": "Buxton",
           "type": "advanced",
           "at": "first",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Kaprielian"
         }
       ]
     }
@@ -39684,7 +40030,8 @@
           "player": "Celestino",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Puk"
         }
       ]
     }
@@ -39763,7 +40110,8 @@
           "player": "Witt Jr.",
           "type": "advanced",
           "at": "third",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Jeffers"
         }
       ]
     }
@@ -40020,13 +40368,15 @@
           "player": "Rivera",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Coulombe"
         },
         {
           "player": "O'Hearn",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Coulombe"
         }
       ]
     }
@@ -40271,7 +40621,8 @@
           "player": "Urshela",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Coleman"
         }
       ]
     }
@@ -40417,7 +40768,8 @@
           "player": "Gordon",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Payamps"
         }
       ]
     }
@@ -40513,7 +40865,8 @@
           "player": "Miller",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Smeltzer"
         }
       ]
     }
@@ -40833,7 +41186,8 @@
     "N. Sandlin pitching for CLE",
     {
       "player": "N. Sandlin",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "CLE"
     }
   ],
   [
@@ -41090,7 +41444,8 @@
           "player": "S\u00e1nchez",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Lopez"
         }
       ],
       "outs": 1
@@ -41395,7 +41750,8 @@
     "C. Hernandez pitching for KC",
     {
       "player": "C. Hernandez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -41408,7 +41764,8 @@
           "player": "Polanco",
           "type": "advanced",
           "at": "second",
-          "how": "passed ball"
+          "how": "passed ball",
+          "by": "Gallagher"
         }
       ]
     }
@@ -41567,7 +41924,8 @@
     "A. Garrett pitching for KC",
     {
       "player": "A. Garrett",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "KC"
     }
   ],
   [
@@ -41689,7 +42047,8 @@
           "player": "Larnach",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Garrett"
         }
       ]
     }
@@ -41835,7 +42194,8 @@
     "M. Bumgarner pitching for ARI",
     {
       "player": "M. Bumgarner",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "ARI"
     }
   ],
   [
@@ -42117,10 +42477,16 @@
       "at": "third",
       "moves": [
         {
+          "player": "C. Kennedy",
+          "type": "advanced",
+          "at": "home"
+        },
+        {
           "player": "Thomas",
           "type": "advanced",
           "at": "home",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Smeltzer"
         },
         {
           "player": "Hager",
@@ -42128,7 +42494,7 @@
           "at": "second"
         }
       ],
-      "runs": 1
+      "runs": 2
     }
   ],
   [
@@ -42230,7 +42596,8 @@
           "player": "C. Kennedy",
           "type": "advanced",
           "at": "second",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Urshela"
         },
         {
           "player": "Varsho",
@@ -42279,7 +42646,8 @@
     "S. Poppen pitching for ARI",
     {
       "player": "S. Poppen",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "ARI"
     }
   ],
   [
@@ -42330,7 +42698,8 @@
     "K. Nelson pitching for ARI",
     {
       "player": "K. Nelson",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "ARI"
     }
   ],
   [
@@ -42363,7 +42732,8 @@
     "J.B. Wendelken pitching for ARI",
     {
       "player": "J.B. Wendelken",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "ARI"
     }
   ],
   [
@@ -42724,7 +43094,8 @@
           "player": "Arraez",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Isbel"
         },
         {
           "player": "Celestino",
@@ -42873,7 +43244,8 @@
           "player": "Lopez",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Polanco"
         }
       ]
     }
@@ -42927,7 +43299,8 @@
           "player": "Kepler",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Staumont"
         }
       ]
     }
@@ -43136,7 +43509,8 @@
           "player": "Gim\u00e9nez",
           "type": "advanced",
           "at": "first",
-          "how": "error"
+          "how": "error",
+          "by": "Jax"
         }
       ]
     }
@@ -43185,7 +43559,8 @@
           "player": "Kepler",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Hentges"
         },
         {
           "player": "Kepler",
@@ -43223,13 +43598,15 @@
           "player": "Kwan",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Pag\u00e1n"
         },
         {
           "player": "Straw",
           "type": "advanced",
           "at": "third",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Pag\u00e1n"
         }
       ]
     }
@@ -43279,7 +43656,8 @@
           "player": "Gordon",
           "type": "advanced",
           "at": "first",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Clase"
         }
       ]
     }
@@ -43293,7 +43671,8 @@
           "player": "Celestino",
           "type": "advanced",
           "at": "first",
-          "how": "fielding error"
+          "how": "fielding error",
+          "by": "Miller"
         }
       ]
     }
@@ -43302,7 +43681,8 @@
     "N. Pivetta pitching for BOS",
     {
       "player": "N. Pivetta",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -43664,7 +44044,8 @@
     "M. Barnes pitching for BOS",
     {
       "player": "M. Barnes",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "BOS"
     }
   ],
   [
@@ -44033,7 +44414,8 @@
     "J. Fleming pitching for TB",
     {
       "player": "J. Fleming",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -44045,7 +44427,8 @@
           "player": "Buxton",
           "type": "advanced",
           "at": "second",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Walls"
         }
       ]
     }
@@ -44269,7 +44652,8 @@
     "R. Dugger pitching for TB",
     {
       "player": "R. Dugger",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "TB"
     }
   ],
   [
@@ -44325,7 +44709,8 @@
           "player": "Celestino",
           "type": "advanced",
           "at": "second",
-          "how": "wild pitch"
+          "how": "wild pitch",
+          "by": "Dugger"
         }
       ]
     }
@@ -44555,7 +44940,8 @@
     "J. Wentz pitching for DET",
     {
       "player": "J. Wentz",
-      "type": "sub-p"
+      "type": "sub-p",
+      "team": "DET"
     }
   ],
   [
@@ -44753,7 +45139,8 @@
           "player": "B\u00e1ez",
           "type": "advanced",
           "at": "first",
-          "how": "throwing error"
+          "how": "throwing error",
+          "by": "Miranda"
         }
       ]
     }

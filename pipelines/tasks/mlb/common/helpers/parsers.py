@@ -38,6 +38,9 @@ default_description_expressions = strike_outs_exports + \
               error_exports + \
               sub_exports
 
+from .templates import TemplateService
+
+
 class ParsingEngine():
     def __init__(self, expressions: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]]) -> None:
         self.__parse_event_expressions = expressions
@@ -128,15 +131,20 @@ class EventDescriptionParser(ParsingEngine):
         return observation
 
     def post_parse(self, observation: Dict[str, Any]) -> Dict[str, Any]:
-        for key in ['type', 'at', 'by', 'for', 'how', 'effort', 'for', 'to']:
-            if key in observation:
-                observation[key] = clean_text(observation[key])
+        def clean_values(observation: Dict[str, Any]) -> Dict[str, Any]:
+            for key in ['type', 'at', 'by', 'for', 'how', 'effort', 'to', 'team']:
+                if key in observation:
+                    observation[key] = clean_text(observation[key])
 
-                if key in ['type', 'at', 'how', 'effort']:
-                    observation[key] = observation[key].lower()
+                    if key in ['type', 'at', 'how', 'effort']:
+                        observation[key] = observation[key].lower()
+
+        clean_values(observation)
 
         if 'moves' in observation:
             moves = observation['moves']
+            for move in moves:
+                clean_values(move)
 
             outs = sum(
                 1
@@ -170,6 +178,7 @@ class EventDescriptionParser(ParsingEngine):
 
 
 EVENT_DESCRIPTION_PARSER = EventDescriptionParser()
+TEMPLATE_SERVICE = TemplateService()
 
 def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
     def clear_event(event: Dict[str, Any]) -> Dict[str, Any]:
@@ -199,8 +208,16 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
             event = clear_event(event)
 
             entities = EVENT_DESCRIPTION_PARSER.transform_into_object(event['desc'])
+
             if entities:
-                event['entities'] = entities
+                matches_template, _ = TEMPLATE_SERVICE.validate(event['desc'], entities)
+                if not matches_template:
+                    if not 'issues' in entities:
+                        entities['issues'] = []
+
+                    entities['issues'].append('template')
+
+            event['entities'] = { 'issues': ['parsing'] } if entities is None else entities
 
             event = set_types_on_event(event)
 

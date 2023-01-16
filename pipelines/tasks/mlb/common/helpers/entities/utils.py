@@ -160,6 +160,8 @@ def clean_text(text: str) -> str:
 
 def split_text(text: str, delimiter: str = r',|\band\b') -> List[str]:
     text = re.sub(r' safe at (first|second|third) and advances ', ' ', text)
+    text = re.sub(r', ((?:[A-Z.]+ |)[A-Z][\w-]+) and ([A-Z]\w+) scored', ', \g<1> scored and \g<2> scored', text)
+
     return [
         text
         for text in map(
@@ -172,24 +174,48 @@ def split_text(text: str, delimiter: str = r',|\band\b') -> List[str]:
 def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
     moves: List[Dict[str, Any]] = []
     for item in groups:
-        text = item[:]
-        additional_information = search(
+        text = item[:].strip()
+
+        ### repair
+        text = re.sub(r'^([A-Z][\w-]+) (first|second|third)(?=\.|$)', '\g<1> to \g<2>', text)
+
+        additional_information_match = search(
             [
-                r"( on (fielder's indifference|runner's fielder's choice).*$)",
-                r"( on ((?:throwing|fielding| )*error|wild pitch|passed ball).*$)",
-                r"( on a (balk).*$)",
-                r"( in (rundown).*$)",
+                r"( on (fielder's indifference|runner's fielder's choice)(.*$))",
+                r"( on ((?:throwing|fielding| )*error|wild pitch|passed ball)(.*$))",
+                r"( on a (balk)(.*$))",
+                r"( in (rundown)(.*$))",
                 r"( (hit by batted ball))",
             ],
             text,
         )
 
         how = None
-        if additional_information:
-            text = text.replace(additional_information.group(1), '')
+        if additional_information_match:
+            additional_information_groups = additional_information_match.groups()
+
+            text = text.replace(additional_information_groups[0], '')
+
             how = {
-                'how': additional_information.group(2)
+                'how': additional_information_groups[1]
             }
+
+            if len(additional_information_groups) > 2:
+                by_information_match = search(
+                    [
+                        r"by (.+? (?:baseman|fielder)) (.+)",
+                        r"by (shortstop|pitcher|catcher) (.+)",
+                        r"by (.+)",
+                    ],
+                    additional_information_groups[2],
+                )
+
+                if by_information_match:
+                    groups = by_information_match.groups()
+                    if len(groups) == 1:
+                        how['by'] = groups[0]
+                    else:
+                        how['by'] = groups[1]
 
         match = search([
                 r'^ *(.+?) (out|out stretching|thrown out|safe) at (.+)',
