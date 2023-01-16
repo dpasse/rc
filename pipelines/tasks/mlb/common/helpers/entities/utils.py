@@ -40,6 +40,7 @@ EventTypes = set([
     'grounded out',
     'bunt single',
     'wild pitch',
+    'passed ball',
     'fouled out',
     'struck out',
     'picked off',
@@ -70,6 +71,7 @@ Locations = set([
     'deep right center',
     'deep left center',
     'shallow center',
+    'designated hitter',
     'shallow right',
     'right center',
     'shallow left',
@@ -157,6 +159,7 @@ def clean_text(text: str) -> str:
     return re.sub(r'[,.]$', '', text).strip()
 
 def split_text(text: str, delimiter: str = r',|\band\b') -> List[str]:
+    text = re.sub(r' safe at (first|second|third) and advances ', ' ', text)
     return [
         text
         for text in map(
@@ -172,7 +175,8 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
         text = item[:]
         additional_information = search(
             [
-                r"( on ((?:throwing|fielding| )*error|runner's fielder's choice|fielder's indifference|wild pitch).*$)",
+                r"( on (fielder's indifference|runner's fielder's choice).*$)",
+                r"( on ((?:throwing|fielding| )*error|wild pitch|passed ball).*$)",
                 r"( on a (balk).*$)",
                 r"( in (rundown).*$)",
                 r"( (hit by batted ball))",
@@ -183,7 +187,9 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
         how = None
         if additional_information:
             text = text.replace(additional_information.group(1), '')
-            how = additional_information.group(2)
+            how = {
+                'how': additional_information.group(2)
+            }
 
         match = search([
                 r'^ *(.+?) (out|out stretching|thrown out|safe) at (.+)',
@@ -212,7 +218,7 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
             )
 
             if how:
-                move['how'] = how
+                move.update(how)
 
             moves.append(move)
 

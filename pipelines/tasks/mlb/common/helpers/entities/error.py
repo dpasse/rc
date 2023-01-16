@@ -8,9 +8,8 @@ def handle_error(groups: List[str]) -> Dict[str, Any]:
         'type': groups[1],
     }
 
-    text = re.sub(r' safe at (first|second|third) and advances ', ' ', groups[0])
     observation.update(
-        handle_extras(split_text(text))
+        handle_extras(split_text(groups[0]))
     )
 
     return observation

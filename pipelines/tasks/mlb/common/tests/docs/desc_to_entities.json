@@ -722,7 +722,8 @@
     "Larnach hit for Buxton",
     {
       "player": "Larnach",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Buxton"
     }
   ],
   [
@@ -957,13 +958,14 @@
   [
     "Barrera to third on wild pitch by Gray.",
     {
-      "type": "wild pitch",
       "player": "Gray",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Barrera",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -1502,7 +1504,8 @@
     "Allen at shortstop.",
     {
       "player": "Allen",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "shortstop"
     }
   ],
   [
@@ -1534,7 +1537,8 @@
     "Miranda hit for Polanco",
     {
       "player": "Miranda",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Polanco"
     }
   ],
   [
@@ -1550,21 +1554,24 @@
     "Arraez at second base.",
     {
       "player": "Arraez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "second"
     }
   ],
   [
     "Miranda at first base.",
     {
       "player": "Miranda",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "first"
     }
   ],
   [
     "Garlick in right field.",
     {
       "player": "Garlick",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -1742,14 +1749,16 @@
     "Pache in center field.",
     {
       "player": "Pache",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
     "Laureano in right field.",
     {
       "player": "Laureano",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -1763,7 +1772,8 @@
     "Barrera in left field.",
     {
       "player": "Barrera",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
@@ -1823,7 +1833,8 @@
     "Celestino hit for Correa",
     {
       "player": "Celestino",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Correa"
     }
   ],
   [
@@ -1885,14 +1896,16 @@
     "Celestino in left field.",
     {
       "player": "Celestino",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
     "Gordon at shortstop.",
     {
       "player": "Gordon",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "shortstop"
     }
   ],
   [
@@ -2163,7 +2176,8 @@
     "Chi Chi Gonzalez pitches to Randy Arozarena",
     {
       "player": "Chi Chi Gonzalez",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Randy Arozarena"
     }
   ],
   [
@@ -2230,13 +2244,14 @@
   [
     "Celestino to second on wild pitch by Baz.",
     {
-      "type": "wild pitch",
       "player": "Baz",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Celestino",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -2537,7 +2552,8 @@
     "Ram\u00edrez hit for Phillips",
     {
       "player": "Ram\u00edrez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Phillips"
     }
   ],
   [
@@ -2560,7 +2576,8 @@
     "Ram\u00edrez in right field.",
     {
       "player": "Ram\u00edrez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -2798,7 +2815,8 @@
     "Mej\u00eda hit for Pinto",
     {
       "player": "Mej\u00eda",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Pinto"
     }
   ],
   [
@@ -2829,7 +2847,8 @@
     "Buxton ran for Gordon",
     {
       "player": "Buxton",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Gordon"
     }
   ],
   [
@@ -2856,14 +2875,16 @@
     "Polanco at shortstop.",
     {
       "player": "Polanco",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "shortstop"
     }
   ],
   [
     "Urshela at third base.",
     {
       "player": "Urshela",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "third"
     }
   ],
   [
@@ -3227,18 +3248,20 @@
   [
     "Winker to second on wild pitch by Duran, France to third on wild pitch by Duran.",
     {
-      "type": "wild pitch",
       "player": "Duran",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Winker",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         },
         {
           "player": "France",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -3523,7 +3546,8 @@
     "Arraez hit for Urshela",
     {
       "player": "Arraez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Urshela"
     }
   ],
   [
@@ -3546,7 +3570,8 @@
     "Gordon ran for Arraez",
     {
       "player": "Gordon",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Arraez"
     }
   ],
   [
@@ -4713,19 +4738,21 @@
     "Gordon ran for Urshela",
     {
       "player": "Gordon",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Urshela"
     }
   ],
   [
     "Gordon to second on passed ball by Maile.",
     {
-      "type": "wild pitch",
       "player": "Maile",
+      "type": "passed ball",
       "moves": [
         {
           "player": "Gordon",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "passed ball"
         }
       ]
     }
@@ -4743,7 +4770,8 @@
     "Buxton hit for Celestino",
     {
       "player": "Buxton",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Celestino"
     }
   ],
   [
@@ -4759,28 +4787,32 @@
     "Miranda at third base.",
     {
       "player": "Miranda",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "third"
     }
   ],
   [
     "Kirilloff at first base.",
     {
       "player": "Kirilloff",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "first"
     }
   ],
   [
     "Gordon in left field.",
     {
       "player": "Gordon",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
     "Buxton in center field.",
     {
       "player": "Buxton",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
@@ -4820,7 +4852,8 @@
     "Palacios hit for Maile",
     {
       "player": "Palacios",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Maile"
     }
   ],
   [
@@ -4836,7 +4869,8 @@
     "Kwan in right field.",
     {
       "player": "Kwan",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -4850,7 +4884,8 @@
     "Palacios in left field.",
     {
       "player": "Palacios",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
@@ -4880,7 +4915,8 @@
     "Correa hit for Miranda",
     {
       "player": "Correa",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Miranda"
     }
   ],
   [
@@ -4920,28 +4956,32 @@
     "Arraez at third base.",
     {
       "player": "Arraez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "third"
     }
   ],
   [
     "Correa at shortstop.",
     {
       "player": "Correa",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "shortstop"
     }
   ],
   [
     "Polanco at second base.",
     {
       "player": "Polanco",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "second"
     }
   ],
   [
     "Miller hit for Straw",
     {
       "player": "Miller",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Straw"
     }
   ],
   [
@@ -4956,13 +4996,14 @@
   [
     "Palacios to third on wild pitch by Pag\u00e1n.",
     {
-      "type": "wild pitch",
       "player": "Pag\u00e1n",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Palacios",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -5008,15 +5049,22 @@
   [
     "Kwan scored, Rosario to third on passed ball by Jeffers.",
     {
-      "type": "wild pitch",
       "player": "Jeffers",
+      "type": "passed ball",
       "moves": [
+        {
+          "player": "Kwan",
+          "type": "advanced",
+          "at": "home"
+        },
         {
           "player": "Rosario",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "passed ball"
         }
-      ]
+      ],
+      "runs": 1
     }
   ],
   [
@@ -5428,13 +5476,14 @@
   [
     "Sheets to second on wild pitch by Winder.",
     {
-      "type": "wild pitch",
       "player": "Winder",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Sheets",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -5478,7 +5527,8 @@
     "Garlick hit for Larnach",
     {
       "player": "Garlick",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Larnach"
     }
   ],
   [
@@ -5510,7 +5560,8 @@
     "Garlick in left field.",
     {
       "player": "Garlick",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
@@ -5647,7 +5698,8 @@
     "Celestino ran for Garlick",
     {
       "player": "Celestino",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Garlick"
     }
   ],
   [
@@ -5826,18 +5878,20 @@
   [
     "Godoy to second on wild pitch by Hendriks, Gordon to third on wild pitch by Hendriks.",
     {
-      "type": "wild pitch",
       "player": "Hendriks",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Godoy",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         },
         {
           "player": "Gordon",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -6271,7 +6325,8 @@
     "Celestino hit for Arraez",
     {
       "player": "Celestino",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Arraez"
     }
   ],
   [
@@ -6287,14 +6342,16 @@
     "Celestino in center field.",
     {
       "player": "Celestino",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
     "Gordon at second base.",
     {
       "player": "Gordon",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "second"
     }
   ],
   [
@@ -6380,7 +6437,8 @@
     "Luplow in right field.",
     {
       "player": "Luplow",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -6517,7 +6575,8 @@
     "P. Smith at first base.",
     {
       "player": "P. Smith",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "first"
     }
   ],
   [
@@ -7019,7 +7078,8 @@
     "Larnach hit for Celestino",
     {
       "player": "Larnach",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Celestino"
     }
   ],
   [
@@ -7042,7 +7102,8 @@
     "Larnach in left field.",
     {
       "player": "Larnach",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
@@ -7228,14 +7289,16 @@
     "Gonzalez in left field.",
     {
       "player": "Gonzalez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
     "Hicks in center field.",
     {
       "player": "Hicks",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
@@ -7407,13 +7470,14 @@
   [
     "Arraez to second on wild pitch by Flexen.",
     {
-      "type": "wild pitch",
       "player": "Flexen",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Arraez",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -7833,7 +7897,8 @@
     "Rodr\u00edguez hit for Trammell",
     {
       "player": "Rodr\u00edguez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Trammell"
     }
   ],
   [
@@ -7963,13 +8028,14 @@
   [
     "Gurriel to second on passed ball by S\u00e1nchez.",
     {
-      "type": "wild pitch",
       "player": "S\u00e1nchez",
+      "type": "passed ball",
       "moves": [
         {
           "player": "Gurriel",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "passed ball"
         }
       ]
     }
@@ -8166,7 +8232,8 @@
     "Contreras in left field.",
     {
       "player": "Contreras",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
@@ -8331,13 +8398,14 @@
   [
     "Maldonado to second on passed ball by S\u00e1nchez.",
     {
-      "type": "wild pitch",
       "player": "S\u00e1nchez",
+      "type": "passed ball",
       "moves": [
         {
           "player": "Maldonado",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "passed ball"
         }
       ]
     }
@@ -8500,7 +8568,8 @@
     "Kirilloff in right field.",
     {
       "player": "Kirilloff",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -9817,13 +9886,14 @@
   [
     "Correa to second on wild pitch by P\u00e9rez.",
     {
-      "type": "wild pitch",
       "player": "P\u00e9rez",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Correa",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -9911,7 +9981,8 @@
     "Felix Bautista pitches to Byron Buxton",
     {
       "player": "Felix Bautista",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Byron Buxton"
     }
   ],
   [
@@ -9953,7 +10024,8 @@
     "Bemboom ran for Chirinos",
     {
       "player": "Bemboom",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Chirinos"
     }
   ],
   [
@@ -10275,7 +10347,8 @@
     "Yusei Kikuchi pitches to Ryan Jeffers",
     {
       "player": "Yusei Kikuchi",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Ryan Jeffers"
     }
   ],
   [
@@ -10340,7 +10413,8 @@
     "Arraez at first base.",
     {
       "player": "Arraez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "first"
     }
   ],
   [
@@ -10841,7 +10915,8 @@
     "Dylan Bundy pitches to Jonathan Schoop",
     {
       "player": "Dylan Bundy",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Jonathan Schoop"
     }
   ],
   [
@@ -11137,13 +11212,14 @@
   [
     "B\u00e1ez to second on wild pitch by Pag\u00e1n.",
     {
-      "type": "wild pitch",
       "player": "Pag\u00e1n",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "B\u00e1ez",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -11211,7 +11287,8 @@
     "Cabrera hit for H. Castro",
     {
       "player": "Cabrera",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "H. Castro"
     }
   ],
   [
@@ -11236,14 +11313,16 @@
     "Grossman in left field.",
     {
       "player": "Grossman",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
     "W. Castro at shortstop.",
     {
       "player": "W. Castro",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "shortstop"
     }
   ],
   [
@@ -11729,13 +11808,14 @@
   [
     "Rosario to second on wild pitch by Duran.",
     {
-      "type": "wild pitch",
       "player": "Duran",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Rosario",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -11803,7 +11883,8 @@
     "Kwan hit for Maile",
     {
       "player": "Kwan",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Maile"
     }
   ],
   [
@@ -12264,7 +12345,8 @@
     "Justin Verlander pitches to Max Kepler",
     {
       "player": "Justin Verlander",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Max Kepler"
     }
   ],
   [
@@ -12392,14 +12474,16 @@
     "Siri in center field.",
     {
       "player": "Siri",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
     "McCormick in left field.",
     {
       "player": "McCormick",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
@@ -12837,7 +12921,8 @@
     "Gordon ran for Garlick",
     {
       "player": "Gordon",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Garlick"
     }
   ],
   [
@@ -12859,7 +12944,8 @@
     "Celestino in right field.",
     {
       "player": "Celestino",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -12976,7 +13062,8 @@
     "Miller hit for Palacios",
     {
       "player": "Miller",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Palacios"
     }
   ],
   [
@@ -13944,21 +14031,24 @@
     "W. Castro in left field.",
     {
       "player": "W. Castro",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
     "Hill in center field.",
     {
       "player": "Hill",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
     "Garlick hit for Palacios",
     {
       "player": "Garlick",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Palacios"
     }
   ],
   [
@@ -14046,13 +14136,14 @@
   [
     "Larnach to second on wild pitch by Brieske.",
     {
-      "type": "wild pitch",
       "player": "Brieske",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Larnach",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -14494,13 +14585,14 @@
   [
     "W. Castro to second on wild pitch by Megill.",
     {
-      "type": "wild pitch",
       "player": "Megill",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "W. Castro",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -14551,13 +14643,14 @@
   [
     "Hill to second on passed ball by S\u00e1nchez.",
     {
-      "type": "wild pitch",
       "player": "S\u00e1nchez",
+      "type": "passed ball",
       "moves": [
         {
           "player": "Hill",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "passed ball"
         }
       ]
     }
@@ -14600,7 +14693,8 @@
     "Buxton hit for Jeffers",
     {
       "player": "Buxton",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Jeffers"
     }
   ],
   [
@@ -14638,13 +14732,14 @@
   [
     "Murphy to third on wild pitch by Paddack.",
     {
-      "type": "wild pitch",
       "player": "Paddack",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Murphy",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -14990,7 +15085,8 @@
     "Bethancourt hit for McKinney",
     {
       "player": "Bethancourt",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "McKinney"
     }
   ],
   [
@@ -15006,14 +15102,16 @@
     "Brown in left field.",
     {
       "player": "Brown",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
     "Bethancourt at first base.",
     {
       "player": "Bethancourt",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "first"
     }
   ],
   [
@@ -15157,7 +15255,8 @@
     "Kemp hit for Smith",
     {
       "player": "Kemp",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Smith"
     }
   ],
   [
@@ -15407,7 +15506,8 @@
     "Garlick hit for Gordon",
     {
       "player": "Garlick",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Gordon"
     }
   ],
   [
@@ -15423,7 +15523,8 @@
     "Kepler in center field.",
     {
       "player": "Kepler",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
@@ -15791,7 +15892,8 @@
     "Ara\u00faz at shortstop.",
     {
       "player": "Ara\u00faz",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "shortstop"
     }
   ],
   [
@@ -15897,7 +15999,8 @@
     "Michael Kopech pitches to Max Kepler",
     {
       "player": "Michael Kopech",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Max Kepler"
     }
   ],
   [
@@ -16084,13 +16187,14 @@
   [
     "Abreu to second on wild pitch by Jax.",
     {
-      "type": "wild pitch",
       "player": "Jax",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Abreu",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -16099,14 +16203,16 @@
     "Engel in center field.",
     {
       "player": "Engel",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
     "Pollock in right field.",
     {
       "player": "Pollock",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -16170,13 +16276,14 @@
   [
     "Jeffers to third on wild pitch by Graveman.",
     {
-      "type": "wild pitch",
       "player": "Graveman",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Jeffers",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -16221,7 +16328,8 @@
     "Haseley ran for Jim\u00e9nez",
     {
       "player": "Haseley",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Jim\u00e9nez"
     }
   ],
   [
@@ -16412,7 +16520,8 @@
     "Bruce Zimmermann pitches to Carlos Correa",
     {
       "player": "Bruce Zimmermann",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Carlos Correa"
     }
   ],
   [
@@ -16594,7 +16703,8 @@
     "Larnach in right field.",
     {
       "player": "Larnach",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -16674,7 +16784,8 @@
     "Ur\u00edas at third base.",
     {
       "player": "Ur\u00edas",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "third"
     }
   ],
   [
@@ -17525,7 +17636,8 @@
     "Zimmer ran for Gurriel Jr.",
     {
       "player": "Zimmer",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Gurriel Jr"
     }
   ],
   [
@@ -17976,7 +18088,8 @@
     "Garlick ran for Jeffers",
     {
       "player": "Garlick",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Jeffers"
     }
   ],
   [
@@ -18011,7 +18124,8 @@
     "Gordon in center field.",
     {
       "player": "Gordon",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
@@ -18146,13 +18260,14 @@
   [
     "Phillips to second on wild pitch by Sands.",
     {
-      "type": "wild pitch",
       "player": "Sands",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Phillips",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -18496,13 +18611,14 @@
   [
     "Walls to second on wild pitch by Duffey.",
     {
-      "type": "wild pitch",
       "player": "Duffey",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Walls",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -18598,13 +18714,14 @@
   [
     "Celestino to second on wild pitch by Poch\u00e9.",
     {
-      "type": "wild pitch",
       "player": "Poch\u00e9",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Celestino",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -18854,7 +18971,8 @@
     "Arraez hit for Garlick",
     {
       "player": "Arraez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Garlick"
     }
   ],
   [
@@ -18877,7 +18995,8 @@
     "Arraez as designated hitter.",
     {
       "player": "Arraez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "designated hitter"
     }
   ],
   [
@@ -19125,7 +19244,8 @@
     "Brown in right field.",
     {
       "player": "Brown",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -19324,7 +19444,8 @@
     "Josh Winder pitches to Sean Murphy",
     {
       "player": "Josh Winder",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Sean Murphy"
     }
   ],
   [
@@ -19438,7 +19559,8 @@
     "McKinney ran for Lowrie",
     {
       "player": "McKinney",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Lowrie"
     }
   ],
   [
@@ -19491,7 +19613,8 @@
     "Bethancourt ran for Murphy",
     {
       "player": "Bethancourt",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Murphy"
     }
   ],
   [
@@ -19783,7 +19906,8 @@
     "Joe Ryan pitches to Adalberto Mondesi",
     {
       "player": "Joe Ryan",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Adalberto Mondesi"
     }
   ],
   [
@@ -19868,7 +19992,8 @@
     "Larnach hit for Garlick",
     {
       "player": "Larnach",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Garlick"
     }
   ],
   [
@@ -20149,13 +20274,14 @@
   [
     "Arraez to second on wild pitch by McKenzie.",
     {
-      "type": "wild pitch",
       "player": "McKenzie",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Arraez",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -20188,13 +20314,14 @@
   [
     "Urshela to third on wild pitch by McKenzie.",
     {
-      "type": "wild pitch",
       "player": "McKenzie",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Urshela",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -20250,13 +20377,14 @@
   [
     "Rosario to second on passed ball by Jeffers.",
     {
-      "type": "wild pitch",
       "player": "Jeffers",
+      "type": "passed ball",
       "moves": [
         {
           "player": "Rosario",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "passed ball"
         }
       ]
     }
@@ -20440,7 +20568,8 @@
     "Clement ran for Ram\u00edrez",
     {
       "player": "Clement",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Ram\u00edrez"
     }
   ],
   [
@@ -20476,7 +20605,8 @@
     "Clement at third base.",
     {
       "player": "Clement",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "third"
     }
   ],
   [
@@ -20536,7 +20666,8 @@
     "Palacios at second base.",
     {
       "player": "Palacios",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "second"
     }
   ],
   [
@@ -20550,14 +20681,16 @@
     "Gim\u00e9nez at shortstop.",
     {
       "player": "Gim\u00e9nez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "shortstop"
     }
   ],
   [
     "Miller at third base.",
     {
       "player": "Miller",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "third"
     }
   ],
   [
@@ -20587,7 +20720,8 @@
     "Miranda hit for Kepler",
     {
       "player": "Miranda",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Kepler"
     }
   ],
   [
@@ -20630,18 +20764,20 @@
   [
     "Miranda to second on wild pitch by Clement, Contreras to third on wild pitch by Clement.",
     {
-      "type": "wild pitch",
       "player": "Clement",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Miranda",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         },
         {
           "player": "Contreras",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -20734,8 +20870,8 @@
   [
     "Straw scored on Cotton wild pitch, Kwan to third on wild pitch by Cotton.",
     {
-      "type": "wild pitch",
       "player": "Cotton",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Straw",
@@ -20745,7 +20881,8 @@
         {
           "player": "Kwan",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ],
       "runs": 1
@@ -21168,7 +21305,8 @@
     "Celestino hit for Gordon",
     {
       "player": "Celestino",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Gordon"
     }
   ],
   [
@@ -21386,7 +21524,8 @@
     "Clement ran for Naylor",
     {
       "player": "Clement",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Naylor"
     }
   ],
   [
@@ -21461,7 +21600,8 @@
     "Clement as designated hitter.",
     {
       "player": "Clement",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "designated hitter"
     }
   ],
   [
@@ -21941,7 +22081,8 @@
     "Celestino hit for Contreras",
     {
       "player": "Celestino",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Contreras"
     }
   ],
   [
@@ -22448,7 +22589,8 @@
     "Candelario hit for H. Castro",
     {
       "player": "Candelario",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "H. Castro"
     }
   ],
   [
@@ -22473,7 +22615,8 @@
     "Candelario at third base.",
     {
       "player": "Candelario",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "third"
     }
   ],
   [
@@ -22496,13 +22639,14 @@
   [
     "Arraez to second on wild pitch by Lange.",
     {
-      "type": "wild pitch",
       "player": "Lange",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Arraez",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -22542,7 +22686,8 @@
     "S\u00e1nchez hit for Larnach",
     {
       "player": "S\u00e1nchez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Larnach"
     }
   ],
   [
@@ -22939,14 +23084,16 @@
     "Kepler hit for Garlick",
     {
       "player": "Kepler",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Garlick"
     }
   ],
   [
     "Kepler in right field.",
     {
       "player": "Kepler",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -23004,7 +23151,8 @@
     "Arraez hit for Celestino",
     {
       "player": "Arraez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Celestino"
     }
   ],
   [
@@ -23380,13 +23528,14 @@
   [
     "S\u00e1nchez to third on wild pitch by Keller.",
     {
-      "type": "wild pitch",
       "player": "Keller",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "S\u00e1nchez",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -23527,8 +23676,8 @@
   [
     "Arraez scored on Speier wild pitch, Kepler stole second.",
     {
-      "type": "wild pitch",
       "player": "Speier",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Arraez",
@@ -23699,7 +23848,8 @@
     "Blanco hit for Merrifield",
     {
       "player": "Blanco",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Merrifield"
     }
   ],
   [
@@ -24509,18 +24659,20 @@
   [
     "Trevino to second on wild pitch by Minaya, Hicks to third on wild pitch by Minaya.",
     {
-      "type": "wild pitch",
       "player": "Minaya",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Trevino",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         },
         {
           "player": "Hicks",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -24687,13 +24839,14 @@
   [
     "LeMahieu to second on wild pitch by Duffey.",
     {
-      "type": "wild pitch",
       "player": "Duffey",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "LeMahieu",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -24979,14 +25132,16 @@
     "Vaughn in left field.",
     {
       "player": "Vaughn",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
     "Sheets in right field.",
     {
       "player": "Sheets",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -25240,7 +25395,8 @@
     "Mendick at shortstop.",
     {
       "player": "Mendick",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "shortstop"
     }
   ],
   [
@@ -25452,13 +25608,15 @@
   [
     "Larnach struck out, Larnach to first on wild pitch by Hendriks.",
     {
-      "type": "wild pitch",
-      "player": "Hendriks",
+      "player": "Larnach",
+      "type": "struck out",
+      "outs": 1,
       "moves": [
         {
           "player": "Larnach",
           "type": "advanced",
-          "at": "first"
+          "at": "first",
+          "how": "wild pitch"
         }
       ]
     }
@@ -25828,7 +25986,8 @@
     "Palacios hit for Hedges",
     {
       "player": "Palacios",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Hedges"
     }
   ],
   [
@@ -25852,7 +26011,8 @@
     "Garlick hit for Kirilloff",
     {
       "player": "Garlick",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Kirilloff"
     }
   ],
   [
@@ -25874,7 +26034,8 @@
     "Miranda hit for Larnach",
     {
       "player": "Miranda",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Larnach"
     }
   ],
   [
@@ -25913,7 +26074,8 @@
     "Miller ran for Naylor",
     {
       "player": "Miller",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Naylor"
     }
   ],
   [
@@ -25940,7 +26102,8 @@
     "Miller at first base.",
     {
       "player": "Miller",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "first"
     }
   ],
   [
@@ -26237,7 +26400,8 @@
     "Haase hit for Barnhart",
     {
       "player": "Haase",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Barnhart"
     }
   ],
   [
@@ -26353,13 +26517,14 @@
   [
     "Larnach to second on wild pitch by Soto.",
     {
-      "type": "wild pitch",
       "player": "Soto",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Larnach",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -26725,7 +26890,8 @@
     "Bethancourt ran for Lowrie",
     {
       "player": "Bethancourt",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Lowrie"
     }
   ],
   [
@@ -26832,7 +26998,8 @@
     "Bethancourt as designated hitter.",
     {
       "player": "Bethancourt",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "designated hitter"
     }
   ],
   [
@@ -27736,7 +27903,8 @@
     "D\u00edaz at shortstop.",
     {
       "player": "D\u00edaz",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "shortstop"
     }
   ],
   [
@@ -27906,7 +28074,8 @@
     "Celestino hit for Kirilloff",
     {
       "player": "Celestino",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Kirilloff"
     }
   ],
   [
@@ -28172,7 +28341,8 @@
     "S\u00e1nchez hit for Jeffers",
     {
       "player": "S\u00e1nchez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Jeffers"
     }
   ],
   [
@@ -28241,7 +28411,8 @@
     "Mancini hit for Ara\u00faz",
     {
       "player": "Mancini",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Ara\u00faz"
     }
   ],
   [
@@ -28295,13 +28466,14 @@
   [
     "Mateo to third on wild pitch by Minaya.",
     {
-      "type": "wild pitch",
       "player": "Minaya",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Mateo",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -28319,7 +28491,8 @@
     "Nevin at third base.",
     {
       "player": "Nevin",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "third"
     }
   ],
   [
@@ -28673,7 +28846,8 @@
     "Toro hit for Trammell",
     {
       "player": "Toro",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Trammell"
     }
   ],
   [
@@ -28689,14 +28863,16 @@
     "Frazier in right field.",
     {
       "player": "Frazier",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
     "Toro at second base.",
     {
       "player": "Toro",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "second"
     }
   ],
   [
@@ -28718,18 +28894,20 @@
   [
     "S\u00e1nchez to second on wild pitch by Murfee, Correa to third on wild pitch by Murfee.",
     {
-      "type": "wild pitch",
       "player": "Murfee",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "S\u00e1nchez",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         },
         {
           "player": "Correa",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -28758,13 +28936,14 @@
   [
     "Arraez to second on wild pitch by Romo.",
     {
-      "type": "wild pitch",
       "player": "Romo",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Arraez",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -29285,13 +29464,14 @@
   [
     "Urshela to second on wild pitch by Ramirez.",
     {
-      "type": "wild pitch",
       "player": "Ramirez",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Urshela",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -29334,7 +29514,8 @@
     "Moore at shortstop.",
     {
       "player": "Moore",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "shortstop"
     }
   ],
   [
@@ -29707,14 +29888,15 @@
     "Arraez hit for Jeffers",
     {
       "player": "Arraez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Jeffers"
     }
   ],
   [
     "Kepler scored on Crawford wild pitch, S\u00e1nchez stole second.",
     {
-      "type": "wild pitch",
       "player": "Crawford",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Kepler",
@@ -29794,15 +29976,22 @@
   [
     "Celestino scored, Polanco to second on wild pitch by Sawamura.",
     {
-      "type": "wild pitch",
       "player": "Sawamura",
+      "type": "wild pitch",
       "moves": [
+        {
+          "player": "Celestino",
+          "type": "advanced",
+          "at": "home"
+        },
         {
           "player": "Polanco",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
-      ]
+      ],
+      "runs": 1
     }
   ],
   [
@@ -30200,7 +30389,8 @@
     "H. Castro hit for Haase",
     {
       "player": "H. Castro",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Haase"
     }
   ],
   [
@@ -30246,7 +30436,8 @@
     "W. Castro hit for Baddoo",
     {
       "player": "W. Castro",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Baddoo"
     }
   ],
   [
@@ -30343,18 +30534,20 @@
   [
     "Le\u00f3n to second on wild pitch by Archer, Palacios to third on wild pitch by Archer.",
     {
-      "type": "wild pitch",
       "player": "Archer",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Le\u00f3n",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         },
         {
           "player": "Palacios",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -30558,7 +30751,8 @@
     "Reyes hit for Palacios",
     {
       "player": "Reyes",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Palacios"
     }
   ],
   [
@@ -30573,14 +30767,16 @@
     "Kwan in left field.",
     {
       "player": "Kwan",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
     "Reyes in right field.",
     {
       "player": "Reyes",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -30681,7 +30877,8 @@
     "Clement ran for Le\u00f3n",
     {
       "player": "Clement",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Le\u00f3n"
     }
   ],
   [
@@ -31015,13 +31212,19 @@
   [
     "Arraez to second, Palacios to third on wild pitch by Carlton.",
     {
-      "type": "wild pitch",
       "player": "Carlton",
+      "type": "wild pitch",
       "moves": [
+        {
+          "player": "Arraez",
+          "type": "advanced",
+          "at": "second"
+        },
         {
           "player": "Palacios",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -31446,13 +31649,14 @@
   [
     "Buxton to third on wild pitch by Lynch.",
     {
-      "type": "wild pitch",
       "player": "Lynch",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Buxton",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -31550,7 +31754,8 @@
     "Joel Payamps pitches to Byron Buxton",
     {
       "player": "Joel Payamps",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Byron Buxton"
     }
   ],
   [
@@ -31601,7 +31806,8 @@
     "Isbel hit for Blanco",
     {
       "player": "Isbel",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Blanco"
     }
   ],
   [
@@ -31649,7 +31855,8 @@
     "Isbel in center field.",
     {
       "player": "Isbel",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
@@ -32254,13 +32461,14 @@
   [
     "Kirk to second on wild pitch by Cano.",
     {
-      "type": "wild pitch",
       "player": "Cano",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Kirk",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -32347,7 +32555,8 @@
     "Zimmer in center field.",
     {
       "player": "Zimmer",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
@@ -32362,7 +32571,8 @@
     "Celestino hit for Polanco",
     {
       "player": "Celestino",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Polanco"
     }
   ],
   [
@@ -32400,7 +32610,8 @@
     "S\u00e1nchez at first base.",
     {
       "player": "S\u00e1nchez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "first"
     }
   ],
   [
@@ -32507,7 +32718,8 @@
     "Tapia hit for Bichette",
     {
       "player": "Tapia",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Bichette"
     }
   ],
   [
@@ -32523,28 +32735,32 @@
     "Tapia in left field.",
     {
       "player": "Tapia",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
     "Espinal at shortstop.",
     {
       "player": "Espinal",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "shortstop"
     }
   ],
   [
     "Gurriel Jr. at first base.",
     {
       "player": "Gurriel Jr.",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "first"
     }
   ],
   [
     "Biggio at second base.",
     {
       "player": "Biggio",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "second"
     }
   ],
   [
@@ -32620,7 +32836,8 @@
     "Spenser Watkins pitches to Trevor Larnach",
     {
       "player": "Spenser Watkins",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Trevor Larnach"
     }
   ],
   [
@@ -33896,13 +34113,14 @@
   [
     "Schoop to second on passed ball by Jeffers.",
     {
-      "type": "wild pitch",
       "player": "Jeffers",
+      "type": "passed ball",
       "moves": [
         {
           "player": "Schoop",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "passed ball"
         }
       ]
     }
@@ -33971,7 +34189,8 @@
     "Cameron ran for Candelario",
     {
       "player": "Cameron",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Candelario"
     }
   ],
   [
@@ -34404,13 +34623,14 @@
   [
     "Buxton to second on wild pitch by Ramirez.",
     {
-      "type": "wild pitch",
       "player": "Ramirez",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Buxton",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -34748,13 +34968,14 @@
   [
     "Correa to second on wild pitch by Guerra.",
     {
-      "type": "wild pitch",
       "player": "Guerra",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Correa",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -35393,7 +35614,8 @@
     "Stanton hit for Trevino",
     {
       "player": "Stanton",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Trevino"
     }
   ],
   [
@@ -35415,7 +35637,8 @@
     "Higashioka ran for Stanton",
     {
       "player": "Higashioka",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Stanton"
     }
   ],
   [
@@ -35470,8 +35693,8 @@
   [
     "Rizzo scored on Moran wild pitch, Torres to second on wild pitch by Moran, Donaldson to third on wild pitch by Moran.",
     {
-      "type": "wild pitch",
       "player": "Moran",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Rizzo",
@@ -35481,12 +35704,14 @@
         {
           "player": "Torres",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         },
         {
           "player": "Donaldson",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ],
       "runs": 1
@@ -35762,13 +35987,14 @@
   [
     "Larnach to third on wild pitch by Bola\u00f1os.",
     {
-      "type": "wild pitch",
       "player": "Bola\u00f1os",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Larnach",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -35830,13 +36056,14 @@
   [
     "Dozier to second on wild pitch by Jax.",
     {
-      "type": "wild pitch",
       "player": "Jax",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Dozier",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -36151,13 +36378,14 @@
   [
     "Dozier to second on wild pitch by Archer.",
     {
-      "type": "wild pitch",
       "player": "Archer",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Dozier",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -36310,7 +36538,8 @@
     "Jeffers hit for S\u00e1nchez",
     {
       "player": "Jeffers",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "S\u00e1nchez"
     }
   ],
   [
@@ -36439,7 +36668,8 @@
     "Blanco ran for Perez",
     {
       "player": "Blanco",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Perez"
     }
   ],
   [
@@ -36462,14 +36692,16 @@
     "Blanco as designated hitter.",
     {
       "player": "Blanco",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "designated hitter"
     }
   ],
   [
     "Hicklen in right field.",
     {
       "player": "Hicklen",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "right"
     }
   ],
   [
@@ -36900,7 +37132,8 @@
     "Kelenic hit for Raleigh",
     {
       "player": "Kelenic",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Raleigh"
     }
   ],
   [
@@ -37218,7 +37451,8 @@
     "Caleb Thielbar pitches to Julio Rodriguez",
     {
       "player": "Caleb Thielbar",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Julio Rodriguez"
     }
   ],
   [
@@ -37528,13 +37762,14 @@
   [
     "Celestino to second on wild pitch by McClanahan.",
     {
-      "type": "wild pitch",
       "player": "McClanahan",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Celestino",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -37836,7 +38071,8 @@
     "Ram\u00edrez hit for Kiermaier",
     {
       "player": "Ram\u00edrez",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Kiermaier"
     }
   ],
   [
@@ -38229,7 +38465,8 @@
     "Kirilloff in left field.",
     {
       "player": "Kirilloff",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "left"
     }
   ],
   [
@@ -38499,7 +38736,8 @@
     "Gordon hit for Correa",
     {
       "player": "Gordon",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Correa"
     }
   ],
   [
@@ -38576,13 +38814,14 @@
   [
     "Muncy to second on wild pitch by Cotton.",
     {
-      "type": "wild pitch",
       "player": "Cotton",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Muncy",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -39226,13 +39465,15 @@
   [
     "Buxton struck out, Buxton to first on wild pitch by Kaprielian.",
     {
-      "type": "wild pitch",
-      "player": "Kaprielian",
+      "player": "Buxton",
+      "type": "struck out",
+      "outs": 1,
       "moves": [
         {
           "player": "Buxton",
           "type": "advanced",
-          "at": "first"
+          "at": "first",
+          "how": "wild pitch"
         }
       ]
     }
@@ -39467,14 +39708,16 @@
     "Lowrie hit for Pinder",
     {
       "player": "Lowrie",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Pinder"
     }
   ],
   [
     "Murphy hit for Smith",
     {
       "player": "Murphy",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Smith"
     }
   ],
   [
@@ -39770,18 +40013,20 @@
   [
     "Rivera to second on wild pitch by Coulombe, O'Hearn to third on wild pitch by Coulombe.",
     {
-      "type": "wild pitch",
       "player": "Coulombe",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Rivera",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         },
         {
           "player": "O'Hearn",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -40165,13 +40410,14 @@
   [
     "Gordon to third on wild pitch by Payamps.",
     {
-      "type": "wild pitch",
       "player": "Payamps",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Gordon",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -40260,13 +40506,14 @@
   [
     "Miller to third on wild pitch by Smeltzer.",
     {
-      "type": "wild pitch",
       "player": "Smeltzer",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Miller",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -40609,7 +40856,8 @@
     "Clement ran for Reyes",
     {
       "player": "Clement",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Reyes"
     }
   ],
   [
@@ -40686,7 +40934,8 @@
     "Contreras ran for Urshela",
     {
       "player": "Contreras",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Urshela"
     }
   ],
   [
@@ -40869,7 +41118,8 @@
     "Kepler hit for Celestino",
     {
       "player": "Kepler",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Celestino"
     }
   ],
   [
@@ -40910,7 +41160,8 @@
     "O'Hearn hit for Hicklen",
     {
       "player": "O'Hearn",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Hicklen"
     }
   ],
   [
@@ -40932,7 +41183,8 @@
     "Blanco ran for O'Hearn",
     {
       "player": "Blanco",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "O'Hearn"
     }
   ],
   [
@@ -40981,7 +41233,8 @@
     "Blanco in center field.",
     {
       "player": "Blanco",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "center"
     }
   ],
   [
@@ -41031,14 +41284,16 @@
     "Gordon hit for Jeffers",
     {
       "player": "Gordon",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Jeffers"
     }
   ],
   [
     "Gordon as designated hitter.",
     {
       "player": "Gordon",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "designated hitter"
     }
   ],
   [
@@ -41146,13 +41401,14 @@
   [
     "Polanco to second on passed ball by Gallagher.",
     {
-      "type": "wild pitch",
       "player": "Gallagher",
+      "type": "passed ball",
       "moves": [
         {
           "player": "Polanco",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "passed ball"
         }
       ]
     }
@@ -41426,13 +41682,14 @@
   [
     "Larnach to second on wild pitch by Garrett.",
     {
-      "type": "wild pitch",
       "player": "Garrett",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Larnach",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }
@@ -41554,7 +41811,8 @@
     "Celestino ran for Arraez",
     {
       "player": "Celestino",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Arraez"
     }
   ],
   [
@@ -42097,7 +42355,8 @@
     "Kirilloff hit for Celestino",
     {
       "player": "Kirilloff",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Celestino"
     }
   ],
   [
@@ -42623,7 +42882,8 @@
     "O'Hearn hit for Rivero",
     {
       "player": "O'Hearn",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Rivero"
     }
   ],
   [
@@ -42660,13 +42920,14 @@
   [
     "Kepler to third on wild pitch by Staumont.",
     {
-      "type": "wild pitch",
       "player": "Staumont",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Kepler",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -42846,7 +43107,8 @@
     "Contreras ran for Miranda",
     {
       "player": "Contreras",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Miranda"
     }
   ],
   [
@@ -42947,24 +43209,27 @@
     "Buxton hit for Kirilloff",
     {
       "player": "Buxton",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Kirilloff"
     }
   ],
   [
     "Kwan to second on wild pitch by Pag\u00e1n, Straw to third on wild pitch by Pag\u00e1n.",
     {
-      "type": "wild pitch",
       "player": "Pag\u00e1n",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Kwan",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         },
         {
           "player": "Straw",
           "type": "advanced",
-          "at": "third"
+          "at": "third",
+          "how": "wild pitch"
         }
       ]
     }
@@ -43006,13 +43271,15 @@
   [
     "Gordon struck out, Gordon to first on wild pitch by Clase.",
     {
-      "type": "wild pitch",
-      "player": "Clase",
+      "player": "Gordon",
+      "type": "struck out",
+      "outs": 1,
       "moves": [
         {
           "player": "Gordon",
           "type": "advanced",
-          "at": "first"
+          "at": "first",
+          "how": "wild pitch"
         }
       ]
     }
@@ -43050,7 +43317,8 @@
     "Gordon ran for Buxton",
     {
       "player": "Gordon",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Buxton"
     }
   ],
   [
@@ -43329,7 +43597,8 @@
     "Hirokazu Sawamura pitches to Carlos Correa",
     {
       "player": "Hirokazu Sawamura",
-      "type": "sub-p"
+      "type": "sub-p",
+      "to": "Carlos Correa"
     }
   ],
   [
@@ -43939,7 +44208,8 @@
     "Larnach ran for Garlick",
     {
       "player": "Larnach",
-      "type": "sub-f"
+      "type": "sub-f",
+      "for": "Garlick"
     }
   ],
   [
@@ -43961,7 +44231,8 @@
     "Larnach as designated hitter.",
     {
       "player": "Larnach",
-      "type": "sub-f"
+      "type": "sub-f",
+      "at": "designated hitter"
     }
   ],
   [
@@ -44047,13 +44318,14 @@
   [
     "Celestino to second on wild pitch by Dugger.",
     {
-      "type": "wild pitch",
       "player": "Dugger",
+      "type": "wild pitch",
       "moves": [
         {
           "player": "Celestino",
           "type": "advanced",
-          "at": "second"
+          "at": "second",
+          "how": "wild pitch"
         }
       ]
     }

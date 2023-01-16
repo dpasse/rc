@@ -67,7 +67,7 @@ class EventDescriptionParser(ParsingEngine):
             return False
 
         def have_issue_with_player(obj: Dict[str, Any]) -> bool:
-            for key in ['player', 'by']:
+            for key in ['player', 'by', 'for', 'to']:
                 if key in obj and not is_player(obj[key]):
                     return True
 
@@ -128,7 +128,7 @@ class EventDescriptionParser(ParsingEngine):
         return observation
 
     def post_parse(self, observation: Dict[str, Any]) -> Dict[str, Any]:
-        for key in ['type', 'at', 'by', 'how', 'effort']:
+        for key in ['type', 'at', 'by', 'for', 'how', 'effort', 'for', 'to']:
             if key in observation:
                 observation[key] = clean_text(observation[key])
 
