@@ -188,9 +188,6 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
         return event
 
     def set_types_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
-        if not 'entities' in event:
-            return event
-
         if not 'isInfoPlay' in event:
             return event
 
@@ -218,7 +215,6 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
                     entities['issues'].append('template')
 
             event['entities'] = { 'issues': ['parsing'] } if entities is None else entities
-
             event = set_types_on_event(event)
 
         events = parse_pitch_events(events)

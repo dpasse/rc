@@ -7,9 +7,8 @@ def handle_balk(groups: List[str]) -> Dict[str, Any]:
         'type': 'balk',
     }
 
-    extras = split_text(groups[0])
     observation.update(
-        handle_extras(extras)
+        handle_extras(split_text(groups[0]))
     )
 
     return observation

@@ -44,9 +44,14 @@
   [
     "T. Turner stole second.",
     {
-      "player": "T. Turner",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "T. Turner",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -1191,9 +1196,14 @@
   [
     "Arraez stole third.",
     {
-      "player": "Arraez",
       "type": "stole",
-      "at": "third"
+      "moves": [
+        {
+          "player": "Arraez",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
     }
   ],
   [
@@ -1440,9 +1450,14 @@
   [
     "Polanco stole second.",
     {
-      "player": "Polanco",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Polanco",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -2186,14 +2201,19 @@
   [
     "Kiermaier caught stealing second, catcher to second.",
     {
-      "player": "Kiermaier",
       "type": "caught stealing",
-      "at": "second",
-      "outs": 1,
       "order": [
         "catcher",
         "second"
-      ]
+      ],
+      "moves": [
+        {
+          "player": "Kiermaier",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
     }
   ],
   [
@@ -2476,9 +2496,14 @@
   [
     "Bruj\u00e1n stole second.",
     {
-      "player": "Bruj\u00e1n",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Bruj\u00e1n",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -2493,14 +2518,19 @@
   [
     "Bruj\u00e1n caught stealing third, catcher to third.",
     {
-      "player": "Bruj\u00e1n",
       "type": "caught stealing",
-      "at": "third",
-      "outs": 1,
       "order": [
         "catcher",
         "third"
-      ]
+      ],
+      "moves": [
+        {
+          "player": "Bruj\u00e1n",
+          "type": "out",
+          "at": "third"
+        }
+      ],
+      "outs": 1
     }
   ],
   [
@@ -4474,9 +4504,14 @@
   [
     "Kwan stole second.",
     {
-      "player": "Kwan",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Kwan",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -4747,9 +4782,14 @@
   [
     "Rosario stole second.",
     {
-      "player": "Rosario",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Rosario",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -5332,9 +5372,14 @@
   [
     "Anderson stole second.",
     {
-      "player": "Anderson",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Anderson",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -7995,9 +8040,14 @@
   [
     "Moore stole second.",
     {
-      "player": "Moore",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Moore",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -10069,14 +10119,19 @@
   [
     "Gordon caught stealing second, catcher to second.",
     {
-      "player": "Gordon",
       "type": "caught stealing",
-      "at": "second",
-      "outs": 1,
       "order": [
         "catcher",
         "second"
-      ]
+      ],
+      "moves": [
+        {
+          "player": "Gordon",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
     }
   ],
   [
@@ -10750,9 +10805,14 @@
   [
     "Gordon stole third.",
     {
-      "player": "Gordon",
       "type": "stole",
-      "at": "third"
+      "moves": [
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
     }
   ],
   [
@@ -10987,9 +11047,14 @@
   [
     "Hill stole second.",
     {
-      "player": "Hill",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Hill",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -12207,9 +12272,14 @@
   [
     "Tucker stole second.",
     {
-      "player": "Tucker",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Tucker",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -12859,14 +12929,19 @@
   [
     "Miranda caught stealing home, catcher to third.",
     {
-      "player": "Miranda",
       "type": "caught stealing",
-      "at": "home",
-      "outs": 1,
       "order": [
         "catcher",
         "third"
-      ]
+      ],
+      "moves": [
+        {
+          "player": "Miranda",
+          "type": "out",
+          "at": "home"
+        }
+      ],
+      "outs": 1
     }
   ],
   [
@@ -14055,10 +14130,13 @@
   [
     "Gordon stole second, Gordon safe at third on throwing error by catcher Haase.",
     {
-      "player": "Gordon",
       "type": "stole",
-      "at": "second",
       "moves": [
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "second"
+        },
         {
           "player": "Gordon",
           "type": "advanced",
@@ -15223,9 +15301,14 @@
   [
     "Brown stole second.",
     {
-      "player": "Brown",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Brown",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -16142,14 +16225,19 @@
   [
     "Polanco caught stealing second, catcher to shortstop.",
     {
-      "player": "Polanco",
       "type": "caught stealing",
-      "at": "second",
-      "outs": 1,
       "order": [
         "catcher",
         "shortstop"
-      ]
+      ],
+      "moves": [
+        {
+          "player": "Polanco",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
     }
   ],
   [
@@ -18510,9 +18598,14 @@
   [
     "Arozarena stole second.",
     {
-      "player": "Arozarena",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Arozarena",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -18535,9 +18628,14 @@
   [
     "Kiermaier stole second.",
     {
-      "player": "Kiermaier",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Kiermaier",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -18649,9 +18747,14 @@
   [
     "Arozarena stole third.",
     {
-      "player": "Arozarena",
       "type": "stole",
-      "at": "third"
+      "moves": [
+        {
+          "player": "Arozarena",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
     }
   ],
   [
@@ -19408,9 +19511,14 @@
   [
     "Piscotty stole second.",
     {
-      "player": "Piscotty",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Piscotty",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -19620,14 +19728,19 @@
   [
     "Neuse caught stealing second, catcher to second.",
     {
-      "player": "Neuse",
       "type": "caught stealing",
-      "at": "second",
-      "outs": 1,
       "order": [
         "catcher",
         "second"
-      ]
+      ],
+      "moves": [
+        {
+          "player": "Neuse",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
     }
   ],
   [
@@ -21545,9 +21658,14 @@
   [
     "Ram\u00edrez stole second.",
     {
-      "player": "Ram\u00edrez",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Ram\u00edrez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -22128,9 +22246,14 @@
   [
     "Joe stole second.",
     {
-      "player": "Joe",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Joe",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -26363,9 +26486,14 @@
   [
     "Gim\u00e9nez stole second.",
     {
-      "player": "Gim\u00e9nez",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Gim\u00e9nez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -27969,9 +28097,14 @@
   [
     "Goodrum stole second.",
     {
-      "player": "Goodrum",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Goodrum",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -30742,14 +30875,19 @@
   [
     "Arraez caught stealing second, catcher to second.",
     {
-      "player": "Arraez",
       "type": "caught stealing",
-      "at": "second",
-      "outs": 1,
       "order": [
         "catcher",
         "second"
-      ]
+      ],
+      "moves": [
+        {
+          "player": "Arraez",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
     }
   ],
   [
@@ -32028,14 +32166,19 @@
   [
     "Celestino caught stealing second, catcher to second.",
     {
-      "player": "Celestino",
       "type": "caught stealing",
-      "at": "second",
-      "outs": 1,
       "order": [
         "catcher",
         "second"
-      ]
+      ],
+      "moves": [
+        {
+          "player": "Celestino",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
     }
   ],
   [
@@ -32058,9 +32201,14 @@
   [
     "Witt Jr. stole second.",
     {
-      "player": "Witt Jr.",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Witt Jr.",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -32415,9 +32563,14 @@
   [
     "Springer stole second.",
     {
-      "player": "Springer",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Springer",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -32729,9 +32882,14 @@
   [
     "Hern\u00e1ndez stole second.",
     {
-      "player": "Hern\u00e1ndez",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Hern\u00e1ndez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -33117,14 +33275,19 @@
   [
     "Kepler caught stealing second, catcher to shortstop.",
     {
-      "player": "Kepler",
       "type": "caught stealing",
-      "at": "second",
-      "outs": 1,
       "order": [
         "catcher",
         "shortstop"
-      ]
+      ],
+      "moves": [
+        {
+          "player": "Kepler",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
     }
   ],
   [
@@ -33533,9 +33696,14 @@
   [
     "Straw stole second.",
     {
-      "player": "Straw",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Straw",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -34772,9 +34940,14 @@
   [
     "Rojas stole second.",
     {
-      "player": "Rojas",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Rojas",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -35074,9 +35247,14 @@
   [
     "Walls stole second.",
     {
-      "player": "Walls",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Walls",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -35321,10 +35499,13 @@
   [
     "Franco stole second, Lowe stole third.",
     {
-      "player": "Franco",
       "type": "stole",
-      "at": "second",
       "moves": [
+        {
+          "player": "Franco",
+          "type": "advanced",
+          "at": "second"
+        },
         {
           "player": "Lowe",
           "type": "advanced",
@@ -35789,9 +35970,14 @@
   [
     "Kiner-Falefa stole third.",
     {
-      "player": "Kiner-Falefa",
       "type": "stole",
-      "at": "third"
+      "moves": [
+        {
+          "player": "Kiner-Falefa",
+          "type": "advanced",
+          "at": "third"
+        }
+      ]
     }
   ],
   [
@@ -35853,9 +36039,14 @@
   [
     "Donaldson stole second.",
     {
-      "player": "Donaldson",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Donaldson",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -37146,10 +37337,13 @@
   [
     "Rodr\u00edguez stole second, Rodr\u00edguez safe at third on throwing error by catcher S\u00e1nchez.",
     {
-      "player": "Rodr\u00edguez",
       "type": "stole",
-      "at": "second",
       "moves": [
+        {
+          "player": "Rodr\u00edguez",
+          "type": "advanced",
+          "at": "second"
+        },
         {
           "player": "Rodr\u00edguez",
           "type": "advanced",
@@ -37406,9 +37600,14 @@
   [
     "Buxton stole second.",
     {
-      "player": "Buxton",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Buxton",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -37601,9 +37800,14 @@
   [
     "Kelenic stole second.",
     {
-      "player": "Kelenic",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Kelenic",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -38429,9 +38633,14 @@
   [
     "Arraez stole second.",
     {
-      "player": "Arraez",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Arraez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -38488,9 +38697,14 @@
   [
     "Palacios stole second.",
     {
-      "player": "Palacios",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Palacios",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -38715,18 +38929,26 @@
   [
     "Bellinger stole second.",
     {
-      "player": "Bellinger",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Bellinger",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
     "Taylor stole second, Bellinger stole third.",
     {
-      "player": "Taylor",
       "type": "stole",
-      "at": "second",
       "moves": [
+        {
+          "player": "Taylor",
+          "type": "advanced",
+          "at": "second"
+        },
         {
           "player": "Bellinger",
           "type": "advanced",
@@ -39902,9 +40124,14 @@
   [
     "Andrus stole second.",
     {
-      "player": "Andrus",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Andrus",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -40102,10 +40329,13 @@
   [
     "Witt Jr. stole second, Witt Jr. safe at third on throwing error by catcher Jeffers.",
     {
-      "player": "Witt Jr.",
       "type": "stole",
-      "at": "second",
       "moves": [
+        {
+          "player": "Witt Jr.",
+          "type": "advanced",
+          "at": "second"
+        },
         {
           "player": "Witt Jr.",
           "type": "advanced",
@@ -40414,9 +40644,14 @@
   [
     "Lopez stole second.",
     {
-      "player": "Lopez",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Lopez",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -41177,9 +41412,14 @@
   [
     "Mercado stole second.",
     {
-      "player": "Mercado",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Mercado",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -41193,9 +41433,14 @@
   [
     "Gordon stole second.",
     {
-      "player": "Gordon",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Gordon",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -43036,9 +43281,14 @@
   [
     "Isbel stole second.",
     {
-      "player": "Isbel",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Isbel",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -43635,14 +43885,19 @@
   [
     "Rosario caught stealing second, catcher to second.",
     {
-      "player": "Rosario",
       "type": "caught stealing",
-      "at": "second",
-      "outs": 1,
       "order": [
         "catcher",
         "second"
-      ]
+      ],
+      "moves": [
+        {
+          "player": "Rosario",
+          "type": "out",
+          "at": "second"
+        }
+      ],
+      "outs": 1
     }
   ],
   [
@@ -43790,9 +44045,14 @@
   [
     "Kepler stole second.",
     {
-      "player": "Kepler",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Kepler",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -43832,9 +44092,14 @@
   [
     "San\u00f3 stole second.",
     {
-      "player": "San\u00f3",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "San\u00f3",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -44955,9 +45220,14 @@
   [
     "W. Castro stole second.",
     {
-      "player": "W. Castro",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "W. Castro",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
@@ -45175,9 +45445,14 @@
   [
     "Cameron stole second.",
     {
-      "player": "Cameron",
       "type": "stole",
-      "at": "second"
+      "moves": [
+        {
+          "player": "Cameron",
+          "type": "advanced",
+          "at": "second"
+        }
+      ]
     }
   ],
   [
