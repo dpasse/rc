@@ -27,10 +27,10 @@ def handle_player_sub(groups: List[str]) -> Dict[str, Any]:
 def handle_pitcher_sub(groups: List[str]) -> Dict[str, Any]:
     observation = create_player_observation(
         player=groups[0],
-        event_type='sub-p'
+        event_type=groups[1]
     )
 
-    observation['to'] = groups[1]
+    observation['to'] = groups[2]
 
     return observation
 
@@ -56,5 +56,5 @@ exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
     (r'^(.+?) (?:hit|ran) for (.+)', handle_player_sub),
     (r'^(.+?) pitching for (.+)', handle_pitcher_sub_with_team),
     (r'^(.+?) (catching)', handle_default_sub),
-    (r'^(.+?) (?:pitches) to (.+)', handle_pitcher_sub),
+    (r'^(.+?) (pitches) to (.+)', handle_pitcher_sub),
 ]

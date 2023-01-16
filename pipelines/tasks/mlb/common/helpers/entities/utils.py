@@ -56,6 +56,7 @@ EventTypes = set([
     'triples',
     'singled',
     'singles',
+    'pitches',
     'walked',
     'sub-p',
     'sub-f',

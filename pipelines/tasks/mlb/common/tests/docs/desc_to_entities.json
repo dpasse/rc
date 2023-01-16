@@ -2200,7 +2200,7 @@
     "Chi Chi Gonzalez pitches to Randy Arozarena",
     {
       "player": "Chi Chi Gonzalez",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Randy Arozarena"
     }
   ],
@@ -10083,7 +10083,7 @@
     "Felix Bautista pitches to Byron Buxton",
     {
       "player": "Felix Bautista",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Byron Buxton"
     }
   ],
@@ -10451,7 +10451,7 @@
     "Yusei Kikuchi pitches to Ryan Jeffers",
     {
       "player": "Yusei Kikuchi",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Ryan Jeffers"
     }
   ],
@@ -11027,7 +11027,7 @@
     "Dylan Bundy pitches to Jonathan Schoop",
     {
       "player": "Dylan Bundy",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Jonathan Schoop"
     }
   ],
@@ -12472,7 +12472,7 @@
     "Justin Verlander pitches to Max Kepler",
     {
       "player": "Justin Verlander",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Max Kepler"
     }
   ],
@@ -16156,7 +16156,7 @@
     "Michael Kopech pitches to Max Kepler",
     {
       "player": "Michael Kopech",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Max Kepler"
     }
   ],
@@ -16683,7 +16683,7 @@
     "Bruce Zimmermann pitches to Carlos Correa",
     {
       "player": "Bruce Zimmermann",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Carlos Correa"
     }
   ],
@@ -19634,7 +19634,7 @@
     "Josh Winder pitches to Sean Murphy",
     {
       "player": "Josh Winder",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Sean Murphy"
     }
   ],
@@ -20097,7 +20097,7 @@
     "Joe Ryan pitches to Adalberto Mondesi",
     {
       "player": "Joe Ryan",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Adalberto Mondesi"
     }
   ],
@@ -32042,7 +32042,7 @@
     "Joel Payamps pitches to Byron Buxton",
     {
       "player": "Joel Payamps",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Byron Buxton"
     }
   ],
@@ -33131,7 +33131,7 @@
     "Spenser Watkins pitches to Trevor Larnach",
     {
       "player": "Spenser Watkins",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Trevor Larnach"
     }
   ],
@@ -37779,7 +37779,7 @@
     "Caleb Thielbar pitches to Julio Rodriguez",
     {
       "player": "Caleb Thielbar",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Julio Rodriguez"
     }
   ],
@@ -43977,7 +43977,7 @@
     "Hirokazu Sawamura pitches to Carlos Correa",
     {
       "player": "Hirokazu Sawamura",
-      "type": "sub-p",
+      "type": "pitches",
       "to": "Carlos Correa"
     }
   ],
