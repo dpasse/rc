@@ -209,6 +209,20 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
 
         return event
 
+    def set_entities_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
+        entities = EVENT_DESCRIPTION_PARSER.transform_into_object(event['desc'])
+
+        if entities:
+            matches_template, _ = TEMPLATE_SERVICE.validate(event['desc'], entities)
+            if not matches_template:
+                if not 'issues' in entities:
+                    entities['issues'] = []
+
+                entities['issues'].append('template')
+
+        event['entities'] = { 'issues': ['parsing'] } if entities is None else entities
+        return event
+
     def set_prior_on_pitches(events: List[Dict[str, Any]]) -> Dict[str, Any]:
         bases = [0, 0, 0]
         for event in events:
@@ -256,30 +270,17 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
         for event in events:
             event = clear_event(event)
 
-            entities = EVENT_DESCRIPTION_PARSER.transform_into_object(event['desc'])
-
-            if entities:
-                matches_template, _ = TEMPLATE_SERVICE.validate(event['desc'], entities)
-                if not matches_template:
-                    if not 'issues' in entities:
-                        entities['issues'] = []
-
-                    entities['issues'].append('template')
-
-            event['entities'] = { 'issues': ['parsing'] } if entities is None else entities
+            event = set_entities_on_event(event)
             event = set_types_on_event(event)
 
         events = handle_pitch_events(events)
-
         period['events'] = events
-        period['score']['outs'] = calculate_total_outs(events)
 
-        score = period['score']
-        if score['outs'] > 3:
+        outs = calculate_total_outs(events)
+        if outs > 3 or (outs < 3 and period['atBat'] != periods[-1]['atBat']):
             period['issues'] = ['outs']
 
-        if score['outs'] < 3 and period['atBat'] != periods[-1]['atBat']:
-            period['issues'] = ['outs']
+        period['score']['outs'] = outs
 
     game['periods'] = periods
     return game
