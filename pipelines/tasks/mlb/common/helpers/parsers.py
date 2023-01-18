@@ -235,24 +235,11 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
         pitch_events = get_pitch_events(events)
 
         for event in filter(lambda ev: not 'isInfoPlay' in ev, events):
-            pe_ids = []
-            pitches = event['pitches'] if 'pitches' in event else []
-            for pitch in pitches:
-                prior = pitch['prior']
-                if 'beforePitchEvent' in prior:
-                    pe_ids.append(prior['beforePitchEvent'])
-
-                result = pitch['result']
-                if 'afterPitchEvent' in result:
-                    pe_ids.append(result['afterPitchEvent'])
-
-            if len(pitches) == 0 and 'pitchEvents' in event:
-                pe_ids.extend(event['pitchEvents'])
-
-            outs += sum(
-                get_outs_from_event(pitch_events[pe_id])
-                for pe_id in pe_ids
-            )
+            if 'pitchEvents' in event:
+                outs += sum(
+                    get_outs_from_event(pitch_events[pe_id])
+                    for pe_id in event['pitchEvents']
+                )
 
             outs += get_outs_from_event(event) if 'outs' in event['entities'] else 0
 
