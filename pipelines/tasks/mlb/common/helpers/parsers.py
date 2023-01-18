@@ -226,13 +226,18 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
     def set_prior_on_pitches(events: List[Dict[str, Any]]) -> Dict[str, Any]:
         bases = [0, 0, 0]
         for event in events:
+            if 'isPitcherChange' in event:
+                event['isInfoPlay'] = True
+
             if 'isInfoPlay' in event:
                 continue
 
-            if 'pitches' in event:
-                for pitch in event['pitches']:
-                    pitch['prior'] = { 'bases': bases.copy() }
-                    bases = pitch['result']['bases']
+            if not 'pitches' in event:
+                event['pitches'] = []
+
+            for pitch in event['pitches']:
+                pitch['prior'] = { 'bases': bases.copy() }
+                bases = pitch['result']['bases']
 
         return events
 
