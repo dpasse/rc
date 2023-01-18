@@ -189,6 +189,9 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
         return event
 
     def set_types_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
+        if 'isPitcherChange' in event:
+            event['isInfoPlay'] = True
+
         if not 'isInfoPlay' in event:
             return event
 
@@ -226,14 +229,19 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
     def set_prior_on_pitches(events: List[Dict[str, Any]]) -> Dict[str, Any]:
         bases = [0, 0, 0]
         for event in events:
-            if 'isPitcherChange' in event:
-                event['isInfoPlay'] = True
-
             if 'isInfoPlay' in event:
                 continue
 
             if not 'pitches' in event:
                 event['pitches'] = []
+
+            entities = event['entities']
+            if 'premature' in entities:
+                continue
+
+            if entities['type'] == 'intentionally walked':
+                bases = ([1] + bases)[:3]
+                continue
 
             for pitch in event['pitches']:
                 pitch['prior'] = { 'bases': bases.copy() }
@@ -270,7 +278,6 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
             del period['issues']
 
         events = period['events']
-        events = set_prior_on_pitches(events)
 
         for event in events:
             event = clear_event(event)
@@ -278,12 +285,29 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
             event = set_entities_on_event(event)
             event = set_types_on_event(event)
 
+        events = set_prior_on_pitches(events)
         events = handle_pitch_events(events)
         period['events'] = events
 
         outs = calculate_total_outs(events)
+        period['score']['outs'] = outs
+
+        issues = []
         if outs > 3 or (outs < 3 and period['atBat'] != periods[-1]['atBat']):
-            period['issues'] = ['outs']
+            issues.append(['outs'])
+
+        for event in events:
+            if 'isInfoPlay' in event:
+                continue
+
+            for pitch in (event['pitches'] if 'pitches' in event else []):
+                if sum(pitch['result']['bases']) - sum(pitch['prior']['bases']) > 1:
+                    ## 2+ baserunners appear...
+                    issues.append('bases')
+                    break
+
+        if len(issues) > 0:
+            period['issues'] = issues
 
         period['score']['outs'] = outs
 

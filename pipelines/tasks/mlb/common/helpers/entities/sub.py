@@ -24,16 +24,6 @@ def handle_player_sub(groups: List[str]) -> Dict[str, Any]:
 
     return observation
 
-def handle_pitcher_sub(groups: List[str]) -> Dict[str, Any]:
-    observation = create_player_observation(
-        player=groups[0],
-        event_type=groups[1]
-    )
-
-    observation['to'] = groups[2]
-
-    return observation
-
 def handle_pitcher_sub_with_team(groups: List[str]) -> Dict[str, Any]:
     observation = create_player_observation(
         player=groups[0],
@@ -51,10 +41,22 @@ def handle_default_sub(groups: List[str]) -> Dict[str, Any]:
         event_type='sub-p' if is_pitch else 'sub-f',
     )
 
+def handle_premature_ending(groups: List[str]) -> Dict[str, Any]:
+    observation = create_player_observation(
+        player=groups[0],
+        event_type=groups[1]
+    )
+
+    observation['to'] = groups[2]
+    observation['premature'] = True
+
+    return observation
+
+
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
     (r'^(.+?) (?:a[st]|in) (.+)', handle_position_sub),
     (r'^(.+?) (?:hit|ran) for (.+)', handle_player_sub),
     (r'^(.+?) pitching for (.+)', handle_pitcher_sub_with_team),
     (r'^(.+?) (catching)', handle_default_sub),
-    (r'^(.+?) (pitches) to (.+)', handle_pitcher_sub),
+    (r'^(.+?) (pitches) to (.+)', handle_premature_ending),
 ]

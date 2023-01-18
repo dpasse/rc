@@ -2221,7 +2221,8 @@
     {
       "player": "Chi Chi Gonzalez",
       "type": "pitches",
-      "to": "Randy Arozarena"
+      "to": "Randy Arozarena",
+      "premature": true
     }
   ],
   [
@@ -10139,7 +10140,8 @@
     {
       "player": "Felix Bautista",
       "type": "pitches",
-      "to": "Byron Buxton"
+      "to": "Byron Buxton",
+      "premature": true
     }
   ],
   [
@@ -10507,7 +10509,8 @@
     {
       "player": "Yusei Kikuchi",
       "type": "pitches",
-      "to": "Ryan Jeffers"
+      "to": "Ryan Jeffers",
+      "premature": true
     }
   ],
   [
@@ -11093,7 +11096,8 @@
     {
       "player": "Dylan Bundy",
       "type": "pitches",
-      "to": "Jonathan Schoop"
+      "to": "Jonathan Schoop",
+      "premature": true
     }
   ],
   [
@@ -12543,7 +12547,8 @@
     {
       "player": "Justin Verlander",
       "type": "pitches",
-      "to": "Max Kepler"
+      "to": "Max Kepler",
+      "premature": true
     }
   ],
   [
@@ -16245,7 +16250,8 @@
     {
       "player": "Michael Kopech",
       "type": "pitches",
-      "to": "Max Kepler"
+      "to": "Max Kepler",
+      "premature": true
     }
   ],
   [
@@ -16772,7 +16778,8 @@
     {
       "player": "Bruce Zimmermann",
       "type": "pitches",
-      "to": "Carlos Correa"
+      "to": "Carlos Correa",
+      "premature": true
     }
   ],
   [
@@ -19748,7 +19755,8 @@
     {
       "player": "Josh Winder",
       "type": "pitches",
-      "to": "Sean Murphy"
+      "to": "Sean Murphy",
+      "premature": true
     }
   ],
   [
@@ -20211,7 +20219,8 @@
     {
       "player": "Joe Ryan",
       "type": "pitches",
-      "to": "Adalberto Mondesi"
+      "to": "Adalberto Mondesi",
+      "premature": true
     }
   ],
   [
@@ -32185,7 +32194,8 @@
     {
       "player": "Joel Payamps",
       "type": "pitches",
-      "to": "Byron Buxton"
+      "to": "Byron Buxton",
+      "premature": true
     }
   ],
   [
@@ -33294,7 +33304,8 @@
     {
       "player": "Spenser Watkins",
       "type": "pitches",
-      "to": "Trevor Larnach"
+      "to": "Trevor Larnach",
+      "premature": true
     }
   ],
   [
@@ -37983,7 +37994,8 @@
     {
       "player": "Caleb Thielbar",
       "type": "pitches",
-      "to": "Julio Rodriguez"
+      "to": "Julio Rodriguez",
+      "premature": true
     }
   ],
   [
@@ -44240,7 +44252,8 @@
     {
       "player": "Hirokazu Sawamura",
       "type": "pitches",
-      "to": "Carlos Correa"
+      "to": "Carlos Correa",
+      "premature": true
     }
   ],
   [
