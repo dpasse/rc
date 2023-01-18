@@ -1,5 +1,6 @@
 import re
 from typing import Optional, Tuple, Dict, Any, List, Callable
+from .extractors import get_pitch_events
 from .entities.utils import clean_text, \
                             is_event_type, \
                             is_location, \
@@ -191,16 +192,80 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
         if not 'isInfoPlay' in event:
             return event
 
-        if not event['entities']['type'] in ['sub-p', 'sub-f']:
-            event['type'] = 'before-pitch' \
-                if event['entities']['type'] in ['balk', 'picked off', 'pickoff error'] \
-                else 'after-pitch'
+        entities = event['entities']
+        if entities['type'] in ['sub-p', 'sub-f']:
+            return event
+
+        if entities['type'] in ['picked off', 'pickoff error']:
+            by = re.search(r'(?:picked off|pickoff error) by (pitcher|catcher)', event['desc'])
+            if by and by.group(1).lower() == 'catcher':
+                event['type'] = 'after-pitch'
+
+                return event
+
+        event['type'] = 'before-pitch' \
+            if entities['type'] in ['balk', 'picked off', 'pickoff error'] \
+            else 'after-pitch'
 
         return event
 
+    def set_prior_on_pitches(events: List[Dict[str, Any]]) -> Dict[str, Any]:
+        bases = [0, 0, 0]
+        for event in events:
+            if 'isInfoPlay' in event:
+                continue
+
+            if 'pitches' in event:
+                for pitch in event['pitches']:
+                    pitch['prior'] = { 'bases': bases.copy() }
+                    bases = pitch['result']['bases']
+
+        return events
+
+    def handle_pitch_events(events: List[Dict[str, Any]]) -> Dict[str, Any]:
+        events = parse_pitch_events(events)
+        return events
+
+    def calculate_total_outs(events: List[Dict[str, Any]]) -> int:
+        def get_outs_from_event(event: Dict[str, Any]) -> int:
+            entities = event['entities']
+            return entities['outs'] if 'outs' in entities else 0
+
+        outs = 0
+        pitch_events = get_pitch_events(events)
+
+        for event in filter(lambda ev: not 'isInfoPlay' in ev, events):
+            pe_ids = []
+            pitches = event['pitches'] if 'pitches' in event else []
+            for pitch in pitches:
+                prior = pitch['prior']
+                if 'beforePitchEvent' in prior:
+                    pe_ids.append(prior['beforePitchEvent'])
+
+                result = pitch['result']
+                if 'afterPitchEvent' in result:
+                    pe_ids.append(result['afterPitchEvent'])
+
+            if len(pitches) == 0 and 'pitchEvents' in event:
+                pe_ids.extend(event['pitchEvents'])
+
+            outs += sum(
+                get_outs_from_event(pitch_events[pe_id])
+                for pe_id in pe_ids
+            )
+
+            outs += get_outs_from_event(event) if 'outs' in event['entities'] else 0
+
+        return outs
+
     periods = game['periods']
     for period in periods:
+        if 'issues' in period:
+            del period['issues']
+
         events = period['events']
+        events = set_prior_on_pitches(events)
+
         for event in events:
             event = clear_event(event)
 
@@ -217,8 +282,17 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
             event['entities'] = { 'issues': ['parsing'] } if entities is None else entities
             event = set_types_on_event(event)
 
-        events = parse_pitch_events(events)
+        events = handle_pitch_events(events)
+
         period['events'] = events
+        period['score']['outs'] = calculate_total_outs(events)
+
+        score = period['score']
+        if score['outs'] > 3:
+            period['issues'] = ['outs']
+
+        if score['outs'] < 3 and period['atBat'] != periods[-1]['atBat']:
+            period['issues'] = ['outs']
 
     game['periods'] = periods
     return game

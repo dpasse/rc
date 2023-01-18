@@ -25969,7 +25969,6 @@
     {
       "player": "Larnach",
       "type": "struck out",
-      "outs": 1,
       "moves": [
         {
           "player": "Larnach",
@@ -40034,7 +40033,6 @@
     {
       "player": "Buxton",
       "type": "struck out",
-      "outs": 1,
       "moves": [
         {
           "player": "Buxton",
@@ -42995,7 +42993,7 @@
     {
       "player": "Kepler",
       "type": "grounded into double play",
-      "outs": 3,
+      "outs": 2,
       "order": [
         "third",
         "shortstop"
@@ -43905,7 +43903,6 @@
     {
       "player": "Gordon",
       "type": "struck out",
-      "outs": 1,
       "moves": [
         {
           "player": "Gordon",

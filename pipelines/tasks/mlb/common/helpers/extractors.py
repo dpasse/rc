@@ -1,4 +1,4 @@
-from typing import Dict, Any
+from typing import Dict, Any, List
 
 
 def get_pitchers_first_appearance(data: dict) -> Dict[str, Dict[str, int]]:
@@ -27,12 +27,11 @@ def get_pitchers_first_appearance(data: dict) -> Dict[str, Dict[str, int]]:
 
     return pitchers_first_appearance
 
-def get_pitch_events(data: dict) -> Dict[int, Dict[str, Any]]:
-    after_pitch_events: Dict[int, Dict[str, Any]] = {}
+def get_pitch_events(events: List[Dict[str, Any]]) -> Dict[int, Dict[str, Any]]:
+    pitch_events: Dict[int, Dict[str, Any]] = {}
 
-    for period in data['periods']:
-        for event in period['events']:
-            if 'type' in event and event['type'] in ['after-pitch', 'before-pitch']:
-                after_pitch_events[event['id']] = event
+    for event in events:
+        if 'type' in event and event['type'] in ['after-pitch', 'before-pitch']:
+            pitch_events[event['id']] = event
 
-    return after_pitch_events
+    return pitch_events

@@ -14,6 +14,7 @@ def test_after_pitch_to_correct_pitch_single():
             "pitches": [
                 {
                     "order": 1,
+                    "prior": { "bases": [1, 0, 0] },
                     "result": {
                         "type": "strike",
                         "outcome": "foul ball",
@@ -22,6 +23,7 @@ def test_after_pitch_to_correct_pitch_single():
                 },
                 {
                     "order": 2,
+                    "prior": { "bases": [1, 0, 0] },
                     "result": {
                         "type": "ball",
                         "outcome": "ball",
@@ -30,6 +32,7 @@ def test_after_pitch_to_correct_pitch_single():
                 },
                 {
                     "order": 3,
+                    "prior": { "bases": [1, 0, 0] },
                     "result": {
                         "type": "strike",
                         "outcome": "strike looking",
@@ -38,6 +41,7 @@ def test_after_pitch_to_correct_pitch_single():
                 },
                 {
                     "order": 4,
+                    "prior": { "bases": [0, 0, 1] },
                     "result": {
                         "type": "strike",
                         "outcome": "strike swinging",
@@ -49,7 +53,7 @@ def test_after_pitch_to_correct_pitch_single():
         }
     ]
 
-    events = parse_pitch_events(events, state_of_bases=[1, 0, 0])
+    events = parse_pitch_events(events)
 
     after_pitch_event = events[0]
     assert after_pitch_event['afterPitchEvent'] == {
@@ -79,6 +83,7 @@ def test_after_pitch_to_correct_pitch_multiple():
             "pitches": [
                 {
                     "order": 1,
+                    "prior": { "bases": [1, 0, 0] },
                     "result": {
                         "type": "strike",
                         "outcome": "foul ball",
@@ -87,6 +92,7 @@ def test_after_pitch_to_correct_pitch_multiple():
                 },
                 {
                     "order": 2,
+                    "prior": { "bases": [1, 0, 0] },
                     "result": {
                         "type": "ball",
                         "outcome": "ball",
@@ -95,6 +101,7 @@ def test_after_pitch_to_correct_pitch_multiple():
                 },
                 {
                     "order": 3,
+                    "prior": { "bases": [1, 0, 0] },
                     "result": {
                         "type": "strike",
                         "outcome": "strike looking",
@@ -103,6 +110,7 @@ def test_after_pitch_to_correct_pitch_multiple():
                 },
                 {
                     "order": 4,
+                    "prior": { "bases": [0, 0, 1] },
                     "result": {
                         "type": "strike",
                         "outcome": "strike swinging",
@@ -111,6 +119,7 @@ def test_after_pitch_to_correct_pitch_multiple():
                 },
                 {
                     "order": 5,
+                    "prior": { "bases": [0, 0, 0] },
                     "result": {
                         "type": "strike",
                         "outcome": "strike swinging",
@@ -119,6 +128,7 @@ def test_after_pitch_to_correct_pitch_multiple():
                 },
                 {
                     "order": 6,
+                    "prior": { "bases": [0, 0, 0] },
                     "result": {
                         "type": "strike",
                         "outcome": "strike swinging",
@@ -130,7 +140,7 @@ def test_after_pitch_to_correct_pitch_multiple():
         }
     ]
 
-    parse_pitch_events(events, state_of_bases=[1, 0, 0])
+    parse_pitch_events(events)
 
     assert events[0]['afterPitchEvent'] == {
         'id': 26,
@@ -146,58 +156,6 @@ def test_after_pitch_to_correct_pitch_multiple():
     assert events[2]['pitches'][2]['result']['afterPitchEvent'] == 25
     assert events[2]['pitchEvents'] == [24,25]
 
-def test_before_pitch_to_correct_pitch():
-    events = [
-        {
-            "isScoringPlay": False,
-            "isInfoPlay": True,
-            "desc": "Kepler to second on pickoff error by catcher McGuire.",
-            "type": "before-pitch",
-            "id": 34,
-        },
-        {
-          "isScoringPlay": False,
-          "pitches": [
-              {
-                  "order": 1,
-                  "result": {
-                      "type": "ball",
-                      "outcome": "ball",
-                      "bases": [1, 0, 0],
-                  },
-              },
-              {
-                  "order": 2,
-                  "result": {
-                      "type": "ball",
-                      "outcome": "ball",
-                      "bases": [0, 1, 0],
-                      "beforePitchEvent": 34
-                  },
-              },
-              {
-                  "order": 3,
-                  "result": {
-                      "type": "play",
-                      "outcome": "line out",
-                      "bases": [0, 1, 0],
-                  },
-              }
-          ],
-          "id": 35
-        }
-    ]
-
-    parse_pitch_events(events, state_of_bases=[1, 0, 0])
-
-    assert events[0]['beforePitchEvent'] == {
-        'id': 35,
-        'pitch': 2
-    }
-
-    assert events[1]['pitches'][1]['result']['beforePitchEvent'] == 34
-    assert events[1]['pitchEvents'] == [34]
-
 def test_before_pitch_when_it_happens_prior_to_first_pitch():
     events = [
         {
@@ -207,46 +165,49 @@ def test_before_pitch_when_it_happens_prior_to_first_pitch():
             "id": 34,
         },
         {
-          "isScoringPlay": False,
-          "pitches": [
-              {
-                  "order": 1,
-                  "result": {
-                      "type": "ball",
-                      "outcome": "ball",
-                      "bases": [0, 0, 0],
-                  },
-              },
-              {
-                  "order": 2,
-                  "result": {
-                      "type": "ball",
-                      "outcome": "ball",
-                      "bases": [0, 0, 0],
-                      "beforePitchEvent": 34
-                  },
-              },
-              {
-                  "order": 3,
-                  "result": {
-                      "type": "play",
-                      "outcome": "line out",
-                      "bases": [0, 0, 0],
-                  },
-              }
-          ],
-          "id": 35
+            "isScoringPlay": False,
+            "pitches": [
+                {
+                    "order": 1,
+                    "prior": { "bases": [1, 0, 0] },
+                    "result": {
+                        "type": "ball",
+                        "outcome": "ball",
+                        "bases": [0, 0, 0],
+                    },
+                },
+                {
+                    "order": 2,
+                    "prior": { "bases": [0, 0, 0] },
+                    "result": {
+                        "type": "ball",
+                        "outcome": "ball",
+                        "bases": [0, 0, 0],
+                        "beforePitchEvent": 34
+                    },
+                },
+                {
+                    "order": 3,
+                    "prior": { "bases": [0, 0, 0] },
+                    "result": {
+                        "type": "play",
+                        "outcome": "line out",
+                        "bases": [0, 0, 0],
+                    },
+                }
+            ],
+            "id": 35
         }
     ]
 
-    parse_pitch_events(events, state_of_bases=[1, 0, 0])
+    parse_pitch_events(events)
 
     assert events[0]['beforePitchEvent'] == {
         'id': 35,
         'pitch': 1
     }
 
-    assert events[1]['pitches'][0]['result']['beforePitchEvent'] == 34
+    assert events[1]['pitches'][0]['prior']['beforePitchEvent'] == 34
     assert events[1]['pitchEvents'] == [34]
 
 def test_before_pitch_when_ends_inning_before_a_pitch():
@@ -264,7 +225,7 @@ def test_before_pitch_when_ends_inning_before_a_pitch():
         }
     ]
 
-    parse_pitch_events(events, [1, 0, 0])
+    parse_pitch_events(events)
 
     assert events[0]['beforePitchEvent'] == {
         'id': 35

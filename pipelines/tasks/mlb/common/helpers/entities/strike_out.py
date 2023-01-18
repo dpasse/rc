@@ -8,8 +8,15 @@ def handle_strike_outs_no_effort(groups: List[str]) -> Dict[str, Any]:
         player=groups[0],
         event_type='struck out',
         extras=extras,
-        outs=1
     )
+
+    is_out = True
+    for move in observation['moves']:
+        if observation['player'] == move['player'] and move['type'] == 'advanced':
+            is_out = False
+
+    if is_out:
+        observation['outs'] = 1
 
     return observation
 

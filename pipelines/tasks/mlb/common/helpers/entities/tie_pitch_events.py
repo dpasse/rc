@@ -6,12 +6,15 @@ BEFORE_PITCH_EVENT = 'beforePitchEvent'
 AFTER_PITCH_EVENT = 'afterPitchEvent'
 
 def clear_pitch(pitch: Dict[str, Any]) -> Dict[str, Any]:
-    if not 'result' in pitch:
-        return pitch
+    if 'result' in pitch:
+        for key in [AFTER_PITCH_EVENT, BEFORE_PITCH_EVENT, DELTA_KEY]:
+            if key in pitch['result']:
+                del pitch['result'][key]
 
-    for key in [BEFORE_PITCH_EVENT, AFTER_PITCH_EVENT, DELTA_KEY]:
-        if key in pitch['result']:
-            del pitch['result'][key]
+    if 'prior' in pitch:
+        for key in [AFTER_PITCH_EVENT, BEFORE_PITCH_EVENT, DELTA_KEY]:
+            if key in pitch['prior']:
+                del pitch['prior'][key]
 
     return pitch
 
@@ -22,10 +25,8 @@ def clear_event(event: Dict[str, Any]) -> Dict[str, Any]:
 
     return event
 
-def set_pitch_deltas(events: List[Dict[str, Any]], state_of_bases: Optional[List[int]] = None) -> List[Dict[str, Any]]:
-    bases = (state_of_bases if state_of_bases else [0, 0, 0]).copy()
+def set_pitch_deltas(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     for event in events:
-
         clear_event(event)
 
         if 'isInfoPlay' in event:
@@ -38,10 +39,8 @@ def set_pitch_deltas(events: List[Dict[str, Any]], state_of_bases: Optional[List
                 current_pitch = clear_pitch(current_pitch)
 
                 if i < number_of_pitches - 1:
-                    if bases != current_pitch['result']['bases']:
+                    if current_pitch['prior']['bases'] != current_pitch['result']['bases']:
                         current_pitch['result'][DELTA_KEY] = True
-
-                bases = current_pitch['result']['bases']
 
     return events
 
@@ -82,7 +81,7 @@ def tie_pitch_events(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                     if key == BEFORE_PITCH_EVENT:
                         ## use current pitch
                         pitch_event_observation['pitch'] = pitch['order']
-                        pitch['result'][key] = pitch_event['id']
+                        pitch['prior'][key] = pitch_event['id']
 
                     if key == AFTER_PITCH_EVENT:
                         ## use previous pitch
@@ -107,8 +106,8 @@ def tie_pitch_events(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
     return events
 
-def parse_pitch_events(events: List[Dict[str, Any]], state_of_bases: Optional[List[int]] = None) -> List[Dict[str, Any]]:
-    events = set_pitch_deltas(events, state_of_bases=state_of_bases)
+def parse_pitch_events(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    events = set_pitch_deltas(events)
     events = tie_pitch_events(events)
 
     return events
