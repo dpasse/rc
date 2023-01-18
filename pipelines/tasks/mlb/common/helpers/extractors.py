@@ -35,3 +35,30 @@ def get_pitch_events(events: List[Dict[str, Any]]) -> Dict[int, Dict[str, Any]]:
             pitch_events[event['id']] = event
 
     return pitch_events
+
+def get_game_issues(game: Dict[str, Any]) -> Dict[str, Any]:
+    game_issue = {
+        'id': game['id'],
+        'periods': []
+    }
+
+    for period in game['periods']:
+        period_issue = {
+            'id': period['id'],
+            'issues': period['issues'] if 'issues' in period else [],
+            'events': [
+                { 'id': event['id'], 'issues': event['entities']['issues'] }
+                for event
+                in period['events']
+                if 'issues' in event['entities']
+            ],
+        }
+
+        has_issues = False
+        for key in ['issues', 'events']:
+            has_issues = has_issues or any(period_issue[key])
+
+        if has_issues:
+            game_issue['periods'].append(period_issue)
+
+    return game_issue

@@ -3,6 +3,7 @@ import json
 from prefect import flow, task
 
 from common.helpers.parsers import parse_game
+from common.helpers.extractors import get_game_issues
 
 
 PBP_DIRECTORY = '../data/mlb/pbp/'
@@ -20,6 +21,13 @@ def reparse(file: str) -> None:
     if not game is None:
         with open(file_path, 'w', encoding='UTF8') as pbp:
             json.dump(game, pbp, indent=2)
+
+        issues = get_game_issues(game)
+        if len(issues['periods']) > 0:
+            print('FOUND ISSUES:')
+            print(json.dumps(issues, indent=4))
+            print()
+            print()
 
 @flow(name='mlb-reparse-pbp', persist_result=False)
 def rerun_pbps() -> None:

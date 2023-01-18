@@ -10,6 +10,7 @@ import pandas as pd
 from prefect import flow, task
 from common.helpers.web import make_request
 from common.helpers.parsers import parse_game
+from common.helpers.extractors import get_game_issues
 
 
 Logger = logging.getLogger(__name__)
@@ -284,6 +285,11 @@ def get_pbps(game_ids: List[str], timeout = 8) -> None:
             if game:
                 with open(f'../data/mlb/pbp/pbp_{game_id}.json', 'w', encoding='UTF8') as pbp_output:
                     pbp_output.write(json.dumps(game, indent=2))
+
+            issues = get_game_issues(game)
+            if len(issues['periods']) > 0:
+                Logger.error('ISSUES FOUND:')
+                Logger.error(issues)
         except Exception as exception:
             Logger.error('    - %s failed', game_id)
             Logger.error(exception)
