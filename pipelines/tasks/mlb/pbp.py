@@ -286,10 +286,10 @@ def get_pbps(game_ids: List[str], timeout = 8) -> None:
                 with open(f'../data/mlb/pbp/pbp_{game_id}.json', 'w', encoding='UTF8') as pbp_output:
                     pbp_output.write(json.dumps(game, indent=2))
 
-            issues = get_game_issues(game)
-            if len(issues['periods']) > 0:
-                Logger.error('ISSUES FOUND:')
-                Logger.error(issues)
+                issues = get_game_issues(game)
+                if len(issues['periods']) > 0:
+                    Logger.error('ISSUES FOUND:')
+                    Logger.error(issues)
         except Exception as exception:
             Logger.error('    - %s failed', game_id)
             Logger.error(exception)

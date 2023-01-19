@@ -83,7 +83,7 @@ def calculate_total_outs(events: List[Dict[str, Any]]) -> int:
     return outs
 
 def get_current_state_before_pitch(pitches: List[Dict[str, Any]], pitch_events: Dict[int, Dict[str, Any]]) -> Tuple[int, List[int]]:
-    def get_pitch_events(pitches):
+    def get_pitch_event_ids(pitches):
         length = len(pitches)
         for i, pitch in enumerate(pitches[:-1]):
             prior = pitch['prior']
@@ -97,7 +97,7 @@ def get_current_state_before_pitch(pitches: List[Dict[str, Any]], pitch_events: 
 
     outs = sum(
         get_outs_from_event(pitch_events[pe_id])
-        for pe_id in get_pitch_events(pitches)
+        for pe_id in get_pitch_event_ids(pitches)
     )
 
     return outs, (pitches[-1]['prior']['after'] if 'after' in pitches[-1]['prior'] else pitches[-1]['prior']['bases']).copy()

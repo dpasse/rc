@@ -22,7 +22,7 @@ def run_dump() -> None:
                     text_instances.append((description, event['entities']))
                     keys.add(description)
 
-    with open(os.path.join(TEST_DIRECTORY, 'desc_to_entities.json'), 'w') as test_instances:
+    with open(os.path.join(TEST_DIRECTORY, 'desc_to_entities.json'), 'w', encoding='UTF8') as test_instances:
         json.dump(text_instances, test_instances, indent=2)
 
 

@@ -1,4 +1,4 @@
-from typing import List, Dict, Any, Optional, cast
+from typing import List, Dict, Any, cast
 
 
 DELTA_KEY = 'delta'

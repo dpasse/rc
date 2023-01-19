@@ -161,7 +161,7 @@ def clean_text(text: str) -> str:
 
 def split_text(text: str, delimiter: str = r',|\band\b') -> List[str]:
     text = re.sub(r' safe at (first|second|third) and advances ', ' ', text)
-    text = re.sub(r', ((?:[A-Z.]+ |)[A-Z][\w-]+) and ([A-Z]\w+) scored', ', \g<1> scored and \g<2> scored', text)
+    text = re.sub(r', ((?:[A-Z.]+ |)[A-Z][\w-]+) and ([A-Z]\w+) scored', r', \g<1> scored and \g<2> scored', text)
 
     return [
         text
@@ -178,7 +178,7 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
         text = item[:].strip()
 
         ### repair
-        text = re.sub(r'^([A-Z][\w-]+) (first|second|third)(?=\.|$)', '\g<1> to \g<2>', text)
+        text = re.sub(r'^([A-Z][\w-]+) (first|second|third)(?=\.|$)', r'\g<1> to \g<2>', text)
 
         additional_information_match = search(
             [
@@ -212,11 +212,11 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
                 )
 
                 if by_information_match:
-                    groups = by_information_match.groups()
-                    if len(groups) == 1:
-                        how['by'] = groups[0]
+                    by_information_match_groups = by_information_match.groups()
+                    if len(by_information_match_groups) == 1:
+                        how['by'] = by_information_match_groups[0]
                     else:
-                        how['by'] = groups[1]
+                        how['by'] = by_information_match_groups[1]
 
         match = search([
                 r'^ *(.+?) (out|out stretching|thrown out|safe) at (.+)',

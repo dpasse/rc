@@ -1,5 +1,5 @@
 from typing import Dict, Any, List, Tuple, Callable
-from .utils import split_text, create_player_observation, handle_extras
+from .utils import split_text, handle_extras
 
 
 # pylint: disable=R0801

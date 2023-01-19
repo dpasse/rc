@@ -21,8 +21,9 @@ from .entities import steal_exports, \
                       balk_exports, \
                       pick_off_exports, \
                       interference_exports
-
 from .entities.tie_pitch_events import parse_pitch_events
+from .templates import TemplateService
+
 
 default_description_expressions = strike_outs_exports + \
               balk_exports + \
@@ -38,9 +39,6 @@ default_description_expressions = strike_outs_exports + \
               steal_exports + \
               error_exports + \
               sub_exports
-
-from .templates import TemplateService
-
 
 class ParsingEngine():
     def __init__(self, expressions: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]]) -> None:
@@ -140,6 +138,8 @@ class EventDescriptionParser(ParsingEngine):
                     if key in ['type', 'at', 'how', 'effort']:
                         observation[key] = observation[key].lower()
 
+            return observation
+
         clean_values(observation)
 
         if 'moves' in observation:
@@ -181,123 +181,125 @@ class EventDescriptionParser(ParsingEngine):
 EVENT_DESCRIPTION_PARSER = EventDescriptionParser()
 TEMPLATE_SERVICE = TemplateService()
 
-def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
-    def clear_event(event: Dict[str, Any]) -> Dict[str, Any]:
-        if 'type' in event:
-            del event['type']
+def clear_event(event: Dict[str, Any]) -> Dict[str, Any]:
+    if 'type' in event:
+        del event['type']
 
+    return event
+
+def set_types_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
+    if 'isPitcherChange' in event:
+        event['isInfoPlay'] = True
+
+    if not 'isInfoPlay' in event:
         return event
 
-    def set_types_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
-        if 'isPitcherChange' in event:
-            event['isInfoPlay'] = True
+    entities = event['entities']
+    if entities['type'] in ['sub-p', 'sub-f']:
+        return event
 
-        if not 'isInfoPlay' in event:
+    if entities['type'] in ['picked off', 'pickoff error']:
+        by_player = re.search(r'(?:picked off|pickoff error) by (pitcher|catcher)', event['desc'])
+        if by_player and by_player.group(1).lower() == 'catcher':
+            event['type'] = 'after-pitch'
+
             return event
+
+    event['type'] = 'before-pitch' \
+        if entities['type'] in ['balk', 'picked off', 'pickoff error'] \
+        else 'after-pitch'
+
+    return event
+
+def set_entities_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
+    entities = EVENT_DESCRIPTION_PARSER.transform_into_object(event['desc'])
+
+    if entities:
+        matches_template, _ = TEMPLATE_SERVICE.validate(event['desc'], entities)
+        if not matches_template:
+            if not 'issues' in entities:
+                entities['issues'] = []
+
+            entities['issues'].append('template')
+
+    event['entities'] = { 'issues': ['parsing'] } if entities is None else entities
+    return event
+
+def set_prior_on_pitches(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    def move_to_open_base(bases: List[int]) -> List[int]:
+        for i, base in enumerate(bases):
+            if base == 0:
+                bases[i] = 1
+                break
+
+        return bases
+
+    bases: List[int] = [0, 0, 0]
+    for event in events:
+        if 'isInfoPlay' in event:
+            continue
+
+        if not 'pitches' in event:
+            event['pitches'] = []
 
         entities = event['entities']
-        if entities['type'] in ['sub-p', 'sub-f']:
-            return event
+        if 'premature' in entities:
+            continue
 
-        if entities['type'] in ['picked off', 'pickoff error']:
-            by = re.search(r'(?:picked off|pickoff error) by (pitcher|catcher)', event['desc'])
-            if by and by.group(1).lower() == 'catcher':
-                event['type'] = 'after-pitch'
+        if len(event['pitches']) == 0 and entities['type'] == 'intentionally walked':
+            bases = move_to_open_base(bases.copy())
 
-                return event
-
-        event['type'] = 'before-pitch' \
-            if entities['type'] in ['balk', 'picked off', 'pickoff error'] \
-            else 'after-pitch'
-
-        return event
-
-    def set_entities_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
-        entities = EVENT_DESCRIPTION_PARSER.transform_into_object(event['desc'])
-
-        if entities:
-            matches_template, _ = TEMPLATE_SERVICE.validate(event['desc'], entities)
-            if not matches_template:
-                if not 'issues' in entities:
-                    entities['issues'] = []
-
-                entities['issues'].append('template')
-
-        event['entities'] = { 'issues': ['parsing'] } if entities is None else entities
-        return event
-
-    def set_prior_on_pitches(events: List[Dict[str, Any]]) -> Dict[str, Any]:
-        def move_to_open_base(bases: List[int]) -> List[int]:
-            for i, base in enumerate(bases):
-                if base == 0:
-                    bases[i] = 1
-                    break
-
-            return bases
-
-        bases: List[int] = [0, 0, 0]
-        for event in events:
-            if 'isInfoPlay' in event:
-                continue
-
-            if not 'pitches' in event:
-                event['pitches'] = []
-
-            entities = event['entities']
-            if 'premature' in entities:
-                continue
-
-            if len(event['pitches']) == 0 and entities['type'] == 'intentionally walked':
-                bases = move_to_open_base(bases.copy())
-
-            else:
-
-                for pitch in event['pitches']:
-                    pitch['prior'] = { 'bases': bases.copy() }
-                    bases = pitch['result']['bases'].copy()
-
-        return events
-
-    def handle_pitch_events(events: List[Dict[str, Any]]) -> Dict[str, Any]:
-        events = set_prior_on_pitches(events)
-        events = parse_pitch_events(events)
-
-        base_index_lookup = { 'first': 0, 'second': 1, 'third': 2 }
-        pitch_events = get_pitch_events(events)
-
-        for event in events:
-            if 'isInfoPlay' in event:
-                continue
+        else:
 
             for pitch in event['pitches']:
+                pitch['prior'] = { 'bases': bases.copy() }
+                bases = pitch['result']['bases'].copy()
 
-                prior = pitch['prior']
-                if 'beforePitchEvent' in prior:
-                    bases = prior['bases'].copy()
-                    entities = pitch_events[prior['beforePitchEvent']]['entities']
+    return events
 
-                    if entities['type'] == 'balk':
-                        bases = ([0] + bases)[:3]
+def handle_pitch_events(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    events = set_prior_on_pitches(events)
+    events = parse_pitch_events(events)
 
-                    if entities['type'] == 'picked off':
-                        base_index = base_index_lookup[entities['at']]
-                        bases[base_index] = 0
+    base_index_lookup = { 'first': 0, 'second': 1, 'third': 2 }
+    pitch_events = get_pitch_events(events)
 
-                    if entities['type'] == 'pickoff error':
-                        base_index = base_index_lookup[entities['at']]
-                        bases[base_index] = 1
+    for event in filter(lambda ev: not 'isInfoPlay' in ev, events):
+        for pitch in event['pitches']:
 
-                        for i in reversed(range(0, base_index)):
-                            if bases[i] == 1:
-                                bases[i] = 0
-                                break
+            prior = pitch['prior']
+            if not 'beforePitchEvent' in prior:
+                continue
 
-                    prior['after'] = bases.copy()
+            bases = prior['bases'].copy()
 
-        return events
+            entities = pitch_events[prior['beforePitchEvent']]['entities']
+
+            if entities['type'] == 'balk':
+                bases = ([0] + bases)[:3]
+
+            if entities['type'] == 'picked off':
+                base_index = base_index_lookup[entities['at']]
+                bases[base_index] = 0
+
+            if entities['type'] == 'pickoff error':
+                base_index = base_index_lookup[entities['at']]
+                bases[base_index] = 1
+
+                for i in reversed(range(0, base_index)):
+                    if bases[i] == 1:
+                        bases[i] = 0
+                        break
+
+            prior['after'] = bases.copy()
+
+    return events
+
+def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
 
     periods = game['periods']
     for period in periods:
+
         if 'issues' in period:
             del period['issues']
 
