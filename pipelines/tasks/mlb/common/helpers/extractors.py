@@ -100,4 +100,4 @@ def get_current_state_before_pitch(pitches: List[Dict[str, Any]], pitch_events: 
         for pe_id in get_pitch_events(pitches)
     )
 
-    return outs, pitches[-1]['prior']['bases']
+    return outs, (pitches[-1]['prior']['after'] if 'after' in pitches[-1]['prior'] else pitches[-1]['prior']['bases']).copy()

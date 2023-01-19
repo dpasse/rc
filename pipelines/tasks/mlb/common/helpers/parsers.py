@@ -1,6 +1,6 @@
 import re
 from typing import Optional, Tuple, Dict, Any, List, Callable
-from .extractors import calculate_total_outs
+from .extractors import calculate_total_outs, get_pitch_events
 from .entities.utils import clean_text, \
                             is_event_type, \
                             is_location, \
@@ -227,7 +227,15 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
         return event
 
     def set_prior_on_pitches(events: List[Dict[str, Any]]) -> Dict[str, Any]:
-        bases = [0, 0, 0]
+        def move_to_open_base(bases: List[int]) -> List[int]:
+            for i, base in enumerate(bases):
+                if base == 0:
+                    bases[i] = 1
+                    break
+
+            return bases
+
+        bases: List[int] = [0, 0, 0]
         for event in events:
             if 'isInfoPlay' in event:
                 continue
@@ -239,18 +247,53 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
             if 'premature' in entities:
                 continue
 
-            if entities['type'] == 'intentionally walked':
-                bases = ([1] + bases)[:3]
-                continue
+            if len(event['pitches']) == 0 and entities['type'] == 'intentionally walked':
+                bases = move_to_open_base(bases.copy())
 
-            for pitch in event['pitches']:
-                pitch['prior'] = { 'bases': bases.copy() }
-                bases = pitch['result']['bases']
+            else:
+
+                for pitch in event['pitches']:
+                    pitch['prior'] = { 'bases': bases.copy() }
+                    bases = pitch['result']['bases'].copy()
 
         return events
 
     def handle_pitch_events(events: List[Dict[str, Any]]) -> Dict[str, Any]:
+        events = set_prior_on_pitches(events)
         events = parse_pitch_events(events)
+
+        base_index_lookup = { 'first': 0, 'second': 1, 'third': 2 }
+        pitch_events = get_pitch_events(events)
+
+        for event in events:
+            if 'isInfoPlay' in event:
+                continue
+
+            for pitch in event['pitches']:
+
+                prior = pitch['prior']
+                if 'beforePitchEvent' in prior:
+                    bases = prior['bases'].copy()
+                    entities = pitch_events[prior['beforePitchEvent']]['entities']
+
+                    if entities['type'] == 'balk':
+                        bases = ([0] + bases)[:3]
+
+                    if entities['type'] == 'picked off':
+                        base_index = base_index_lookup[entities['at']]
+                        bases[base_index] = 0
+
+                    if entities['type'] == 'pickoff error':
+                        base_index = base_index_lookup[entities['at']]
+                        bases[base_index] = 1
+
+                        for i in reversed(range(0, base_index)):
+                            if bases[i] == 1:
+                                bases[i] = 0
+                                break
+
+                    prior['after'] = bases.copy()
+
         return events
 
     periods = game['periods']
@@ -262,20 +305,15 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
 
         for event in events:
             event = clear_event(event)
-
             event = set_entities_on_event(event)
             event = set_types_on_event(event)
 
-        events = set_prior_on_pitches(events)
         events = handle_pitch_events(events)
-        period['events'] = events
-
-        outs = calculate_total_outs(events)
-        period['score']['outs'] = outs
 
         issues = []
+        outs = calculate_total_outs(events)
         if outs > 3 or (outs < 3 and period['atBat'] != periods[-1]['atBat']):
-            issues.append(['outs'])
+            issues.append('outs')
 
         for event in events:
             if 'isInfoPlay' in event:
@@ -289,6 +327,9 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
 
         if len(issues) > 0:
             period['issues'] = issues
+
+        period['score']['outs'] = outs
+        period['events'] = events
 
     game['periods'] = periods
     return game

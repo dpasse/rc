@@ -22,6 +22,9 @@ mlb-pitcher-aggregates:
 mlb-reparse-pbp:
 	python ./tasks/mlb/reparse_pbp.py
 
+mlb-dump-entities:
+	python ./tasks/mlb/dump_entities.py
+
 prefect:
 	prefect orion start
 
