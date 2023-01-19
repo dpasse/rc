@@ -85,7 +85,7 @@ def calculate_total_outs(events: List[Dict[str, Any]]) -> int:
 def get_current_state_before_pitch(pitches: List[Dict[str, Any]], pitch_events: Dict[int, Dict[str, Any]]) -> Tuple[int, List[int]]:
     def get_pitch_events(pitches):
         length = len(pitches)
-        for i, pitch in enumerate(pitches):
+        for i, pitch in enumerate(pitches[:-1]):
             prior = pitch['prior']
             if 'beforePitchEvent' in prior:
                 yield prior['beforePitchEvent']
@@ -100,4 +100,4 @@ def get_current_state_before_pitch(pitches: List[Dict[str, Any]], pitch_events: 
         for pe_id in get_pitch_events(pitches)
     )
 
-    return outs, pitches[-1]['result']['bases']
+    return outs, pitches[-1]['prior']['bases']
