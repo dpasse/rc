@@ -1,6 +1,6 @@
 import re
 from typing import Optional, Tuple, Dict, Any, List, Callable
-from .extractors import get_pitch_events
+from .extractors import calculate_total_outs
 from .entities.utils import clean_text, \
                             is_event_type, \
                             is_location, \
@@ -253,25 +253,6 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
         events = parse_pitch_events(events)
         return events
 
-    def calculate_total_outs(events: List[Dict[str, Any]]) -> int:
-        def get_outs_from_event(event: Dict[str, Any]) -> int:
-            entities = event['entities']
-            return entities['outs'] if 'outs' in entities else 0
-
-        outs = 0
-        pitch_events = get_pitch_events(events)
-
-        for event in filter(lambda ev: not 'isInfoPlay' in ev, events):
-            if 'pitchEvents' in event:
-                outs += sum(
-                    get_outs_from_event(pitch_events[pe_id])
-                    for pe_id in event['pitchEvents']
-                )
-
-            outs += get_outs_from_event(event) if 'outs' in event['entities'] else 0
-
-        return outs
-
     periods = game['periods']
     for period in periods:
         if 'issues' in period:
@@ -308,8 +289,6 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
 
         if len(issues) > 0:
             period['issues'] = issues
-
-        period['score']['outs'] = outs
 
     game['periods'] = periods
     return game

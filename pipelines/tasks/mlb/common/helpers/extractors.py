@@ -1,4 +1,4 @@
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Tuple
 
 
 def get_pitchers_first_appearance(data: dict) -> Dict[str, Dict[str, int]]:
@@ -62,3 +62,42 @@ def get_game_issues(game: Dict[str, Any]) -> Dict[str, Any]:
             game_issue['periods'].append(period_issue)
 
     return game_issue
+
+def get_outs_from_event(event: Dict[str, Any]) -> int:
+    entities = event['entities']
+    return entities['outs'] if 'outs' in entities else 0
+
+def calculate_total_outs(events: List[Dict[str, Any]]) -> int:
+    outs = 0
+    pitch_events = get_pitch_events(events)
+
+    for event in filter(lambda ev: not 'isInfoPlay' in ev, events):
+        if 'pitchEvents' in event:
+            outs += sum(
+                get_outs_from_event(pitch_events[pe_id])
+                for pe_id in event['pitchEvents']
+            )
+
+        outs += get_outs_from_event(event) if 'outs' in event['entities'] else 0
+
+    return outs
+
+def get_current_state_before_pitch(pitches: List[Dict[str, Any]], pitch_events: Dict[int, Dict[str, Any]]) -> Tuple[int, List[int]]:
+    def get_pitch_events(pitches):
+        length = len(pitches)
+        for i, pitch in enumerate(pitches):
+            prior = pitch['prior']
+            if 'beforePitchEvent' in prior:
+                yield prior['beforePitchEvent']
+
+            if length != i:
+                result = pitch['result']
+                if 'afterPitchEvent' in result:
+                    yield result['afterPitchEvent']
+
+    outs = sum(
+        get_outs_from_event(pitch_events[pe_id])
+        for pe_id in get_pitch_events(pitches)
+    )
+
+    return outs, pitches[-1]['result']['bases']
