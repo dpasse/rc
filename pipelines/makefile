@@ -25,6 +25,9 @@ mlb-reparse-pbp:
 mlb-dump-entities:
 	python ./tasks/mlb/dump_entities.py
 
+mlb-compute-states:
+	python ./tasks/mlb/compute_states.py
+
 prefect:
 	prefect orion start
 
