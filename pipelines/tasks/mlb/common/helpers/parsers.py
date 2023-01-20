@@ -243,8 +243,6 @@ def set_prior_on_pitches(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             event['pitches'] = []
 
         entities = event['entities']
-        if 'premature' in entities:
-            continue
 
         if len(event['pitches']) == 0 and entities['type'] == 'intentionally walked':
             bases = move_to_open_base(bases.copy())
