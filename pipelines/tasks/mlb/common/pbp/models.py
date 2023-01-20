@@ -249,13 +249,17 @@ class Period():
 class Game():
     def __init__(self, game: Dict[str, Any]):
         self.__id = ''
-        self.__home: str = cast(str, game['home'])
-        self.__away: str = cast(str, game['away'])
+        self.__home: str = ''
+        self.__away: str = ''
         self.__periods = []
 
         for key in game.keys():
             if key == 'id':
                 self.__id = game[key]
+            elif key == 'home':
+                self.__home = game[key]
+            elif key == 'away':
+                self.__away = game[key]
             elif key == 'periods':
                 self.__periods = [
                     Period(obj)
@@ -267,6 +271,10 @@ class Game():
     @property
     def id(self) -> str:
         return self.__id
+
+    @property
+    def teams(self) -> List[str]:
+        return [self.home, self.away]
 
     @property
     def home(self) -> str:

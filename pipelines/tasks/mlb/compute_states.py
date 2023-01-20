@@ -59,12 +59,11 @@ def slim_graph_down(graph_to_slim):
 @task(retries=1, retry_delay_seconds=15)
 def generate_event_graph(games: List[Game]) -> None:
     def get_teams(games: List[Game]) -> List[str]:
-        teams = set([])
+        teams = []
         for game in games:
-            teams.add(game.home)
-            teams.add(game.away)
+            teams.extend(game.teams)
 
-        return list(teams)
+        return set(teams)
 
     graph = create_graph(get_teams(games))
 
