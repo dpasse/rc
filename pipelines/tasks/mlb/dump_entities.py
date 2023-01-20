@@ -3,7 +3,7 @@ import json
 from prefect import flow
 
 
-PBP_DIRECTORY = '../data/mlb/pbp/'
+PBP_DIRECTORY = '../data/mlb/pbp/2/'
 TEST_DIRECTORY = './tasks/mlb/common/tests/docs/'
 
 @flow(name='mlb-dump-entities', persist_result=False)

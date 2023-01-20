@@ -1,0 +1,954 @@
+{
+  "bal": {
+    "away": {
+      "0": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "doubled": 1,
+            "flied out": 4,
+            "popped out": 1,
+            "struck out": 3
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "grounded out": 1
+          }
+        }
+      },
+      "1": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "doubled": 1,
+            "flied out": 1,
+            "grounded out": 1,
+            "infield single": 1,
+            "lined out": 2,
+            "struck out": 2
+          }
+        },
+        "001": {
+          "runs": 1,
+          "types": {
+            "grounded into fielder's choice": 1
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "popped out": 2
+          }
+        },
+        "100": {
+          "runs": 0,
+          "types": {
+            "grounded out": 1
+          }
+        }
+      },
+      "2": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "flied out": 2,
+            "lined out": 1,
+            "struck out": 2,
+            "walked": 1
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "flied out": 1,
+            "fouled out": 1,
+            "lined out": 1,
+            "struck out": 1
+          }
+        },
+        "100": {
+          "runs": 1,
+          "types": {
+            "doubled": 1
+          }
+        }
+      }
+    },
+    "home": {
+      "0": {},
+      "1": {},
+      "2": {}
+    }
+  },
+  "cle": {
+    "away": {
+      "0": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "flied out": 1,
+            "fouled out": 1,
+            "grounded out": 1,
+            "lined out": 2,
+            "singled": 1,
+            "struck out": 2,
+            "walked": 1
+          }
+        },
+        "011": {
+          "runs": 0,
+          "types": {
+            "hit by pitch": 1
+          }
+        },
+        "100": {
+          "runs": 0,
+          "types": {
+            "doubled": 1,
+            "popped out": 1
+          }
+        },
+        "111": {
+          "runs": 0,
+          "types": {
+            "grounded into fielder's choice": 1
+          }
+        }
+      },
+      "1": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "doubled": 1,
+            "flied out": 1,
+            "fouled out": 1,
+            "grounded out": 2,
+            "hit by pitch": 1,
+            "struck out": 1
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "grounded out": 1,
+            "struck out": 1
+          }
+        },
+        "100": {
+          "runs": 0,
+          "types": {
+            "struck out": 1
+          }
+        },
+        "111": {
+          "runs": 0,
+          "types": {
+            "grounded into fielder's choice": 1
+          }
+        }
+      },
+      "2": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "doubled": 1,
+            "flied out": 2,
+            "popped out": 1,
+            "singled": 1
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "grounded out": 1,
+            "struck out": 2
+          }
+        },
+        "100": {
+          "runs": 0,
+          "types": {
+            "grounded out": 2
+          }
+        },
+        "111": {
+          "runs": 0,
+          "types": {
+            "lined out": 1
+          }
+        }
+      }
+    },
+    "home": {
+      "0": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "doubled": 1,
+            "fielding error": 1,
+            "flied out": 4,
+            "fouled out": 3,
+            "grounded out": 9,
+            "hit by pitch": 1,
+            "lined out": 3,
+            "singled": 7,
+            "struck out": 11,
+            "walked": 4
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "doubled": 1,
+            "flied out": 1,
+            "grounded out": 1,
+            "popped out": 1,
+            "struck out": 1
+          }
+        },
+        "011": {
+          "runs": 2,
+          "types": {
+            "grounded out": 1,
+            "singled": 1
+          }
+        },
+        "100": {
+          "runs": 0,
+          "types": {
+            "grounded into double play": 4,
+            "grounded out": 2,
+            "singled": 2,
+            "struck out": 1,
+            "walked": 2
+          }
+        },
+        "110": {
+          "runs": 0,
+          "types": {
+            "flied out": 1,
+            "grounded out": 1,
+            "singled": 1
+          }
+        },
+        "111": {
+          "runs": 0,
+          "types": {
+            "flied out": 1
+          }
+        }
+      },
+      "1": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "doubled": 2,
+            "error": 1,
+            "flied out": 3,
+            "fouled out": 2,
+            "grounded out": 4,
+            "hit by pitch": 1,
+            "infield single": 1,
+            "lined out": 3,
+            "popped out": 2,
+            "singled": 2,
+            "struck out": 9
+          }
+        },
+        "001": {
+          "runs": 0,
+          "types": {
+            "walked": 1
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "flied out": 2,
+            "grounded out": 3,
+            "walked": 2
+          }
+        },
+        "011": {
+          "runs": 1,
+          "types": {
+            "grounded into fielder's choice": 1,
+            "lined out": 1,
+            "popped out": 1,
+            "sacrifice fly": 1
+          }
+        },
+        "100": {
+          "runs": 0,
+          "types": {
+            "grounded into fielder's choice": 1,
+            "grounded out": 1,
+            "popped out": 2,
+            "walked": 1
+          }
+        },
+        "101": {
+          "runs": 1,
+          "types": {
+            "doubled": 1
+          }
+        },
+        "110": {
+          "runs": 0,
+          "types": {
+            "flied out": 1,
+            "lined into double play": 1,
+            "struck out": 1,
+            "walked": 1
+          }
+        },
+        "111": {
+          "runs": 4,
+          "types": {
+            "grounded into fielder's choice": 1,
+            "infield single": 1
+          }
+        }
+      },
+      "2": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "doubled": 2,
+            "flied out": 6,
+            "grounded out": 4,
+            "hit by pitch": 1,
+            "lined out": 4,
+            "popped out": 1,
+            "singled": 3,
+            "struck out": 5,
+            "walked": 2
+          }
+        },
+        "001": {
+          "runs": 2,
+          "types": {
+            "fouled out": 1,
+            "homered": 1,
+            "popped out": 1,
+            "struck out": 1
+          }
+        },
+        "010": {
+          "runs": 2,
+          "types": {
+            "flied out": 1,
+            "grounded out": 3,
+            "hit by pitch": 1,
+            "homered": 1,
+            "struck out": 3
+          }
+        },
+        "011": {
+          "runs": 0,
+          "types": {
+            "fouled out": 1,
+            "lined out": 1,
+            "walked": 1
+          }
+        },
+        "100": {
+          "runs": 1,
+          "types": {
+            "doubled": 1,
+            "fouled out": 1,
+            "grounded into fielder's choice": 2,
+            "grounded out": 1,
+            "popped out": 1,
+            "walked": 2
+          }
+        },
+        "110": {
+          "runs": 0,
+          "types": {
+            "flied out": 2,
+            "grounded out": 2
+          }
+        },
+        "111": {
+          "runs": 1,
+          "types": {
+            "grounded into fielder's choice": 1,
+            "walked": 1
+          }
+        }
+      }
+    }
+  },
+  "col": {
+    "away": {
+      "0": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "doubled": 1,
+            "flied out": 6,
+            "grounded out": 5,
+            "infield single": 1,
+            "lined out": 1,
+            "popped out": 1,
+            "singled": 3,
+            "struck out": 7,
+            "walked": 2
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "grounded out": 1
+          }
+        },
+        "100": {
+          "runs": 0,
+          "types": {
+            "flied out": 1,
+            "singled": 4,
+            "walked": 1
+          }
+        },
+        "101": {
+          "runs": 0,
+          "types": {
+            "fouled out": 1
+          }
+        },
+        "110": {
+          "runs": 0,
+          "types": {
+            "grounded into double play": 1,
+            "lined out": 1,
+            "struck out": 1,
+            "walked": 1
+          }
+        },
+        "111": {
+          "runs": 0,
+          "types": {
+            "lined out": 1
+          }
+        }
+      },
+      "1": {
+        "000": {
+          "runs": 1,
+          "types": {
+            "doubled": 1,
+            "flied out": 4,
+            "grounded out": 4,
+            "hit by pitch": 1,
+            "homered": 1,
+            "lined out": 1,
+            "singled": 1,
+            "struck out": 4,
+            "walked": 4
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "fouled out": 1,
+            "lined out": 1
+          }
+        },
+        "011": {
+          "runs": 0,
+          "types": {
+            "flied out": 1
+          }
+        },
+        "100": {
+          "runs": 0,
+          "types": {
+            "flied out": 1,
+            "grounded into double play": 2,
+            "singled": 2,
+            "walked": 2
+          }
+        },
+        "101": {
+          "runs": 1,
+          "types": {
+            "grounded into fielder's choice": 1
+          }
+        },
+        "110": {
+          "runs": 0,
+          "types": {
+            "flied out": 1,
+            "grounded into double play": 1,
+            "lined out": 3
+          }
+        },
+        "111": {
+          "runs": 0,
+          "types": {
+            "grounded into fielder's choice": 1
+          }
+        }
+      },
+      "2": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "flied out": 4,
+            "grounded out": 4,
+            "singled": 1,
+            "struck out": 4
+          }
+        },
+        "001": {
+          "runs": 0,
+          "types": {
+            "lined out": 1
+          }
+        },
+        "010": {
+          "runs": 1,
+          "types": {
+            "doubled": 1,
+            "grounded out": 2,
+            "infield single": 1
+          }
+        },
+        "011": {
+          "runs": 0,
+          "types": {
+            "fouled out": 1
+          }
+        },
+        "100": {
+          "runs": 1,
+          "types": {
+            "doubled": 1,
+            "flied out": 1,
+            "walked": 1
+          }
+        },
+        "101": {
+          "runs": 0,
+          "types": {
+            "flied out": 1
+          }
+        },
+        "110": {
+          "runs": 0,
+          "types": {
+            "flied out": 1,
+            "grounded out": 1,
+            "popped out": 1,
+            "struck out": 2
+          }
+        },
+        "111": {
+          "runs": 0,
+          "types": {
+            "struck out": 1
+          }
+        }
+      }
+    },
+    "home": {
+      "0": {},
+      "1": {},
+      "2": {}
+    }
+  },
+  "min": {
+    "away": {
+      "0": {
+        "000": {
+          "runs": 3,
+          "types": {
+            "flied out": 6,
+            "fouled out": 2,
+            "grounded out": 12,
+            "homered": 3,
+            "infield single": 3,
+            "lined out": 4,
+            "popped out": 2,
+            "singled": 5,
+            "struck out": 8,
+            "throwing error": 1,
+            "walked": 3
+          }
+        },
+        "001": {
+          "runs": 1,
+          "types": {
+            "singled": 1
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "lined out": 1
+          }
+        },
+        "100": {
+          "runs": 1,
+          "types": {
+            "doubled": 1,
+            "grounded into double play": 1,
+            "grounded into fielder's choice": 1,
+            "popped out": 1,
+            "singled": 3,
+            "struck out": 4,
+            "walked": 1
+          }
+        },
+        "110": {
+          "runs": 0,
+          "types": {
+            "grounded into double play": 1,
+            "singled": 1,
+            "struck out": 1
+          }
+        },
+        "111": {
+          "runs": 1,
+          "types": {
+            "sacrifice fly": 1
+          }
+        }
+      },
+      "1": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "doubled": 1,
+            "flied out": 3,
+            "grounded out": 12,
+            "hit by pitch": 2,
+            "lined out": 1,
+            "popped out": 1,
+            "singled": 4,
+            "struck out": 8,
+            "walked": 3
+          }
+        },
+        "001": {
+          "runs": 1,
+          "types": {
+            "singled": 1
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "grounded out": 1,
+            "struck out": 1
+          }
+        },
+        "011": {
+          "runs": 3,
+          "types": {
+            "grounded out": 1,
+            "homered": 1
+          }
+        },
+        "100": {
+          "runs": 2,
+          "types": {
+            "doubled": 2,
+            "flied out": 2,
+            "fouled out": 2,
+            "grounded into double play": 1,
+            "grounded into fielder's choice": 1,
+            "grounded out": 2,
+            "homered": 1,
+            "lined out": 1,
+            "singled": 1,
+            "struck out": 1,
+            "walked": 1
+          }
+        },
+        "101": {
+          "runs": 0,
+          "types": {
+            "grounded into double play": 1
+          }
+        },
+        "110": {
+          "runs": 1,
+          "types": {
+            "singled": 1,
+            "struck out": 2,
+            "walked": 1
+          }
+        },
+        "111": {
+          "runs": 1,
+          "types": {
+            "grounded into fielder's choice": 1
+          }
+        }
+      },
+      "2": {
+        "000": {
+          "runs": 1,
+          "types": {
+            "doubled": 2,
+            "fielding error": 1,
+            "flied out": 2,
+            "grounded out": 6,
+            "hit by pitch": 1,
+            "homered": 1,
+            "lined out": 2,
+            "popped out": 1,
+            "singled": 8,
+            "struck out": 8,
+            "walked": 1
+          }
+        },
+        "001": {
+          "runs": 2,
+          "types": {
+            "flied out": 1,
+            "grounded out": 1,
+            "homered": 1,
+            "walked": 1
+          }
+        },
+        "010": {
+          "runs": 3,
+          "types": {
+            "flied out": 2,
+            "grounded out": 2,
+            "homered": 1,
+            "lined out": 1,
+            "struck out": 1,
+            "tripled": 1
+          }
+        },
+        "011": {
+          "runs": 0,
+          "types": {
+            "grounded out": 1
+          }
+        },
+        "100": {
+          "runs": 5,
+          "types": {
+            "fouled out": 1,
+            "grounded into fielder's choice": 2,
+            "grounded out": 4,
+            "homered": 2,
+            "singled": 4,
+            "struck out": 2,
+            "tripled": 1
+          }
+        },
+        "101": {
+          "runs": 0,
+          "types": {
+            "struck out": 3
+          }
+        },
+        "110": {
+          "runs": 0,
+          "types": {
+            "flied out": 2,
+            "grounded out": 1,
+            "struck out": 1,
+            "walked": 1
+          }
+        },
+        "111": {
+          "runs": 3,
+          "types": {
+            "doubled": 1
+          }
+        }
+      }
+    },
+    "home": {
+      "0": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "doubled": 4,
+            "flied out": 6,
+            "fouled out": 1,
+            "grounded out": 13,
+            "infield single": 2,
+            "lined out": 4,
+            "popped out": 3,
+            "singled": 2,
+            "struck out": 3,
+            "walked": 4
+          }
+        },
+        "001": {
+          "runs": 0,
+          "types": {
+            "struck out": 1
+          }
+        },
+        "010": {
+          "runs": 1,
+          "types": {
+            "flied out": 1,
+            "struck out": 2,
+            "tripled": 1
+          }
+        },
+        "100": {
+          "runs": 2,
+          "types": {
+            "flied out": 2,
+            "fouled out": 1,
+            "grounded into fielder's choice": 1,
+            "homered": 1,
+            "popped out": 1,
+            "singled": 1,
+            "struck out": 1
+          }
+        },
+        "110": {
+          "runs": 0,
+          "types": {
+            "flied out": 1
+          }
+        }
+      },
+      "1": {
+        "000": {
+          "runs": 1,
+          "types": {
+            "flied out": 7,
+            "fouled out": 1,
+            "grounded out": 5,
+            "homered": 1,
+            "lined out": 3,
+            "singled": 4,
+            "struck out": 6,
+            "walked": 4
+          }
+        },
+        "001": {
+          "runs": 1,
+          "types": {
+            "sacrifice fly": 1,
+            "walked": 1
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "flied out": 1,
+            "grounded out": 1,
+            "singled": 1
+          }
+        },
+        "100": {
+          "runs": 1,
+          "types": {
+            "flied out": 3,
+            "grounded into double play": 2,
+            "grounded into fielder's choice": 1,
+            "grounded out": 1,
+            "singled": 1,
+            "struck out": 4,
+            "tripled": 1,
+            "walked": 1
+          }
+        },
+        "101": {
+          "runs": 4,
+          "types": {
+            "sacrifice fly": 1,
+            "singled": 3,
+            "struck out": 1,
+            "walked": 1
+          }
+        },
+        "110": {
+          "runs": 2,
+          "types": {
+            "flied out": 1,
+            "singled": 2,
+            "struck out": 1
+          }
+        },
+        "111": {
+          "runs": 0,
+          "types": {
+            "struck out": 1
+          }
+        }
+      },
+      "2": {
+        "000": {
+          "runs": 0,
+          "types": {
+            "doubled": 1,
+            "flied out": 3,
+            "grounded out": 5,
+            "lined out": 4,
+            "popped out": 2,
+            "singled": 2,
+            "struck out": 4,
+            "walked": 2
+          }
+        },
+        "010": {
+          "runs": 0,
+          "types": {
+            "fouled out": 1,
+            "grounded out": 2,
+            "struck out": 2,
+            "walked": 1
+          }
+        },
+        "011": {
+          "runs": 0,
+          "types": {
+            "flied out": 1
+          }
+        },
+        "100": {
+          "runs": 1,
+          "types": {
+            "doubled": 2,
+            "flied out": 2,
+            "fouled out": 1,
+            "grounded into fielder's choice": 2,
+            "grounded out": 1,
+            "infield single": 1,
+            "popped out": 1,
+            "singled": 1,
+            "struck out": 2
+          }
+        },
+        "101": {
+          "runs": 0,
+          "types": {
+            "grounded out": 1,
+            "struck out": 1
+          }
+        },
+        "110": {
+          "runs": 2,
+          "types": {
+            "doubled": 1,
+            "grounded out": 1,
+            "popped out": 1,
+            "struck out": 1
+          }
+        },
+        "111": {
+          "runs": 1,
+          "types": {
+            "singled": 1
+          }
+        }
+      }
+    }
+  }
+}

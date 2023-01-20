@@ -10,17 +10,17 @@ mlb-standings:
 mlb-schedule:
 	python ./tasks/mlb/schedules.py -l "../data/mlb/inputs/schedules.csv"
 
-mlb-pbp:
-	python ./tasks/mlb/pbp.py -l "../data/mlb/inputs/games.csv"
+mlb-pbp-download:
+	python ./tasks/mlb/pbp_download.py -l "../data/mlb/inputs/games.csv"
+
+mlb-pbp-parse:
+	python ./tasks/mlb/pbp_parse.py
 
 mlb-batter-aggregates:
 	python ./tasks/mlb/player_aggregates.py batting correca01
 
 mlb-pitcher-aggregates:
 	python ./tasks/mlb/player_aggregates.py pitching verlaju01
-
-mlb-reparse-pbp:
-	python ./tasks/mlb/reparse_pbp.py
 
 mlb-dump-entities:
 	python ./tasks/mlb/dump_entities.py

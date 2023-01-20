@@ -1,8 +1,10 @@
 from dataclasses import dataclass
-from typing import Any, Dict, List, Optional, cast, TypeVar, Tuple
+from typing import Any, Dict, List, Optional, cast, TypeVar, Generator, Generic
+
 
 # pylint: disable=C0103
 TInningState = TypeVar('TInningState', bound='InningState')
+TEvent = TypeVar('TEvent', bound='Event')
 
 @dataclass
 class InningState():
@@ -21,13 +23,34 @@ class InningState():
         self.outs += obj.outs
         self.bases = obj.bases.copy()
 
+class PitchCount():
+    def __init__(self, obj: Dict[str, Any]) -> None:
+        for key in obj.keys():
+            if key == 'balls':
+                self.__balls = obj[key]
+            elif key == 'strikes':
+                self.__strikes = obj[key]
+            else:
+                setattr(self, f'__{key}', obj[key])
+
+    def balls(self) -> int:
+        return self.__balls
+
+    def strikes(self) -> int:
+        return self.__strikes
+
 class Score():
     def __init__(self, score: Dict[str, Any]):
         self.__home = 0
         self.__away = 0
 
         for key in score.keys():
-            setattr(self, f'__{key}', score[key])
+            if key == 'home':
+                self.__home = score[key]
+            elif key == 'away':
+                self.__away = score[key]
+            else:
+                setattr(self, f'__{key}', score[key])
 
     @property
     def home(self) -> int:
@@ -37,8 +60,131 @@ class Score():
     def away(self) -> int:
         return self.__away
 
-# pylint: disable=C0103
-TEvent = TypeVar('TEvent', bound='Event')
+class BeforePitch(Generic[TEvent]):
+    def __init__(self, obj: Dict[str, Any]) -> None:
+        self.__after = None
+        self.__pitch_event_id: Optional[int] = None
+        self.__pitch_event: Optional[TEvent] = None
+
+        for key in obj.keys():
+            if key == 'bases':
+                self.__bases = obj[key]
+            elif key == 'after':
+                self.__after = obj[key]
+            elif key == 'beforePitchEvent':
+                self.__pitch_event_id = obj[key]
+            else:
+                setattr(self, f'__{key}', obj[key])
+
+    @property
+    def bases(self) -> List[int]:
+        return self.__after if self.__after else self.__bases
+
+    @property
+    def pitch_event(self) -> Optional[TEvent]:
+        return self.__pitch_event
+
+    def set_pitch_events(self, pitch_events: Dict[int, TEvent]) -> None:
+        if self.__pitch_event_id:
+            self.__pitch_event = pitch_events[self.__pitch_event_id]
+
+class AfterPitch(Generic[TEvent]):
+    def __init__(self, obj: Dict[str, Any]) -> None:
+        self.__pitch_event_id: Optional[int] = None
+        self.__pitch_event: Optional[TEvent] = None
+
+        for key in obj.keys():
+            if key == 'bases':
+                self.__bases = obj[key]
+            elif key == 'afterPitchEvent':
+                self.__pitch_event_id = obj[key]
+            else:
+                setattr(self, f'__{key}', obj[key])
+
+    @property
+    def bases(self) -> List[int]:
+        return self.__bases
+
+    @property
+    def pitch_event(self) -> Optional[TEvent]:
+        return self.__pitch_event
+
+    def set_pitch_events(self, pitch_events: Dict[int, TEvent]):
+        if self.__pitch_event_id:
+            self.__pitch_event = pitch_events[self.__pitch_event_id]
+
+class Pitch():
+    def __init__(self, pitch: Dict[str, Any]):
+        self.__result: AfterPitch = AfterPitch(pitch['result'])
+        self.__prior: BeforePitch = BeforePitch(pitch['prior'])
+
+        for key in pitch.keys():
+            if key == 'id':
+                self.__id = pitch[key]
+            elif key == 'count':
+                self.__count = PitchCount(pitch[key])
+            else:
+                setattr(self, f'__{key}', pitch[key])
+
+    @property
+    def id(self) -> str:
+        return self.__id
+
+    @property
+    def count(self) -> PitchCount:
+        return self.__count
+
+    @property
+    def prior(self) -> BeforePitch:
+        return self.__prior
+
+    @property
+    def result(self) -> AfterPitch:
+        return self.__result
+
+    def set_pitch_events(self, pitch_events: Dict[int, TEvent]) -> None:
+        self.prior.set_pitch_events(pitch_events)
+        self.result.set_pitch_events(pitch_events)
+
+class Entities():
+    def __init__(self, entities: Dict[str, Any]):
+        self.__outs = 0
+        self.__runs = 0
+        self.__type = ''
+        self.__attrs: List[str] = []
+        self.__body = entities
+
+        for key in entities.keys():
+            if key == 'outs':
+                self.__outs = entities[key]
+            elif key == 'runs':
+                self.__runs = entities[key]
+            elif key == 'type':
+                self.__type = entities[key]
+            elif key == 'premature':
+                if entities[key]:
+                    self.__attrs.append(key)
+            else:
+                setattr(self, f'__{key}', entities[key])
+
+    @property
+    def outs(self) -> int:
+        return self.__outs
+
+    @property
+    def runs(self) -> int:
+        return self.__runs
+
+    @property
+    def type(self) -> str:
+        return self.__type
+
+    @property
+    def body(self) -> Dict[str, Any]:
+        return self.__body
+
+    def is_a(self, attr: str) -> bool:
+        return attr in self.__attrs
 
 # pylint: disable=R0902
 class Event():
@@ -49,8 +195,7 @@ class Event():
         self.__attrs = []
         self.__pitch_events: Dict[int, TEvent] = {}
         self.__pitch_event_ids: List[int] = []
-        self.__pitches: List[Dict[str, Any]] = []
-        self.__entities: Dict[str, Any] = {}
+        self.__pitches: List[Pitch] = []
 
         for key in event.keys():
             if key == 'id':
@@ -63,9 +208,12 @@ class Event():
             elif key == 'score':
                 self.__score = Score(event[key])
             elif key == 'pitches':
-                self.__pitches = event[key]
+                self.__pitches = [
+                    Pitch(obj)
+                    for obj in event[key]
+                ]
             elif key == 'entities':
-                self.__entities = event[key]
+                self.__entities = Entities(event[key])
             elif key == 'pitchEvents':
                 self.__pitch_event_ids = event[key]
             else:
@@ -92,11 +240,11 @@ class Event():
         return self.__score
 
     @property
-    def entities(self: TEvent) -> Dict[str, Any]:
+    def entities(self: TEvent) -> Entities:
         return self.__entities
 
     @property
-    def pitches(self: TEvent) -> List[Dict[str, Any]]:
+    def pitches(self: TEvent) -> List[Pitch]:
         return self.__pitches
 
     @property
@@ -104,7 +252,7 @@ class Event():
         return len(self.__pitches) > 0
 
     @property
-    def last_pitch(self: TEvent) -> Optional[Dict[str, Any]]:
+    def last_pitch(self: TEvent) -> Optional[Pitch]:
         if not self.has_pitches:
             return None
 
@@ -123,50 +271,45 @@ class Event():
             for event_id in self.__pitch_event_ids
         }
 
-    def get_prior_state(self: TEvent) -> Optional[InningState]:
-        def get_pitch_event_ids(pitches: List[Dict[str, Any]]):
-            length = len(pitches)
-            for i, pitch in enumerate(pitches[:-1]):
-                prior = pitch['prior']
-                if 'beforePitchEvent' in prior:
-                    yield prior['beforePitchEvent']
+        for pitch in self.pitches:
+            pitch.set_pitch_events(self.__pitch_events)
 
-                if length != i:
-                    result = pitch['result']
-                    if 'afterPitchEvent' in result:
-                        yield result['afterPitchEvent']
+    def get_prior_state(self: TEvent) -> Optional[InningState]:
+        def get_pitch_events(pitches: List[Pitch]) -> Generator[TEvent, None, None]:
+            for pitch in pitches:
+                if pitch.prior.pitch_event:
+                    yield pitch.prior.pitch_event
+
+                if pitch.result.pitch_event:
+                    yield pitch.result.pitch_event
 
         if not self.has_pitches:
             return None
 
-        outs = 0
-        for id in get_pitch_event_ids(self.pitches):
-            entities = self.pitch_events[id].entities
-            outs += entities['outs'] if 'outs' in entities else 0
+        outs = sum(
+            pitch_event.entities.outs
+            for pitch_event in get_pitch_events(self.pitches[:-1])
+        )
 
-        last_pitch = cast(Dict[str, Any], self.last_pitch)
+        last_pitch = cast(Pitch, self.last_pitch)
         return InningState(
-            outs, (
-                last_pitch['prior']['after']
-                if 'after' in last_pitch['prior']
-                else last_pitch['prior']['bases']
-            ).copy()
+            outs,
+            last_pitch.prior.bases.copy()
         )
 
     def get_result_state(self: TEvent) -> Optional[InningState]:
         if not self.has_pitches:
             return None
 
-        outs = self.entities['outs'] if 'outs' in self.entities else 0
+        result = cast(Pitch, self.last_pitch).result
 
-        result = cast(Dict[str, Any], self.last_pitch)['result']
-        if 'afterPitchEvent' in result:
-            entities = self.pitch_events[result['afterPitchEvent']].entities
-            outs += entities['outs'] if 'outs' in entities else 0
+        outs = self.entities.outs
+        if result.pitch_event:
+            outs += result.pitch_event.entities.outs
 
         return InningState(
             outs,
-            result['bases'].copy(),
+            result.bases.copy(),
         )
 
 class Scoreboard():

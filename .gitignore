@@ -140,7 +140,8 @@ webpack-stats.json
 # data files
 data/mlb/batting/*
 data/mlb/pitching/*
-data/mlb/pbp/*
+data/mlb/pbp/1/*
+data/mlb/pbp/2/*
 data/mlb/inputs/*
 
 data/mlb/standings.csv

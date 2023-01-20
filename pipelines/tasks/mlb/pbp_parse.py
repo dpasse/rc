@@ -1,17 +1,17 @@
 from typing import List, Optional, Tuple, Dict, Any, cast
 
-import sys
-import time
+import os
 import json
 import logging
 import datetime
-import pandas as pd
 
 from prefect import flow, task
-from common.helpers.web import make_request
 from common.helpers.parsers import parse_game
 from common.helpers.extractors import get_game_issues
 
+
+PBP_DOWNLOAD_DIRECTORY = '../data/mlb/pbp/1/'
+PBP_OUTPUT_DIRECTORY = '../data/mlb/pbp/2/'
 
 Logger = logging.getLogger(__name__)
 Logger.setLevel(level=logging.INFO)
@@ -230,63 +230,44 @@ def compress_game(game: Dict[str, Any]) -> Dict[str, Any]:
 
     return game
 
-def dump_json_blob(game_id: str, json_blob: dict) -> None:
-    Logger.info('    - Writing debug file')
-
-    with open(f'../data/mlb/pbp/org_pbp_{game_id}.json', 'w', encoding='UTF8') as debug_json:
-        json.dump(json_blob, debug_json)
-
 @task(retries=1, retry_delay_seconds=15)
-def get_pbp(game_id: str, debug = False) -> Optional[dict]:
-    Logger.info('* Stated "%s"', game_id)
-
-    key = "window['__espnfitt__']="
-    scripts = make_request(
-        f'https://www.espn.com/mlb/playbyplay/_/gameId/{game_id}'
-    ).select('script')
-
-    json_blobs = [
-        script
-        for script in scripts
-        if script.text.startswith(key)
-    ]
-
-    if len(json_blobs) == 0:
-        return None
-
-    json_string = json_blobs[0].text[len(key):-1]
-    json_obj = json.loads(json_string)['page']['content']['gamepackage']['pbp']
-
-    game = None
+def get_pbp(game: dict) -> Optional[dict]:
+    Logger.info('* Stated "%s"', game['id'])
 
     try:
         game = parse_game(
-            compress_game({ 'id': game_id, 'periods': json_obj })
+            compress_game(game)
         )
     except Exception as exception:
-        Logger.error('    - %s failed', game_id)
+        Logger.error('    - %s failed', game['id'])
         Logger.error(exception)
-
-        debug = True
-
-    if debug:
-        dump_json_blob(
-            game_id,
-            json_blob=json_obj
-        )
 
     return game
 
-@flow(name='mlb-pbp', persist_result=False)
-def get_pbps(game_ids: List[str], timeout = 8) -> None:
-    for i, game_id in enumerate(game_ids):
-        try:
-            game = get_pbp(game_id)
-            if game:
-                with open(f'../data/mlb/pbp/pbp_{game_id}.json', 'w', encoding='UTF8') as pbp_output:
-                    pbp_output.write(json.dumps(game, indent=2))
+@task(retries=1, retry_delay_seconds=15)
+def get_games() -> List[dict]:
+    games: List[dict] = []
+    for file in os.listdir(PBP_DOWNLOAD_DIRECTORY):
+        with open(os.path.join(PBP_DOWNLOAD_DIRECTORY, file), 'r', encoding='UTF8') as pbp:
+            games.append(
+                json.loads(pbp.read())
+            )
 
-                issues = get_game_issues(game)
+    return games
+
+@flow(name='mlb-pbp', persist_result=False)
+def get_pbps() -> None:
+    games = get_games.submit().result()
+
+    for game in games:
+        try:
+            game_id = game['id']
+            parsed_game = get_pbp.submit(game).result()
+            if parsed_game:
+                with open(os.path.join(PBP_OUTPUT_DIRECTORY, f'pbp_{game_id}.json'), 'w', encoding='UTF8') as pbp_output:
+                    pbp_output.write(json.dumps(parsed_game, indent=2))
+
+                issues = get_game_issues(parsed_game)
                 if len(issues['periods']) > 0:
                     Logger.error('ISSUES FOUND:')
                     Logger.error(issues)
@@ -294,34 +275,11 @@ def get_pbps(game_ids: List[str], timeout = 8) -> None:
             Logger.error('    - %s failed', game_id)
             Logger.error(exception)
 
-        if i < (len(game_ids) - 1):
-            Logger.info('    - sleeping %s seconds', timeout)
-            time.sleep(timeout)
-
 
 if __name__ == '__main__':
-    args = sys.argv[1:]
-    if len(args) == 0:
-        raise Exception('Need to provide options.')
+    Logger.info('Started Parsing @ %s', datetime.datetime.now())
 
-    Logger.info('Started @ %s', datetime.datetime.now())
-
-    input_game_ids: List[str] = []
-    if args[0] == '-l':
-        FILE_PATH = args[1]
-
-        Logger.info('    - %s', FILE_PATH)
-
-        df = pd.read_csv(FILE_PATH, index_col=None)
-        input_game_ids.extend(
-            df.id.astype(str).unique().tolist()
-        )
-    else:
-        input_game_ids.extend(args)
-
-    Logger.info('    - #%s', len(input_game_ids))
-
-    get_pbps(input_game_ids, timeout=30)
+    get_pbps()
 
     Logger.info('Finished @ %s', datetime.datetime.now())
     Logger.info('')

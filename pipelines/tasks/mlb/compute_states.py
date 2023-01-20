@@ -4,11 +4,10 @@ from typing import List
 from collections import defaultdict
 from prefect import flow, task
 
-from common.helpers.extractors import get_outs_from_event
 from common.pbp.models import Game, InningState
 
 
-PBP_DIRECTORY = '../data/mlb/pbp/'
+PBP_DIRECTORY = '../data/mlb/pbp/2/'
 
 def create_graph(teams):
     areas = ['home', 'away']
@@ -47,7 +46,9 @@ def slim_graph_down(graph_to_slim):
         for area in graph_to_slim[team].keys():
             for out in graph_to_slim[team][area].keys():
                 for state in graph_to_slim[team][area][out].keys():
-                    total = sum(graph_to_slim[team][area][out][state]['types'].values())
+                    total = sum(
+                        graph_to_slim[team][area][out][state]['types'].values()
+                    )
                     if total == 0:
                         keys_to_delete.append((team, area, out, state))
 
@@ -63,7 +64,7 @@ def generate_event_graph(games: List[Game]) -> None:
         for game in games:
             teams.extend(game.teams)
 
-        return set(teams)
+        return list(set(teams))
 
     graph = create_graph(get_teams(games))
 
@@ -76,8 +77,8 @@ def generate_event_graph(games: List[Game]) -> None:
             state = InningState(0, [0, 0, 0])
             for event in period.events:
                 skip = event.is_a('isInfoPlay') or \
-                    'premature' in event.entities or \
-                     not event.has_pitches
+                    event.entities.is_a('premature') or \
+                    not event.has_pitches
 
                 if skip:
                     continue
@@ -86,16 +87,18 @@ def generate_event_graph(games: List[Game]) -> None:
                 if prior_state:
                     state.add(prior_state)
 
-                item = graph[period.at_bat]['home' if game.is_home_team(period.at_bat) else 'away'][state.outs_key][state.bases_key]
-                item['runs'] += event.entities['runs'] if 'runs' in event.entities else 0
-                item['types'][event.entities['type']] += 1
+                side = 'home' if game.is_home_team(period.at_bat) else 'away'
+                item = graph[period.at_bat][side][state.outs_key][state.bases_key]
+
+                item['runs'] += event.entities.runs
+                item['types'][event.entities.type] += 1
 
                 result_state = event.get_result_state()
                 if result_state:
                     state.add(result_state)
 
-    with open('../data/mlb/computes/team_event_graph.json', 'w', encoding='UTF8') as pbp_output:
-        pbp_output.write(json.dumps(graph, indent=2))
+    with open('../data/mlb/pbp/computes/team_event_graph.json', 'w', encoding='UTF8') as pbp_output:
+        pbp_output.write(json.dumps(slim_graph_down(graph), indent=2, sort_keys=True))
 
 @task(retries=1, retry_delay_seconds=15)
 def get_games() -> List[Game]:
