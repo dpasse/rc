@@ -1,10 +1,11 @@
 import os
 import json
-from typing import List, Dict, Any
+from typing import List
 from collections import defaultdict
 from prefect import flow, task
 
-from common.helpers.extractors import get_pitch_events, get_current_state_before_pitch, get_outs_from_event
+from common.helpers.extractors import get_outs_from_event
+from common.pbp.models import Game, InningState
 
 
 PBP_DIRECTORY = '../data/mlb/pbp/'
@@ -56,75 +57,55 @@ def slim_graph_down(graph_to_slim):
     return graph_to_slim
 
 @task(retries=1, retry_delay_seconds=15)
-def generate_event_graph(games: List[Dict[str, Any]]) -> None:
-    def get_teams(games: List[Dict[str, Any]]) -> List[str]:
+def generate_event_graph(games: List[Game]) -> None:
+    def get_teams(games: List[Game]) -> List[str]:
         teams = set([])
         for game in games:
-            teams.add(game['home'])
-            teams.add(game['away'])
+            teams.add(game.home)
+            teams.add(game.away)
 
-        return teams
+        return list(teams)
 
-    graph = create_graph(
-        get_teams(games),
-    )
+    graph = create_graph(get_teams(games))
 
     for game in games:
-        team_lookup = { game['home']: 'home', game['away']: 'away' }
-
-        for period in game['periods']:
-            if 'issues' in period:
-                print(f'skipping period {period["id"]} in {game["id"]} due to {period["issues"]} issue(s)...')
+        for period in game.periods:
+            if len(period.issues) > 0:
+                print(f'skipping period {period.id} in {game.id} due to {",".join(period.issues)} issue(s)...')
                 continue
 
-            state = { 'outs': 0, 'bases': [0, 0, 0] }
-            pitch_events = get_pitch_events(period['events'])
+            state = InningState(0, [0, 0, 0])
+            for event in period.events:
+                skip = event.is_a('isInfoPlay') or \
+                    'premature' in event.entities or \
+                     not event.has_pitches
 
-            for event in period['events']:
-                if 'isInfoPlay' in event:
+                if skip:
                     continue
 
-                entities = event['entities']
-                if 'premature' in entities:
-                    ## ie. player caught stealing to end the inning
-                    continue
+                prior_state = event.get_prior_state()
+                if prior_state:
+                    state.add(prior_state)
 
-                pitches = event['pitches']
-                if len(pitches) == 0:
-                    continue
+                item = graph[period.at_bat]['home' if game.is_home_team(period.at_bat) else 'away'][state.outs_key][state.bases_key]
+                item['runs'] += event.entities['runs'] if 'runs' in event.entities else 0
+                item['types'][event.entities['type']] += 1
 
-                ## prior to the last pitch
-                outs_before, bases_before = get_current_state_before_pitch(pitches, pitch_events)
-                state['outs'] += outs_before
-                state['bases'] = bases_before.copy()
-
-                team = period['atBat']
-                location = team_lookup[team]
-                outs = str(state['outs'])
-                bases = ''.join(map(str, state['bases']))
-
-                item = graph[team][location][outs][bases]
-                item['runs'] += entities['runs'] if 'runs' in entities else 0
-                item['types'][entities['type']] += 1
-
-                result = pitches[-1]['result']
-                if 'afterPitchEvent' in result:
-                    state['outs'] += get_outs_from_event(pitch_events[result['afterPitchEvent']])
-
-                state['outs'] += get_outs_from_event(event)
-                state['bases'] = result['bases'].copy()
+                result_state = event.get_result_state()
+                if result_state:
+                    state.add(result_state)
 
     with open('../data/mlb/computes/team_event_graph.json', 'w', encoding='UTF8') as pbp_output:
         pbp_output.write(json.dumps(graph, indent=2))
 
 @task(retries=1, retry_delay_seconds=15)
-def get_games() -> List[Dict[str, Any]]:
-    games = []
+def get_games() -> List[Game]:
+    games: List[Game] = []
     for file in os.listdir(PBP_DIRECTORY):
         file_path = os.path.join(PBP_DIRECTORY, file)
         with open(file_path, 'r', encoding='UTF8') as pbp:
             games.append(
-                json.loads(pbp.read())
+                Game(json.loads(pbp.read()))
             )
 
     return games
