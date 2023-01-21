@@ -50,11 +50,9 @@ class TemplateService():
             '- to - on - by - - -',
             '- scored on - by - -',
             '- reached - base on -',
-            '- scored',
-            '- scored',
             '- scored on - by - - -',
             '- safe at - on - by - -',
-            'advances to - on - by - -'
+            'advances to - on - by - -',
             '- safe at - on - by - - -',
         ])
 
