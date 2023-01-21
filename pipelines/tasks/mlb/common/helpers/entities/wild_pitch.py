@@ -8,12 +8,12 @@ def handle_wild_pitch(groups) -> Dict[str, Any]:
 
     player = 'not found'
     for pitcher_match_expression in [
-        r'(?:wild pitch|passed ball) by (.+?)[,.]',
-        r'on (.+?) wild pitch',
+        r'(?:wild pitch|passed ball) by (.+?)(?:,|$)',
+        r' on (.+?) wild pitch',
     ]:
         pitcher_match = re.search(pitcher_match_expression, text)
         if pitcher_match:
-            player = pitcher_match.group(1)
+            player = re.sub(r'[.]+$', '', pitcher_match.group(1))
             break
 
     observation = create_player_observation(
