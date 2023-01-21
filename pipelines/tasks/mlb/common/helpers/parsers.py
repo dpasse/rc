@@ -261,7 +261,7 @@ def handle_pitch_events(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     events = set_prior_on_pitches(events)
     events = parse_pitch_events(events)
 
-    base_index_lookup = { 'first': 0, 'second': 1, 'third': 2 }
+    base_index_lookup = { 'first': 0, 'second': 1, 'third': 2, 'home': 3 }
     pitch_events = get_pitch_events(events)
 
     for event in filter(lambda ev: not 'isInfoPlay' in ev, events):
@@ -283,13 +283,16 @@ def handle_pitch_events(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                 bases[base_index] = 0
 
             if entities['type'] == 'pickoff error':
-                base_index = base_index_lookup[entities['at']]
-                bases[base_index] = 1
+                for move in entities['moves']:
+                    base_index = base_index_lookup[move['at']]
 
-                for i in reversed(range(0, base_index)):
-                    if bases[i] == 1:
-                        bases[i] = 0
-                        break
+                    if not move['at'] == 'home':
+                        bases[base_index] = 1
+
+                    for i in reversed(range(0, base_index)):
+                        if bases[i] == 1:
+                            bases[i] = 0
+                            break
 
             prior['after'] = bases.copy()
 

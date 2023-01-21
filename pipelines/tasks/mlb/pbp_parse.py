@@ -234,13 +234,9 @@ def compress_game(game: Dict[str, Any]) -> Dict[str, Any]:
 def get_pbp(game: dict) -> Optional[dict]:
     Logger.info('* Stated "%s"', game['id'])
 
-    try:
-        game = parse_game(
-            compress_game(game)
-        )
-    except Exception as exception:
-        Logger.error('    - %s failed', game['id'])
-        Logger.error(exception)
+    game = parse_game(
+        compress_game(game)
+    )
 
     return game
 
