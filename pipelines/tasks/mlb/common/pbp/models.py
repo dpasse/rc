@@ -202,6 +202,8 @@ class Event():
                 self.__id = event[key]
             elif key == 'type':
                 self.__type = event[key]
+            elif key == 'desc':
+                self.__desc = event[key]
             elif key in ['isInfoPlay', 'isScoringPlay', 'isPitcherChange']:
                 if event[key]:
                     self.__attrs.append(key)
