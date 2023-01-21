@@ -54,6 +54,7 @@ class TemplateService():
             '- scored',
             '- scored on - by - - -',
             '- safe at - on - by - -',
+            'advances to - on - by - -'
             '- safe at - on - by - - -',
         ])
 
