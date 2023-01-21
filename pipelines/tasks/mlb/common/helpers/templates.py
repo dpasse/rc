@@ -1,143 +1,71 @@
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, Tuple, Generator, List
 import re
 
 
 class TemplateService():
     def __init__(self) -> None:
-        self.__templates = [
+        self.__templates = set([
             '- -',
+            'to -',
             '- - -',
-            '- as -',
             '- at -',
+            '- to -',
+            '- as -',
             '- - to -',
+            '- - at -',
+            '- scored',
+            '- stole -',
+            '- - - at -',
             '- catching',
-            '- ran for -',
             '- to - on -',
+            '- safe at -',
             '- at - base',
             '- hit for -',
-            '- -, - to -',
+            '- to - to -',
+            '- ran for -',
             '- in - field',
+            '- hit - to -',
+            '- scored on -',
             '- bunt - to -',
-            '- - -, - to -',
-            '- to - on a -',
+            '- - at - in -',
             '- - at - on -',
+            '- to - on a -',
             '- hit a - to -',
             '- pitches to -',
             '- - on strikes',
-            '- pitching for -',
-            '- - -, - stole -',
+            '- doubled off -',
+            '- scored on - -',
+            '- thrown - at -',
+            '- scored on a -',
+            '- safe at - on -',
+            '- to - to - to -',
             '- to - on - by -',
-            '- - to -, - to -',
+            '- pitching for -',
             '- - to - (- feet)',
-            '- - to -, - scored',
             '- to - on - by - -',
-            '- - to -, - - at -',
+            '- - stretching at -',
             '- reached on - to -',
-            '- -, - to -, - to -',
+            '- caught stealing -',
             '- to - on - by - - -',
-            '- -, - to - on - by -',
-            '- -, - to -, - - at -',
-            '- hit - to -, - scored',
-            '- hit a - to -, - to -',
+            '- scored on - by - -',
+            '- reached - base on -',
+            '- scored and - scored',
+            '- scored on - by - - -',
             '- safe at - on - by - -',
-            '- - to -, - scored, - -',
-            '- hit a - to -, - scored',
-            '- to -, - to - on - by -',
-            '- - to -, - to -, - to -',
             '- safe at - on - by - - -',
-            '- - to -, - thrown - at -',
             '- - and caught stealing -',
-            '- -, - to - to -, - - at -',
-            '- - to -, - scored, - to -',
-            '- - to -, - to -, - - at -',
-            '- - to -, - - at -, - to -',
-            '- scored on - -, - stole -',
-            '- -, to -, - doubled off -',
-            '- scored, - to - on - by -',
-            '- reached on - to -, - to -',
-            '- - to - (- feet), - scored',
-            '- -, - to -, - doubled off -',
-            '- -, - to -, - thrown - at -',
-            '- - to -, - scored, - - at -',
-            '- -, - to -, - to -, - - at -',
-            '- - to -, - - stretching at -',
-            '- -, - to -, - - at -, - to -',
-            '- reached on - to -, - scored',
-            '- -, - scored, - to -, - to -',
-            '- hit - to -, - scored, - to -',
-            '- - -, - safe at - on - by - -',
-            '- scored on a -, - to - on a -',
-            '- reached on - to -, - - - at -',
-            '- - to -, - scored and - scored',
-            '- -, - to -, - - at -, - - at -',
-            '- - to -, - scored on - by - - -',
-            '- safe at - on - by - - -, - to -',
-            '- - to -, - to -, - thrown - at -',
-            '- - to -, - safe at - on - by - -',
-            '- -, - to - on - by - - -, - to -',
-            '- -, - to - to -, - doubled off -',
-            '- scored on - -, - to - on - by -',
-            '- -, - to - to -, - - at -, - to -',
-            '- - to -, - to -, - to -, - - at -',
-            '- - -, - caught stealing -, - to -',
-            '- to - on - by -, - to - on - by -',
-            '- - to -, - scored, - to -, - to -',
-            '- reached on - to -, - to -, - to -',
-            '- - to -, - scored, - thrown - at -',
-            '- - to -, - safe at - on - by - - -',
-            '- -, - to - to -, - scored, - - at -',
-            '- - to -, - scored, - - at -, - to -',
-            '- reached on - to -, - scored, - to -',
-            '- - to -, - - stretching at -, - to -',
-            '- hit - to -, - scored, - to -, - to -',
-            '- scored on -, - safe at - on - by - -',
-            '- safe at - on - by - -, - to -, - to -',
-            '- - to -, - scored, - - stretching at -',
-            '- - to -, - to -, - to -, - - at - in -',
-            '- - to -, - scored and - scored, - to -',
-            '- scored on -, - safe at - on - by - - -',
-            '- - to - (- feet), - scored and - scored',
-            '- reached - base on -, - to - on - by - -',
-            '- - to -, - to -, - to -, - thrown - at -',
-            '- safe at - on - by - -, - safe at - on -',
-            '- - to -, - scored, - scored and - scored',
-            '- safe at - on - by - - -, - to -, - to -',
-            '- -, - to - to -, - to -, - to -, - - at -',
-            '- - to -, - scored, - - at -, - - at - on -',
-            '- - to -, - safe at - on - by - - -, - to -',
-            '- - to -, - to -, - safe at - on - by - - -',
-            '- safe at - on - by - - -, - safe at - on -',
-            '- reached on - to -, - scored on - by - - -',
-            '- - to -, - scored, - to -, - thrown - at -',
-            '- reached on - to -, - safe at - on - by - -',
-            '- -, - to - to -, - scored, - - at -, - to -',
-            '- - to -, - - at -, - safe at - on - by - - -',
-            '- safe at first and advances to - on - by - -',
-            '- - to -, - safe at - on - by - - -, - - at -',
-            '- -, - to - to - to -, - thrown - at -, - to -',
-            '- reached on - to -, - safe at - on - by - - -',
-            '- scored, - safe at -, - safe at - on - by - -',
-            '- - to -, - scored on - by - -, - safe at - on -',
-            '- scored, - safe at -, - safe at - on - by - - -',
-            '- - to - (- feet), - scored, - scored and - scored',
-            '- - to -, - scored on -, - safe at - on - by - - -',
-            '- - to -, - to -, - to -, - safe at - on - by - - -',
-            '- reached on - to -, - scored on - by - - -, - to -',
-            '- scored on - -, - to - on - by -, - to - on - by -',
-            '- reached on - to -, - to -, - safe at - on - by - -',
-            '- - to -, - safe at - on - by - - -, - safe at - on -',
-            '- reached - base on -, - to - on - by - -, - to - on -',
-            '- reached on - to -, - to -, - safe at - on - by - - -',
-            '- reached on - to -, - to - on - by - -, - to -, - to -',
-            '- reached on - to -, - and - scored on - by - -, - to -',
-            '- - to -, - scored on - by - - and - scored on -, - to -',
-            '- reached on - to -, - to -, - to -, - safe at - on - by - - -',
-            '- - to -, - scored, - scored on - by - - - and - scored, - to -',
-            '- reached on - to -, - scored on - by - -, - to -, - safe at - on -',
-            '- reached on - to -, - scored on - by - - - and - scored on -, - to -',
-            '- - to -, - scored on - and - scored, - - at -, - safe at - on - by - - -',
-            '- reached on - to -, - scored and - scored on - by - -, - to -, - safe at - on -'
-        ]
+            '- and - scored on - by - -',
+            '- scored on - and - scored',
+            '- scored and - scored on - by - -',
+            '- scored on - by - - - and - scored',
+            '- scored on - by - - and - scored on -',
+            '- scored on - by - - - and - scored on -',
+            '- safe at - and advances to - on - by - -',
+        ])
+
+    @property
+    def templates(self) -> List[str]:
+        return list(self.__templates)
 
     def create_template(self, description: str, entities: Dict[str, Any]) -> str:
         for key, value in entities.items():
@@ -154,15 +82,21 @@ class TemplateService():
                     else:
                         description = description.replace(str(item), '-', 1)
 
-        return description
+        return re.sub(r' +', ' ', description).strip()
+
+    def check_template(self, template: str) -> List[str]:
+        issues = []
+        for subset in (item.strip() for item in template.split(',')):
+            if not subset in self.__templates:
+                issues.append()
+
+        return issues
 
     def validate(self, description: str, entities: Dict[str, Any]) -> Tuple[bool, str]:
         template = re.sub(r'\. *$', '', description)
+        template = re.sub(r'safe at (first|second|third) and advances', 'safe at - and advances', template)
         template = re.sub(r'by ((first|second|third) baseman|(right|left|center) fielder)', 'by - -', template)
         template = re.sub(r'by (pitcher|catcher|shortstop)', 'by -', template)
 
         template = self.create_template(template, entities)
-
-        template = re.sub(r' +', ' ', template).strip()
-
-        return template in self.__templates, template
+        return not any(self.check_template(template)), template
