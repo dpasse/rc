@@ -20,5 +20,5 @@ def handle_multiple_outs(groups: List[str]) -> Dict[str, Any]:
     return observation
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
-    (r'^(.+?) ((?:ground|lin|fli|popp)ed into (?:double|triple) play)(.+)', handle_multiple_outs),
+    (r'^(.+?) ((?:ground|lin|fli|popp|sacrific)ed into (?:double|triple) play)(.+)', handle_multiple_outs),
 ]

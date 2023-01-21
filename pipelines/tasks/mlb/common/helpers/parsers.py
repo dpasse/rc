@@ -213,16 +213,18 @@ def set_types_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
 
 def set_entities_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
     entities = EVENT_DESCRIPTION_PARSER.transform_into_object(event['desc'])
-
     if entities:
-        matches_template, _ = TEMPLATE_SERVICE.validate(event['desc'], entities)
+        matches_template, template = TEMPLATE_SERVICE.validate(event['desc'], entities)
         if not matches_template:
             if not 'issues' in entities:
                 entities['issues'] = []
 
             entities['issues'].append('template')
+            entities['issues'].append(template)
+    else:
+        entities = { 'issues': ['parsing'] }
 
-    event['entities'] = { 'issues': ['parsing'] } if entities is None else entities
+    event['entities'] = entities
     return event
 
 def set_prior_on_pitches(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -294,20 +296,19 @@ def handle_pitch_events(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     return events
 
 def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
-
     periods = game['periods']
+
     for period in periods:
-
-        if 'issues' in period:
-            del period['issues']
-
-        events = period['events']
-
-        for event in events:
+        for event in period['events']:
             event = clear_event(event)
             event = set_entities_on_event(event)
             event = set_types_on_event(event)
 
+    for period in periods:
+        if 'issues' in period:
+            del period['issues']
+
+        events = period['events']
         events = handle_pitch_events(events)
 
         issues = []

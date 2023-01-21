@@ -14,6 +14,6 @@ def handle_error(groups: List[str]) -> Dict[str, Any]:
     return observation
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
-    (r'(.+on ((?:fielding|throwing) error).+)', handle_error),
-    (r'(.+on (error).+)', handle_error),
+    (r'(.+ on ((?:fielding|throwing) error).+)', handle_error),
+    (r'(.+ on (error).+)', handle_error),
 ]

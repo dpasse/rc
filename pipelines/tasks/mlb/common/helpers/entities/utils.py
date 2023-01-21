@@ -15,19 +15,26 @@ Positions = set([
 ])
 
 StrikeOutEfforts = set([
-    'swinging', 'looking', 'called out'
+    'swinging', 'looking', 'called out', 'bunting foul'
 ])
 
 EventTypes = set([
     'inside-the-park-home run',
     "runner's fielder's choice",
     "grounded into fielder's choice",
+    "hit into fielder's choice",
+    "bunted into fielder's choice",
     'grounded into double play',
+    "sacrificed into double play",
+    'grounded into triple play',
     "fielder's indifference",
     'popped into double play',
+    'popped into triple play',
+    'flied into triple play',
     'flied into double play',
-    "catcher's interference",
     'lined into double play',
+    'lined into triple play',
+    "catcher's interference",
     'intentionally walked',
     'ground rule double',
     'caught stealing',
@@ -88,8 +95,9 @@ Locations = set([
     'third',
     'right',
     'first',
+    'short',
     'left',
-    'home'
+    'home',
 ])
 
 
@@ -173,17 +181,11 @@ def split_text(text: str, delimiter: str = r',|\band\b') -> List[str]:
     ]
 
 def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
-    moves: List[Dict[str, Any]] = []
-    for item in groups:
-        text = item[:].strip()
-
-        ### repair
-        text = re.sub(r'^([A-Z][\w-]+) (first|second|third)(?=\.|$)', r'\g<1> to \g<2>', text)
-
+    def get_additional_information(text: str):
         additional_information_match = search(
             [
                 r"( on (fielder's indifference|runner's fielder's choice)(.*$))",
-                r"( on ((?:throwing|fielding| )*error|wild pitch|passed ball)(.*$))",
+                r"( on ((?:throwing|fielding| )*error|wild pitch|passed ball|pickoff error)(.*$))",
                 r"( on a (balk)(.*$))",
                 r"( in (rundown)(.*$))",
                 r"( (hit by batted ball))",
@@ -191,7 +193,6 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
             text,
         )
 
-        how = None
         if additional_information_match:
             additional_information_groups = additional_information_match.groups()
 
@@ -217,6 +218,39 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
                         how['by'] = by_information_match_groups[0]
                     else:
                         how['by'] = by_information_match_groups[1]
+
+            return text, how
+
+        additional_information_match = search(
+            [
+                r"( on (.+?) (wild pitch)\.?$)",
+            ],
+            text,
+        )
+
+        if additional_information_match:
+            additional_information_groups = additional_information_match.groups()
+
+            text = text.replace(additional_information_groups[0], '')
+
+            how = {
+                'how': additional_information_groups[2],
+                'by': additional_information_groups[1]
+            }
+
+            return text, how
+
+        return text, None
+
+
+    moves: List[Dict[str, Any]] = []
+    for item in groups:
+        text = item[:].strip()
+
+        ### repair
+        text = re.sub(r'^([A-Z][\w-]+) (first|second|third)(?=\.|$)', r'\g<1> to \g<2>', text)
+
+        text, how = get_additional_information(text)
 
         match = search([
                 r'^ *(.+?) (out|out stretching|thrown out|safe) at (.+)',

@@ -260,20 +260,17 @@ def get_pbps() -> None:
     games = get_games.submit().result()
 
     for game in games:
-        try:
-            game_id = game['id']
-            parsed_game = get_pbp.submit(game).result()
-            if parsed_game:
-                with open(os.path.join(PBP_OUTPUT_DIRECTORY, f'pbp_{game_id}.json'), 'w', encoding='UTF8') as pbp_output:
-                    pbp_output.write(json.dumps(parsed_game, indent=2))
 
-                issues = get_game_issues(parsed_game)
-                if len(issues['periods']) > 0:
-                    Logger.error('ISSUES FOUND:')
-                    Logger.error(issues)
-        except Exception as exception:
-            Logger.error('    - %s failed', game_id)
-            Logger.error(exception)
+        game_id = game['id']
+        parsed_game = get_pbp(game)
+        if parsed_game:
+            with open(os.path.join(PBP_OUTPUT_DIRECTORY, f'pbp_{game_id}.json'), 'w', encoding='UTF8') as pbp_output:
+                pbp_output.write(json.dumps(parsed_game, indent=2))
+
+            issues = get_game_issues(parsed_game)
+            if len(issues['periods']) > 0:
+                Logger.error('ISSUES FOUND:')
+                Logger.error(issues)
 
 
 if __name__ == '__main__':

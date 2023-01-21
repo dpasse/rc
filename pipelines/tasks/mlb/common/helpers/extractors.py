@@ -43,15 +43,22 @@ def get_game_issues(game: Dict[str, Any]) -> Dict[str, Any]:
     }
 
     for period in game['periods']:
+        event_issues = []
+        for event in period['events']:
+            if not 'entities' in event:
+                event_issues.append(
+                    { 'id': event['id'], 'issues': ['parsing'] }
+                )
+            else:
+                if 'issues' in event['entities']:
+                    event_issues.append(
+                        { 'id': event['id'], 'issues': event['entities']['issues'] }
+                    )
+
         period_issue = {
             'id': period['id'],
             'issues': period['issues'] if 'issues' in period else [],
-            'events': [
-                { 'id': event['id'], 'issues': event['entities']['issues'] }
-                for event
-                in period['events']
-                if 'issues' in event['entities']
-            ],
+            'events': event_issues,
         }
 
         has_issues = False

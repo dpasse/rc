@@ -41,6 +41,7 @@ class TemplateService():
             '- to - to - to -',
             '- to - on - by -',
             '- pitching for -',
+            'caught stealing -',
             '- - to - (- feet)',
             '- to - on - by - -',
             '- - stretching at -',
@@ -49,18 +50,11 @@ class TemplateService():
             '- to - on - by - - -',
             '- scored on - by - -',
             '- reached - base on -',
-            '- scored and - scored',
+            '- scored',
+            '- scored',
             '- scored on - by - - -',
             '- safe at - on - by - -',
             '- safe at - on - by - - -',
-            '- - and caught stealing -',
-            '- and - scored on - by - -',
-            '- scored on - and - scored',
-            '- scored and - scored on - by - -',
-            '- scored on - by - - - and - scored',
-            '- scored on - by - - and - scored on -',
-            '- scored on - by - - - and - scored on -',
-            '- safe at - and advances to - on - by - -',
         ])
 
     @property
@@ -86,15 +80,16 @@ class TemplateService():
 
     def check_template(self, template: str) -> List[str]:
         issues = []
-        for subset in (item.strip() for item in template.split(',')):
+        for subset in (re.sub(r'[.,]+$', '', item).strip() for item in re.split(r',|\band\b', template)):
             if not subset in self.__templates:
-                issues.append()
+                issues.append(subset)
 
         return issues
 
     def validate(self, description: str, entities: Dict[str, Any]) -> Tuple[bool, str]:
         template = re.sub(r'\. *$', '', description)
         template = re.sub(r'safe at (first|second|third) and advances', 'safe at - and advances', template)
+        template = re.sub(r', ((?:[A-Z.]+ |)[A-Z][\w-]+) and ([A-Z]\w+) scored', r', \g<1> scored and \g<2> scored', template)
         template = re.sub(r'by ((first|second|third) baseman|(right|left|center) fielder)', 'by - -', template)
         template = re.sub(r'by (pitcher|catcher|shortstop)', 'by -', template)
 

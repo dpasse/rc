@@ -5824,10 +5824,11 @@
   [
     "Celestino to third on pickoff error by pitcher Graveman.",
     {
-      "player": "Celestino",
+      "player": "Graveman",
       "type": "pickoff error",
-      "at": "third",
-      "by": "Graveman"
+      "moves": [
+        {"player": "Celestino", "type": "advanced", "at": "third", "how": "pickoff error", "by": "Graveman"}
+      ]
     }
   ],
   [
@@ -21194,6 +21195,23 @@
     }
   ],
   [
+    "Gordon scored on Garcia wild pitch.",
+    {
+        "player": "Garcia",
+        "type": "wild pitch",
+        "moves": [
+          {
+            "player": "Gordon",
+            "type": "advanced",
+            "at": "home",
+            "how": "wild pitch",
+            "by": "Garcia"
+          }
+        ],
+        "runs": 1
+      }
+  ],
+  [
     "Straw scored on Cotton wild pitch, Kwan to third on wild pitch by Cotton.",
     {
       "player": "Cotton",
@@ -21202,7 +21220,9 @@
         {
           "player": "Straw",
           "type": "advanced",
-          "at": "home"
+          "at": "home",
+          "how": "wild pitch",
+          "by": "Cotton"
         },
         {
           "player": "Kwan",
@@ -24033,7 +24053,9 @@
         {
           "player": "Arraez",
           "type": "advanced",
-          "at": "home"
+          "at": "home",
+          "how": "wild pitch",
+          "by": "Speier"
         },
         {
           "player": "Kepler",
@@ -24733,10 +24755,11 @@
   [
     "Polanco to second on pickoff error by first baseman Rizzo.",
     {
-      "player": "Polanco",
+      "player": "Rizzo",
       "type": "pickoff error",
-      "at": "second",
-      "by": "Rizzo"
+      "moves": [
+        {"player": "Polanco", "type": "advanced", "at": "second", "how": "pickoff error", "by": "Rizzo"}
+      ]
     }
   ],
   [
@@ -25092,10 +25115,11 @@
   [
     "Kepler to second on pickoff error by pitcher Luetge.",
     {
-      "player": "Kepler",
+      "player": "Luetge",
       "type": "pickoff error",
-      "at": "second",
-      "by": "Luetge"
+      "moves": [
+        {"player": "Kepler", "type": "advanced", "at": "second", "how": "pickoff error", "by": "Luetge"}
+      ]
     }
   ],
   [
@@ -25593,10 +25617,11 @@
   [
     "Kepler to second on pickoff error by catcher McGuire.",
     {
-      "player": "Kepler",
+      "player": "McGuire",
       "type": "pickoff error",
-      "at": "second",
-      "by": "McGuire"
+      "moves": [
+        {"player": "Kepler", "type": "advanced", "at": "second", "how": "pickoff error", "by": "McGuire"}
+      ]
     }
   ],
   [
@@ -30313,7 +30338,9 @@
         {
           "player": "Kepler",
           "type": "advanced",
-          "at": "home"
+          "at": "home",
+          "how": "wild pitch",
+          "by": "Crawford"
         },
         {
           "player": "S\u00e1nchez",
@@ -36211,7 +36238,9 @@
         {
           "player": "Rizzo",
           "type": "advanced",
-          "at": "home"
+          "at": "home",
+          "how": "wild pitch",
+          "by": "Moran"
         },
         {
           "player": "Torres",
