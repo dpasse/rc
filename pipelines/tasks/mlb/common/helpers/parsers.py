@@ -46,6 +46,7 @@ class ParsingEngine():
         self.__parse_event_expressions = expressions
 
     def transform_into_object(self, description: str) -> Optional[dict]:
+        description = re.sub(r'(first|second|third|left|right|center)\.', r'\g<1> ,', description)
         for expression, mapping_function in self.__parse_event_expressions:
             match = re.search(expression, description)
             observation = self.post_parse(mapping_function(list(match.groups()))) if match else None
@@ -213,8 +214,7 @@ def set_types_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
     return event
 
 def set_entities_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
-    description = re.sub(r'(first|second|third|left|right|center)\.', r'\g<1> ,', event['desc'])
-    entities = EVENT_DESCRIPTION_PARSER.transform_into_object(description)
+    entities = EVENT_DESCRIPTION_PARSER.transform_into_object(event['desc'])
 
     if entities:
         matches_template, template = TEMPLATE_SERVICE.validate(event['desc'], entities)

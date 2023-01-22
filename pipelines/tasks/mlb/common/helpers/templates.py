@@ -61,6 +61,7 @@ class TemplateService():
             'deflected by -',
             '- - to - on - by - -',
             '- to - on - by - - -',
+            '- - to -', '- to -',
             '- - - -',
             '- continues to at bat after - by - - -',
             '- continues to at bat after - by - -',
