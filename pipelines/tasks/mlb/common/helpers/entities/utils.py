@@ -35,6 +35,8 @@ EventTypes = set([
     'popped into double play',
     'popped into triple play',
     'flied into triple play',
+    'bunt double',
+    'bunt single',
     'dropped foul ball',
     'flied into double play',
     'lined into double play',
@@ -75,6 +77,7 @@ EventTypes = set([
     'stole',
     'error',
     'balk',
+    'lined',
     'out'
 ])
 
@@ -104,6 +107,7 @@ Locations = set([
     'right',
     'first',
     'short',
+    'shift',
     'left',
     'home',
 ])
@@ -263,10 +267,10 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
 
         text, how = get_additional_information(text)
 
-        advanced = ['to', 'scored', 'safe', 'stole', 'advanced to', 'walked']
+        advanced = ['to', 'scored', 'safe', 'stole', 'advanced to', 'walked', 'safe to']
         match = search([
                 r'^ *(.+?) (out|out stretching|thrown out|safe) at (.+)',
-                r'^ *(.+?) ((?:doubled|picked) off|caught stealing|to|stole|advanced to) (.+)',
+                r'^ *(.+?) ((?:doubled|picked) off|caught stealing|to|safe to|stole|advanced to) (.+)',
                 r'^ *(.+?) (thrown out|scored|walked|struck out)',
             ],
             text,

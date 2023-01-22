@@ -25,20 +25,21 @@ from .entities.tie_pitch_events import parse_pitch_events
 from .templates import TemplateService
 
 
-default_description_expressions =  walk_exports + \
-              strike_outs_exports + \
-              balk_exports + \
-              pick_off_exports + \
-              homerun_exports + \
-              wild_pitch_exports + \
-              in_play_exports + \
-              interference_exports + \
-              multiple_outs_export + \
-              fielders_choice_export + \
-              sacrifice_exports + \
-              steal_exports + \
-              error_exports + \
-              sub_exports
+default_description_expressions =  sacrifice_exports + \
+            walk_exports + \
+            strike_outs_exports + \
+            balk_exports + \
+            pick_off_exports + \
+            homerun_exports + \
+            wild_pitch_exports + \
+            in_play_exports + \
+            interference_exports + \
+            multiple_outs_export + \
+            fielders_choice_export + \
+            sacrifice_exports + \
+            steal_exports + \
+            error_exports + \
+            sub_exports
 
 class ParsingEngine():
     def __init__(self, expressions: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]]) -> None:

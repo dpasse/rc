@@ -55,10 +55,10 @@ def handle_foul_out(groups: List[str]) -> Dict[str, Any]:
     return observation
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
+    (r'^(.+?) reache[ds] on ((?:infield|bunt) (?:singl|doubl)e) to (.+)', handle_in_play),
     (r'^(.+?) ((?:singl|doubl|tripl)e[ds]) to (.+)', handle_in_play),
-    (r'^(.+?) reache[ds] on ((?:infield|bunt) single) to (.+)', handle_in_play),
     (r'^(.+?) hit a (ground rule double) to (.+)', handle_in_play),
-    ##(r'^(.+?)(?: |bunt)+((?:lin|ground|fli|foul|popp)ed out) to (.+?)[.,](.+)', handle_in_play_out_with_error),
     (r'^(.+?)(?: |bunt)+((?:lin|ground|fli|foul|popp)ed out) to (.+)', handle_in_play_out),
+    (r'^(.+?) ((?:lin|ground|fli|)ed) into the (.+)', handle_in_play_out),
     (r'^(.+?) (fouled out) (.+)', handle_foul_out)
 ]

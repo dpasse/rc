@@ -60,7 +60,6 @@ class TemplateService():
             '- reaches on - to -',
             'deflected by -',
             '- - to - on - by - -',
-            '- - to -',
             '- to - on - by - - -',
             '- - - -',
             '- continues to at bat after - by - - -',
@@ -71,6 +70,9 @@ class TemplateService():
             'out on batter interference',
             '- - to - off a deflection by -',
             '- to - on - -',
+            '- - - to - to -',
+            '- - into the -',
+            '- safe to -'
         ])
 
     @property

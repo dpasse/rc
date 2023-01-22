@@ -14,8 +14,6 @@ def handle_sacrifice(groups: List[str]) -> Dict[str, Any]:
         outs=1
     )
 
-    ## if player is safe in moves remove out
-
     if not 'moves' in observation:
         return observation
 
