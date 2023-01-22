@@ -52,8 +52,21 @@ def handle_premature_ending(groups: List[str]) -> Dict[str, Any]:
 
     return observation
 
+def handle_continues(groups: List[str]) -> Dict[str, Any]:
+    observation = create_player_observation(
+        player=groups[0],
+        event_type=groups[1]
+    )
+
+    observation['by'] = groups[2]
+
+    return observation
+
 
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
+    (r'^(.+?) continues to at bat after (dropped foul ball) by (?:first|second|third) baseman (.+)', handle_continues),
+    (r'^(.+?) continues to at bat after (dropped foul ball) by (?:left|right) fielder (.+)', handle_continues),
+    (r'^(.+?) continues to at bat after (dropped foul ball) by catcher (.+)', handle_continues),
     (r'^(.+?) (?:a[st]|in) (.+)', handle_position_sub),
     (r'^(.+?) (?:hit|ran) for (.+)', handle_player_sub),
     (r'^(.+?) pitching for (.+)', handle_pitcher_sub_with_team),

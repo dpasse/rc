@@ -25,11 +25,11 @@ from .entities.tie_pitch_events import parse_pitch_events
 from .templates import TemplateService
 
 
-default_description_expressions = strike_outs_exports + \
+default_description_expressions =  walk_exports + \
+              strike_outs_exports + \
               balk_exports + \
               pick_off_exports + \
               homerun_exports + \
-              walk_exports + \
               wild_pitch_exports + \
               in_play_exports + \
               interference_exports + \
@@ -195,7 +195,7 @@ def set_types_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
         return event
 
     entities = event['entities']
-    if entities['type'] in ['sub-p', 'sub-f']:
+    if entities['type'] in ['sub-p', 'sub-f', 'dropped foul ball']:
         return event
 
     if entities['type'] in ['picked off', 'pickoff error']:
@@ -212,7 +212,9 @@ def set_types_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
     return event
 
 def set_entities_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
-    entities = EVENT_DESCRIPTION_PARSER.transform_into_object(event['desc'])
+    description = re.sub(r'(first|second|third|left|right|center)\.', r'\g<1> ,', event['desc'])
+    entities = EVENT_DESCRIPTION_PARSER.transform_into_object(description)
+
     if entities:
         matches_template, template = TEMPLATE_SERVICE.validate(event['desc'], entities)
         if not matches_template:
@@ -302,6 +304,9 @@ def parse_game(game: Dict[str, Any]) -> Dict[str, Any]:
     periods = game['periods']
 
     for period in periods:
+        if not 'events' in period:
+            period['events'] = []
+
         for event in period['events']:
             event = clear_event(event)
             event = set_entities_on_event(event)

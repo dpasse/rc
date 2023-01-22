@@ -43,6 +43,7 @@ class TemplateService():
             '- pitching for -',
             'caught stealing -',
             '- - to - (- feet)',
+            '- - to (- feet)',
             '- to - on - by - -',
             '- - stretching at -',
             '- reached on - to -',
@@ -54,6 +55,22 @@ class TemplateService():
             '- safe at - on - by - -',
             'advances to - on - by - -',
             '- safe at - on - by - - -',
+            '- - - to -',
+            '- picked off -',
+            '- reaches on - to -',
+            'deflected by -',
+            '- - to - on - by - -',
+            '- - to -',
+            '- to - on - by - - -',
+            '- - - -',
+            '- continues to at bat after - by - - -',
+            '- continues to at bat after - by - -',
+            '- struck - swinging',
+            '-',
+            '- safe at - on a - by - -',
+            'out on batter interference',
+            '- - to - off a deflection by -',
+            '- to - on - -',
         ])
 
     @property
@@ -79,7 +96,7 @@ class TemplateService():
 
     def check_template(self, template: str) -> List[str]:
         issues = []
-        for subset in (re.sub(r'[.,]+$', '', item).strip() for item in re.split(r',|\band\b', template)):
+        for subset in (re.sub(r'[.,]+$', '', item).strip() for item in re.split(r'[,.]|\band\b', template)):
             if not subset in self.__templates:
                 issues.append(subset)
 

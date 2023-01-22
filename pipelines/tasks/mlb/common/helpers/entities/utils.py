@@ -12,6 +12,9 @@ Positions = set([
     'center',
     'right',
     'pitcher',
+    'left fielder',
+    'right fielder',
+    'center fielder'
 ])
 
 StrikeOutEfforts = set([
@@ -28,9 +31,11 @@ EventTypes = set([
     "sacrificed into double play",
     'grounded into triple play',
     "fielder's indifference",
+    'bunt popped into double play',
     'popped into double play',
     'popped into triple play',
     'flied into triple play',
+    'dropped foul ball',
     'flied into double play',
     'lined into double play',
     'lined into triple play',
@@ -83,6 +88,8 @@ Locations = set([
     'shallow right',
     'right center',
     'shallow left',
+    'left field',
+    'right field',
     'deep center',
     'left center',
     'deep right',
@@ -169,7 +176,8 @@ def clean_text(text: str) -> str:
 
 def split_text(text: str, delimiter: str = r',|\band\b') -> List[str]:
     text = re.sub(r' safe at (first|second|third) and advances ', ' ', text)
-    text = re.sub(r', ((?:[A-Z.]+ |)[A-Z][\w-]+) and ([A-Z]\w+) scored', r', \g<1> scored and \g<2> scored', text)
+    text = re.sub(r', ((?:[A-Z.]+ |)[A-Z][\w.-]+(?: [A-Za-z.]{2,3}|)) and ([A-Z]\w+) scored', r', \g<1> scored and \g<2> scored', text)
+
 
     return [
         text
@@ -185,7 +193,7 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
         additional_information_match = search(
             [
                 r"( on (fielder's indifference|runner's fielder's choice)(.*$))",
-                r"( on ((?:throwing|fielding| )*error|wild pitch|passed ball|pickoff error)(.*$))",
+                r"( on(?: |a)+((?:throwing|fielding| )*error|wild pitch|passed ball|pickoff error|missed catch error)(.*$))",
                 r"( on a (balk)(.*$))",
                 r"( in (rundown)(.*$))",
                 r"( (hit by batted ball))",
@@ -214,10 +222,9 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
 
                 if by_information_match:
                     by_information_match_groups = by_information_match.groups()
-                    if len(by_information_match_groups) == 1:
-                        how['by'] = by_information_match_groups[0]
-                    else:
-                        how['by'] = by_information_match_groups[1]
+                    by = by_information_match_groups[0] if len(by_information_match_groups) == 1 else by_information_match_groups[1]
+                    if not by in Positions:
+                        how['by'] = by
 
             return text, how
 
@@ -233,29 +240,33 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
 
             text = text.replace(additional_information_groups[0], '')
 
-            how = {
-                'how': additional_information_groups[2],
-                'by': additional_information_groups[1]
-            }
+            by = additional_information_groups[1]
+            if by in Positions:
+                how = {
+                    'how': additional_information_groups[2]
+                }
+            else:
+                how = {
+                    'how': additional_information_groups[2],
+                    'by': additional_information_groups[1]
+                }
 
             return text, how
 
         return text, None
 
-
     moves: List[Dict[str, Any]] = []
     for item in groups:
         text = item[:].strip()
-
-        ### repair
         text = re.sub(r'^([A-Z][\w-]+) (first|second|third)(?=\.|$)', r'\g<1> to \g<2>', text)
 
         text, how = get_additional_information(text)
 
+        advanced = ['to', 'scored', 'safe', 'stole', 'advanced to', 'walked']
         match = search([
                 r'^ *(.+?) (out|out stretching|thrown out|safe) at (.+)',
-                r'^ *(.+?) (doubled off|caught stealing|to|stole) (.+)',
-                r'^ *(.+?) (thrown out|scored)',
+                r'^ *(.+?) ((?:doubled|picked) off|caught stealing|to|stole|advanced to) (.+)',
+                r'^ *(.+?) (thrown out|scored|walked|struck out)',
             ],
             text,
         )
@@ -274,7 +285,7 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
 
             move = create_player_observation(
                 player=player,
-                event_type='advanced' if move_type in ['to', 'scored', 'safe', 'stole'] else 'out',
+                event_type='advanced' if move_type in advanced else 'out',
                 at=at
             )
 

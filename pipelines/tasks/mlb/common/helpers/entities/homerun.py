@@ -15,7 +15,7 @@ def handle_homerun(groups: List[str]) -> Dict[str, Any]:
     observation = create_player_observation(
         player=groups[0],
         event_type=groups[1],
-        at=extras[0],
+        at=extras[0] if len(extras) > 0 else None,
         extras=extras[1:],
         runs=1,
     )
