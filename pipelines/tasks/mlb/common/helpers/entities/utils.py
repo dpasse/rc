@@ -14,7 +14,7 @@ Positions = set([
     'pitcher',
     'left fielder',
     'right fielder',
-    'center fielder'
+    'center fielder',
 ])
 
 StrikeOutEfforts = set([
@@ -89,6 +89,7 @@ Locations = set([
     'right center',
     'shallow left',
     'left field',
+    'shortstop first',
     'right field',
     'deep center',
     'left center',
@@ -192,7 +193,7 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
     def get_additional_information(text: str):
         additional_information_match = search(
             [
-                r"( on (fielder's indifference|runner's fielder's choice)(.*$))",
+                r"( on (fielder's indifference|runner's fielder's choice|interference)(.*$))",
                 r"( on(?: |a)+((?:throwing|fielding| )*error|wild pitch|passed ball|pickoff error|missed catch error)(.*$))",
                 r"( on a (balk)(.*$))",
                 r"( in (rundown)(.*$))",

@@ -14,6 +14,18 @@ def handle_sacrifice(groups: List[str]) -> Dict[str, Any]:
         outs=1
     )
 
+    ## if player is safe in moves remove out
+
+    if not 'moves' in observation:
+        return observation
+
+    was_save = [
+        move for move in observation['moves'] if move['type'] == 'advanced' and move['player'] == groups[0]
+    ]
+
+    if any(was_save):
+        observation['outs'] -= 1
+
     return observation
 
 def handle_attempted_sacrifice(groups: List[str]) -> Dict[str, Any]:

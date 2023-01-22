@@ -6,20 +6,38 @@ from .utils import split_text, handle_extras, create_player_observation
 
 def handle_fielders_choice(groups: List[str]) -> Dict[str, Any]:
     extras = split_text(groups[2])
-    return create_player_observation(
+    observation = create_player_observation(
         player=groups[0],
         event_type=groups[1],
         at=extras[0],
-        extras=extras[1:]
+        extras=extras[1:],
     )
+
+    ##outs = 0
+    ##if 'moves' in observation:
+    ##    outs = sum(1 for move in observation['moves'] if move['type'] == 'out')
+##
+    ##if outs == 0:
+    ##    observation['outs'] = 1
+
+    return observation
 
 def handle_fielders_choice_wide(groups: List[str]) -> Dict[str, Any]:
     extras = split_text(groups[2])
-    return create_player_observation(
+    observation = create_player_observation(
         player=groups[0],
         event_type=groups[1],
         extras=extras,
     )
+
+    ##outs = 0
+    ##if 'moves' in observation:
+    ##    outs = sum(1 for move in observation['moves'] if move['type'] == 'out')
+##
+    ##if outs == 0:
+    ##    observation['outs'] = 1
+
+    return observation
 
 def handle_wide_fielders_choice(groups: List[str]) -> Dict[str, Any]:
     observation: Dict[str, Any] = {

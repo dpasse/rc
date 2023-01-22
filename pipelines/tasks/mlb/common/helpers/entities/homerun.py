@@ -25,7 +25,27 @@ def handle_homerun(groups: List[str]) -> Dict[str, Any]:
 
     return observation
 
+def handle_homerun_no_at(groups: List[str]) -> Dict[str, Any]:
+    distance = search([r'\((\d+)'], groups[2])
+
+    extras = split_text(
+        re.sub(r'\([^)]+\)', '', groups[2]), ## (565 feet)
+    )
+
+    observation = create_player_observation(
+        player=groups[0],
+        event_type=groups[1],
+        extras=extras,
+        runs=1,
+    )
+
+    if distance:
+        observation['distance'] = int(distance.group(1))
+
+    return observation
+
 exports: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]] = [
+    (r'^(.+?) (homered) to (\(\d+ feet\),.+)', handle_homerun_no_at),
     (r'^(.+?) (homered) to (.+)', handle_homerun),
     (r'^(.+?) (inside-the-park-home run) to (.+)', handle_homerun),
 ]
