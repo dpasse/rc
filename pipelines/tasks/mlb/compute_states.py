@@ -12,7 +12,7 @@ PBP_DIRECTORY = '../data/mlb/pbp/2/'
 def create_graph(teams):
     areas = ['home', 'away']
 
-    possible_outs = ['0', '1', '2', '3']
+    possible_outs = ['0', '1', '2']
 
     possible_states = [
         [0, 0, 0],
