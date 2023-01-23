@@ -11,7 +11,8 @@ def handle_strike_outs_no_effort(groups: List[str]) -> Dict[str, Any]:
     )
 
     is_out = True
-    for move in observation['moves']:
+    moves = observation['moves'] if 'moves' in observation else []
+    for move in moves:
         if observation['player'] == move['player'] and move['type'] == 'advanced':
             is_out = False
 
@@ -25,9 +26,17 @@ def handle_strike_outs(groups: List[str]) -> Dict[str, Any]:
     observation = create_player_observation(
         player=groups[0],
         event_type='struck out',
-        extras=extras[1:],
-        outs=1
+        extras=extras[1:]
     )
+
+    is_out = True
+    moves = observation['moves'] if 'moves' in observation else []
+    for move in moves:
+        if observation['player'] == move['player'] and move['type'] == 'advanced':
+            is_out = False
+
+    if is_out:
+        observation['outs'] = 1
 
     observation['effort'] = extras[0]
 
