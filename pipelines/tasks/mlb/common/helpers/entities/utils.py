@@ -65,6 +65,7 @@ EventTypes = {
     'throwing error',
     'caught stealing',
     'dropped foul ball',
+    'trying to advance',
     'ground rule double',
     'hit by batted ball',
     'missed catch error',
@@ -209,7 +210,7 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
                 r"( on(?: |a|the)+((?:throwing|fielding| )*error|wild pitch|passed ball|pickoff error|missed catch error|throw)(.*$))",
                 r"( on a (balk)(.*$))",
                 r"( in (rundown)(.*$))",
-                r"( (hit by batted ball))",
+                r"( (hit by batted ball|trying to advance))",
             ],
             text,
         )
