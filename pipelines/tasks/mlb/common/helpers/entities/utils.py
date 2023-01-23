@@ -36,6 +36,7 @@ EventTypes = set([
     'popped into triple play',
     'flied into triple play',
     'bunt double',
+    "runner's inteference",
     'bunt single',
     'dropped foul ball',
     'flied into double play',
@@ -47,8 +48,10 @@ EventTypes = set([
     'caught stealing',
     'throwing error',
     'infield single',
+    'hit by batted ball',
     'fielding error',
     'pickoff error',
+    'missed catch error',
     'sacrifice fly',
     'hit by pitch',
     'grounded out',
@@ -75,9 +78,11 @@ EventTypes = set([
     'sub-p',
     'sub-f',
     'stole',
+    'throw',
     'error',
     'balk',
     'lined',
+    'rundown',
     'out'
 ])
 
@@ -197,8 +202,8 @@ def handle_moves(groups: List[str]) -> List[Dict[str, Any]]:
     def get_additional_information(text: str):
         additional_information_match = search(
             [
-                r"( on (fielder's indifference|runner's fielder's choice|interference)(.*$))",
-                r"( on(?: |a)+((?:throwing|fielding| )*error|wild pitch|passed ball|pickoff error|missed catch error)(.*$))",
+                r"( on ((?:fielder|runner)'s indifference|runner's fielder's choice|interference|runner's inter?ference)(.*$))",
+                r"( on(?: |a|the)+((?:throwing|fielding| )*error|wild pitch|passed ball|pickoff error|missed catch error|throw)(.*$))",
                 r"( on a (balk)(.*$))",
                 r"( in (rundown)(.*$))",
                 r"( (hit by batted ball))",

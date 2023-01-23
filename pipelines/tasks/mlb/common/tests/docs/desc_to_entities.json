@@ -197,7 +197,8 @@
         {
           "player": "Candelario",
           "type": "out",
-          "at": "second on runner's inteference"
+          "at": "second",
+          "how": "runner's inteference"
         }
       ]
     }
@@ -4816,7 +4817,8 @@
         {
           "player": "Schwindel",
           "type": "advanced",
-          "at": "second on throw"
+          "at": "second",
+          "how": "throw"
         },
         {
           "player": "Schwindel",
@@ -7560,7 +7562,8 @@
         {
           "player": "Velazquez",
           "type": "out",
-          "at": "third on runner's inteference"
+          "at": "third",
+          "how": "runner's inteference"
         }
       ],
       "outs": 1
@@ -9916,7 +9919,8 @@
         {
           "player": "Rosario",
           "type": "advanced",
-          "at": "second on the throw"
+          "at": "second",
+          "how": "throw"
         },
         {
           "player": "Rosario",

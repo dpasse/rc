@@ -1,5 +1,6 @@
+from abc import abstractmethod, ABC
 import re
-from typing import Optional, Tuple, Dict, Any, List, Callable
+from typing import Optional, Tuple, Dict, Any, List, Callable, Union, cast
 from .extractors import calculate_total_outs, get_pitch_events
 from .entities.utils import clean_text, \
                             is_event_type, \
@@ -41,12 +42,106 @@ default_description_expressions =  sacrifice_exports + \
             error_exports + \
             sub_exports
 
+class AbstractValidator(ABC):
+    def __init__(self, identifier: str, keys: List[str]) -> None:
+        self.__identifier = identifier
+        self.__keys = keys
+
+    @property
+    def identifier(self) -> str:
+        return self.__identifier
+
+    @abstractmethod
+    def is_item_valid(self, item: Union[List[str], str]) -> bool:
+        pass
+
+    def validate(self, obj: Dict[str, Any]) -> bool:
+        for key in self.__keys:
+            if not key in obj:
+                continue
+
+            if not self.is_item_valid(obj[key]):
+                return False
+
+        return True
+
+class EffortValidator(AbstractValidator):
+    def __init__(self) -> None:
+        super().__init__('effort', ['effort'])
+
+    def is_item_valid(self, item: Union[List[str], str]) -> bool:
+        return is_strike_out_effort(cast(str, item))
+
+class PlayerValidator(AbstractValidator):
+    def __init__(self) -> None:
+        super().__init__('player', ['player', 'by', 'for', 'to'])
+
+    def is_item_valid(self, item: Union[List[str], str]) -> bool:
+        return is_player(cast(str, item))
+
+class TypeValidator(AbstractValidator):
+    def __init__(self) -> None:
+        super().__init__('type', ['type', 'how'])
+
+    def is_item_valid(self, item: Union[List[str], str]) -> bool:
+        return is_event_type(cast(str, item))
+
+class LocationValidator(AbstractValidator):
+    def __init__(self) -> None:
+        super().__init__('at', ['at'])
+
+    def is_item_valid(self, item: Union[List[str], str]) -> bool:
+        return is_location(cast(str, item))
+
+class OrderValidator(AbstractValidator):
+    def __init__(self) -> None:
+        super().__init__('order', ['order'])
+
+    def is_item_valid(self, item: Union[List[str], str]) -> bool:
+        return sum(is_position(subset) for subset in cast(List[str], item)) > 0
+
+class GameValidator():
+    def __init__(self) -> None:
+        self.__validators: List[AbstractValidator] = [
+            EffortValidator(),
+            PlayerValidator(),
+            TypeValidator(),
+            LocationValidator(),
+            OrderValidator(),
+        ]
+
+    def run(self, observation: Dict[str, Any]) -> List[str]:
+        issues = []
+        for validator in self.__validators:
+            if not validator.validate(observation):
+                issues.append(validator.identifier)
+
+        return issues
+
+    def validate(self, observation: Dict[str, Any]) -> List[str]:
+        issues = []
+        issues.extend(
+            self.run(observation)
+        )
+
+        if 'moves' in observation:
+            for move in observation['moves']:
+                issues.extend(
+                    [f'move.{item}' for item in self.run(move)]
+                )
+
+        return issues
+
 class ParsingEngine():
     def __init__(self, expressions: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]]) -> None:
         self.__parse_event_expressions = expressions
 
+    def pre_parse(self, description:str) -> str:
+        description = re.sub(r'(first|second|third|left|right|center)\.', r'\g<1> ,', description).strip()
+        return description
+
     def transform_into_object(self, description: str) -> Optional[dict]:
-        description = re.sub(r'(first|second|third|left|right|center)\.', r'\g<1> ,', description)
+        description = self.pre_parse(description)
         for expression, mapping_function in self.__parse_event_expressions:
             match = re.search(expression, description)
             observation = self.post_parse(mapping_function(list(match.groups()))) if match else None
@@ -61,73 +156,12 @@ class ParsingEngine():
 class EventDescriptionParser(ParsingEngine):
     def __init__(self, expressions: Optional[List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]]] = None) -> None:
         super().__init__(default_description_expressions if expressions is None else expressions)
+        self.__validator = GameValidator()
 
     def validate(self, observation: Dict[str, Any]) -> Dict[str, Any]:
-        def have_issue_with_effort(obj: Dict[str, Any]) -> bool:
-            for key in ['effort']:
-                if key in obj and not is_strike_out_effort(obj[key]):
-                    return True
-
-            return False
-
-        def have_issue_with_player(obj: Dict[str, Any]) -> bool:
-            for key in ['player', 'by', 'for', 'to']:
-                if key in obj and not is_player(obj[key]):
-                    return True
-
-            return False
-
-        def have_issues_with_type(obj: Dict[str, Any]) -> bool:
-            for key in ['type', 'how']:
-                if key in obj and not is_event_type(obj[key]):
-                    return True
-
-            return False
-
-        def have_issues_with_location(obj: Dict[str, Any]) -> bool:
-            for key in ['at']:
-                if key in obj and not is_location(obj[key]):
-                    return True
-
-            return False
-
-        def have_issues_with_order(obj: Dict[str, Any]) -> bool:
-            for key in ['order']:
-                if key in obj and not sum(is_position(subset) for subset in obj[key]) > 0:
-                    return True
-
-            return False
-
-        issues = set([])
-
-        if have_issue_with_player(observation):
-            issues.add('player')
-
-        if have_issue_with_effort(observation):
-            issues.add('effort')
-
-        if have_issues_with_type(observation):
-            issues.add('type')
-
-        if have_issues_with_location(observation):
-            issues.add('at')
-
-        if have_issues_with_order(observation):
-            issues.add('order')
-
-        if 'moves' in observation:
-            for move in observation['moves']:
-                if have_issue_with_player(move):
-                    issues.add('player')
-
-                if have_issues_with_type(observation):
-                    issues.add('type')
-
-                if have_issues_with_location(observation):
-                    issues.add('at')
-
+        issues = self.__validator.validate(observation)
         if len(issues) > 0:
-            observation['issues'] = list(issues)
+            observation['issues'] = issues
 
         return observation
 
