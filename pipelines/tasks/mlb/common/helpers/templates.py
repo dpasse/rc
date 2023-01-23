@@ -1,101 +1,95 @@
-from typing import Any, Dict, Tuple, Generator, List
+from typing import Any, Dict, Tuple, List
 import re
 
 
 class TemplateService():
     def __init__(self) -> None:
-        self.__templates = set([
-            '- -',
+        self.__templates = {
+            '-',
             'to -',
-            '- - -',
+            '- as -',
             '- at -',
             '- to -',
-            '- as -',
-            '- - to -',
-            '- - at -',
             '- scored',
             '- stole -',
-            '- - - at -',
             '- catching',
-            '- to - on -',
-            '- safe at -',
             '- at - base',
+            '- at - in -',
+            '- at - on -',
             '- hit for -',
-            '- to - to -',
             '- ran for -',
-            '- in - field',
+            '- safe at -',
+            '- safe to -',
+            '- to - on -',
+            '- to - to -',
             '- hit - to -',
-            '- scored on -',
+            '- in - field',
+            '- into the -',
+            '- on strikes',
             '- bunt - to -',
-            '- - at - in -',
-            '- - at - on -',
+            '- scored on -',
+            '- to (- feet)',
             '- to - on a -',
             '- hit a - to -',
-            '- pitches to -',
-            '- - on strikes',
-            '- doubled off -',
-            '- scored on - -',
-            '- thrown - at -',
-            '- scored on a -',
-            '- safe at - on -',
-            '- to - to - to -',
-            '- to - on - by -',
-            '- pitching for -',
-            'caught stealing -',
-            '- - to - (- feet)',
-            '- - to (- feet)',
-            '- to - on - by - -',
-            '- - stretching at -',
-            '- reached on - to -',
-            '- caught stealing -',
-            '- to - on - by - - -',
-            '- scored on - by - -',
-            '- reached - base on -',
-            '- scored on - by - - -',
-            '- safe at - on - by - -',
-            'advances to - on - by - -',
-            '- safe at - on - by - - -',
-            '- - - to -',
             '- picked off -',
-            '- reaches on - to -',
+            '- pitches to -',
             'deflected by -',
-            '- - to - on - by - -',
-            '- to - on - by - - -',
-            '- - to -', '- to -',
-            '- - - -',
-            '- continues to at bat after - by - - -',
-            '- continues to at bat after - by - -',
+            '- doubled off -',
+            '- to - on the -',
+            '- scored on a -',
+            '- thrown - at -',
+            '- to - (- feet)',
+            '- pitching for -',
+            '- safe at - on -',
+            '- to - on - by -',
+            '- to - to - to -',
+            '- stretching at -',
+            'caught stealing -',
+            '- scored on - by -',
+            '- caught stealing -',
+            '- reached on - to -',
+            '- reaches on - to -',
             '- struck - swinging',
-            '-',
-            '- safe at - on a - by - -',
+            '- reached - base on -',
+            '- safe at - on - by -',
+            '- safe at - on a - by -',
+            'advances to - on - by -',
             'out on batter interference',
-            '- - to - off a deflection by -',
-            '- to - on - -',
-            '- - - to - to -',
-            '- - into the -',
-            '- safe to -'
-        ])
+            '- to - off a deflection by -',
+            '- continues to at bat after - by -'
+        }
 
     @property
     def templates(self) -> List[str]:
         return list(self.__templates)
 
+    def clean_text(self, description: str) -> str:
+        template = re.sub(r'\. *$', '', description)
+        template = re.sub(r'safe at (first|second|third) and advances', 'safe at - and advances', template)
+        template = re.sub(r', ((?:[A-Z.]+ |)[A-Z][\w-]+) and ([A-Z]\w+) scored', r', \g<1> scored and \g<2> scored', template)
+        template = re.sub(r'by ((first|second|third) baseman|(right|left|center) fielder)', 'by - -', template)
+        template = re.sub(r'by (pitcher|catcher|shortstop)', 'by -', template)
+
+        return template
+
     def create_template(self, description: str, entities: Dict[str, Any]) -> str:
+        template = self.clean_text(description);
         for key, value in entities.items():
             if key in ['runs', 'outs']:
                 continue
 
             if isinstance(value, (str, int)):
-                description = description.replace(str(value), '-', 1)
+                template = template.replace(str(value), '-', 1)
 
             if isinstance(value, list):
                 for item in value:
                     if isinstance(item, dict):
-                        description = self.create_template(description, item)
+                        template = self.create_template(template, item)
                     else:
-                        description = description.replace(str(item), '-', 1)
+                        template = template.replace(str(item), '-', 1)
 
-        return re.sub(r' +', ' ', description).strip()
+        template = re.sub(r'(-( -)+)', '-', template)
+        return re.sub(r' +', ' ', template).strip()
 
     def check_template(self, template: str) -> List[str]:
         issues = []
@@ -106,11 +100,5 @@ class TemplateService():
         return issues
 
     def validate(self, description: str, entities: Dict[str, Any]) -> Tuple[bool, str]:
-        template = re.sub(r'\. *$', '', description)
-        template = re.sub(r'safe at (first|second|third) and advances', 'safe at - and advances', template)
-        template = re.sub(r', ((?:[A-Z.]+ |)[A-Z][\w-]+) and ([A-Z]\w+) scored', r', \g<1> scored and \g<2> scored', template)
-        template = re.sub(r'by ((first|second|third) baseman|(right|left|center) fielder)', 'by - -', template)
-        template = re.sub(r'by (pitcher|catcher|shortstop)', 'by -', template)
-
-        template = self.create_template(template, entities)
+        template = self.create_template(description, entities)
         return not any(self.check_template(template)), template

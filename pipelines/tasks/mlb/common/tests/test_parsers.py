@@ -2,6 +2,7 @@ from typing import Dict, Any, List
 import json
 import pytest
 from ..helpers.parsers import EventDescriptionParser
+from ..helpers.templates import TemplateService
 
 
 test_data: List[Dict[str, Any]] = []
@@ -19,3 +20,8 @@ def test_event_description_parser(description: str, expected: Dict[str, Any]):
         print(observation)
 
     assert observation == expected, observation
+
+@pytest.mark.parametrize('description,expected', test_data)
+def test_description_templates_parser(description: str, expected: Dict[str, Any]):
+    is_valid, template = TemplateService().validate(description, expected)
+    assert is_valid, f'{description} -> {template}'

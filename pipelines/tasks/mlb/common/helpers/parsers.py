@@ -132,12 +132,36 @@ class GameValidator():
 
         return issues
 
+class GameCleaner():
+    def __init__(self) -> None:
+        self.__keys = ['type', 'at', 'by', 'for', 'how', 'effort', 'to', 'team']
+        self.__to_lower = set(['type', 'at', 'how', 'effort'])
+
+    def clean_object(self, observation: Dict[str, Any]) -> Dict[str, Any]:
+        for key in self.__keys:
+            if not key in observation:
+                continue
+
+            observation[key] = clean_text(observation[key])
+            if key in self.__to_lower:
+                observation[key] = observation[key].lower()
+
+        return observation
+
+    def clean(self, observation: Dict[str, Any]) -> Dict[str, Any]:
+        observation = self.clean_object(observation)
+
+        if 'moves' in observation:
+            for move in observation['moves']:
+                move = self.clean_object(move)
+
+        return observation
+
 class ParsingEngine():
     def __init__(self, expressions: List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]]) -> None:
         self.__parse_event_expressions = expressions
 
     def pre_parse(self, description:str) -> str:
-        description = re.sub(r'(first|second|third|left|right|center)\.', r'\g<1> ,', description).strip()
         return description
 
     def transform_into_object(self, description: str) -> Optional[dict]:
@@ -156,7 +180,13 @@ class ParsingEngine():
 class EventDescriptionParser(ParsingEngine):
     def __init__(self, expressions: Optional[List[Tuple[str, Callable[[List[str]], Dict[str, Any]]]]] = None) -> None:
         super().__init__(default_description_expressions if expressions is None else expressions)
+
         self.__validator = GameValidator()
+        self.__cleaner = GameCleaner()
+
+    def pre_parse(self, description:str) -> str:
+        description = re.sub(r'(first|second|third|left|right|center)\.', r'\g<1> ,', description).strip()
+        return description
 
     def validate(self, observation: Dict[str, Any]) -> Dict[str, Any]:
         issues = self.__validator.validate(observation)
@@ -166,42 +196,23 @@ class EventDescriptionParser(ParsingEngine):
         return observation
 
     def post_parse(self, observation: Dict[str, Any]) -> Dict[str, Any]:
-        def clean_values(observation: Dict[str, Any]) -> Dict[str, Any]:
-            for key in ['type', 'at', 'by', 'for', 'how', 'effort', 'to', 'team']:
-                if key in observation:
-                    observation[key] = clean_text(observation[key])
-
-                    if key in ['type', 'at', 'how', 'effort']:
-                        observation[key] = observation[key].lower()
-
-            return observation
-
-        clean_values(observation)
+        self.__cleaner.clean(observation)
 
         if 'moves' in observation:
-            moves = observation['moves']
-            for move in moves:
-                clean_values(move)
+            outs = 0
+            runs = 0
 
-            outs = sum(
-                1
-                for move
-                in moves
-                if move['type'] == 'out'
-            )
+            for move in observation['moves']:
+                if move['type'] == 'out':
+                    outs += 1
+                elif move['at'] == 'home':
+                    runs += 1
 
             if outs > 0:
                 if not 'outs' in observation:
                     observation['outs'] = 0
 
                 observation['outs'] += outs
-
-            runs = sum(
-                1
-                for move
-                in moves
-                if move['at'] == 'home' and move['type'] != 'out'
-            )
 
             if runs > 0:
                 if not 'runs' in observation:
@@ -210,7 +221,6 @@ class EventDescriptionParser(ParsingEngine):
                 observation['runs'] += runs
 
         observation = self.validate(observation)
-
         return observation
 
 

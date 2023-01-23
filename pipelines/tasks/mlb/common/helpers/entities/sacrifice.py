@@ -14,7 +14,7 @@ def handle_sacrifice(groups: List[str]) -> Dict[str, Any]:
         outs=1
     )
 
-    if not 'moves' in observation:
+    if 'moves' not in observation:
         return observation
 
     was_save = [
