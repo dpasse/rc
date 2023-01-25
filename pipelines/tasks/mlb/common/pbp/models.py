@@ -89,6 +89,9 @@ class BeforePitch(Generic[TEvent]):
         if self.__pitch_event_id:
             self.__pitch_event = pitch_events[self.__pitch_event_id]
 
+    def __repr__(self) -> str:
+        return f'<BeforePitch bases="{self.bases}" pitch_event={self.__pitch_event} />'
+
 class AfterPitch(Generic[TEvent]):
     def __init__(self, obj: Dict[str, Any]) -> None:
         self.__pitch_event_id: Optional[int] = None
@@ -114,13 +117,16 @@ class AfterPitch(Generic[TEvent]):
         if self.__pitch_event_id:
             self.__pitch_event = pitch_events[self.__pitch_event_id]
 
+    def __repr__(self) -> str:
+        return f'<AfterPitch bases="{self.bases}" pitch_event={self.__pitch_event} />'
+
 class Pitch():
     def __init__(self, pitch: Dict[str, Any]):
         self.__result: AfterPitch = AfterPitch(pitch['result'])
         self.__prior: BeforePitch = BeforePitch(pitch['prior'])
 
         for key in pitch.keys():
-            if key == 'id':
+            if key == 'order':
                 self.__id = pitch[key]
             elif key == 'count':
                 self.__count = PitchCount(pitch[key])
@@ -146,6 +152,9 @@ class Pitch():
     def set_pitch_events(self, pitch_events: Dict[int, TEvent]) -> None:
         self.prior.set_pitch_events(pitch_events)
         self.result.set_pitch_events(pitch_events)
+
+    def __repr__(self) -> str:
+        return f'<Pitch id="{self.id}"\nprior={self.prior}\nresult={self.result} />'
 
 class Entities(Generic[TEntities]):
     def __init__(self: TEntities, entities: Dict[str, Any]):
@@ -339,6 +348,9 @@ class Event():
             outs,
             result.bases.copy(),
         )
+
+    def __repr__(self) -> str:
+        return f'<Event id="{self.id}" desc="{self.desc}" />'
 
 class Scoreboard():
     def __init__(self, score: Dict[str, Any]):

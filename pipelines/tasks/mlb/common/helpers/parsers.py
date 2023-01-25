@@ -362,13 +362,11 @@ def correct_bases_when_prior_pitch_event_exists(events: List[Dict[str, Any]]) ->
         for pitch in event['pitches']:
 
             prior = pitch['prior']
-            if not 'beforePitchEvent' in prior:
-                continue
-
-            prior['after'] = base_runners.play(
-                pitch_events[prior['beforePitchEvent']]['entities'],
-                prior['bases'].copy(),
-            )
+            if 'beforePitchEvent' in prior:
+                prior['after'] = base_runners.play(
+                    pitch_events[prior['beforePitchEvent']]['entities'],
+                    prior['bases'].copy(),
+                )
 
     return events
 
