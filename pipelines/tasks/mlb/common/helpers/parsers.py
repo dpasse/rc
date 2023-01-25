@@ -354,26 +354,27 @@ def set_prior_on_pitches(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
     return events
 
-def correct_bases_when_prior_pitch_event_exists(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    base_runners = BaseRunners()
-
-    pitch_events = get_pitch_events(events)
-    for event in filter(lambda ev: not 'isInfoPlay' in ev, events):
-        for pitch in event['pitches']:
-
-            prior = pitch['prior']
-            if 'beforePitchEvent' in prior:
-                prior['after'] = base_runners.play(
-                    pitch_events[prior['beforePitchEvent']]['entities'],
-                    prior['bases'].copy(),
-                )
-
-    return events
+#def correct_bases_when_prior_pitch_event_exists(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+#    base_runners = BaseRunners()
+#
+#    pitch_events = get_pitch_events(events)
+#    for event in filter(lambda ev: not 'isInfoPlay' in ev, events):
+#        for pitch in event['pitches']:
+#
+#            prior = pitch['prior']
+#            if 'beforePitchEvent' in prior:
+#                prior['after'] = base_runners.play(
+#                    pitch_events[prior['beforePitchEvent']]['entities'],
+#                    prior['bases'].copy(),
+#                )
+#
+#    return events
 
 def handle_pitch_events(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     events = set_prior_on_pitches(events)
     events = parse_pitch_events(events)
-    events = correct_bases_when_prior_pitch_event_exists(events)
+
+    ## events = correct_bases_when_prior_pitch_event_exists(events)
 
     return events
 

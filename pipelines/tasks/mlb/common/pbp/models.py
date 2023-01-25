@@ -122,8 +122,8 @@ class AfterPitch(Generic[TEvent]):
 
 class Pitch():
     def __init__(self, pitch: Dict[str, Any]):
-        self.__result: AfterPitch = AfterPitch(pitch['result'])
         self.__prior: BeforePitch = BeforePitch(pitch['prior'])
+        self.__result: AfterPitch = AfterPitch(pitch['result'])
 
         for key in pitch.keys():
             if key == 'order':
