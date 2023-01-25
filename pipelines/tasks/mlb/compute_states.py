@@ -78,7 +78,11 @@ def generate_event_graph(games: List[Game]) -> None:
             for event in period.events:
                 skip = event.is_a('isInfoPlay') or \
                     event.entities.is_a('premature') or \
-                    not event.has_pitches
+                    event.has_events_prior_to_last_pitch()
+
+
+                 ## or \
+                    ## not event.has_pitches
 
                 if skip:
                     continue

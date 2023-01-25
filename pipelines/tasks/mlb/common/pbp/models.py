@@ -282,6 +282,17 @@ class Event():
     def is_a(self: TEvent, attr: str) -> bool:
         return attr in self.__attrs
 
+    def has_events_prior_to_last_pitch(self: TEvent) -> bool:
+        for pitch in self.pitches:
+            if pitch.prior.pitch_event:
+                return True
+
+        for pitch in self.pitches[:-1]:
+            if pitch.result.pitch_event:
+                return True
+
+        return False
+
     def set_pitch_events(self: TEvent, pitch_events: Dict[int, TEvent]) -> None:
         self.__pitch_events = {
             event_id: pitch_events[event_id]
