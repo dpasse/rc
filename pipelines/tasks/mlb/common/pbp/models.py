@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Optional, cast, TypeVar, Generator, Generic
 # pylint: disable=C0103
 TInningState = TypeVar('TInningState', bound='InningState')
 TEvent = TypeVar('TEvent', bound='Event')
+TEntities = TypeVar('TEntities', bound='Entities')
 
 @dataclass
 class InningState():
@@ -146,13 +147,15 @@ class Pitch():
         self.prior.set_pitch_events(pitch_events)
         self.result.set_pitch_events(pitch_events)
 
-class Entities():
-    def __init__(self, entities: Dict[str, Any]):
+class Entities(Generic[TEntities]):
+    def __init__(self: TEntities, entities: Dict[str, Any]):
         self.__outs = 0
         self.__runs = 0
         self.__type = ''
+        self.__at: Optional[str] = None
         self.__attrs: List[str] = []
         self.__body = entities
+        self.__moves: List[TEntities] = []
 
         for key in entities.keys():
             if key == 'outs':
@@ -161,27 +164,39 @@ class Entities():
                 self.__runs = entities[key]
             elif key == 'type':
                 self.__type = entities[key]
+            elif key == 'at':
+                self.__at = entities[key]
             elif key == 'premature':
                 if entities[key]:
                     self.__attrs.append(key)
+            elif key == 'moves':
+                self.__moves = [Entities(move) for move in entities[key]]
             else:
                 setattr(self, f'__{key}', entities[key])
 
     @property
-    def outs(self) -> int:
+    def outs(self: TEntities) -> int:
         return self.__outs
 
     @property
-    def runs(self) -> int:
+    def runs(self: TEntities) -> int:
         return self.__runs
 
     @property
-    def type(self) -> str:
+    def type(self: TEntities) -> str:
         return self.__type
 
     @property
-    def body(self) -> Dict[str, Any]:
+    def at(self: TEntities) -> Optional[str]:
+        return self.__at
+
+    @property
+    def body(self: TEntities) -> Dict[str, Any]:
         return self.__body
+
+    @property
+    def moves(self: TEntities) -> List[TEntities]:
+        return self.__moves
 
     def is_a(self, attr: str) -> bool:
         return attr in self.__attrs

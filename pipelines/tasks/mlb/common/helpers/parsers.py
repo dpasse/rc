@@ -1,6 +1,7 @@
 from abc import abstractmethod, ABC
 import re
 from typing import Optional, Tuple, Dict, Any, List, Callable, Union, cast
+
 from .extractors import calculate_total_outs, get_pitch_events
 from .entities.utils import clean_text, \
                             is_event_type, \
@@ -23,6 +24,7 @@ from .entities import steal_exports, \
                       pick_off_exports, \
                       interference_exports
 from .entities.tie_pitch_events import parse_pitch_events
+from ..pbp.models import Entities
 from .templates import TemplateService
 
 
@@ -223,6 +225,54 @@ class EventDescriptionParser(ParsingEngine):
         observation = self.validate(observation)
         return observation
 
+class BaseRunners():
+    def __init__(self) -> None:
+        self.__base_index_lookup = {
+            'first': 0,
+            'second': 1,
+            'third': 2,
+            'home': 3,
+        }
+
+    def trim(bases: List[int]) -> List[int]:
+        return bases[:3]
+
+    def play(self, entities: Dict[str, Any], current_bases_state: List[int]) -> List[int]:
+        model = Entities(entities)
+        bases = current_bases_state.copy()
+
+        if model.type == 'balk':
+            return BaseRunners.trim([0] + bases)
+
+        if model.type == 'picked off' and model.at:
+            base_index = self.__base_index_lookup[model.at]
+            bases[self.__base_index_lookup[model.at]] = 0
+
+            return bases
+
+        if model.type == 'pickoff error':
+            ## order by bases, move the first guy... move the next...
+            players_moved = set()
+            for move in sorted(model.moves, key=lambda mv: self.__base_index_lookup[mv.at], reverse=True):
+                player = move.body['player']
+                if player in players_moved:
+                    continue
+
+                if move.type == 'advanced':
+                    base_index = self.__base_index_lookup[move.at]
+                    if base_index < 3:
+                        bases[base_index] = 1
+
+                    for i in reversed(range(0, base_index)):
+                        if bases[i] == 1:
+                            bases[i] = 0
+                            break
+
+                    players_moved.add(player)
+                else:
+                    print('not supported!', move)
+
+        return bases
 
 EVENT_DESCRIPTION_PARSER = EventDescriptionParser()
 TEMPLATE_SERVICE = TemplateService()
@@ -304,13 +354,10 @@ def set_prior_on_pitches(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
     return events
 
-def handle_pitch_events(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    events = set_prior_on_pitches(events)
-    events = parse_pitch_events(events)
+def correct_bases_when_prior_pitch_event_exists(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    base_runners = BaseRunners()
 
-    base_index_lookup = { 'first': 0, 'second': 1, 'third': 2, 'home': 3 }
     pitch_events = get_pitch_events(events)
-
     for event in filter(lambda ev: not 'isInfoPlay' in ev, events):
         for pitch in event['pitches']:
 
@@ -318,30 +365,17 @@ def handle_pitch_events(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             if not 'beforePitchEvent' in prior:
                 continue
 
-            bases = prior['bases'].copy()
+            prior['after'] = base_runners.play(
+                pitch_events[prior['beforePitchEvent']]['entities'],
+                prior['bases'].copy(),
+            )
 
-            entities = pitch_events[prior['beforePitchEvent']]['entities']
+    return events
 
-            if entities['type'] == 'balk':
-                bases = ([0] + bases)[:3]
-
-            if entities['type'] == 'picked off':
-                base_index = base_index_lookup[entities['at']]
-                bases[base_index] = 0
-
-            if entities['type'] == 'pickoff error':
-                for move in entities['moves']:
-                    base_index = base_index_lookup[move['at']]
-
-                    if not move['at'] == 'home':
-                        bases[base_index] = 1
-
-                    for i in reversed(range(0, base_index)):
-                        if bases[i] == 1:
-                            bases[i] = 0
-                            break
-
-            prior['after'] = bases.copy()
+def handle_pitch_events(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    events = set_prior_on_pitches(events)
+    events = parse_pitch_events(events)
+    events = correct_bases_when_prior_pitch_event_exists(events)
 
     return events
 
