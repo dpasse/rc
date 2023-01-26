@@ -64,7 +64,7 @@ class BasesContext():
 
         found = self.get(player)
         if found:
-            assert self.__lookup[at] > self.__lookup[found.at]
+            assert self.__lookup[at] >= self.__lookup[found.at], found
 
         self.remove(player)
 
@@ -77,7 +77,7 @@ class BasesContext():
         found = self.get(for_player)
         if found:
             self.remove(for_player)
-            self.add(player, found[0].at)
+            self.add(player, found.at)
 
     def play(self, entities: Entities) -> BasesState:
         before = self.to_list()
@@ -102,9 +102,6 @@ class BasesContext():
         if entities.type in ['tripled', 'triples']:
             self.add(entities.body['player'], 'third')
 
-        if entities.type in ['homered', 'inside-the-park-home run']:
-            self.__on_base.clear()
-
         for move in entities.moves:
             if move.type == 'advanced':
                 assert self.get(move.body['player']) ## events are out of order
@@ -113,6 +110,9 @@ class BasesContext():
             if move.type == 'out':
                 assert self.get(move.body['player']) ## events are out of order
                 self.remove(move.body['player'])
+
+        if entities.type in ['homered', 'inside-the-park-home run']:
+            self.__on_base.clear()
 
         self.validate()
 
