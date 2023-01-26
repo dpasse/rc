@@ -107,14 +107,15 @@ class BasesContext():
 
         for move in entities.moves:
             if move.type == 'advanced':
-                assert self.get(move.body['player'])
+                assert self.get(move.body['player']) ## events are out of order
                 self.add(move.body['player'], move.at)
 
             if move.type == 'out':
-                assert self.get(move.body['player'])
+                assert self.get(move.body['player']) ## events are out of order
                 self.remove(move.body['player'])
 
-        assert not len(self.__on_base) > 3
+        self.validate()
+
         return BasesState(
             before,
             self.to_list()
