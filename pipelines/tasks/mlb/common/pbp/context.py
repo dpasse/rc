@@ -21,6 +21,7 @@ class BasesContext():
             'first': 0,
             'second': 1,
             'third': 2,
+            'home': 3,
         }
 
         self.__reverse_lookup = {
@@ -44,7 +45,7 @@ class BasesContext():
             if item.player != player
         ]
 
-    def get(self, player: str) -> Optional[BasesState]:
+    def get(self, player: str) -> Optional[OnBase]:
         player = BasesContext.clean_player_name(player)
 
         found = [
@@ -60,6 +61,10 @@ class BasesContext():
 
     def add(self, player: str, at: str) -> None:
         player = BasesContext.clean_player_name(player)
+
+        found = self.get(player)
+        if found:
+            assert self.__lookup[at] > self.__lookup[found.at]
 
         self.remove(player)
 
