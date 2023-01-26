@@ -283,6 +283,7 @@ def clear_event(event: Dict[str, Any]) -> Dict[str, Any]:
 
     return event
 
+## maybe make this in ref to the last pitch...
 def set_types_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
     if 'isPitcherChange' in event:
         event['isInfoPlay'] = True
@@ -298,7 +299,6 @@ def set_types_on_event(event: Dict[str, Any]) -> Dict[str, Any]:
         by_player = re.search(r'(?:picked off|pickoff error) by (pitcher|catcher)', event['desc'])
         if by_player and by_player.group(1).lower() == 'catcher':
             event['type'] = 'after-pitch'
-
             return event
 
     event['type'] = 'before-pitch' \

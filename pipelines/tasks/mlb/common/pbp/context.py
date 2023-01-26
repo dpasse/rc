@@ -59,7 +59,7 @@ class BasesContext():
 
         return None
 
-    def add(self, player: str, at: str) -> None:
+    def add(self, player: str, at: str) -> Optional[OnBase]:
         player = BasesContext.clean_player_name(player)
 
         found = self.get(player)
@@ -69,7 +69,11 @@ class BasesContext():
         self.remove(player)
 
         if at != 'home':
-            self.__on_base.append(OnBase(player, at))
+            on_base = OnBase(player, at)
+            self.__on_base.append(on_base)
+            return on_base
+
+        return None
 
     def switch(self, player: str, for_player: str) -> None:
         for_player = BasesContext.clean_player_name(for_player)
@@ -78,6 +82,23 @@ class BasesContext():
         if found:
             self.remove(for_player)
             self.add(player, found.at)
+
+    def force_forward(self, on_base: OnBase) -> Optional[OnBase]:
+        at_same_base = [
+            item for item in self.__on_base
+            if item.at == on_base.at and item.player != on_base.player
+        ]
+
+        if len(at_same_base) > 0:
+            player = at_same_base[0]
+            return self.force_forward(
+                self.add(
+                    player.player,
+                    self.__reverse_lookup[self.__lookup[player.at] + 1]
+                )
+            )
+
+        return None
 
     def play(self, entities: Entities) -> BasesState:
         before = self.to_list()
@@ -104,12 +125,17 @@ class BasesContext():
 
         for move in entities.moves:
             if move.type == 'advanced':
-                assert self.get(move.body['player']) ## events are out of order
                 self.add(move.body['player'], move.at)
 
             if move.type == 'out':
-                assert self.get(move.body['player']) ## events are out of order
                 self.remove(move.body['player'])
+
+        if "into fielder's choice" in entities.type:
+            found = self.get(entities.body['player'])
+            if found:
+                print(self.__on_base)
+                self.force_forward(found)
+                print(self.__on_base)
 
         if entities.type in ['homered', 'inside-the-park-home run']:
             self.__on_base.clear()
