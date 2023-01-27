@@ -9,7 +9,7 @@ from prefect import flow, task
 from common.parsers.engines import PlayByPlayParser
 
 
-@task(timeout_seconds=5)
+@task(timeout_seconds=5, retries=0)
 def get_pbp_rows(game_id: str) -> None:
     df = pd.read_csv(f'../data/mlb/pbp/1/pbp_{game_id}.csv')
     df['R/O'] = df['R/O'].astype(str)

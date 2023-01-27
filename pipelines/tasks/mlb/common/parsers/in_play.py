@@ -3,8 +3,17 @@ from typing import Any, Dict, Optional
 import re
 
 
+def handle_ground_rule_double(text: str) -> Optional[Dict[str, Any]]:
+    match = re.search(r'^ *(ground-rule double)', text, flags=re.IGNORECASE)
+    if match:
+        return {
+            'type': match.group(1)
+        }
+
+    return None
+
 def handle_out_of_play_outs(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *(foul) (flyball|popfly|lineout)', text, flags=re.IGNORECASE)
+    match = re.search(r'^ *(foul) ((?:bunt |)(?:flyball|popfly|lineout))', text, flags=re.IGNORECASE)
     if match:
         return {
             'type': match.group(2)
@@ -13,7 +22,7 @@ def handle_out_of_play_outs(text: str) -> Optional[Dict[str, Any]]:
     return None
 
 def handle_in_play_outs(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *(flyball|popfly|(?:line|ground)out)', text, flags=re.IGNORECASE)
+    match = re.search(r'^ *((?:bunt )?(?:flyball|popfly|(?:line|ground)out))', text, flags=re.IGNORECASE)
     if match:
         return {
             'type': match.group(0)
@@ -22,7 +31,7 @@ def handle_in_play_outs(text: str) -> Optional[Dict[str, Any]]:
     return None
 
 def handle_in_play(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *(walk|hit by pitch|single|double|triple|home run)', text, flags=re.IGNORECASE)
+    match = re.search(r'^ *((?:intentional )?walk|hit by pitch|single|double|triple|home run)', text, flags=re.IGNORECASE)
     if match:
         return {
             'type': match.group(0)

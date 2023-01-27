@@ -29,10 +29,9 @@ HEADERS = [
     'Play Description',
 ]
 
-@task(retries=3, retry_delay_seconds=15, timeout_seconds=5)
+@task(name='mlb-download', retries=3, retry_delay_seconds=15, timeout_seconds=5)
 def get_pbp(team: str, game: str) -> None:
     uri = f'../data/mlb/pbp/1/pbp_{game}.csv'
-
     if os.path.exists(uri):
         print('skipping...', game)
         return
@@ -82,9 +81,8 @@ def get_pbp(team: str, game: str) -> None:
     df['Inn'] = df['Inn'].bfill(axis = 0)
     df.to_csv(uri, index=False)
 
-@task()
+@task(name='mlb-sleep')
 def sleep(timeout: int) -> None:
-    print('sleeping...', timeout)
     time.sleep(timeout)
 
 @flow(name='mlb-pbp', task_runner=SequentialTaskRunner())

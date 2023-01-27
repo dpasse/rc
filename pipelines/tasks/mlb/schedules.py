@@ -1,4 +1,5 @@
-from typing import List, Tuple, Any, Optional
+from typing import List, Tuple, cast
+
 import sys
 import os
 import re
@@ -7,7 +8,7 @@ import logging
 import unidecode
 import pandas as pd
 
-from bs4 import ResultSet, Tag, PageElement
+from bs4 import Tag
 from prefect import flow, task
 from prefect.task_runners import SequentialTaskRunner
 
@@ -61,7 +62,7 @@ def get_team_schedule(season: str, team: str) -> None:
         if 'class' in row.attrs and 'thead' in row.attrs['class']:
             continue
 
-        columns = list(row.children)
+        columns: List[Tag] = cast(List[Tag], list(row.children))
 
         headers = [
             col.attrs['data-stat'] for col in columns

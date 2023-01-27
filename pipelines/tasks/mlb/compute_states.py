@@ -1,8 +1,8 @@
 import os
 import json
 
-from collections import defaultdict
 from prefect import flow, task
+from collections import defaultdict
 
 
 PBP_DIRECTORY = '../data/mlb/pbp/2/'
@@ -25,7 +25,10 @@ def create_graph(teams) -> dict:
     for team in teams:
         graph[team] = {
             out: {
-                ''.join(map(str, state)): { 'runs': 0, 'types': defaultdict(lambda: 0) }
+                ''.join(map(str, state)): {
+                    'runs': 0,
+                    'types': defaultdict(lambda: 0)
+                }
                 for state in possible_states
             }
             for out in possible_outs

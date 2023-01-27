@@ -1,21 +1,937 @@
 {
-  "LAD": {
+  "BAL": {
+    "0": {
+      "---": {
+        "runs": 2,
+        "types": {
+          "Double": 3,
+          "Flyball": 3,
+          "Groundout": 6,
+          "Home Run": 2,
+          "Lineout": 4,
+          "Popfly": 4,
+          "Single": 4,
+          "Strikeout": 8,
+          "Triple": 1,
+          "Walk": 2
+        }
+      },
+      "--3": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1
+        }
+      },
+      "-2-": {
+        "runs": 3,
+        "types": {
+          "Home Run": 1,
+          "Single": 1,
+          "Strikeout": 1
+        }
+      },
+      "-23": {
+        "runs": 1,
+        "types": {
+          "Error": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Double": 1,
+          "Double Play": 1,
+          "Groundout": 1,
+          "Lineout": 1,
+          "Strikeout": 2,
+          "Walk": 1
+        }
+      },
+      "12-": {
+        "runs": 1,
+        "types": {
+          "Double": 1,
+          "Double Play": 1,
+          "Single": 1
+        }
+      }
+    },
+    "1": {
+      "---": {
+        "runs": 3,
+        "types": {
+          "Flyball": 4,
+          "Groundout": 2,
+          "Hit By Pitch": 1,
+          "Home Run": 3,
+          "Lineout": 4,
+          "Popfly": 1,
+          "Single": 6,
+          "Strikeout": 7,
+          "Walk": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Flyball": 2,
+          "Hit By Pitch": 1
+        }
+      },
+      "-23": {
+        "runs": 1,
+        "types": {
+          "Single": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Flyball": 2,
+          "Groundout": 2,
+          "Lineout": 1,
+          "Single": 2,
+          "Strikeout": 3
+        }
+      },
+      "1-3": {
+        "runs": 1,
+        "types": {
+          "Double Play": 1,
+          "Flyball": 1
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Groundout": 1
+        }
+      }
+    },
+    "2": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Flyball": 2,
+          "Groundout": 3,
+          "Lineout": 1,
+          "Single": 3,
+          "Strikeout": 9,
+          "Triple": 1,
+          "Walk": 1
+        }
+      },
+      "--3": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1,
+          "Hit By Pitch": 1,
+          "Lineout": 1,
+          "Single": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Groundout": 2,
+          "Strikeout": 2
+        }
+      },
+      "1--": {
+        "runs": 3,
+        "types": {
+          "Double": 1,
+          "Flyball": 3,
+          "Groundout": 2,
+          "Home Run": 1,
+          "Lineout": 1,
+          "Single": 1,
+          "Strikeout": 3
+        }
+      },
+      "1-3": {
+        "runs": 0,
+        "types": {
+          "Groundout": 1,
+          "Popfly": 1
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Strikeout": 1
+        }
+      }
+    }
+  },
+  "BOS": {
     "0": {
       "---": {
         "runs": 0,
         "types": {
+          "Double": 2,
+          "Error": 1,
+          "Flyball": 4,
+          "Groundout": 9,
+          "Lineout": 2,
+          "Popfly": 4,
+          "Single": 5,
+          "Strikeout": 7,
+          "Walk": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Single": 1,
+          "Strikeout": 1
+        }
+      },
+      "-23": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1,
+          "Lineout": 1,
+          "Popfly": 1
+        }
+      },
+      "1--": {
+        "runs": 2,
+        "types": {
+          "Double": 2,
+          "Double Play": 1,
+          "Flyball": 1,
+          "Home Run": 1,
+          "Lineout": 1,
+          "Single": 1
+        }
+      },
+      "1-3": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1,
+          "Single": 1
+        }
+      },
+      "12-": {
+        "runs": 1,
+        "types": {
+          "Double": 1
+        }
+      }
+    },
+    "1": {
+      "---": {
+        "runs": 2,
+        "types": {
+          "Double": 1,
+          "Flyball": 2,
+          "Groundout": 3,
+          "Home Run": 2,
+          "Lineout": 1,
+          "Popfly": 2,
+          "Single": 4,
+          "Strikeout": 10,
+          "Walk": 4
+        }
+      },
+      "--3": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1
+        }
+      },
+      "-2-": {
+        "runs": 3,
+        "types": {
           "Double": 1,
           "Groundout": 1,
-          "Lineout": 2,
+          "Home Run": 1
+        }
+      },
+      "-23": {
+        "runs": 3,
+        "types": {
+          "Fielder's Choice": 1,
+          "Groundout": 1,
           "Popfly": 1,
-          "Strikeout": 2,
-          "Walk": 2
+          "Single": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Double": 1,
+          "Double Play: Strikeout Looking, Bradley": 1,
+          "Flyball": 1,
+          "Groundout": 2,
+          "Single": 5,
+          "Strikeout": 1
+        }
+      },
+      "1-3": {
+        "runs": 1,
+        "types": {
+          "Double Play": 1,
+          "Flyball": 1
+        }
+      },
+      "12-": {
+        "runs": 1,
+        "types": {
+          "Flyball": 2,
+          "Single": 1,
+          "Strikeout": 1
+        }
+      }
+    },
+    "2": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Flyball": 2,
+          "Groundout": 5,
+          "Lineout": 1,
+          "Popfly": 1,
+          "Single": 3,
+          "Strikeout": 9
+        }
+      },
+      "--3": {
+        "runs": 2,
+        "types": {
+          "Home Run": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 1,
+          "Popfly": 1
+        }
+      },
+      "-23": {
+        "runs": 1,
+        "types": {
+          "Intentional Walk": 1,
+          "Single": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 1,
+          "Lineout": 1,
+          "Popfly": 1,
+          "Strikeout": 2
+        }
+      },
+      "1-3": {
+        "runs": 0,
+        "types": {
+          "Strikeout": 1
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Groundout": 1,
+          "Popfly": 1,
+          "Strikeout": 1
+        }
+      },
+      "123": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1
+        }
+      }
+    }
+  },
+  "CHW": {
+    "0": {
+      "---": {
+        "runs": 3,
+        "types": {
+          "Double": 2,
+          "Flyball": 6,
+          "Groundout": 6,
+          "Home Run": 3,
+          "Lineout": 1,
+          "Single": 4,
+          "Strikeout": 7,
+          "Walk": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Groundout": 2,
+          "Popfly": 1,
+          "Strikeout": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Double Play": 1,
+          "Popfly": 1,
+          "Strikeout": 2
+        }
+      }
+    },
+    "1": {
+      "---": {
+        "runs": 1,
+        "types": {
+          "Double": 1,
+          "Flyball": 3,
+          "Groundout": 6,
+          "Home Run": 1,
+          "Lineout": 1,
+          "Single": 4,
+          "Strikeout": 4,
+          "Walk": 1
+        }
+      },
+      "--3": {
+        "runs": 0,
+        "types": {
+          "Strikeout": 1,
+          "Walk": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Groundout": 2,
+          "Single": 1,
+          "Strikeout": 1
+        }
+      },
+      "-23": {
+        "runs": 1,
+        "types": {
+          "Groundout": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Double Play": 1,
+          "Flyball": 3,
+          "Ground-rule Double": 1,
+          "Lineout": 1,
+          "Strikeout": 1
+        }
+      },
+      "1-3": {
+        "runs": 0,
+        "types": {
+          "Strikeout": 1,
+          "Walk": 1
+        }
+      },
+      "123": {
+        "runs": 0,
+        "types": {
+          "Popfly": 1
+        }
+      }
+    },
+    "2": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Error": 1,
+          "Flyball": 1,
+          "Groundout": 4,
+          "Lineout": 1,
+          "Single": 2,
+          "Strikeout": 5,
+          "Walk": 1
+        }
+      },
+      "--3": {
+        "runs": 1,
+        "types": {
+          "Single": 1,
+          "Strikeout": 1
         }
       },
       "-2-": {
         "runs": 0,
         "types": {
           "Groundout": 1,
+          "Strikeout": 1,
+          "Walk": 2
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Flyball": 3,
+          "Groundout": 2,
+          "Lineout": 1,
+          "Single": 1,
+          "Strikeout": 2
+        }
+      },
+      "1-3": {
+        "runs": 0,
+        "types": {
+          "Lineout": 1
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Popfly": 1,
+          "Strikeout": 1,
+          "Walk": 1
+        }
+      },
+      "123": {
+        "runs": 1,
+        "types": {
+          "Single": 1,
+          "Strikeout": 1
+        }
+      }
+    }
+  },
+  "DET": {
+    "0": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Double": 1,
+          "Flyball": 3,
+          "Groundout": 5,
+          "Hit By Pitch": 1,
+          "Lineout": 2,
+          "Single": 7,
+          "Strikeout": 8
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Groundout": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Double Play": 2,
+          "Flyball": 2,
+          "Groundout": 1,
+          "Single": 1,
+          "Strikeout": 1,
+          "Walk": 1
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Double Play": 1,
+          "Flyball": 1
+        }
+      }
+    },
+    "1": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Double": 1,
+          "Flyball": 4,
+          "Groundout": 6,
+          "Lineout": 4,
+          "Single": 1,
+          "Strikeout": 2,
+          "Walk": 1
+        }
+      },
+      "--3": {
+        "runs": 0,
+        "types": {
+          "Strikeout": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1,
+          "Strikeout": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Double": 1,
+          "Flyball": 1,
+          "Lineout": 1,
+          "Strikeout": 2
+        }
+      },
+      "12-": {
+        "runs": 3,
+        "types": {
+          "Home Run": 1
+        }
+      }
+    },
+    "2": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Bunt Interference": 1,
+          "Flyball": 1,
+          "Groundout": 3,
+          "Popfly": 1,
+          "Single": 4,
+          "Strikeout": 6,
+          "Walk": 2
+        }
+      },
+      "--3": {
+        "runs": 1,
+        "types": {
+          "Double": 1,
+          "Groundout": 1
+        }
+      },
+      "-2-": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 1,
+          "Single": 1,
+          "Walk": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Flyball": 2,
+          "Popfly": 1,
+          "Single": 2,
+          "Strikeout": 3,
+          "Walk": 2
+        }
+      },
+      "1-3": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Single": 1,
+          "Strikeout": 2,
+          "Walk": 1
+        }
+      },
+      "123": {
+        "runs": 0,
+        "types": {
+          "Flyball": 2
+        }
+      }
+    }
+  },
+  "HOU": {
+    "0": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Flyball": 2,
+          "Groundout": 1,
+          "Hit By Pitch": 1,
+          "Single": 2,
+          "Strikeout": 1,
+          "Walk": 2
+        }
+      },
+      "-23": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 1,
+          "Lineout": 1,
+          "Walk": 2
+        }
+      },
+      "12-": {
+        "runs": 1,
+        "types": {
+          "Double": 1,
+          "Flyball": 1
+        }
+      }
+    },
+    "1": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1,
+          "Single": 1,
+          "Strikeout": 1,
+          "Walk": 1
+        }
+      },
+      "--3": {
+        "runs": 0,
+        "types": {
+          "Groundout": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Fielder's Choice": 1,
+          "Popfly": 1,
+          "Strikeout": 2
+        }
+      },
+      "1-3": {
+        "runs": 1,
+        "types": {
+          "Groundout": 1
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Single": 1
+        }
+      },
+      "123": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1
+        }
+      }
+    },
+    "2": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Walk": 2
+        }
+      },
+      "--3": {
+        "runs": 0,
+        "types": {
+          "Walk": 1
+        }
+      },
+      "-2-": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 1,
+          "Single": 1,
+          "Walk": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1,
+          "Single": 1,
+          "Strikeout": 2
+        }
+      },
+      "1-3": {
+        "runs": 0,
+        "types": {
+          "Groundout": 2
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1,
+          "Strikeout": 1
+        }
+      }
+    }
+  },
+  "KCR": {
+    "0": {
+      "---": {
+        "runs": 1,
+        "types": {
+          "Double": 1,
+          "Flyball": 3,
+          "Groundout": 7,
+          "Home Run": 1,
+          "Lineout": 3,
+          "Popfly": 1,
+          "Single": 2,
+          "Strikeout": 7,
+          "Walk": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Single": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Bunt Popfly": 1,
+          "Single": 1
+        }
+      },
+      "1-3": {
+        "runs": 2,
+        "types": {
+          "Double Play": 1,
+          "Single": 1
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1
+        }
+      }
+    },
+    "1": {
+      "---": {
+        "runs": 2,
+        "types": {
+          "Double": 1,
+          "Flyball": 5,
+          "Groundout": 5,
+          "Home Run": 2,
+          "Popfly": 2,
+          "Single": 2,
+          "Strikeout": 6,
+          "Triple": 1
+        }
+      },
+      "--3": {
+        "runs": 0,
+        "types": {
+          "Double": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Strikeout": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Groundout": 1,
+          "Single": 1,
+          "Strikeout": 1
+        }
+      },
+      "1-3": {
+        "runs": 0,
+        "types": {
+          "Walk": 1
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Strikeout": 1
+        }
+      },
+      "123": {
+        "runs": 1,
+        "types": {
+          "Double Play": 1,
+          "Walk": 1
+        }
+      }
+    },
+    "2": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Double": 2,
+          "Flyball": 3,
+          "Groundout": 4,
+          "Lineout": 1,
+          "Popfly": 1,
+          "Single": 2,
+          "Strikeout": 5,
+          "Walk": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 1,
+          "Popfly": 1,
+          "Walk": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Groundout": 1,
+          "Popfly": 1,
+          "Strikeout": 1,
+          "Witt": 1
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Popfly": 1,
+          "Strikeout": 1
+        }
+      }
+    }
+  },
+  "LAD": {
+    "0": {
+      "---": {
+        "runs": 1,
+        "types": {
+          "Double": 2,
+          "Flyball": 2,
+          "Groundout": 3,
+          "Home Run": 1,
+          "Lineout": 2,
+          "Popfly": 1,
+          "Strikeout": 5,
+          "Walk": 3
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Groundout": 1,
+          "Lineout": 1,
           "Walk": 1
         }
       },
@@ -28,13 +944,13 @@
       "1--": {
         "runs": 0,
         "types": {
-          "Walk": 1
+          "Walk": 2
         }
       },
       "12-": {
         "runs": 1,
         "types": {
-          "Flyball": 1,
+          "Flyball": 2,
           "Single": 1,
           "Walk": 1
         }
@@ -49,11 +965,14 @@
     },
     "1": {
       "---": {
-        "runs": 0,
+        "runs": 3,
         "types": {
-          "Flyball": 2,
-          "Groundout": 1,
-          "Strikeout": 2,
+          "Flyball": 5,
+          "Groundout": 2,
+          "Home Run": 3,
+          "Lineout": 1,
+          "Single": 1,
+          "Strikeout": 3,
           "Walk": 1
         }
       },
@@ -61,14 +980,24 @@
         "runs": 0,
         "types": {
           "Popfly": 1,
+          "Single": 1,
           "Walk": 1
         }
       },
       "-23": {
-        "runs": 2,
+        "runs": 3,
         "types": {
+          "Fielder's Choice": 1,
           "Flyball": 1,
+          "Hit By Pitch": 1,
+          "Lineout": 1,
           "Single": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Double": 1
         }
       },
       "1-3": {
@@ -80,14 +1009,16 @@
       "12-": {
         "runs": 0,
         "types": {
+          "Error": 1,
           "Strikeout": 1,
           "Walk": 1
         }
       },
       "123": {
-        "runs": 0,
+        "runs": 2,
         "types": {
-          "Strikeout": 1
+          "Single": 1,
+          "Strikeout": 2
         }
       }
     },
@@ -95,10 +1026,12 @@
       "---": {
         "runs": 0,
         "types": {
-          "Double": 1,
-          "Groundout": 2,
+          "Double": 2,
+          "Groundout": 3,
+          "Lineout": 1,
+          "Single": 1,
           "Triple": 1,
-          "Walk": 1
+          "Walk": 3
         }
       },
       "--3": {
@@ -112,24 +1045,28 @@
         "runs": 0,
         "types": {
           "Flyball": 1,
-          "Strikeout": 1
+          "Popfly": 1,
+          "Strikeout": 2
         }
       },
       "1--": {
         "runs": 0,
         "types": {
-          "Strikeout": 1
+          "Groundout": 2,
+          "Strikeout": 2
         }
       },
       "12-": {
         "runs": 0,
         "types": {
+          "Groundout": 1,
           "Single": 1
         }
       },
       "123": {
         "runs": 0,
         "types": {
+          "Groundout": 1,
           "Lineout": 1,
           "Strikeout": 1
         }
@@ -139,77 +1076,404 @@
   "MIN": {
     "0": {
       "---": {
-        "runs": 2,
+        "runs": 6,
         "types": {
-          "Double": 2,
-          "Flyball": 7,
-          "Groundout": 8,
-          "Home Run": 2,
-          "Lineout": 2,
-          "Popfly": 2,
-          "Single": 4,
-          "Strikeout": 13,
-          "Walk": 6
+          "Bunt Groundout": 1,
+          "Double": 10,
+          "Error": 4,
+          "Flyball": 39,
+          "Ground-rule Double": 1,
+          "Groundout": 49,
+          "Hit By Pitch": 1,
+          "Home Run": 6,
+          "Lineout": 15,
+          "Popfly": 10,
+          "Single": 34,
+          "Strikeout": 71,
+          "Walk": 34
         }
       },
-      "-2-": {
+      "--3": {
         "runs": 0,
         "types": {
-          "Flyball": 1,
-          "Groundout": 1,
           "Popfly": 1
         }
       },
-      "-23": {
-        "runs": 0,
+      "-2-": {
+        "runs": 6,
         "types": {
-          "Fielder's Choice": 1
+          "Double": 4,
+          "Flyball": 1,
+          "Groundout": 4,
+          "Home Run": 1,
+          "Lineout": 2,
+          "Popfly": 4,
+          "Single": 2,
+          "Walk": 3
+        }
+      },
+      "-23": {
+        "runs": 3,
+        "types": {
+          "Double": 1,
+          "Fielder's Choice": 1,
+          "Lineout": 1,
+          "Strikeout": 2,
+          "Walk": 1
         }
       },
       "1--": {
-        "runs": 2,
+        "runs": 10,
         "types": {
-          "Double": 1,
-          "Double Play": 1,
-          "Flyball": 1,
-          "Groundout": 1,
-          "Hit By Pitch": 1,
-          "Home Run": 1,
-          "Popfly": 1,
-          "Single": 1,
-          "Strikeout": 1
+          "Double": 3,
+          "Double Play": 14,
+          "Fielder's Choice": 1,
+          "Flyball": 8,
+          "Ground-rule Double": 1,
+          "Groundout": 6,
+          "Hit By Pitch": 2,
+          "Home Run": 5,
+          "Lineout": 3,
+          "Popfly": 5,
+          "Single": 11,
+          "Strikeout": 8,
+          "Walk": 2
+        }
+      },
+      "1-3": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1
         }
       },
       "12-": {
-        "runs": 0,
+        "runs": 4,
         "types": {
-          "Groundout": 1,
-          "Strikeout": 1
+          "Double": 3,
+          "Double Play": 1,
+          "Flyball": 3,
+          "Groundout": 2,
+          "Popfly": 1,
+          "Single": 3,
+          "Strikeout": 4,
+          "Walk": 1
+        }
+      },
+      "123": {
+        "runs": 6,
+        "types": {
+          "Double": 1,
+          "Flyball": 1,
+          "Groundout": 2
         }
       }
     },
     "1": {
       "---": {
+        "runs": 4,
+        "types": {
+          "Double": 11,
+          "Flyball": 26,
+          "Groundout": 34,
+          "Hit By Pitch": 1,
+          "Home Run": 4,
+          "Lineout": 8,
+          "Popfly": 11,
+          "Single": 25,
+          "Strikeout": 53,
+          "Triple": 1,
+          "Walk": 18
+        }
+      },
+      "--3": {
         "runs": 3,
         "types": {
+          "Flyball": 1,
+          "Single": 2,
+          "Strikeout": 1,
+          "Walk": 1
+        }
+      },
+      "-2-": {
+        "runs": 7,
+        "types": {
           "Double": 1,
-          "Flyball": 3,
-          "Groundout": 8,
+          "Flyball": 6,
+          "Groundout": 4,
+          "Hit By Pitch": 1,
+          "Popfly": 1,
+          "Single": 7,
+          "Strikeout": 7,
+          "Walk": 2
+        }
+      },
+      "-23": {
+        "runs": 7,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 1,
+          "Home Run": 1,
+          "Single": 2,
+          "Strikeout": 1
+        }
+      },
+      "1--": {
+        "runs": 6,
+        "types": {
+          "Double": 2,
+          "Double Play": 10,
+          "Double Play: Strikeout Swinging, Polanco": 1,
+          "Flyball": 13,
+          "Groundout": 12,
+          "Hit By Pitch": 1,
           "Home Run": 3,
-          "Lineout": 1,
+          "Lineout": 3,
+          "Popfly": 2,
+          "Reached on Interference": 1,
+          "Single": 8,
+          "Strikeout": 17,
+          "Walk": 5
+        }
+      },
+      "1-3": {
+        "runs": 4,
+        "types": {
+          "Bunt Popfly": 1,
+          "Double": 1,
+          "Double Play": 1,
+          "Flyball": 2,
+          "Single": 2,
+          "Strikeout": 2
+        }
+      },
+      "12-": {
+        "runs": 11,
+        "types": {
+          "Double": 1,
+          "Double Play": 3,
+          "Fielder's Choice": 1,
+          "Flyball": 4,
+          "Groundout": 1,
+          "Hit By Pitch": 2,
+          "Home Run": 1,
+          "Lineout": 3,
+          "Popfly": 3,
+          "Single": 5,
+          "Strikeout": 4
+        }
+      },
+      "123": {
+        "runs": 2,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 1
+        }
+      }
+    },
+    "2": {
+      "---": {
+        "runs": 6,
+        "types": {
+          "Double": 5,
+          "Flyball": 25,
+          "Ground-rule Double": 2,
+          "Groundout": 24,
+          "Hit By Pitch": 3,
+          "Home Run": 6,
+          "Lineout": 11,
+          "Popfly": 6,
+          "Single": 14,
+          "Strikeout": 45,
+          "Walk": 16
+        }
+      },
+      "--3": {
+        "runs": 0,
+        "types": {
+          "Groundout": 3,
+          "Strikeout": 1,
+          "Walk": 2
+        }
+      },
+      "-2-": {
+        "runs": 4,
+        "types": {
+          "Double": 2,
+          "Flyball": 9,
+          "Groundout": 9,
+          "Hit By Pitch": 1,
+          "Intentional Walk": 1,
+          "Lineout": 5,
           "Popfly": 2,
           "Single": 3,
-          "Strikeout": 12,
-          "Walk": 2
+          "Strikeout": 6,
+          "Walk": 4
+        }
+      },
+      "-23": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 1,
+          "Lineout": 1,
+          "Strikeout": 2
+        }
+      },
+      "1--": {
+        "runs": 7,
+        "types": {
+          "Arraez": 1,
+          "Double": 5,
+          "Flyball": 9,
+          "Gordon": 1,
+          "Groundout": 11,
+          "Home Run": 2,
+          "Kepler": 1,
+          "Lineout": 4,
+          "Out Advancing": 2,
+          "Polanco": 1,
+          "Popfly": 3,
+          "Single": 14,
+          "Strikeout": 14,
+          "Walk": 5
+        }
+      },
+      "1-3": {
+        "runs": 5,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 2,
+          "Hit By Pitch": 1,
+          "Lineout": 2,
+          "Popfly": 1,
+          "Single": 5,
+          "Strikeout": 4,
+          "Walk": 1
+        }
+      },
+      "12-": {
+        "runs": 5,
+        "types": {
+          "Error": 1,
+          "Flyball": 6,
+          "Groundout": 7,
+          "Lineout": 5,
+          "Popfly": 1,
+          "Single": 6,
+          "Strikeout": 7,
+          "Walk": 4
+        }
+      },
+      "123": {
+        "runs": 8,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 1,
+          "Home Run": 1,
+          "Single": 2,
+          "Strikeout": 3
+        }
+      }
+    }
+  },
+  "OAK": {
+    "0": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1,
+          "Groundout": 8,
+          "Lineout": 2,
+          "Popfly": 2,
+          "Single": 4,
+          "Strikeout": 7,
+          "Walk": 3
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Double Play": 2,
+          "Flyball": 1,
+          "Strikeout": 4
+        }
+      }
+    },
+    "1": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Flyball": 3,
+          "Groundout": 1,
+          "Lineout": 1,
+          "Popfly": 1,
+          "Single": 3,
+          "Strikeout": 10,
+          "Walk": 1
+        }
+      },
+      "-2-": {
+        "runs": 0,
+        "types": {
+          "Strikeout": 2
+        }
+      },
+      "-23": {
+        "runs": 2,
+        "types": {
+          "Single": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Double": 1,
+          "Fielder's Choice": 1,
+          "Lineout": 2,
+          "Single": 1,
+          "Strikeout": 2,
+          "Walk": 1
+        }
+      },
+      "1-3": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Flyball": 1,
+          "Walk": 1
+        }
+      },
+      "123": {
+        "runs": 0,
+        "types": {
+          "Groundout": 1
+        }
+      }
+    },
+    "2": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Double": 1,
+          "Flyball": 1,
+          "Groundout": 4,
+          "Lineout": 3,
+          "Single": 1,
+          "Strikeout": 7,
+          "Walk": 1
         }
       },
       "-2-": {
         "runs": 0,
         "types": {
           "Flyball": 1,
-          "Groundout": 2,
-          "Hit By Pitch": 1,
-          "Strikeout": 1
+          "Single": 1,
+          "Strikeout": 2
         }
       },
       "-23": {
@@ -221,98 +1485,30 @@
       "1--": {
         "runs": 0,
         "types": {
-          "Flyball": 1,
-          "Reached on Interference": 1,
-          "Single": 2,
-          "Strikeout": 3,
-          "Walk": 1
-        }
-      },
-      "1-3": {
-        "runs": 1,
-        "types": {
-          "Flyball": 1,
-          "Single": 1,
-          "Strikeout": 1
-        }
-      },
-      "12-": {
-        "runs": 4,
-        "types": {
-          "Double": 1,
-          "Double Play": 2,
-          "Fielder's Choice": 1,
-          "Groundout": 1,
-          "Lineout": 1,
-          "Single": 2,
-          "Strikeout": 1
-        }
-      }
-    },
-    "2": {
-      "---": {
-        "runs": 2,
-        "types": {
-          "Flyball": 7,
-          "Groundout": 4,
-          "Home Run": 2,
-          "Lineout": 1,
-          "Popfly": 2,
-          "Single": 2,
-          "Strikeout": 8,
-          "Walk": 4
-        }
-      },
-      "-2-": {
-        "runs": 1,
-        "types": {
-          "Double": 1,
           "Flyball": 2,
-          "Lineout": 1,
-          "Strikeout": 1
-        }
-      },
-      "-23": {
-        "runs": 0,
-        "types": {
-          "Groundout": 1,
-          "Strikeout": 1
-        }
-      },
-      "1--": {
-        "runs": 0,
-        "types": {
-          "Double": 1,
-          "Flyball": 2,
-          "Groundout": 2,
-          "Single": 1,
-          "Strikeout": 2,
-          "Walk": 2
-        }
-      },
-      "1-3": {
-        "runs": 1,
-        "types": {
           "Groundout": 1,
           "Hit By Pitch": 1,
-          "Single": 1,
-          "Strikeout": 1
+          "Neuse": 1,
+          "Single": 1
+        }
+      },
+      "1-3": {
+        "runs": 1,
+        "types": {
+          "Flyball": 1,
+          "Single": 1
         }
       },
       "12-": {
         "runs": 0,
         "types": {
-          "Error": 1,
-          "Flyball": 1,
-          "Groundout": 1,
-          "Lineout": 1
+          "Strikeout": 1
         }
       },
       "123": {
-        "runs": 4,
+        "runs": 0,
         "types": {
-          "Flyball": 1,
-          "Home Run": 1
+          "Strikeout": 1
         }
       }
     }
@@ -486,6 +1682,143 @@
           "Home Run": 1,
           "Lineout": 1,
           "Strikeout": 1
+        }
+      }
+    }
+  },
+  "TBR": {
+    "0": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Double": 1,
+          "Flyball": 4,
+          "Groundout": 9,
+          "Lineout": 1,
+          "Strikeout": 8,
+          "Walk": 4
+        }
+      },
+      "-2-": {
+        "runs": 1,
+        "types": {
+          "Double": 1,
+          "Groundout": 1,
+          "Single": 2
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Double Play": 1,
+          "Groundout": 1
+        }
+      },
+      "1-3": {
+        "runs": 3,
+        "types": {
+          "Home Run": 1
+        }
+      }
+    },
+    "1": {
+      "---": {
+        "runs": 0,
+        "types": {
+          "Double": 2,
+          "Flyball": 1,
+          "Ground-rule Double": 1,
+          "Groundout": 5,
+          "Lineout": 3,
+          "Popfly": 2,
+          "Single": 2,
+          "Strikeout": 6
+        }
+      },
+      "--3": {
+        "runs": 0,
+        "types": {
+          "Popfly": 1
+        }
+      },
+      "-2-": {
+        "runs": 1,
+        "types": {
+          "Single": 1,
+          "Strikeout": 4
+        }
+      },
+      "-23": {
+        "runs": 0,
+        "types": {
+          "Fielder's Choice": 1
+        }
+      },
+      "1--": {
+        "runs": 1,
+        "types": {
+          "Double": 1,
+          "Groundout": 1,
+          "Single": 1,
+          "Strikeout": 1
+        }
+      }
+    },
+    "2": {
+      "---": {
+        "runs": 2,
+        "types": {
+          "Flyball": 4,
+          "Groundout": 2,
+          "Home Run": 2,
+          "Lineout": 1,
+          "Popfly": 1,
+          "Single": 1,
+          "Strikeout": 7,
+          "Walk": 2
+        }
+      },
+      "--3": {
+        "runs": 1,
+        "types": {
+          "Single": 1
+        }
+      },
+      "-2-": {
+        "runs": 1,
+        "types": {
+          "Double": 1,
+          "Groundout": 1,
+          "Single": 1,
+          "Strikeout": 2
+        }
+      },
+      "-23": {
+        "runs": 0,
+        "types": {
+          "Groundout": 1
+        }
+      },
+      "1--": {
+        "runs": 0,
+        "types": {
+          "Double": 1,
+          "Groundout": 1,
+          "Popfly": 1,
+          "Strikeout": 2,
+          "Walk": 1
+        }
+      },
+      "1-3": {
+        "runs": 0,
+        "types": {
+          "Groundout": 2
+        }
+      },
+      "12-": {
+        "runs": 0,
+        "types": {
+          "Groundout": 1
         }
       }
     }

@@ -24,8 +24,14 @@ class PlayByPlayDescriptionParser():
         observation = self.__parse_text(subs[0])
 
         if observation is not None:
+            moves = []
             for sub in subs[1:]:
-                observation['moves'] = self.__parse_text(sub)
+                move = self.__parse_text(sub)
+                if move:
+                    moves.append(move)
+
+            if len(moves) > 0:
+                observation['moves'] = moves
 
         return observation
 
@@ -34,11 +40,11 @@ class PlayByPlayParser():
         self.__description_parser = PlayByPlayDescriptionParser()
 
     @staticmethod
-    def get_break_points(df: pd.DataFrame) -> zip[Tuple[int, int]]:
-        return zip(
+    def get_break_points(df: pd.DataFrame) -> List[Tuple[int, int]]:
+        return list(zip(
             df[df.Inn == EVENT_START].index.values,
             df[df.Inn == EVENT_END].index.values
-        )
+        ))
 
     @staticmethod
     def to_parent_child_relationship(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -46,6 +52,7 @@ class PlayByPlayParser():
         previous_events: List[Dict[str, Any]] = []
 
         in_play_events: List[Dict[str, Any]] = []
+
         for event in events:
             if event['type'] == 'sub':
                 in_play_events.append(event)
@@ -67,6 +74,7 @@ class PlayByPlayParser():
                     in_play_events.append(last_event)
 
                 batter = event['batter']
+                previous_events = [event]
 
         n = len(previous_events)
         if n > 0:
@@ -105,7 +113,6 @@ class PlayByPlayParser():
             df_subset['aRoB'] = df_subset['aRoB'].astype(str)
 
             events: List[Dict[str, Any]] = []
-
             for _, row in df_subset.iterrows():
                 event = {
                     'id': event_identifier,
@@ -135,19 +142,19 @@ class PlayByPlayParser():
 
                     if event['entities'] is None:
                         raise ValueError(f'could not parse "{row["Play Description"]}".')
+
                 else:
                     event.update({
                         'type': 'sub',
                     })
 
                 events.append(event)
-
                 event_identifier += 1
 
             periods.append({
                 'id': i + 1,
                 'inning': f'{"top" if is_top else "bottom"}-{inning}',
-                'events': PlayByPlayParser.to_parent_child_relationship(events),
+                'events': PlayByPlayParser.to_parent_child_relationship(events)
             })
 
         return periods
