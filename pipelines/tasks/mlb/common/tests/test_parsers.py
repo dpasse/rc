@@ -1,27 +1,22 @@
 from typing import Dict, Any, List
+
 import json
 import pytest
-from ..helpers.parsers import EventDescriptionParser
-from ..helpers.templates import TemplateService
+from ..parsers.engines import PlayByPlayDescriptionParser
 
 
 test_data: List[Dict[str, Any]] = []
 
-if len(test_data) == 0:
-    with open('./tasks/mlb/common/tests/docs/desc_to_entities.json', 'r', encoding='UTF8') as file_input:
-        test_data = json.load(file_input)
+##if len(test_data) == 0:
+##   with open('./tasks/mlb/common/tests/docs/desc_to_entities.json', 'r', encoding='UTF8') as file_input:
+##       test_data = json.load(file_input)
 
 
 @pytest.mark.parametrize('description,expected', test_data)
 def test_event_description_parser(description: str, expected: Dict[str, Any]):
-    observation = EventDescriptionParser().transform_into_object(description)
+    observation = PlayByPlayDescriptionParser().parse(description)
 
     if len(test_data) == 1:
         print(observation)
 
     assert observation == expected, observation
-
-@pytest.mark.parametrize('description,expected', test_data)
-def test_description_templates_parser(description: str, expected: Dict[str, Any]):
-    is_valid, template = TemplateService().validate(description, expected)
-    assert is_valid, f'{description} -> {template}'

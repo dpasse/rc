@@ -1,89 +1,112 @@
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 import os
 import sys
+import re
 import time
-import json
-import logging
-import datetime
+import unidecode
 import pandas as pd
 
+from bs4 import BeautifulSoup
 from prefect import flow, task
+from prefect.task_runners import SequentialTaskRunner
+
 from common.helpers.web import make_request
 
 
-Logger = logging.getLogger(__name__)
-Logger.setLevel(level=logging.INFO)
-Logger.addHandler(
-    logging.FileHandler('../data/mlb/logs/pbp.log')
-)
+HEADERS = [
+    'Inn',
+    'Score',
+    'Out',
+    'RoB',
+    'Pit(cnt)',
+    'R/O',
+    '@Bat',
+    'Batter',
+    'Pitcher',
+    'wWPA',
+    'wWE',
+    'Play Description',
+]
 
+@task(retries=3, retry_delay_seconds=15, timeout_seconds=5)
+def get_pbp(team: str, game: str) -> None:
+    uri = f'../data/mlb/pbp/1/pbp_{game}.csv'
 
-@task(retries=3, retry_delay_seconds=15)
-def get_pbp(game_id: str) -> Optional[dict]:
-    Logger.info('* Stated "%s"', game_id)
+    if os.path.exists(uri):
+        print('skipping...', game)
+        return
 
-    key = "window['__espnfitt__']="
-    scripts = make_request(
-        f'https://www.espn.com/mlb/playbyplay/_/gameId/{game_id}'
-    ).select('script')
+    page = make_request(
+        f'https://www.baseball-reference.com/boxes/{team}/{game}.shtml'
+    )
 
-    json_blobs = [
-        script
-        for script in scripts
-        if script.text.startswith(key)
-    ]
+    pbp_div = page.select_one('#all_play_by_play')
+    if not pbp_div:
+        return
 
-    if len(json_blobs) == 0:
-        return None
+    div_text = re.sub(r'(<!--|-->)', '', pbp_div.prettify())
+    div = BeautifulSoup(div_text, features='html.parser')
 
-    json_string = json_blobs[0].text[len(key):-1]
-    return json.loads(json_string)['page']['content']['gamepackage']['pbp']
+    data: List[dict] = []
+    for row in div.select('#div_play_by_play tbody tr'):
+        observation: Optional[dict] = None
 
-@flow(name='mlb-pbp', persist_result=False)
-def get_pbps(game_ids: List[str], timeout = 8) -> None:
-    for i, game_id in enumerate(game_ids):
-        if os.path.exists(f'../data/mlb/pbp/1/pbp_{game_id}.json'):
-            Logger.info('    - skipping %s', game_id)
-            continue
+        if 'id' in row.attrs:
+            observation = {
+                'id': row.attrs['id']
+            }
 
-        try:
-            json_obj = get_pbp(game_id)
-            if json_obj:
-                with open(f'../data/mlb/pbp/1/pbp_{game_id}.json', 'w', encoding='UTF8') as pbp_output:
-                    pbp_output.write(json.dumps({ 'id': game_id, 'periods': json_obj }, indent=2))
-        except Exception as exception:
-            Logger.error('    - %s failed', game_id)
-            Logger.error(exception)
+            observation.update(
+                dict(zip(HEADERS, map(lambda a: a.text, row.children)))
+            )
+        elif 'class' in row.attrs:
+            observation = {
+                'Play Description': list(row.children)[-1].text
+            }
 
-        if i < (len(game_ids) - 1):
-            Logger.info('    - sleeping %s seconds', timeout)
-            time.sleep(timeout)
+            if 'pbp_summary_top' in row.attrs['class']:
+                observation['Inn'] = 'e-start'
 
+            if 'pbp_summary_bottom' in row.attrs['class']:
+                observation['Inn'] = 'e-end'
+
+        if observation:
+            for key in ['Play Description', 'Batter', 'Pitcher', 'Pit(cnt)']:
+                if key in observation:
+                    observation[key] = unidecode.unidecode(observation[key])
+
+            data.append(observation)
+
+    df = pd.DataFrame(data).drop(columns=['wWPA', 'wWE'])
+    df['Inn'] = df['Inn'].bfill(axis = 0)
+    df.to_csv(uri, index=False)
+
+@task()
+def sleep(timeout: int) -> None:
+    print('sleeping...', timeout)
+    time.sleep(timeout)
+
+@flow(name='mlb-pbp', task_runner=SequentialTaskRunner())
+def get_pbps(games: List[Tuple[str, str]], timeout = 15) -> None:
+    for i, request in enumerate(games):
+        get_pbp.submit(*request)
+        if i < (len(games) - 1):
+            sleep.submit(timeout)
 
 if __name__ == '__main__':
     args = sys.argv[1:]
     if len(args) == 0:
         raise Exception('Need to provide options.')
 
-    Logger.info('Started Download @ %s', datetime.datetime.now())
+    games: List[Tuple[str, str]] = []
 
-    input_game_ids: List[str] = []
     if args[0] == '-l':
-        FILE_PATH = args[1]
+        games = []
+        for _, row in pd.read_csv(args[1], index_col=None).iterrows():
+            games.append(
+                (row['team'], f'{row["team"]}{row["game"]}')
+            )
 
-        Logger.info('    - %s', FILE_PATH)
-
-        df = pd.read_csv(FILE_PATH, index_col=None)
-        input_game_ids.extend(
-            df.id.astype(str).unique().tolist()
-        )
-    else:
-        input_game_ids.extend(args)
-
-    Logger.info('    - #%s', len(input_game_ids))
-
-    get_pbps(input_game_ids, timeout=30)
-
-    Logger.info('Finished Download @ %s', datetime.datetime.now())
-    Logger.info('')
+    if len(games) > 0:
+        get_pbps(games)

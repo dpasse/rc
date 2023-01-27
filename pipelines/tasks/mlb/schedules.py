@@ -1,19 +1,17 @@
-from typing import List, Dict, Optional, cast
+from typing import List, Tuple, Any, Optional
 import sys
 import os
 import re
 import time
 import logging
-import datetime
-import numpy as np
+import unidecode
 import pandas as pd
 
-from bs4 import ResultSet, Tag
+from bs4 import ResultSet, Tag, PageElement
 from prefect import flow, task
+from prefect.task_runners import SequentialTaskRunner
 
-from common.helpers.normalizers import TeamNormalizer
 from common.helpers.web import make_request
-from common.helpers.merges import merge
 
 
 Logger = logging.getLogger(__name__)
@@ -22,115 +20,97 @@ Logger.addHandler(
     logging.FileHandler('../data/mlb/logs/schedule.log')
 )
 
-def extract_game(columns: ResultSet[Tag]) -> str:
-    anchor = columns[2].select_one('a.AnchorLink')
+def extract_game(column: Tag) -> Tuple[str, str]:
+    anchor = column.select_one('a')
     if anchor:
-        match = re.search(r'\/gameId\/(.+)$', anchor.attrs['href'])
+        match = re.search(
+            r'\/([a-z]+)(\d+).shtml',
+            anchor.attrs['href'],
+            flags=re.IGNORECASE
+        )
+
         if match:
-            return match.group(1)
+            return match.group(1), match.group(2)
+
+    return '', ''
+
+def extract_pitcher(column: Tag) -> str:
+    anchor = column.select_one('a')
+    if anchor:
+        return unidecode.unidecode(anchor.attrs['title'])
 
     return ''
 
-
 @task(retries=1, retry_delay_seconds=15)
-def get_team_schedule(season: str, abbr: str, team: int) -> List[dict]:
+def get_team_schedule(season: str, team: str) -> None:
+    uri = f'../data/mlb/schedules/{team}_{season}.csv'
+    if os.path.exists(uri):
+        print('skipping...', season, team)
+        return
+
+    bs = make_request(
+        f'https://www.baseball-reference.com/teams/{team}/{season}-schedule-scores.shtml',
+    )
+
+    div = bs.select_one('#team_schedule')
+    if not div:
+        return None
+
     collection = []
-    for half in [1, 2]:
-        bs = make_request(
-            f'https://www.espn.com/mlb/team/schedule/_/name/{abbr}/season/2022/seasontype/2/half/{half}'
-        )
+    for row in div.select('tbody tr'):
+        if 'class' in row.attrs and 'thead' in row.attrs['class']:
+            continue
 
-        for schedule in (
-            card
-            for card in bs.select('.Card')
-            if len(card.select('.schedule__header')) > 0
-        ):
-            rows = schedule.select('.Table__TBODY tr')
+        columns = list(row.children)
 
-            tds = rows[0].select('td')
-            for row in rows[1:]:
-                columns = row.select('td')
-                data = [column.text.strip() for column in columns]
-                collection.append(
-                    dict(zip(
-                        ['TEAM', 'SEASON', 'HALF'] + [ column.text for column in tds ] + ['GAME_ID', 'DESC'],
-                        [team, season, half] + data + [extract_game(columns), '']
-                        if len(data) == len(tds)
-                        else [team, season, half] + data[:2] + ([''] * 7) + data[2:],
-                    ))
-                )
+        headers = [
+            col.attrs['data-stat'] for col in columns
+        ]
 
-        if half == 1:
-            time.sleep(5)
+        data = dict(zip(
+            headers,
+            [item.text for item in columns]
+        ))
 
-    return collection
+        del data['boxscore']
 
-@flow(name='mlb-team-schedules', persist_result=False)
-def get_schedules(season: str, abbrs: List[str]) -> None:
-    data: List[dict] = []
-    team_normalizer = TeamNormalizer()
+        data['date_game'] = columns[1].attrs['csk']
 
-    path = '../data/mlb/schedules.csv'
-    df_current: Optional[pd.DataFrame] = None
-    if os.path.exists(path):
-        df_current = pd.read_csv(path)
-        df_current['TEAM'] = df_current['TEAM'].astype(int)
-        df_current['SEASON'] = df_current['SEASON'].astype(str)
-        df_current['GAME_ID'] = df_current['GAME_ID'].astype(str)
+        team, game = extract_game(columns[2])
+        data['team'] = team
+        data['game'] = game
 
-    for abbr in abbrs:
-        team = team_normalizer.get(abbr)
-        data.extend(
-            cast(List[dict], get_team_schedule(season, abbr, team))
-        )
+        data['winning_pitcher'] = extract_pitcher(columns[13])
+        data['losing_pitcher'] = extract_pitcher(columns[14])
+        data['saving_pitcher'] = extract_pitcher(columns[15])
 
-        ## remove entries from df_current
-        if not df_current is None:
-            df_current = df_current.loc[~np.logical_and(df_current.TEAM == team, df_current.SEASON == season)]
+        collection.append(data)
 
-        time.sleep(8)
+    pd.DataFrame(collection).to_csv(uri, index=None)
 
-    df = pd.DataFrame(data)
-    df['TEAM'] = df['TEAM'].astype(int)
-    df['SEASON'] = df['SEASON'].astype(str)
-    df['GAME_ID'] = df['GAME_ID'].astype(str)
+@task()
+def sleep(timeout: int) -> None:
+    print('sleeping...', timeout)
+    time.sleep(timeout)
 
-    if not df_current is None:
-        df = merge(df, df_current)
-        df['TEAM'] = df['TEAM'].astype(int)
-        df['SEASON'] = df['SEASON'].astype(str)
-        df['GAME_ID'] = df['GAME_ID'].astype(str)
-
-    df.sort_values(['TEAM', 'SEASON', 'HALF']).to_csv(path, index=False)
-
-
+@flow(name='mlb-team-schedules', task_runner=SequentialTaskRunner())
+def get_schedules(requests: List[Tuple[str, str]], timeout=15) -> None:
+    for i, request in enumerate(requests):
+        get_team_schedule.submit(*request)
+        if i < (len(requests) - 1):
+            sleep.submit(timeout)
 
 if __name__ == '__main__':
     args = sys.argv[1:]
     if len(args) == 0:
         raise Exception('Need to provide options.')
 
-    input_data: Dict[str, List[str]] = {}
-
+    requests = []
     if args[0] == '-l':
-        FILE_PATH = args[1]
-        df_input = pd.read_csv(FILE_PATH, index_col=None)
-        df_input['season'] = df_input['season'].astype(str)
-        df_input['team'] = df_input['team'].astype(str)
+        for _, row in pd.read_csv(args[1], index_col=None).iterrows():
+            requests.append(
+                (row['season'], row['team'])
+            )
 
-        input_data = df_input.groupby(['season'])['team'].apply(list).to_dict()
-    else:
-        input_data = {
-            sys.argv[1]: sys.argv[2:]
-        }
-
-    Logger.info('Started @ %s', datetime.datetime.now())
-
-    for input_season, input_teams in input_data.items():
-        Logger.info('    - %s', input_season)
-        Logger.info('    - #%s', len(input_teams))
-
-        get_schedules(input_season, input_teams)
-
-    Logger.info('Finished @ %s', datetime.datetime.now())
-    Logger.info('')
+    if len(requests) > 0:
+        get_schedules(requests)
