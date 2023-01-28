@@ -142,7 +142,6 @@ data/mlb/batting/*
 data/mlb/pitching/*
 data/mlb/pbp/1/*
 data/mlb/pbp/2/*
-data/mlb/inputs/*
 data/mlb/schedules/*
 
 data/mlb/standings.csv

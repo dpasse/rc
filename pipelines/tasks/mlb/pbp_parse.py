@@ -1,6 +1,7 @@
 from typing import List
 
 import os
+import re
 import json
 import pandas as pd
 
@@ -28,9 +29,8 @@ def get_pbps(game_ids: List[str]) -> None:
         get_pbp_rows.submit(game_id)
 
 if __name__ == '__main__':
-    game_ids = [
-        file.replace('pbp_', '').replace('.csv', '')
-        for file in os.listdir('../data/mlb/pbp/1/')
-    ]
-
-    get_pbps(game_ids)
+    get_pbps([
+        re.sub(r'^pbp_|\.csv$', '', file)
+        for file
+        in os.listdir('../data/mlb/pbp/1/')
+    ])
