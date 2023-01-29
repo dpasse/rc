@@ -1,7 +1,7 @@
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 import re
 
-from .helpers import grab, create_find_match_request
+from .helpers import grab, create_find_match_request, FindMatch
 
 
 def handle_match(match: re.Match[str]) -> Dict[str, Any]:
@@ -10,7 +10,7 @@ def handle_match(match: re.Match[str]) -> Dict[str, Any]:
         'how': grab(match, 1),
     }
 
-def handle_multiple_outs() -> Optional[Dict[str, Any]]:
+def handle_multiple_outs() -> FindMatch:
     expressions = [
         r'^ *(ground ball) ((?:double|triple) play)',
     ]

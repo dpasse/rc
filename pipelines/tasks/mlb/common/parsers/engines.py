@@ -18,8 +18,7 @@ class PlayByPlayDescriptionParser():
     def parse(self, text: str) -> Optional[Dict[str, Any]]:
         subs = text.split(';')
         observation = self.__parse_text(subs[0])
-
-        if observation is not None:
+        if not observation is None:
             moves = []
             for sub in subs[1:]:
                 move = self.__parse_text(sub)

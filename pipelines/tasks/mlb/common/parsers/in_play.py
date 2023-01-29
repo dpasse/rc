@@ -4,7 +4,7 @@ import re
 from .helpers import grab, create_find_match_request, FindMatch
 
 
-def handle_match(match: re.Match[str]) -> FindMatch:
+def handle_match(match: re.Match[str]) -> Dict[str, Any]:
     return {
         'type': grab(match, 1),
     }
