@@ -1,24 +1,25 @@
-from typing import Any, Dict, Optional
-
+from typing import Any, Dict
 import re
 
+from .helpers import grab, create_find_match_request, FindMatch
 
-def handle_steal(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *.+? (steals) (.+)', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(1),
-            'at': match.group(2)
-        }
 
-    return None
+def handle_match(match: re.Match[str]) -> Dict[str, Any]:
+    return {
+        'type': grab(match, 1),
+        'at': grab(match, 2),
+    }
 
-def handle_caught_stealing(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *(.+?) (caught stealing)', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(1),
-            'at': match.group(2)
-        }
+def handle_steal() -> FindMatch:
+    expressions = [
+        r'^ *.+? (steals) (.+)',
+    ]
 
-    return None
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE)
+
+def handle_caught_stealing() -> FindMatch:
+    expressions = [
+        r'^ *.+? (caught stealing) (.+)',
+    ]
+
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE)

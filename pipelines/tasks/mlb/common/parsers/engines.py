@@ -1,7 +1,8 @@
-from typing import Any, Dict, List, Optional, Tuple, cast
+from typing import Any, Dict, List, Optional, Tuple
 import pandas as pd
 
-from . import play_by_play_parsers
+from . import create_default_play_by_play_parsers_list
+from .helpers import parse_many
 
 
 EVENT_START = 'e-start'
@@ -9,15 +10,10 @@ EVENT_END = 'e-end'
 
 class PlayByPlayDescriptionParser():
     def __init__(self):
-        self.__parsers = play_by_play_parsers
+        self.__parsers = create_default_play_by_play_parsers_list()
 
     def __parse_text(self, text: str) -> Optional[Dict[str, Any]]:
-        for parser in self.__parsers:
-            observation = parser(text)
-            if observation:
-                return observation
-
-        return None
+        return parse_many(self.__parsers, text)
 
     def parse(self, text: str) -> Optional[Dict[str, Any]]:
         subs = text.split(';')

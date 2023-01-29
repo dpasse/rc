@@ -1,13 +1,17 @@
-from typing import Any, Dict, Optional
-
+from typing import Any, Dict
 import re
 
+from .helpers import grab, create_find_match_request, FindMatch
 
-def handle_balk(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *(balk)', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(1)
-        }
 
-    return None
+def handle_match(match: re.Match[str]) -> Dict[str, Any]:
+    return {
+        'type': grab(match, 1),
+    }
+
+def handle_balk() -> FindMatch:
+    expressions = [
+        r'^ *(balk)',
+    ]
+
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE)

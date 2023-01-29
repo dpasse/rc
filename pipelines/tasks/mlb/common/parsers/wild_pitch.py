@@ -1,22 +1,24 @@
-from typing import Any, Dict, Optional
-
+from typing import Any, Dict
 import re
 
+from .helpers import create_find_match_request, grab, FindMatch
 
-def handle_wild_pitch(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *(wild pitch)', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(1),
-        }
 
-    return None
+def handle_match(match: re.Match[str]) -> Dict[str, Any]:
+    return {
+        'type': grab(match, 0)
+    }
 
-def handle_passed_ball(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *(passed ball)', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(1),
-        }
+def handle_wild_pitch() -> FindMatch:
+    expressions = [
+        r'^ *(wild pitch)',
+    ]
 
-    return None
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE)
+
+def handle_passed_ball() -> FindMatch:
+    expressions = [
+        r'^ *(passed ball)'
+    ]
+
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE)
