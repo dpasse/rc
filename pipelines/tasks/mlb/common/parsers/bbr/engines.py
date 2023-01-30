@@ -2,13 +2,14 @@ from typing import List, Tuple
 import pandas as pd
 
 from . import create_default_play_by_play_parsers_list
-from .typing import OptionalHandleType, HandleType
+from ..typing import OptionalHandleType, HandleType
+from ..helpers import AbstrractPlayByPlayDescriptionParser
 
 
 EVENT_START = 'e-start'
 EVENT_END = 'e-end'
 
-class PlayByPlayDescriptionParser():
+class PlayByPlayDescriptionParser(AbstrractPlayByPlayDescriptionParser):
     def __init__(self):
         self.__parsers = create_default_play_by_play_parsers_list()
 

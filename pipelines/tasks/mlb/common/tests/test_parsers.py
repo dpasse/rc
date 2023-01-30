@@ -2,7 +2,7 @@ from typing import Dict, Any, List
 
 import json
 import pytest
-from ..parsers.engines import PlayByPlayDescriptionParser
+from ..parsers.bbr.engines import PlayByPlayDescriptionParser
 
 
 test_data: List[Dict[str, Any]] = []

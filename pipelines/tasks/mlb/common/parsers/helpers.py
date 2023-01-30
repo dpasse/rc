@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 from typing import List, Optional
 import re
 from dataclasses import dataclass
@@ -28,3 +29,9 @@ def create_find_match_request(expressions: List[str],  handle_match: HandlerType
 
 def grab(match: MatchType, index: int) -> str:
     return match.group(index).strip()
+
+
+class AbstrractPlayByPlayDescriptionParser(ABC):
+    @abstractmethod
+    def parse(self, text: str) -> OptionalHandleType:
+        pass
