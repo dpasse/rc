@@ -1,8 +1,8 @@
-from typing import List, Callable, Optional, Dict, Any
+from typing import List, Optional
 import re
 from dataclasses import dataclass
 
-from .typing import OptionalHandleType, MatchType, HandlerType, MatchType
+from .typing import OptionalHandleType, MatchType, HandlerType
 
 
 @dataclass(frozen=True)

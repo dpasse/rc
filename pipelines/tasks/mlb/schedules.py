@@ -55,14 +55,14 @@ def get_team_schedule(season: str, team: str) -> None:
 
     div = bs.select_one('#team_schedule')
     if not div:
-        return None
+        return
 
     collection = []
-    for row in div.select('tbody tr'):
-        if 'class' in row.attrs and 'thead' in row.attrs['class']:
+    for schedule in div.select('tbody tr'):
+        if 'class' in schedule.attrs and 'thead' in schedule.attrs['class']:
             continue
 
-        columns: List[Tag] = cast(List[Tag], list(row.children))
+        columns: List[Tag] = cast(List[Tag], list(schedule.children))
 
         headers = [
             col.attrs['data-stat'] for col in columns
@@ -95,10 +95,10 @@ def sleep(timeout: int) -> None:
     time.sleep(timeout)
 
 @flow(name='mlb-team-schedules', task_runner=SequentialTaskRunner())
-def get_schedules(requests: List[Tuple[str, str]], timeout=15) -> None:
-    for i, request in enumerate(requests):
+def get_schedules(schedule_requests: List[Tuple[str, str]], timeout=15) -> None:
+    for i, request in enumerate(schedule_requests):
         get_team_schedule.submit(*request)
-        if i < (len(requests) - 1):
+        if i < (len(schedule_requests) - 1):
             sleep.submit(timeout)
 
 if __name__ == '__main__':

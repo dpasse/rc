@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Optional, Tuple
+from typing import List, Tuple
 import pandas as pd
 
 from . import create_default_play_by_play_parsers_list
@@ -58,11 +58,11 @@ class PlayByPlayParser():
                 previous_events.append(event)
 
             else:
-                n = len(previous_events)
-                if n > 0:
+                length = len(previous_events)
+                if length > 0:
                     last_event = previous_events[-1]
 
-                    if n > 1:
+                    if length > 1:
                         last_event['before']['events'] = []
                         for previous_event in previous_events[:-1]:
                             previous_event['beforeEvent'] = last_event['id']
@@ -73,11 +73,11 @@ class PlayByPlayParser():
                 batter = event['batter']
                 previous_events = [event]
 
-        n = len(previous_events)
-        if n > 0:
+        length = len(previous_events)
+        if length > 0:
             last_event = previous_events[-1]
 
-            if n > 1:
+            if length > 1:
                 last_event['before']['events'] = []
                 for previous_event in previous_events[:-1]:
                     previous_event['beforeEvent'] = last_event['id']

@@ -48,26 +48,26 @@ def get_pbp(team: str, game: str) -> None:
     div = BeautifulSoup(div_text, features='html.parser')
 
     data: List[dict] = []
-    for row in div.select('#div_play_by_play tbody tr'):
+    for pbp in div.select('#div_play_by_play tbody tr'):
         observation: Optional[dict] = None
 
-        if 'id' in row.attrs:
+        if 'id' in pbp.attrs:
             observation = {
-                'id': row.attrs['id']
+                'id': pbp.attrs['id']
             }
 
             observation.update(
-                dict(zip(HEADERS, map(lambda a: a.text, row.children)))
+                dict(zip(HEADERS, map(lambda a: a.text, pbp.children)))
             )
-        elif 'class' in row.attrs:
+        elif 'class' in pbp.attrs:
             observation = {
-                'Play Description': list(row.children)[-1].text
+                'Play Description': list(pbp.children)[-1].text
             }
 
-            if 'pbp_summary_top' in row.attrs['class']:
+            if 'pbp_summary_top' in pbp.attrs['class']:
                 observation['Inn'] = 'e-start'
 
-            if 'pbp_summary_bottom' in row.attrs['class']:
+            if 'pbp_summary_bottom' in pbp.attrs['class']:
                 observation['Inn'] = 'e-end'
 
         if observation:
@@ -78,7 +78,7 @@ def get_pbp(team: str, game: str) -> None:
             data.append(observation)
 
     df = pd.DataFrame(data).drop(columns=['wWPA', 'wWE'])
-    df['Inn'] = df['Inn'].bfill(axis = 0)
+    df.Inn = df.Inn.bfill(axis = 0)
     df.to_csv(uri, index=False)
 
 @task(name='mlb-sleep')
@@ -86,10 +86,10 @@ def sleep(timeout: int) -> None:
     time.sleep(timeout)
 
 @flow(name='mlb-pbp', task_runner=SequentialTaskRunner())
-def get_pbps(games: List[Tuple[str, str]], timeout = 15) -> None:
-    for i, request in enumerate(games):
+def get_pbps(requests: List[Tuple[str, str]], timeout = 15) -> None:
+    for i, request in enumerate(requests):
         get_pbp.submit(*request)
-        if i < (len(games) - 1):
+        if i < (len(requests) - 1):
             sleep.submit(timeout)
 
 if __name__ == '__main__':
