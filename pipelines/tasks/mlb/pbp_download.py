@@ -86,7 +86,7 @@ def sleep(timeout: int) -> None:
     time.sleep(timeout)
 
 @flow(name='mlb-pbp', task_runner=SequentialTaskRunner())
-def get_pbps(games: List[Tuple[str, str]], timeout = 15) -> None:
+def get_pbps(games: List[Tuple[str, str]], timeout = 20) -> None:
     for i, request in enumerate(games):
         get_pbp.submit(*request)
         if i < (len(games) - 1):
