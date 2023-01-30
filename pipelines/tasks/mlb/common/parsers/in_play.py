@@ -1,58 +1,52 @@
-from typing import Any, Dict, Optional
-
 import re
 
+from .helpers import create_find_match_request, grab
+from .typing import ParserType, HandleType, MatchType
 
-def handle_ground_rule_double(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *(ground-rule double)', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(1)
-        }
 
-    return None
+def handle_match(match: MatchType) -> HandleType:
+    return {
+        'type': grab(match, 1),
+    }
 
-def handle_out_of_play_outs(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *(foul) ((?:bunt |)(?:flyball|popfly|lineout))', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(2)
-        }
+def parse_ground_rule_double() -> ParserType:
+    expressions = [
+        r'^ *(ground-rule double)',
+    ]
 
-    return None
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse
 
-def handle_in_play_outs(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *((?:bunt )?(?:flyball|popfly|(?:line|ground)out))', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(0)
-        }
+def parse_out_of_play_outs() -> ParserType:
+    expressions = [
+        r'^ *(foul (?:bunt |)(?:flyball|popfly|lineout))',
+    ]
 
-    return None
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse
 
-def handle_in_play(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *((?:intentional )?walk|hit by pitch|single|double|triple|home run)', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(0)
-        }
+def parse_in_play_outs() -> ParserType:
+    expressions = [
+        r'^ *((?:bunt )?(?:flyball|popfly|(?:line|ground)out))',
+    ]
 
-    return None
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse
 
-def handle_fielders_choice(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r"^ *(fielder's choice)", text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(0)
-        }
+def parse_in_play() -> ParserType:
+    expressions = [
+        r'^ *((?:intentional )?walk|hit by pitch|single|double|triple|home run)',
+    ]
 
-    return None
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse
 
-def handle_reached_on(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r"^ *reached on (interference)", text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(0)
-        }
+def parse_fielders_choice() -> ParserType:
+    expressions = [
+        r"^ *(fielder's choice)",
+    ]
 
-    return None
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse
+
+def parse_reached_on() -> ParserType:
+    expressions = [
+        r"^ *reached on (interference)",
+    ]
+
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse

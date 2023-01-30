@@ -1,8 +1,8 @@
 import os
 import json
 
-from prefect import flow, task
 from collections import defaultdict
+from prefect import flow, task
 
 
 PBP_DIRECTORY = '../data/mlb/pbp/2/'

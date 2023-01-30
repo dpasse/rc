@@ -1,14 +1,18 @@
-from typing import Any, Dict, Optional
-
 import re
 
+from .helpers import create_find_match_request, grab
+from .typing import ParserType, HandleType, MatchType
 
-def handle_strikeout(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *(strikeout) (swinging|looking)', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(1),
-            'how': match.group(2)
-        }
 
-    return None
+def handle_match(match: MatchType) -> HandleType:
+    return {
+        'type': grab(match, 1),
+        'effort': grab(match, 2)
+    }
+
+def parse_strikeout() -> ParserType:
+    expressions = [
+        r'^ *(strikeout) (swinging|looking)',
+    ]
+
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse

@@ -1,13 +1,17 @@
-from typing import Any, Dict, Optional
-
 import re
 
+from .helpers import create_find_match_request
+from .typing import ParserType, HandleType, MatchType
 
-def handle_error(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *reached on (e\d+)', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': 'Error',
-        }
 
-    return None
+def handle_match(_: MatchType) -> HandleType:
+    return {
+        'type': 'Error',
+    }
+
+def parse_error() -> ParserType:
+    expressions = [
+        r'^ *reached on (e\d+)',
+    ]
+
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse

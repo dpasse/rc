@@ -1,14 +1,18 @@
-from typing import Any, Dict, Optional
-
 import re
 
+from .helpers import create_find_match_request, grab
+from .typing import ParserType, HandleType, MatchType
 
-def handle_multiple_outs(text: str) -> Optional[Dict[str, Any]]:
-    match = re.search(r'^ *(ground ball) ((?:double|triple) play)', text, flags=re.IGNORECASE)
-    if match:
-        return {
-            'type': match.group(2),
-            'how': match.group(1)
-        }
 
-    return None
+def handle_match(match: MatchType) -> HandleType:
+    return {
+        'type': grab(match, 2),
+        'how': grab(match, 1),
+    }
+
+def parse_multiple_outs() -> ParserType:
+    expressions = [
+        r'^ *(ground ball) ((?:double|triple) play)',
+    ]
+
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse
