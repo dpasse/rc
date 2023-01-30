@@ -1,15 +1,15 @@
 import re
 
 from .helpers import create_find_match_request, grab
-from .typing import ParseType, HandleType
+from .typing import ParserType, HandleType, MatchType
 
 
-def handle_match(match: re.Match[str]) -> HandleType:
+def handle_match(match: MatchType) -> HandleType:
     return {
         'type': grab(match, 1),
     }
 
-def parse_interference() -> ParseType:
+def parse_interference() -> ParserType:
     expressions = [
         r'^ *(bunt Interference)',
     ]

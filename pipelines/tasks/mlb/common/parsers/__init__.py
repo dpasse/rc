@@ -1,6 +1,6 @@
 from typing import List
 
-from .typing import ParseType
+from .typing import ParserType
 from .in_play import parse_in_play_outs, \
                      parse_in_play, \
                      parse_fielders_choice, \
@@ -18,7 +18,7 @@ from .balk import parse_balk
 from .interference import parse_interference
 
 
-def create_default_play_by_play_parsers_list() -> List[ParseType]:
+def create_default_play_by_play_parsers_list() -> List[ParserType]:
     return [
         parse_passed_ball(),
         parse_wild_pitch(),

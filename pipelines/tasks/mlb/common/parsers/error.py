@@ -1,15 +1,15 @@
 import re
 
 from .helpers import create_find_match_request
-from .typing import ParseType, HandleType
+from .typing import ParserType, HandleType, MatchType
 
 
-def handle_match(_: re.Match[str]) -> HandleType:
+def handle_match(_: MatchType) -> HandleType:
     return {
         'type': 'Error',
     }
 
-def parse_error() -> ParseType:
+def parse_error() -> ParserType:
     expressions = [
         r'^ *reached on (e\d+)',
     ]
