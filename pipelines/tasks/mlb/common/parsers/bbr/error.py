@@ -1,7 +1,7 @@
 import re
 
-from .helpers import create_find_match_request
-from .typing import ParserType, HandleType, MatchType
+from ..models import create_find_match_request
+from ..typing import ParserType, HandleType, MatchType
 
 
 def handle_match(_: MatchType) -> HandleType:

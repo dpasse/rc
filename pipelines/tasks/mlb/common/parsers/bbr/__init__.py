@@ -1,6 +1,6 @@
 from typing import List
 
-from .typing import ParserType
+from ..typing import ParserType
 from .in_play import parse_in_play_outs, \
                      parse_in_play, \
                      parse_fielders_choice, \

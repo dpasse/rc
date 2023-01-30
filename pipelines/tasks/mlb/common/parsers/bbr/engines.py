@@ -3,7 +3,7 @@ import pandas as pd
 
 from . import create_default_play_by_play_parsers_list
 from ..typing import OptionalHandleType, HandleType
-from ..helpers import AbstrractPlayByPlayDescriptionParser
+from ..models import AbstrractPlayByPlayDescriptionParser
 
 
 EVENT_START = 'e-start'
