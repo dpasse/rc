@@ -25,7 +25,7 @@ def handle_out_advance_match(match: MatchType) -> HandleType:
 
 def parse_out_advance() -> ParserType:
     expressions = [
-        r'^ *baserunner (out advancing) *$',
+        r'^ *baserunner (out advancing|advance) *$',
     ]
 
     return create_find_match_request(expressions, handle_out_advance_match, re.IGNORECASE).parse

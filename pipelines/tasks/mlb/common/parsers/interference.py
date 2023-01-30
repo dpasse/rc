@@ -11,7 +11,9 @@ def handle_match(match: MatchType) -> HandleType:
 
 def parse_interference() -> ParserType:
     expressions = [
-        r'^ *(bunt Interference)',
+        r'^ *(bunt interference)',
+        r'^ *(foul interference)',
+        r'^ *(interference by batter)'
     ]
 
     return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse

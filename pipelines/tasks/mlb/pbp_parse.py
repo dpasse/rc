@@ -10,7 +10,7 @@ from prefect import flow, task
 from common.parsers.engines import PlayByPlayParser
 
 
-@task(timeout_seconds=5)
+##@task(timeout_seconds=5)
 def get_pbp_rows(game_id: str) -> None:
     df = pd.read_csv(f'../data/mlb/pbp/1/pbp_{game_id}.csv')
     df['R/O'] = df['R/O'].astype(str)
@@ -23,10 +23,10 @@ def get_pbp_rows(game_id: str) -> None:
     with open(f'../data/mlb/pbp/2/pbp_{game_id}.json', 'w', encoding='UTF8') as output_file:
         json.dump(game, output_file, indent=4)
 
-@flow(name='mlb-pbp-parse')
+##@flow(name='mlb-pbp-parse')
 def get_pbps(game_ids: List[str]) -> None:
     for game_id in game_ids:
-        get_pbp_rows.submit(game_id)
+        get_pbp_rows(game_id)
 
 if __name__ == '__main__':
     get_pbps([

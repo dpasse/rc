@@ -12,6 +12,7 @@ def handle_match(_: MatchType) -> HandleType:
 def parse_error() -> ParserType:
     expressions = [
         r'^ *reached on (e\d+)',
+        r'^ *(e\d+) on',
     ]
 
     return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse

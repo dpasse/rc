@@ -16,6 +16,7 @@ from .pick_off import parse_pick_off
 from .advance import parse_advance, parse_out_advance
 from .balk import parse_balk
 from .interference import parse_interference
+from .indifference import parse_indifference
 
 
 def create_default_play_by_play_parsers_list() -> List[ParserType]:
@@ -38,4 +39,5 @@ def create_default_play_by_play_parsers_list() -> List[ParserType]:
         parse_out_advance(),
         parse_advance(),
         parse_interference(),
+        parse_indifference(),
     ]

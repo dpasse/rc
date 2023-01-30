@@ -32,7 +32,7 @@ def parse_in_play_outs() -> ParserType:
 
 def parse_in_play() -> ParserType:
     expressions = [
-        r'^ *((?:intentional )?walk|hit by pitch|single|double|triple|home run)',
+        r'^ *((?:intentional )?walk|hit by pitch|single|double|triple|home run|inside-the-park home run)',
     ]
 
     return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse
