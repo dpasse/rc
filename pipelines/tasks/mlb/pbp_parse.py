@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict, Any
 
 import os
 import re
@@ -8,20 +8,37 @@ import pandas as pd
 from prefect import flow, task
 
 from common.parsers.engines import PlayByPlayParser
+from common.parsers.typing import HandleType
 
+
+class PlayByPlayCsvToJsonConverter():
+    def __init__(self, game_id: str) -> None:
+        self.__game_id = game_id
+        self.__input_path = f'../data/mlb/pbp/1/pbp_{self.game_id}.csv'
+        self.__output_path = f'../data/mlb/pbp/2/pbp_{self.game_id}.json'
+        self.__parser = PlayByPlayParser()
+
+    def convert(self) -> HandleType:
+        df = pd.read_csv(self.__input_path, index_col=None)
+        df['R/O'] = df['R/O'].astype(str)
+
+        return {
+            'id': self.__game_id,
+            'periods': self.__parser.parse(df)
+        }
+
+    def dump(self, game: Dict[str, Any]) -> None:
+        with open(self.__output_path, 'w', encoding='UTF8') as output_file:
+            json.dump(game, output_file, indent=4)
+
+    def convert_and_dump(self) -> None:
+        self.dump(
+            self.convert()
+        )
 
 ##@task(timeout_seconds=5)
 def get_pbp_rows(game_id: str) -> None:
-    df = pd.read_csv(f'../data/mlb/pbp/1/pbp_{game_id}.csv')
-    df['R/O'] = df['R/O'].astype(str)
-
-    game = {
-        'id': game_id,
-        'periods': PlayByPlayParser().parse(df)
-    }
-
-    with open(f'../data/mlb/pbp/2/pbp_{game_id}.json', 'w', encoding='UTF8') as output_file:
-        json.dump(game, output_file, indent=4)
+    PlayByPlayCsvToJsonConverter(game_id).convert_and_dump()
 
 ##@flow(name='mlb-pbp-parse')
 def get_pbps(game_ids: List[str]) -> None:
