@@ -2,7 +2,7 @@ from typing import Any, Dict, List, Optional, Tuple
 import pandas as pd
 
 from . import create_default_play_by_play_parsers_list
-from .helpers import parse_many
+from .typing import OptionalHandleType, HandleType
 
 
 EVENT_START = 'e-start'
@@ -12,21 +12,23 @@ class PlayByPlayDescriptionParser():
     def __init__(self):
         self.__parsers = create_default_play_by_play_parsers_list()
 
-    def __parse_text(self, text: str) -> Optional[Dict[str, Any]]:
-        return parse_many(self.__parsers, text)
+    def __parse_text(self, text: str) -> OptionalHandleType:
+        for parser in self.__parsers:
+            observation = parser(text)
+            if observation:
+                return observation
 
-    def parse(self, text: str) -> Optional[Dict[str, Any]]:
+        return None
+
+    def parse(self, text: str) -> OptionalHandleType:
         subs = text.split(';')
         observation = self.__parse_text(subs[0])
-        if not observation is None:
-            moves = []
-            for sub in subs[1:]:
-                move = self.__parse_text(sub)
-                if move:
-                    moves.append(move)
+        if observation is None:
+            return None
 
-            if len(moves) > 0:
-                observation['moves'] = moves
+        moves = [self.__parse_text(sub) for sub in subs[1:]]
+        if len(moves) > 0:
+            observation['moves'] = moves
 
         return observation
 
@@ -42,11 +44,11 @@ class PlayByPlayParser():
         ))
 
     @staticmethod
-    def to_parent_child_relationship(events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    def to_parent_child_relationship(events: List[HandleType]) -> List[HandleType]:
         batter = ''
-        previous_events: List[Dict[str, Any]] = []
+        previous_events: List[HandleType] = []
 
-        in_play_events: List[Dict[str, Any]] = []
+        in_play_events: List[HandleType] = []
 
         for event in events:
             if event['type'] == 'sub':
@@ -85,10 +87,10 @@ class PlayByPlayParser():
 
         return in_play_events
 
-    def parse(self, df: pd.DataFrame) -> List[Dict[str, Any]]:
+    def parse(self, df: pd.DataFrame) -> List[HandleType]:
         inning = 0
         event_identifier = 1
-        periods: List[Dict[str, Any]] = []
+        periods: List[HandleType] = []
 
         break_points = enumerate(
             df.iloc[s+1:e].copy()
@@ -107,7 +109,7 @@ class PlayByPlayParser():
             df_subset['aRoB'] = rob[1:] + rob[-1:]
             df_subset['aRoB'] = df_subset['aRoB'].astype(str)
 
-            events: List[Dict[str, Any]] = []
+            events: List[HandleType] = []
             for _, row in df_subset.iterrows():
                 event = {
                     'id': event_identifier,

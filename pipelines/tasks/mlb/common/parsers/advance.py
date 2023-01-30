@@ -1,31 +1,31 @@
-from typing import Any, Dict
 import re
 
-from .helpers import grab, create_find_match_request, FindMatch
+from .helpers import create_find_match_request, grab
+from .typing import ParseType, HandleType
 
 
-def handle_advance_match(match: re.Match[str]) -> Dict[str, Any]:
+def handle_advance_match(match: re.Match[str]) -> HandleType:
     return {
         'player': grab(match, 1),
         'type': 'Advanced',
         'at': grab(match, 2),
     }
 
-def handle_advance() -> FindMatch:
+def parse_advance() -> ParseType:
     expressions = [
         r'^ *(.+?) to ([123]B) *$',
     ]
 
-    return create_find_match_request(expressions, handle_advance_match, re.IGNORECASE)
+    return create_find_match_request(expressions, handle_advance_match, re.IGNORECASE).parse
 
-def handle_out_advance_match(match: re.Match[str]) -> Dict[str, Any]:
+def handle_out_advance_match(match: re.Match[str]) -> HandleType:
     return {
         'type': grab(match, 1),
     }
 
-def handle_out_advance() -> FindMatch:
+def parse_out_advance() -> ParseType:
     expressions = [
         r'^ *baserunner (out advancing) *$',
     ]
 
-    return create_find_match_request(expressions, handle_out_advance_match, re.IGNORECASE)
+    return create_find_match_request(expressions, handle_out_advance_match, re.IGNORECASE).parse

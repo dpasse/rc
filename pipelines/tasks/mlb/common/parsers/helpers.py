@@ -1,37 +1,30 @@
 from typing import List, Callable, Optional, Dict, Any
 import re
+from dataclasses import dataclass
+
+from .typing import OptionalHandleType
 
 
-def grab(match: re.Match, index: int) -> str:
-    return match.group(index).strip()
-
+@dataclass(frozen=True)
 class FindMatch():
-    def __init__(self, expressions: List[str], handle_match: Callable[[re.Match[str]], Dict[str, Any]], flags: int = 0) -> None:
-        self.__expressions = expressions
-        self.__handle = handle_match
-        self.__flags = flags
+    expressions: List[str]
+    handle: Callable[[re.Match[str]], Dict[str, Any]]
+    flags: int
 
     def find(self, text: str) -> Optional[re.Match[str]]:
-        match: Optional[re.Match[str]] = None
-        for expression in self.__expressions:
-            match = re.search(expression, text, flags=self.__flags)
+        for expression in self.expressions:
+            match = re.search(expression, text, flags=self.flags)
             if match:
-                break
+                return match
 
-        return match
+        return None
 
-    def parse(self, text: str) -> Optional[Dict[str, Any]]:
+    def parse(self, text: str) -> OptionalHandleType:
         match = self.find(text)
-        return self.__handle(match) if match else None
+        return self.handle(match) if match else None
 
 def create_find_match_request(expressions: List[str],  handle_match: Callable[[re.Match[str]], Dict[str, Any]], flags: int = 0) -> FindMatch:
     return FindMatch(expressions, handle_match, flags)
 
-def parse_many(requests: List[FindMatch], text: str) -> Optional[Dict[str, Any]]:
-    match: Optional[Dict[str, Any]] = None
-    for request in requests:
-        match = request.parse(text)
-        if match:
-            break
-
-    return match
+def grab(match: re.Match, index: int) -> str:
+    return match.group(index).strip()

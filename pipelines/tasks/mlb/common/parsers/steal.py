@@ -1,25 +1,25 @@
-from typing import Any, Dict
 import re
 
-from .helpers import grab, create_find_match_request, FindMatch
+from .helpers import create_find_match_request, grab
+from .typing import ParseType, HandleType
 
 
-def handle_match(match: re.Match[str]) -> Dict[str, Any]:
+def handle_match(match: re.Match[str]) -> HandleType:
     return {
         'type': grab(match, 1),
         'at': grab(match, 2),
     }
 
-def handle_steal() -> FindMatch:
+def parse_steal() -> ParseType:
     expressions = [
         r'^ *.+? (steals) (.+)',
     ]
 
-    return create_find_match_request(expressions, handle_match, re.IGNORECASE)
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse
 
-def handle_caught_stealing() -> FindMatch:
+def parse_caught_stealing() -> ParseType:
     expressions = [
         r'^ *.+? (caught stealing) (.+)',
     ]
 
-    return create_find_match_request(expressions, handle_match, re.IGNORECASE)
+    return create_find_match_request(expressions, handle_match, re.IGNORECASE).parse
