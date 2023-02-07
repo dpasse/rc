@@ -14,12 +14,13 @@ webpack-watch-dev:
 	npx webpack watch --config webpack.config.js
 
 mypy:
-	cd ./pipelines && make mypy
-	cd ./db && make mypy
-	cd ./app && make mypy
+	cd ./pipelines && mypy ./ --ignore-missing-imports
+	cd ./db && mypy ./ --ignore-missing-imports
+	cd ./app && mypy ./ --ignore-missing-imports
+	cd ./mushbeard && mypy ./ --ignore-missing-imports
 
 test:
-	cd ./pipelines && pytest -v -s
+	cd ./mushbeard && pytest -v -s
 
 pylint:
 	find . -type f -not -path "./rc/*" -name "*.py" | xargs pylint

@@ -1,14 +1,18 @@
 from typing import List, Dict, Any
 
 import os
+import sys
 import re
 import json
 import pandas as pd
 
-from prefect import flow, task
+from prefect import flow
 
-from common.parsers.bbr.engines import PlayByPlayParser
-from common.parsers.typing import HandleType
+from find import root
+sys.path.append(root())
+
+from mushbeard.parsers.bbr.engines import PlayByPlayParser
+from mushbeard.parsers.typing import HandleType
 
 
 class PlayByPlayCsvToJsonConverter():

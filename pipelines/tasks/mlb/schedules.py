@@ -12,7 +12,10 @@ from bs4 import Tag
 from prefect import flow, task
 from prefect.task_runners import SequentialTaskRunner
 
-from common.helpers.web import make_request
+from find import root
+sys.path.append(root())
+
+from mushbeard.helpers.web import make_request
 
 
 Logger = logging.getLogger(__name__)

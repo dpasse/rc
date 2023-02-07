@@ -6,9 +6,12 @@ import time
 import pandas as pd
 from prefect import flow, task
 
-from common.helpers.transformers import run, PITCHERS, BATTERS
-from common.helpers.web import make_request
-from common.helpers.merges import merge
+from find import root
+sys.path.append(root())
+
+from mushbeard.helpers.transformers import run, PITCHERS, BATTERS
+from mushbeard.helpers.web import make_request
+from mushbeard.helpers.merges import merge
 
 
 @task(retries=1)
