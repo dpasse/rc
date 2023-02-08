@@ -1,7 +1,6 @@
 from typing import List, Dict, Any
 
 import os
-import sys
 import re
 import json
 import pandas as pd
@@ -10,8 +9,9 @@ from prefect import flow
 
 # pylint: disable=C0413
 
-from find import root
-sys.path.append(root())
+from setup_module import append_path
+
+append_path()
 
 from mushbeard.parsers.bbr.engines import PlayByPlayParser
 from mushbeard.parsers.typing import HandleType

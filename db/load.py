@@ -1,11 +1,10 @@
-import sys
 import sqlite3
 
 # pylint: disable=C0413
 
-from find import root
-sys.path.append(root())
+from setup_module import append_path
 
+append_path()
 from mushbeard.db.loaders import get_loaders
 
 

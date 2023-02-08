@@ -8,8 +8,9 @@ from prefect import flow, task
 
 # pylint: disable=C0413
 
-from find import root
-sys.path.append(root())
+from setup_module import append_path
+
+append_path()
 
 from mushbeard.helpers.transformers import run, PITCHERS, BATTERS
 from mushbeard.helpers.web import make_request

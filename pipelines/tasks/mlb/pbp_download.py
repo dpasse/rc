@@ -13,8 +13,9 @@ from prefect.task_runners import SequentialTaskRunner
 
 # pylint: disable=C0413
 
-from find import root
-sys.path.append(root())
+from setup_module import append_path
+
+append_path()
 
 from mushbeard.helpers.web import make_request
 
