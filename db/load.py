@@ -6,22 +6,14 @@ import sqlite3
 from find import root
 sys.path.append(root())
 
-from mushbeard.db.loaders import seasons, leagues, conferences, divisions, teams
+from mushbeard.db.loaders import get_loaders
 
 
 DATA_DIRECTORY = '../data/'
 DATABASE_PATH = '../app/rc.sqlite'
 
 if __name__ == '__main__':
-    data_migrations = [
-        ('insert_seasons', seasons.execute),
-        ('insert_leagues', leagues.execute),
-        ('insert_conferences', conferences.execute),
-        ('insert_divisions', divisions.execute),
-        ('insert_teams', teams.execute),
-    ]
-
-    for label, method in data_migrations:
+    for label, method in get_loaders():
         with sqlite3.connect(DATABASE_PATH) as conn:
             print(f'running - {label}')
 
