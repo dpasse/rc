@@ -1,7 +1,7 @@
-from .typing import BASES_TYPE
+from .typing import BasesType
 
 
-def handle_take_base(bases: BASES_TYPE) -> BASES_TYPE:
+def handle_take_base(bases: BasesType) -> BasesType:
     if bases == [1, 1, 1]:
         return [1] + bases
 

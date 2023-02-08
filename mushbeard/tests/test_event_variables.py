@@ -1,4 +1,4 @@
-from ..simulation.models import BatterStats, BatterEventVariableFactory
+from ..simulation.models.batters import BatterStats, BatterEventVariableFactory
 
 
 def test_event_variables():

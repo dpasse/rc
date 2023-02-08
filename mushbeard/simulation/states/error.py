@@ -1,5 +1,5 @@
-from .typing import BASES_TYPE
+from .typing import BasesType
 
 
-def handle_error(bases: BASES_TYPE) -> BASES_TYPE:
+def handle_error(bases: BasesType) -> BasesType:
     return [1] + bases

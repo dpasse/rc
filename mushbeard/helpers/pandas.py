@@ -3,6 +3,11 @@ import numpy as np
 import pandas as pd
 
 
+def merge(df_to_merge, df_current) -> pd.DataFrame:
+    return df_to_merge \
+        if not df_current.empty \
+        else pd.concat([df_to_merge, df_current])
+
 def chunkify(df: pd.DataFrame, chunk_size: int):
     start = 0
     length = df.shape[0]

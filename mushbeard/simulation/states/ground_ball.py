@@ -1,7 +1,7 @@
-from .typing import BASES_TYPE
+from .typing import BasesType
 
 
-def handle_ground_into_double_play(bases: BASES_TYPE) -> BASES_TYPE:
+def handle_ground_into_double_play(bases: BasesType) -> BasesType:
     if bases == [1, 0, 0]:
         return [0, 0, 0]
 
@@ -16,7 +16,7 @@ def handle_ground_into_double_play(bases: BASES_TYPE) -> BASES_TYPE:
 
     return bases
 
-def handle_normal_ground_ball(bases: BASES_TYPE) -> BASES_TYPE:
+def handle_normal_ground_ball(bases: BasesType) -> BasesType:
     if bases == [0, 1, 1]:
         return bases
 

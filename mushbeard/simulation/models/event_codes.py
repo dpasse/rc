@@ -1,5 +1,6 @@
 from enum import Enum
 
+# pylint: disable=C0103
 
 class EventCodes(Enum):
     Strikeout = 1

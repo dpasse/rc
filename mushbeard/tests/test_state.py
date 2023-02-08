@@ -1,6 +1,6 @@
 import pytest
 
-from ..simulation.models import EventCodes
+from ..simulation.models.event_codes import EventCodes
 from ..simulation.state import  Inning, InningScenario
 
 

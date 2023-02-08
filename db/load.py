@@ -1,6 +1,12 @@
+import sys
 import sqlite3
 
-from db.common.loaders import seasons, leagues, conferences, divisions, teams
+# pylint: disable=C0413
+
+from find import root
+sys.path.append(root())
+
+from mushbeard.db.loaders import seasons, leagues, conferences, divisions, teams
 
 
 DATA_DIRECTORY = '../data/'

@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from prefect import flow, task
 from prefect.task_runners import SequentialTaskRunner
 
+# pylint: disable=C0413
 
 from find import root
 sys.path.append(root())

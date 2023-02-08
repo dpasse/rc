@@ -2,7 +2,7 @@ import os
 from typing import List
 import pandas as pd
 
-from ..helpers.pandas_to_sql import build_bulk_insert_sql
+from ...helpers.pandas import build_bulk_insert_sql
 
 
 def execute(root_directory: str) -> List[str]:

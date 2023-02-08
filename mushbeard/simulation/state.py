@@ -1,23 +1,23 @@
 from typing import List, Optional
 from dataclasses import dataclass
 
-from .models import EventCodes
-from .states import get_states, STATE_LOOKUP_TYPE, BASES_TYPE
+from .models.event_codes import EventCodes
+from .states import get_states, StateLookupType, BasesType
 
 
 class Bases():
-    def __init__(self, scenario: Optional[BASES_TYPE] = None) -> None:
+    def __init__(self, scenario: Optional[BasesType] = None) -> None:
         self.__bases = (scenario if scenario else [0, 0, 0]).copy()
-        self.__base_runner_rules: STATE_LOOKUP_TYPE = get_states()
+        self.__base_runner_rules: StateLookupType = get_states()
 
     @property
-    def state(self) -> BASES_TYPE:
+    def state(self) -> BasesType:
         return self.__bases.copy()
 
-    def matches(self, scenario: BASES_TYPE) -> bool:
+    def matches(self, scenario: BasesType) -> bool:
         return self.__bases == scenario
 
-    def is_in(self, scenarios: List[BASES_TYPE]) -> bool:
+    def is_in(self, scenarios: List[BasesType]) -> bool:
         for scenario in scenarios:
             if self.matches(scenario):
                 return True
@@ -41,13 +41,13 @@ class Bases():
 
 @dataclass
 class InningScenario():
-    bases: BASES_TYPE
+    bases: BasesType
     runs: int
     outs: int
 
 @dataclass
 class InningHistory():
-    bases: BASES_TYPE
+    bases: BasesType
     runs: int
     outs: int
     batter: str

@@ -8,6 +8,8 @@ import pandas as pd
 
 from prefect import flow
 
+# pylint: disable=C0413
+
 from find import root
 sys.path.append(root())
 

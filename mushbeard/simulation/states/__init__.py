@@ -1,6 +1,6 @@
 from typing import Callable, Dict
 
-from .typing import BASES_TYPE
+from .typing import BasesType
 from .error import handle_error
 from .take_base import handle_take_base
 from .single import handle_single, handle_medium_single, handle_long_single
@@ -9,10 +9,10 @@ from .triple import handle_triple
 from .homerun import handle_homerun
 from .ground_ball import handle_ground_into_double_play, handle_normal_ground_ball
 from .fly import handle_long_fly, handle_medium_fly
-from ..models import EventCodes
+from ..models.event_codes import EventCodes
 
 
-STATE_LOOKUP_TYPE = Dict[EventCodes, Callable[[BASES_TYPE], BASES_TYPE]]
+StateLookupType = Dict[EventCodes, Callable[[BasesType], BasesType]]
 
 _states = {
     EventCodes.Error: handle_error,

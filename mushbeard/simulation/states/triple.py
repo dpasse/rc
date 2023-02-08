@@ -1,5 +1,5 @@
-from .typing import BASES_TYPE
+from .typing import BasesType
 
 
-def handle_triple(bases: BASES_TYPE) -> BASES_TYPE:
+def handle_triple(bases: BasesType) -> BasesType:
     return [0, 0, 1] + bases

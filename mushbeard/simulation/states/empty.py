@@ -1,5 +1,5 @@
-from .typing import BASES_TYPE
+from .typing import BasesType
 
 
-def handle_empty(bases: BASES_TYPE) -> BASES_TYPE:
+def handle_empty(bases: BasesType) -> BasesType:
     return bases

@@ -1,4 +1,4 @@
-from . import EventCodes
+from .event_codes import EventCodes
 
 
 class EventVariable():

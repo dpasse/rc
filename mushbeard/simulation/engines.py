@@ -1,8 +1,10 @@
 import random
-from typing import List, Tuple
+from typing import List
 from .state import Inning
 
-from .models import EventCodes, EventVariable, AbstractBatters, BatterStats
+from .models.event_codes import EventCodes
+from .models.event_variable import EventVariable
+from .models.batters import AbstractBatters
 
 
 class InningSimulator():
